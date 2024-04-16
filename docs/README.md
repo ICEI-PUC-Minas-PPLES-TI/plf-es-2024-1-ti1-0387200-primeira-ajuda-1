@@ -20,15 +20,10 @@ Esta seção traz explicações breves sobre o conjunto de artefatos que precisa
 
 ## Problema
 
-Nesse momento você deve apresentar o problema que a sua aplicação deve resolver. No entanto, não é a hora de comentar sobre a aplicação. Descreva também o contexto em que essa aplicação será usada, se houver: empresa, tecnologias, etc. Novamente, descreva apenas o que de fato existir, pois ainda não é a hora de apresentar requisitos detalhados ou projetos.
+Os primeiros socorros desempenham um papel crucial na gestão de uma ampla gama de emergências, e a falta de conhecimento sobre esse tema representa uma preocupação significativa para a segurança e o bem-estar de todos, especialmente para pessoas acima de 13 anos que não possuem conhecimento sobre primeiros socorros e precisam de orientação em situações de emergência. Embora a capacidade de fornecer assistência imediata possa ser decisiva em situações de acidentes ou emergências médicas, é essencial ressaltar que a prestação de primeiros socorros deve ser realizada apenas por pessoas devidamente treinadas.
 
-Nesse momento, o grupo pode optar por fazer uso de ferramentas como Design Thinking, que permite um olhar de ponta a ponta para o problema.
+A ausência de educação formal sobre esse assunto, aliada ao receio de cometer erros e à indisponibilidade de treinamento acessível, evidencia que muitos indivíduos não possuem conhecimentos básicos sobre como agir adequadamente em situações de emergência. Essa lacuna ressalta a necessidade de educar o público e aumentar a conscientização sobre a importância dos princípios básicos de primeiros socorros.
 
-**Links Úteis**:
-
-- [Objetivos, Problema de pesquisa e Justificativa](https://medium.com/@versioparole/objetivos-problema-de-pesquisa-e-justificativa-c98c8233b9c3)
-- [Matriz Certezas, Suposições e Dúvidas](https://medium.com/educa%C3%A7%C3%A3o-fora-da-caixa/matriz-certezas-suposi%C3%A7%C3%B5es-e-d%C3%BAvidas-fa2263633655)
-- [Brainstorming](https://www.euax.com.br/2018/09/brainstorming/)
 
 ## Objetivos
 
