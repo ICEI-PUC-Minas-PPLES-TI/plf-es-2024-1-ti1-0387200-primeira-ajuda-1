@@ -76,6 +76,16 @@ conseguir optar pelo contato adequado (bombeiros, polícia ou hospitais), para q
 não podendo prestar o socorro inicial consiga acessar de forma rápida os profissionais
 que poderão.
 
+-Como usuário, eu preciso encontrar no site um botão de chamada de emergência que me
+conecte diretamente ao serviço de atendimento médico de emergência (SAMU), permitindo
+que eu chame rapidamente uma ambulância e receba orientações de profissionais qualificados
+em casos de urgência médica grave.
+
+- Como usuário, ao acessar o site, desejo encontrar um mapa interativo que me mostre a 
+ localização e a disponibilidade dos postos de atendimento médico mais próximos, como 
+ hospitais, clínicas e unidades de pronto-atendimento, para que eu possa identificar 
+ facilmente onde obter assistência médica em caso de emergência ou necessidade de cuidados
+ médicos urgentes.
 
 ## Requisitos
 
