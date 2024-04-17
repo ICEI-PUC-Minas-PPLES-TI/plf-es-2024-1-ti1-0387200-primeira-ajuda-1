@@ -28,47 +28,28 @@ A ausência de educação formal sobre esse assunto, aliada ao receio de cometer
 ## Objetivos
 
 Objetivo Geral:
-Desenvolver um software para promover a conscientização e educação em primeiros socorros, visando mitigar a falta de conhecimento básico sobre como agir em situações de emergência.
+Desenvolver um software dedicado à conscientização e educação em primeiros socorros visando mitigar a falta de conhecimento existente no conhecimento básico sobre como agir diante de situações de emergência. Este software será uma ferramenta fundamental para capacitar as pessoas, fornecendo-lhes informações vitais e orientações passo a passo sobre como responder a uma variedade de cenários de emergência. Ao promover uma compreensão mais profunda dos procedimentos de primeiros socorros, o software não apenas aumentará a confiança das pessoas em suas habilidades de resposta, mas também poderá salvar vidas em momentos críticos. Ele proporcionará uma experiência de aprendizado envolvente e prática, adaptada para diversos públicos, desde jovens até adultos. Além disso, a acessibilidade será priorizada, garantindo que o software seja democrático. 
 
 Objetivos Específicos:
-. Criar uma plataforma acessível e de fácil utilização que forneça informações sobre primeiros socorros de forma clara e objetiva.
-. Desenvolver recursos interativos, como vídeos explicativos e simulações de situações de emergência, para melhorar o aprendizado e retenção do conhecimento.
-
-Aqui você deve descrever os objetivos do trabalho indicando que o objetivo geral é desenvolver um software para solucionar o problema apresentado acima. Apresente também alguns (pelo menos 2) objetivos específicos dependendo de onde você vai querer concentrar a sua prática investigativa, ou como você vai aprofundar no seu trabalho.
-
-**Links Úteis**:
-
-- [Objetivo geral e objetivo específico: como fazer e quais verbos utilizar](https://blog.mettzer.com/diferenca-entre-objetivo-geral-e-objetivo-especifico/)
+- Criar uma plataforma acessível e de fácil utilização que forneça informações sobre primeiros socorros de forma clara e objetiva.
+- Desenvolver recursos interativos, como vídeos explicativos e simulações de situações de emergência, para melhorar o aprendizado e retenção do conhecimento.
 
 ## Justificativa
 
-A importância de abordar este problema reside no fato de que muitas pessoas carecem de conhecimentos básicos em primeiros socorros, o que pode resultar em consequências graves em situações de emergência. O desenvolvimento deste software visa preencher essa lacuna, fornecendo acesso democrático a informações essenciais sobre primeiros socorros. A escolha de desenvolver recursos interativos é motivada pela necessidade de engajar os usuários e facilitar a assimilação do conteúdo. O uso de questionários, entrevistas e dados estatísticos nos permitirá compreender melhor as necessidades e lacunas de conhecimento do público-alvo, direcionando assim o desenvolvimento da solução. 
+A urgência de resolver esta questão reside no fato de que muitas pessoas carecem de conhecimentos fundamentais em primeiros socorros, o que pode desencadear consequências graves durante emergências. O desenvolvimento deste software visa preencher essa lacuna, democratizando o acesso a informações essenciais sobre primeiros socorros. A opção por recursos interativos é motivada pela necessidade de engajar os usuários e facilitar a absorção do conteúdo. A utilização de questionários, entrevistas e análises estatísticas nos permitirá entender de forma mais aprofundada as necessidades e deficiências de conhecimento do público-alvo, orientando assim o desenvolvimento da solução.
 
-Descreva a importância ou a motivação para trabalhar com esta aplicação que você escolheu. Indique as razões pelas quais você escolheu seus objetivos específicos ou as razões para aprofundar em certos aspectos do software.
-
-O grupo de trabalho pode fazer uso de questionários, entrevistas e dados estatísticos, que podem ser apresentados, com o objetivo de esclarecer detalhes do problema que será abordado pelo grupo.
-
-**Links Úteis**:
-
-- [Como montar a justificativa](https://guiadamonografia.com.br/como-montar-justificativa-do-tcc/)
 
 ## Público-Alvo
 
-O público-alvo do software inclui uma ampla variedade de pessoas, desde leigos até profissionais da área da saúde. Entre os perfis de usuários estão:
+O software é direcionado a um público diversificado, compreendendo uma ampla faixa etária, a partir de 13 anos, abrangendo desde leigos até profissionais da área da saúde. Os perfis de usuários incluem:
 
-. Leigos: Pessoas sem conhecimento prévio em primeiros socorros.
-. Pais e responsáveis: Indivíduos interessados em aprender a lidar com emergências que envolvam crianças.
-. Profissionais da saúde: Médicos, enfermeiros e socorristas que desejam atualizar ou reforçar seus conhecimentos.
-. Educadores: Professores e instrutores que buscam recursos para ensinar primeiros socorros em escolas e organizações.
+- Leigos: Pessoas sem conhecimento prévio em primeiros socorros.
+- Pais e responsáveis: Indivíduos interessados em aprender a lidar com emergências que envolvam crianças.
+- Profissionais da saúde: Médicos, enfermeiros e socorristas que desejam atualizar ou reforçar seus conhecimentos.
+- Educadores: Professores e instrutores que buscam recursos para ensinar ou prestar primeiros socorros em escolas e organizações.
 
 Descreva quem serão as pessoas que usarão a sua aplicação indicando os diferentes perfis. O objetivo aqui não é definir quem serão os clientes ou quais serão os papéis dos usuários na aplicação. A ideia é, dentro do possível, conhecer um pouco mais sobre o perfil dos usuários: conhecimentos prévios, relação com a tecnologia, relações hierárquicas, etc.
 
-Adicione informações sobre o público-alvo por meio de uma descrição textual, ou diagramas de personas, mapa de stakeholders, ou como o grupo achar mais conveniente.
-
-**Links Úteis**:
-
-- [Público-alvo: o que é, tipos, como definir seu público e exemplos](https://klickpages.com.br/blog/publico-alvo-o-que-e/)
-- [Qual a diferença entre público-alvo e persona?](https://rockcontent.com/blog/diferenca-publico-alvo-e-persona/)
 
 ## Personas
 
