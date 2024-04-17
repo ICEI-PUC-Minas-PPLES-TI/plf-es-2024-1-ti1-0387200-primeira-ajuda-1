@@ -1,6 +1,7 @@
-# Nome do projeto
+# Primeira Ajuda
 
-Descrição do Problema
+## Descrição do Problema
+
 Primeiros socorros são fundamentais para lidar com uma variedade de situações de emergência e seu desconhecimento é uma questão que afeta a segurança e o bem-estar das pessoas. Quando ocorrem acidentes ou emergências médicas, a capacidade de fornecer assistência imediata pode ser decisiva, ainda assim é importante lembrar que a prestação de primeiros socorros deve ser feita apenas se você estiver treinado para isso. A falta de educação formal sobre o tema, medo de cometer erros e a ausência de treinamento acessível evidenciam que muitas pessoas não possuem conhecimento básico sobre como agir para administrar a ajuda corretamente. Abordar esse problema requer esforços para educar o público e promover a conscientização sobre a importância de noções básicas de primeiros socorros. Nesse cenário temos a intenção de propor uma solução que visa promover o acesso de maneira democrática a informação, em função de mitigar eventualidades que podem se tornar fatalidades.
 
 ## Alunos integrantes da equipe
