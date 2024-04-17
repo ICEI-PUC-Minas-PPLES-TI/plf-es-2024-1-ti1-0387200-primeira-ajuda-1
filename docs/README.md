@@ -129,3 +129,5 @@ Coloque detalhes sobre o processo de Design Thinking e a implementação do Fram
 ## Referências
 
 - FIORUC, B. E.; MOLINA, A. C.; VITTI JUNIOR, W.; LIMA, S. A. M. Educação em saúde: abordando primeiros socorros em escolas públicas no interior de São Paulo. Revista Eletrônica de Enfermagem, Goiânia, Goiás, Brasil, v. 10, n. 3, 2017. DOI: 10.5216/ree.v10.46619. Disponível em: https://revistas.ufg.br/fen/article/view/46619. Acesso em: 17 abr. 2024.
+
+- PRIMEIROS socorros: como agir em situações de emergência na indústria?. [S. l.], 17 mar. 2021. Disponível em: https://sesirs.org.br/saude-na-empresa/primeiros-socorros-como-agir-em-situacoes-de-emergencia-na-industria. Acesso em: 16 abr. 2024.
