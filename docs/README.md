@@ -125,3 +125,7 @@ Coloque detalhes sobre o processo de Design Thinking e a implementação do Fram
 - [(460) GitHub Projects - YouTube](https://www.youtube.com/playlist?list=PLiO7XHcmTsldZR93nkTFmmWbCEVF_8F5H)
 - [11 Passos Essenciais para Implantar Scrum no seu Projeto](https://mindmaster.com.br/scrum-11-passos/)
 - [Scrum em 9 minutos](https://www.youtube.com/watch?v=XfvQWnRgxG0)
+
+## Referências
+
+- FIORUC, B. E.; MOLINA, A. C.; VITTI JUNIOR, W.; LIMA, S. A. M. Educação em saúde: abordando primeiros socorros em escolas públicas no interior de São Paulo. Revista Eletrônica de Enfermagem, Goiânia, Goiás, Brasil, v. 10, n. 3, 2017. DOI: 10.5216/ree.v10.46619. Disponível em: https://revistas.ufg.br/fen/article/view/46619. Acesso em: 17 abr. 2024.
