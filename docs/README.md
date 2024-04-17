@@ -68,12 +68,17 @@ Relacione as personas identificadas no seu projeto e os respectivos mapas de emp
 
 ## Histórias de Usuários
 
-Apresente aqui as histórias de usuário que são relevantes para o projeto de sua solução. As Histórias de Usuário consistem em uma ferramenta poderosa para a compreensão e elicitação dos requisitos funcionais e não funcionais da sua aplicação. Se possível, agrupe as histórias de usuário por contexto, para facilitar consultas recorrentes à essa parte do documento.
+- Como usuário, eu preciso abrir o site e ter facilidade de visualização das seções de
+primeiros socorros adequados ao tipo de situação emergencial para que eu possa
+encontrar rapidamente a informação necessária para prestar o socorro para um
+terceiro ou para mim mesmo.
 
-**Links Úteis**:
+- Como usuário, eu preciso abrir o site e conseguir contatar facilmente ajuda de
+terceiros, que podem variar de acordo com a minha emergência, sendo necessário
+conseguir optar pelo contato adequado (bombeiros, polícia ou hospitais), para que eu
+não podendo prestar o socorro inicial consiga acessar de forma rápida os profissionais
+que poderão.
 
-- [Histórias de usuários com exemplos e template](https://www.atlassian.com/br/agile/project-management/user-stories)
-- [Como escrever boas histórias de usuário (User Stories)](https://medium.com/vertice/como-escrever-boas-users-stories-hist%C3%B3rias-de-usu%C3%A1rios-b29c75043fac)
 
 ## Requisitos
 
