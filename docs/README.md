@@ -86,6 +86,7 @@ em casos de urgência médica grave.
  hospitais, clínicas e unidades de pronto-atendimento, para que eu possa identificar 
  facilmente onde obter assistência médica em caso de emergência ou necessidade de cuidados
  médicos urgentes.
+
 - Como usuário, gostaria de ter acesso a vídeos curtos e diretos ensinando manobras de
 primeiros socorros, como a de engasgamento, para que eu possa agir rapidamente em
 situações de emergência sem dificuldade.
@@ -112,10 +113,11 @@ procedimentos de primeiros socorros. Isso me ajudará a encontrar rapidamente o 
 Requisitos Funcionais (RF):
 
 - O sistema deve disponibilizar o local de cadastro e de compartilhamento de experiências do usuários.
-- O sistema deve disponibilizar conteúdo educacional sobre primeiros socorros, dividido em módulos temáticos.
+- O sistema deve disponibilizar conteúdo educacional sobre primeiros socorros, dividido em seções temáticas.
 - O sistema deve disponibilizar recursos interativos, como vídeos explicativos e seção de mitos e verdades.
 - O sistema deve disponibilizar mapa interativo dos locais de treinamento e serviços de emergência.
 - O sistema deve disponibilizar uma barra de pesquisa como acesso rápido para o tipo de problema que usuário estará buscando.
+- O sistema deve disponibilizar um botão que irá facilitar a comunicação do usuário com um profissional capacitado em práticas de primeiros socorros.
 
 Requisitos Não Funcionais (RNF):
 
@@ -123,20 +125,6 @@ Requisitos Não Funcionais (RNF):
 - O sistema deve possuir disponibilidade da plataforma em dispositivos móveis e desktop.
 - O sistema deve possuir  tempo de resposta rápido para acesso ao conteúdo.
 - O sistema deve possuir segurança dos dados dos usuários.
-
-Os requisitos de um projeto são classificados em dois grupos:
-
-- [Requisitos Funcionais (RF)](https://pt.wikipedia.org/wiki/Requisito_funcional):
-  correspondem a uma funcionalidade que deve estar presente na plataforma (ex: cadastro de usuário).
-- [Requisitos Não Funcionais (RNF)](https://pt.wikipedia.org/wiki/Requisito_n%C3%A3o_funcional):
-  correspondem a uma característica técnica, seja de usabilidade, desempenho, confiabilidade, segurança ou outro (ex: suporte a dispositivos iOS e Android).
-
-Lembre-se que cada requisito deve corresponder à uma e somente uma característica alvo da sua solução. Além disso, certifique-se de que todos os aspectos capturados nas Histórias de Usuário foram cobertos.
-
-**Links Úteis**:
-
-- [O que são Requisitos Funcionais e Requisitos Não Funcionais?](https://codificar.com.br/requisitos-funcionais-nao-funcionais/)
-- [O que são requisitos funcionais e requisitos não funcionais?](https://analisederequisitos.com.br/requisitos-funcionais-e-requisitos-nao-funcionais-o-que-sao/)
 
 ## User Flow
 
