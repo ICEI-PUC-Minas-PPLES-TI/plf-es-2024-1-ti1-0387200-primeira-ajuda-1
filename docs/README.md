@@ -109,6 +109,21 @@ procedimentos de primeiros socorros. Isso me ajudará a encontrar rapidamente o 
 
 ## Requisitos
 
+Requisitos Funcionais (RF):
+
+- O sistema deve disponibilizar o local de cadastro e de compartilhamento de experiências do usuários.
+- O sistema deve disponibilizar conteúdo educacional sobre primeiros socorros, dividido em módulos temáticos.
+- O sistema deve disponibilizar recursos interativos, como vídeos explicativos e seção de mitos e verdades.
+- O sistema deve disponibilizar mapa interativo dos locais de treinamento e serviços de emergência.
+- O sistema deve disponibilizar uma barra de pesquisa como acesso rápido para o tipo de problema que usuário estará buscando.
+
+Requisitos Não Funcionais (RNF):
+
+- O sistema deve possuir uma interface de usuário intuitiva e de fácil navegação.
+- O sistema deve possuir disponibilidade da plataforma em dispositivos móveis e desktop.
+- O sistema deve possuir  tempo de resposta rápido para acesso ao conteúdo.
+- O sistema deve possuir segurança dos dados dos usuários.
+
 Os requisitos de um projeto são classificados em dois grupos:
 
 - [Requisitos Funcionais (RF)](https://pt.wikipedia.org/wiki/Requisito_funcional):
