@@ -54,18 +54,12 @@ O software é direcionado a um público diversificado, compreendendo uma ampla f
 
 ## Personas
 
-Relacione as personas identificadas no seu projeto e os respectivos mapas de empatia. Lembre-se que você deve ser enumerar e descrever precisamente e de forma personalizada todos os principais envolvidos com a solução almeja.
-
-**Links Úteis**:
-
-<img src="./assets/images/personas/persona1.jpg" alt="Texto Alternativo">
-![Logo da Minha Empresa](docs\assets\images\personas\persona2.jpg)
-
-
-- [Persona x Público-alvo](https://flammo.com.br/blog/persona-e-publico-alvo-qual-a-diferenca/)
-- [O que é persona?](https://resultadosdigitais.com.br/blog/persona-o-que-e/)
-- [Rock Content](https://rockcontent.com/blog/personas/)
-- [Criar personas (Hotmart)](https://blog.hotmart.com/pt-br/como-criar-persona-negocio/)
+<img src="./assets/images/personas/persona1.jpg" alt="imagem primeira persona">
+<img src="./assets/images/personas/persona2.jpg" alt="imagem segunda persona">
+<img src="./assets/images/personas/persona3.jpg" alt="imagem terceira persona">
+<img src="./assets/images/personas/persona4.jpg" alt="imagem quarta persona">
+<img src="./assets/images/personas/persona5.jpg" alt="imagem quinta persona">
+<img src="./assets/images/personas/persona6.jpg" alt="imagem sexta persona">
 
 ## Histórias de Usuários
 
