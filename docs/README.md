@@ -58,6 +58,8 @@ Relacione as personas identificadas no seu projeto e os respectivos mapas de emp
 
 **Links Úteis**:
 
+<img src="./assets/images/personas/persona1.jpg" alt="Texto Alternativo">
+
 - [Persona x Público-alvo](https://flammo.com.br/blog/persona-e-publico-alvo-qual-a-diferenca/)
 - [O que é persona?](https://resultadosdigitais.com.br/blog/persona-o-que-e/)
 - [Rock Content](https://rockcontent.com/blog/personas/)
