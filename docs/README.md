@@ -114,8 +114,10 @@ Requisitos Não Funcionais (RNF):
 
 ## Wireframes
 
-- Link para no protótipo "Figma": 
+- Link para no protótipo: 
  [Figma](https://www.figma.com/proto/98bjco2iTtVQWATczqWRV5/PrimeiraAjuda.com?type=design&node-id=20-11&t=6kVjYAaPRMkqMo56-1&scaling=min-zoom&page-id=20%3A2&starting-point-node-id=20%3A11&mode=design)
+
+ <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2F98bjco2iTtVQWATczqWRV5%2FPimeiraAjuda.com%3Ftype%3Ddesign%26node-id%3D20%3A11%26mode%3Ddesign%26t%3DWSCkvktfk3usGYO2-1" allowfullscreen></iframe>
 
 
 ## Gestão de Projetos
