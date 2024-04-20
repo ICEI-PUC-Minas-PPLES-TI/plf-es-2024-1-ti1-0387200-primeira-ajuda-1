@@ -117,7 +117,7 @@ Requisitos Não Funcionais (RNF):
 - Link para no protótipo: 
  [Figma](https://www.figma.com/proto/98bjco2iTtVQWATczqWRV5/PrimeiraAjuda.com?type=design&node-id=20-11&t=6kVjYAaPRMkqMo56-1&scaling=min-zoom&page-id=20%3A2&starting-point-node-id=20%3A11&mode=design)
 
-<img src="./assets/images/prototipo/prototipoPrimeiraAjuda.jpg" alt="prototipo">
+<img src="./assets/images/prototipo/protPrimeiraAjuda.jpg" alt="imagem do prototipo">
 
 ## Gestão de Projetos
 
