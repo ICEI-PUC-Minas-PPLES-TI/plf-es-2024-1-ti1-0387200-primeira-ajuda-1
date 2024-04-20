@@ -1,5 +1,3 @@
-![image](https://github.com/ICEI-PUC-Minas-PPLES-TI/plf-es-2024-1-ti1-0387200-primeira-ajuda-1/assets/102271147/106a289f-5b22-41c9-8ae6-964234666c2b)# Documentação do Projeto (TIDocs)
-
 Esta pasta armazena a documentação do projeto para a disciplina de **Trabalho Interdisciplinar 1** dos cursos de Tecnologia da Informação da **[PUC Minas](https://pucminas.br)**. Essa documentação é estruturada na forma de um site que fica disponível por meio do GitHub Pages e pode ser incluído, também, no site da solução hospedada. Um [exemplo publicado do TIDocs](https://webtech-puc-minas.github.io/ti1-template/) está disponível por meio do repositório do **[WebTech PUC Minas](https://github.com/webtech-pucminas)**.
 
 A documentação do projeto inclui as seguintes seções:
@@ -146,12 +144,12 @@ Wireframes são protótipos das telas da aplicação usados em design de interfa
 
 ## Gestão de Projetos
 
+![Captura de tela 2024-04-20 031557](https://github.com/ICEI-PUC-Minas-PPLES-TI/plf-es-2024-1-ti1-0387200-primeira-ajuda-1/assets/102271147/9689c360-1436-4540-81fe-7ef6bb9d49ed)
+![Captura de tela 2024-04-20 031610](https://github.com/ICEI-PUC-Minas-PPLES-TI/plf-es-2024-1-ti1-0387200-primeira-ajuda-1/assets/102271147/07f3bc78-e8b3-4c51-8fd6-9d07a7f31404)
+![Captura de tela 2024-04-20 031621](https://github.com/ICEI-PUC-Minas-PPLES-TI/plf-es-2024-1-ti1-0387200-primeira-ajuda-1/assets/102271147/34a17c67-b379-4c0c-bb21-4eec91e7eaac)
+![Captura de tela 2024-04-20 031634](https://github.com/ICEI-PUC-Minas-PPLES-TI/plf-es-2024-1-ti1-0387200-primeira-ajuda-1/assets/102271147/26a3072c-fe61-4081-af42-a85917a4fa39)
+![Captura de tela 2024-04-20 031642](https://github.com/ICEI-PUC-Minas-PPLES-TI/plf-es-2024-1-ti1-0387200-primeira-ajuda-1/assets/102271147/404feb76-a5e4-4b30-a07a-3aa5aeb95d23)
 
- Nesta parte do documento, você deve apresentar  o processo de trabalho baseado nas metodologias ágeis, a divisão de papéis e tarefas, as ferramentas empregadas e como foi realizada a gestão de configuração do projeto via GitHub.
-
-Coloque detalhes sobre o processo de Design Thinking e a implementação do Framework Scrum seguido pelo grupo. O grupo poderá fazer uso de ferramentas on-line para acompanhar o andamento do projeto, a execução das tarefas e o status de desenvolvimento da solução.
-
-![Captura de tela 2024-04-20 031557](https://github.com/ICEI-PUC-Minas-PPLES-TI/plf-es-2024-1-ti1-0387200-primeira-ajuda-1/assets/102271147/f012c698-0627-435f-aedd-4eb0348dc57e)
 
 **Links Úteis**:
 
