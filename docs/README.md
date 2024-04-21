@@ -110,7 +110,7 @@ Requisitos Não Funcionais (RNF):
 
 ## User Flow
 
-
+<img src="./assets/images/userFlow/primeiraAjudaUserFlow.jpg" alt="user flow">
 
 ## Wireframes
 
