@@ -100,9 +100,9 @@ Requisitos Funcionais (RF):
 Requisitos Não Funcionais (RNF):
 
 - O sistema deve possuir uma interface de usuário intuitiva e de fácil navegação.
-- O sistema deve possuir disponibilidade da plataforma em dispositivos móveis e desktop.
-- O sistema deve possuir  tempo de resposta rápido para acesso ao conteúdo.
-- O sistema deve possuir segurança dos dados dos usuários.
+- O sistema deve oferecer disponibilidade da plataforma para dispositivos móveis e desktop.
+- O sistema deve garantir um tempo de resposta rápido para o acesso ao conteúdo.
+- O sistema deve garantir a segurança dos dados dos usuários.
 
 ## User Flow
 
