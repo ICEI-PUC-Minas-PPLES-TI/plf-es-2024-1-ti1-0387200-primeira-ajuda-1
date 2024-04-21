@@ -69,6 +69,10 @@ em casos de urgência médica grave.
  facilmente onde obter assistência médica em caso de emergência ou necessidade de cuidados
  médicos urgentes.
 
+ - Como usuário, desejo encontrar um mapa interativo mostrando a localização dos centros de treinamento de 
+primeiros socorros mais próximos da minha região, para que eu possa participar de cursos e treinamentos
+para adquirir habilidades de resgate e atendimento em situações de emergência.
+
 - Como usuário, gostaria de ter acesso a vídeos curtos e diretos ensinando manobras de
 primeiros socorros, como a de engasgamento, para que eu possa agir rapidamente em
 situações de emergência sem dificuldade.
@@ -78,17 +82,9 @@ encontrar rapidamente informações específicas sobre primeiros socorros, como 
 "ressuscitação cardiopulmonar" ou "ferimentos", para que eu possa obter as orientações necessárias
 rapidamente em situações de emergência.
 
-- Como usuário, desejo encontrar no site mapas mostrando a localização dos centros de treinamento de 
-primeiros socorros mais próximos da minha região, para que eu possa participar de cursos e treinamentos
-para adquirir habilidades de resgate e atendimento em situações de emergência.
-
 - Como usuário, gostaria de uma aba no site dedicada à divulgação de experiências dos usuários, onde as 
 pessoas podem compartilhar como o site os ajudou em situações de emergência, oferecendo dicas e relatos
 reais para incentivar outros a buscar conhecimento sobre primeiros socorros.
-
-- Como usuário, necessito que os conteúdos do site sejam organizados em seções claras e bem definidas, 
-facilitando o acesso e a busca por informações sobre diferentes tipos de situações de emergência e 
-procedimentos de primeiros socorros. Isso me ajudará a encontrar rapidamente o que preciso em momentos críticos.
 
 ## Requisitos
 
