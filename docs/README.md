@@ -86,11 +86,11 @@ rapidamente em situações de emergência.
 pessoas podem compartilhar como o site os ajudou em situações de emergência, oferecendo dicas e relatos
 reais para incentivar outros a buscar conhecimento sobre primeiros socorros.
 
-- Como usuário, desejo encontrar uma seção dedicada aos tópicos mais buscados na plataforma, para que eu possa acessar de forma mais eficiente o conteúdo mais popular.
+- Como usuário, desejo encontrar uma seção dedicada aos tópicos mais buscados na plataforma, para que eu possa visualizar e acessar o conteúdo mais prestigiado.
 
-- Como usuário, gostaria de ter acesso à minha classificação baseada no conteúdo que consumi ao longo do tempo de uso da plataforma, para entender minha evolução no contexto de prestação de primeiros socorros.
+- Como usuário, gostaria de ter acesso à minha classificação baseada no conteúdo que consumi, bem como, nos quizzes que realizei ao longo do tempo de uso da plataforma, para entender minha evolução no contexto de prestação de primeiros socorros.
 
-- Como usuário, desejo ter acesso a todo o conteúdo com o qual interagi na plataforma, para que eu possa facilmente visualizar, editar e excluir minhas interações, conforme necessário, de forma simples e rápida.
+- Como usuário, desejo ter a capacidade de criar kits de primeiros socorros adaptados para diversas situações, garantindo assim minha prontidão diante de cenários adversos.
 
 ## Requisitos
 
@@ -104,7 +104,9 @@ Requisitos Funcionais (RF):
 - O sistema deve disponibilizar um botão que irá facilitar a comunicação do usuário com um profissional capacitado em práticas de primeiros socorros.
 - O sistema deve fornecer um gráfico que apresente os tópicos mais frequentemente buscados dentro da plataforma.
 - O sistema deve incluir um painel do usuário com uma barra de progresso que indica a classificação do usuário, a qual será determinada pelo conteúdo que ele já consumiu.
-- O sistema deve oferecer uma tabela que liste todos os comentários feitos pelos usuários em fóruns, permitindo sua visualização, edição e exclusão das postagens.
+- O sistema deve fornecer uma tabela para listagem de kits de primeiros socorros montados pelo próprio usuário para diferentes situações, possibilitando sua visualização, edição e exclusão.
+- O sistema deve oferecer testes de conhecimento(quizzes de múltipla escolha), que serão destinados a realização dos usuários após consumo de alguma seção informativa de práticas de primeiros socorros, para avaliar as habilidades adquiridas a partir do conteúdo disponibilizado. Os resultados dos testes contribuirão para o progresso do usuário em sua classificação de capacitação.
+
 
 Requisitos Não Funcionais (RNF):
 
