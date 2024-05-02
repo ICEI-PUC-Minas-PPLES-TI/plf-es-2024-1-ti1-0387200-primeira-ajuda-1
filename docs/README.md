@@ -86,7 +86,7 @@ rapidamente em situações de emergência.
 pessoas podem compartilhar como o site os ajudou em situações de emergência, oferecendo dicas e relatos
 reais para incentivar outros a buscar conhecimento sobre primeiros socorros.
 
-- Como usuário, desejo encontrar uma seção dedicada aos tópicos mais buscados na plataforma, para que eu possa visualizar e acessar o conteúdo mais popular.
+- Como usuário, desejo encontrar uma seção dedicada aos tópicos mais buscados na plataforma, para que eu possa visualizar e acessar o conteúdo mais prestigiado.
 
 - Como usuário, gostaria de ter acesso à minha classificação baseada no conteúdo que consumi, bem como, nos quizzes que realizei ao longo do tempo de uso da plataforma, para entender minha evolução no contexto de prestação de primeiros socorros.
 
