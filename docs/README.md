@@ -86,11 +86,11 @@ rapidamente em situações de emergência.
 pessoas podem compartilhar como o site os ajudou em situações de emergência, oferecendo dicas e relatos
 reais para incentivar outros a buscar conhecimento sobre primeiros socorros.
 
-- Como usuário, desejo encontrar uma seção dedicada aos tópicos mais buscados na plataforma, para que eu possa acessar de forma mais eficiente o conteúdo mais popular.
+- Como usuário, desejo encontrar uma seção dedicada aos tópicos mais buscados na plataforma, para que eu possa visualizar e acessar o conteúdo mais popular.
 
-- Como usuário, gostaria de ter acesso à minha classificação baseada no conteúdo que consumi ao longo do tempo de uso da plataforma, para entender minha evolução no contexto de prestação de primeiros socorros.
+- Como usuário, gostaria de ter acesso à minha classificação baseada no conteúdo que consumi, bem como, nos quizzes que realizei ao longo do tempo de uso da plataforma, para entender minha evolução no contexto de prestação de primeiros socorros.
 
-- Como usuário, desejo ter acesso a todo o conteúdo com o qual interagi na plataforma, para que eu possa facilmente visualizar, editar e excluir minhas interações, conforme necessário, de forma simples e rápida.
+- Como usuário, desejo ter a capacidade de criar kits de primeiros socorros adaptados para diversas situações, garantindo assim minha prontidão diante de cenários adversos.
 
 ## Requisitos
 
