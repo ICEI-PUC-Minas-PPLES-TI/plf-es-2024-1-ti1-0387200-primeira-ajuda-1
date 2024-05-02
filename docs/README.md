@@ -86,6 +86,12 @@ rapidamente em situações de emergência.
 pessoas podem compartilhar como o site os ajudou em situações de emergência, oferecendo dicas e relatos
 reais para incentivar outros a buscar conhecimento sobre primeiros socorros.
 
+- Como usuário, desejo encontrar uma seção dedicada aos tópicos mais buscados na plataforma, para que eu possa acessar de forma mais eficiente o conteúdo mais popular.
+
+- Como usuário, gostaria de ter acesso à minha classificação baseada no conteúdo que consumi ao longo do tempo de uso da plataforma, para entender minha evolução no contexto de prestação de primeiros socorros.
+
+- Como usuário, desejo ter acesso a todo o conteúdo com o qual interagi na plataforma, para que eu possa facilmente visualizar, editar e excluir minhas interações, conforme necessário, de forma simples e rápida.
+
 ## Requisitos
 
 Requisitos Funcionais (RF):
@@ -96,6 +102,9 @@ Requisitos Funcionais (RF):
 - O sistema deve disponibilizar mapa interativo dos locais de treinamento e serviços de emergência.
 - O sistema deve disponibilizar uma barra de pesquisa como acesso rápido para o tipo de problema que usuário estará buscando.
 - O sistema deve disponibilizar um botão que irá facilitar a comunicação do usuário com um profissional capacitado em práticas de primeiros socorros.
+- O sistema deve fornecer um gráfico que apresente os tópicos mais frequentemente buscados dentro da plataforma.
+- O sistema deve incluir um painel do usuário com uma barra de progresso que indica a classificação do usuário, a qual será determinada pelo conteúdo que ele já consumiu.
+- O sistema deve oferecer uma tabela que liste todos os comentários feitos pelos usuários em fóruns, permitindo sua visualização, edição e exclusão das postagens.
 
 Requisitos Não Funcionais (RNF):
 
