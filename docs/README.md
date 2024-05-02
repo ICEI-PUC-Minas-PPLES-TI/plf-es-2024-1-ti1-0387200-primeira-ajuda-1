@@ -96,6 +96,9 @@ Requisitos Funcionais (RF):
 - O sistema deve disponibilizar mapa interativo dos locais de treinamento e serviços de emergência.
 - O sistema deve disponibilizar uma barra de pesquisa como acesso rápido para o tipo de problema que usuário estará buscando.
 - O sistema deve disponibilizar um botão que irá facilitar a comunicação do usuário com um profissional capacitado em práticas de primeiros socorros.
+- O sistema deve fornecer um gráfico que apresente os tópicos mais frequentemente buscados dentro da plataforma.
+- O sistema deve incluir um Painel do Usuário com uma barra de progresso que indica a classificação do usuário, a qual será determinada pelo conteúdo que ele já consumiu.
+- O sistema deve oferecer uma tabela que liste todos os comentários feitos pelos usuários em fóruns, permitindo sua visualização, edição e exclusão das postagens.
 
 Requisitos Não Funcionais (RNF):
 
