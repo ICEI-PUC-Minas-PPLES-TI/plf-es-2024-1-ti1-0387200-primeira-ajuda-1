@@ -126,6 +126,9 @@ Requisitos Não Funcionais (RNF):
 
 <img src="./assets/images/prototipo/protPrimeiraAjuda.jpg" alt="imagem do prototipo">
 
+<object data="assets/files/primeiraAjudaPrototipoVersao2.jpg" type="application/pdf" width="100%"
+                height="500px">
+
 ## Gestão de Projetos
 
 ![Captura de tela 2024-04-20 031557](https://github.com/ICEI-PUC-Minas-PPLES-TI/plf-es-2024-1-ti1-0387200-primeira-ajuda-1/assets/102271147/9689c360-1436-4540-81fe-7ef6bb9d49ed)
