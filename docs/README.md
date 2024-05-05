@@ -117,17 +117,16 @@ Requisitos Não Funcionais (RNF):
 
 ## User Flow
 
-<img src="./assets/images/userFlow/primeiraAjudaUserFlow.jpg" alt="user flow">
+<img src="./assets/images/userFlow/userFlowPrimeiraAjuda.jpg" alt="user flow">
 
 ## Wireframes
 
-- Link para o protótipo: 
- [Figma](https://www.figma.com/proto/98bjco2iTtVQWATczqWRV5/PrimeiraAjuda.com?type=design&node-id=20-11&t=6kVjYAaPRMkqMo56-1&scaling=min-zoom&page-id=20%3A2&starting-point-node-id=20%3A11&mode=design)
+- Link para o figma: 
+ [Figma](https://www.figma.com/file/pz7P5Tga5f7DopL5gGHpQa/Primeira-Ajuda?type=design&node-id=6%3A18&mode=design&t=COzWTd0CGRXwSMWF-1)
 
-<img src="./assets/images/prototipo/protPrimeiraAjuda.jpg" alt="imagem do prototipo">
+- Link para o protótipo interativo: 
+[Figma](https://www.figma.com/proto/pz7P5Tga5f7DopL5gGHpQa/Primeira-Ajuda?page-id=0%3A1&type=design&node-id=5-2&viewport=435%2C303%2C0.52&t=dz1FNblludZKqi4j-1&scaling=scale-down&starting-point-node-id=5%3A2)
 
-<object data="assets/files/primeiraAjudaPrototipoVersao2.jpg" type="application/pdf" width="100%"
-                height="500px">
 
 ## Gestão de Projetos
 
