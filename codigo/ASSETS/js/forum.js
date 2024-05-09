@@ -13,11 +13,11 @@ function determinaId() {
 }
 
 function salvaPostagens(dados) {
-    localStorage.setItem('db', JSON.stringify(dados))
+    localStorage.setItem('postagens', JSON.stringify(dados))
 }
 
 function consultaPostagens() {
-    let dados = localStorage.getItem('db')
+    let dados = localStorage.getItem('postagens')
     let postagens = {}
 
     if (dados) {
@@ -80,10 +80,13 @@ function imprimePostagens() {
         `
         , '')
 
-    let postagensWrapper = document.querySelector('#postagensWrapper')
-    postagensWrapper.innerHTML = elementosHTMl
-
+    document.querySelector('#postagensWrapper').innerHTML = elementosHTMl
 }
 
 document.querySelector('#btnPublicar').addEventListener('click', criaPostagem)
 window.addEventListener('load', imprimePostagens)
+
+function removePostagemPorId(id) {
+    let postagens = consultaPostagens()
+    return postagens.filter(postagem => postagem.id !== id)
+}
