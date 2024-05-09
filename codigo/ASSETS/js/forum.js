@@ -1,6 +1,4 @@
-
-// localStorage.clear();
-
+//localStorage.clear();
 var id = 1
 
 const usuario = {
@@ -13,7 +11,6 @@ const usuario = {
 function determinaId() {
     id++
 }
-
 
 function salvaPostagens(dados) {
     localStorage.setItem('db', JSON.stringify(dados))
@@ -42,7 +39,7 @@ function consultaPostagens() {
 }
 
 function criaPostagem() {
-    const inputData = document.querySelector('#inputEntrada').value
+    const input = document.querySelector('#inputEntrada').value
 
     let postagens = consultaPostagens()
     determinaId()
@@ -50,22 +47,43 @@ function criaPostagem() {
     postagens.data.push({
         id,
         ...usuario,
-        conteudo: inputData,
+        conteudo: input,
     })
 
     salvaPostagens(postagens)
+    imprimePostagens()
 }
 
 
 function imprimePostagens() {
-    console.log(inputData.value)
+    let postagens = consultaPostagens()
+    const { data } = postagens
 
+    let elementosHTMl = data?.reduce((postagens, item) =>
+        postagens +
+        `
+          <article class="postagem">
+            <div>
+                <img>
+                <div>
+                    <h3>${item.nome}</h3>
+                    <p>
+                        <span>${item.level} |</span>
+                        <span>${item.profissao} |</span>
+                        <span>${item.data}</span>
+                    </p>
+                </div>
+            </div>
 
-    inputData.addEventListener('change', (e) => {
-        console.log(e.target.value)
-    })
+            <p>${item.conteudo}</p>        
+          </article> 
+        `
+        , '')
+
+    let postagensWrapper = document.querySelector('#postagensWrapper')
+    postagensWrapper.innerHTML = elementosHTMl
+
 }
 
-// document.querySelector('#btnPublicar').addEventListener('click', imprimeValor)
-
 document.querySelector('#btnPublicar').addEventListener('click', criaPostagem)
+window.addEventListener('load', imprimePostagens)
