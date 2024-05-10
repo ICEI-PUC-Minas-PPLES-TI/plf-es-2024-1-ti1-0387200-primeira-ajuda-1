@@ -8,7 +8,6 @@ const postagensWrapper = document.querySelector("#postagensWrapper")
 
 
 function determinaId() {
-    console.log("Entrei na det")
     let id = parseInt(localStorage.getItem("id"))
     id += 1
 
@@ -89,8 +88,8 @@ function imprimePostagens() {
                 </div>
                 
                 <div>
-                    <i class="fa-solid fa-pen-to-square"></i>
-                    <i class="fa-solid fa-trash"></i>
+                    <i id="${item.id}" class="fa-solid fa-pen-to-square"></i>
+                    <i id="${item.id}" class="fa-solid fa-trash"></i>
                 </div>
             </div>
 
