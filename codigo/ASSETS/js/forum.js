@@ -1,6 +1,9 @@
 // localStorage.clear();
 var id = 1
 
+const section = document.querySelector("#forum")
+const postagensWrapper = document.querySelector("#postagensWrapper")
+
 
 const usuario = {
     level: 'Bronze',
@@ -42,8 +45,6 @@ function consultaPostagens() {
 function criaPostagem() {
     const textoEntrada = document.querySelector('#textoEntrada').value.trim()
 
-    //adicionar validação para não ser possível submitar sem valor de contéudo
-
     if (textoEntrada) {
         let postagens = consultaPostagens()
         determinaId()
@@ -59,26 +60,20 @@ function criaPostagem() {
         form.reset()
         imprimePostagens()
     } else {
-        console.log('entrei aqui')
-        // inlineAlert()
+        inlineAlert()
     }
 
 }
 
-const section = document.querySelector("main section")
-const form = document.querySelector("form")
+function inlineAlert() {
+    let div = document.createElement("div")
+    div.setAttribute("class", "inline-alert")
 
+    let texto = document.createTextNode("Insira um comentário antes de publicar")
+    div.appendChild(texto)
 
-// function inlineAlert() {
-//     let div = document.createElement("div").setAttribute("class", "inline-alert")
-//     let texto = document.createTextNode("Insira um comentário antes de publicar")
-
-//     div.appendChild(texto)
-
-//     console.log(div)
-
-//     // section.insertBefore(form, div)
-// }
+    section.insertBefore(div, postagensWrapper)
+}
 
 
 function imprimePostagens() {
