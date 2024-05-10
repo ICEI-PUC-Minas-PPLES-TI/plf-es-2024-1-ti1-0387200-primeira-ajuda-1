@@ -1,24 +1,25 @@
-// localStorage.clear();
-var id = 1
+import { usuario } from "./utils.js"
 
+//localStorage.clear();
+
+const form = document.querySelector("form")
 const section = document.querySelector("#forum")
 const postagensWrapper = document.querySelector("#postagensWrapper")
 
 
-const usuario = {
-    level: 'Bronze',
-    profissao: 'Estudante',
-    nome: 'Pedro da Silva',
-    data: new Date(),
-}
-
 function determinaId() {
-    id++
+    console.log("Entrei na det")
+    let id = parseInt(localStorage.getItem("id"))
+    id += 1
+
+    localStorage.setItem("id", id)
+    return id;
 }
 
 function salvaPostagens(dados) {
     localStorage.setItem('postagens', JSON.stringify(dados))
 }
+
 
 function consultaPostagens() {
     let dados = localStorage.getItem('postagens')
@@ -26,17 +27,8 @@ function consultaPostagens() {
 
     if (dados) {
         postagens = JSON.parse(dados)
-        id = postagens.data.at(-1).id
     } else {
-        postagens = {
-            data: [
-                {
-                    id,
-                    ...usuario,
-                    conteudo: 'Lorem ipsum dolor sit amet consectetur. Aenean enim diam ut donec consequat arcu habitant. Aliquam elit habitant duis.'
-                }
-            ]
-        }
+        postagens = { data: [] }
     }
 
     return postagens
@@ -47,10 +39,9 @@ function criaPostagem() {
 
     if (textoEntrada) {
         let postagens = consultaPostagens()
-        determinaId()
 
         postagens.data.push({
-            id,
+            id: determinaId(),
             ...usuario,
             conteudo: textoEntrada,
         })
@@ -65,15 +56,15 @@ function criaPostagem() {
 
 }
 
-function inlineAlert() {
-    let div = document.createElement("div")
-    div.setAttribute("class", "inline-alert")
+// function inlineAlert() {
+//     let div = document.createElement("div")
+//     div.setAttribute("class", "inline-alert")
 
-    let texto = document.createTextNode("Comente para publicar")
-    div.appendChild(texto)
+//     let texto = document.createTextNode("Comente para publicar")
+//     div.appendChild(texto)
 
-    section.insertBefore(div, postagensWrapper)
-}
+//     section.insertBefore(div, postagensWrapper)
+// }
 
 
 function imprimePostagens() {
@@ -85,14 +76,21 @@ function imprimePostagens() {
         `
           <article class="postagem">
             <div>
-                <img>
                 <div>
-                    <h3>${item.nome}</h3>
-                    <p>
-                        <span>${item.level} |</span>
-                        <span>${item.profissao} |</span>
-                        <span>${item.data}</span>
-                    </p>
+                    <img>
+                    <div>
+                        <h3>${item.nome}</h3>
+                        <p>
+                            <span>${item.level} |</span>
+                            <span>${item.profissao} |</span>
+                            <span>${item.data}</span>
+                        </p>
+                    </div>
+                </div>
+                
+                <div>
+                    <i class="fa-solid fa-pen-to-square"></i>
+                    <i class="fa-solid fa-trash"></i>
                 </div>
             </div>
 
@@ -109,15 +107,12 @@ document.querySelector('#btnPublicar').addEventListener('click', (evento) => {
     criaPostagem()
 })
 
+window.addEventListener('load', () => {
+    localStorage.setItem("id", 0)
+    imprimePostagens()
+})
 
-window.addEventListener('load', imprimePostagens)
 
 
-// function removePostagem(id) {
-//     let postagens = consultaPostagens()
-//     salvaPostagens(postagens.data.filter(postagem => postagem.id !== id))
-//     imprimePostagens()
-// }
 
-// removePostagem(2)
 
