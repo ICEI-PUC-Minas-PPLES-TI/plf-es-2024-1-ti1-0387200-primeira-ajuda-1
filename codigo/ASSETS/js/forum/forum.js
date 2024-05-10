@@ -118,6 +118,11 @@ function removePostagem(id) {
     imprimePostagens()
 }
 
+document.querySelector('.fa-trash').addEventListener('click', (evento) => {
+console.log(evento.target.id)
+})
+
+
 
 
 
