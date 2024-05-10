@@ -1,4 +1,4 @@
-//localStorage.clear();
+// localStorage.clear();
 var id = 1
 
 const usuario = {
@@ -39,7 +39,9 @@ function consultaPostagens() {
 }
 
 function criaPostagem() {
-    const input = document.querySelector('#inputEntrada').value
+    const input = document.querySelector('#inputEntrada').value.trim()
+
+    //adicionar validação para não ser possível submitar sem valor de contéudo
 
     let postagens = consultaPostagens()
     determinaId()
@@ -51,6 +53,8 @@ function criaPostagem() {
     })
 
     salvaPostagens(postagens)
+
+    form.reset()
     imprimePostagens()
 }
 
@@ -59,7 +63,7 @@ function imprimePostagens() {
     let postagens = consultaPostagens()
     const { data } = postagens
 
-    let elementosHTMl = data?.reduce((postagens, item) =>
+    let elementosHTMl = data.reduce((postagens, item) =>
         postagens +
         `
           <article class="postagem">
@@ -86,7 +90,12 @@ function imprimePostagens() {
 document.querySelector('#btnPublicar').addEventListener('click', criaPostagem)
 window.addEventListener('load', imprimePostagens)
 
-function removePostagemPorId(id) {
-    let postagens = consultaPostagens()
-    return postagens.filter(postagem => postagem.id !== id)
-}
+
+// function removePostagem(id) {
+//     let postagens = consultaPostagens()
+//     salvaPostagens(postagens.data.filter(postagem => postagem.id !== id))
+//     imprimePostagens()
+// }
+
+// removePostagem(2)
+
