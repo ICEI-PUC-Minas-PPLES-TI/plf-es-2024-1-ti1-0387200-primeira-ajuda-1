@@ -112,6 +112,14 @@ window.addEventListener('load', () => {
 })
 
 
+function removePostagem(id) {
+    let postagens = consultaPostagens()
+    salvaPostagens(postagens.data.filter(postagem => postagem.id !== id))
+    imprimePostagens()
+}
+
+
+
 
 
 
