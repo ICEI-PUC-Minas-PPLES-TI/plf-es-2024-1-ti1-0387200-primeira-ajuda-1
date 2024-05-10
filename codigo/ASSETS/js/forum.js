@@ -69,7 +69,7 @@ function inlineAlert() {
     let div = document.createElement("div")
     div.setAttribute("class", "inline-alert")
 
-    let texto = document.createTextNode("Insira um comentário antes de publicar")
+    let texto = document.createTextNode("Comente para publicar")
     div.appendChild(texto)
 
     section.insertBefore(div, postagensWrapper)
