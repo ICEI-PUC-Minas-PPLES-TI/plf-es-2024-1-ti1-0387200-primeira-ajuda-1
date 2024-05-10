@@ -2,10 +2,10 @@ import { usuario } from "./utils.js"
 
 //localStorage.clear();
 
-const form = document.querySelector("form")
 const section = document.querySelector("#forum")
+const form = document.querySelector("form")
+const textArea = document.querySelector('#textoEntrada')
 const postagensWrapper = document.querySelector("#postagensWrapper")
-
 
 function determinaId() {
     let id = parseInt(localStorage.getItem("id"))
@@ -34,15 +34,16 @@ function consultaPostagens() {
 }
 
 function criaPostagem() {
-    const textoEntrada = document.querySelector('#textoEntrada').value.trim()
+    let inlineAlert = document.querySelector(".inline-alert")
 
-    if (textoEntrada) {
+    if (textArea.value) {
+        if (inlineAlert) inlineAlert.remove()
+
         let postagens = consultaPostagens()
-
         postagens.data.push({
             id: determinaId(),
             ...usuario,
-            conteudo: textoEntrada,
+            conteudo: textArea.value.trim(),
         })
 
         salvaPostagens(postagens)
@@ -50,20 +51,20 @@ function criaPostagem() {
         form.reset()
         imprimePostagens()
     } else {
-        inlineAlert()
+        if (!inlineAlert) displayInlineAlert()
     }
 
 }
 
-// function inlineAlert() {
-//     let div = document.createElement("div")
-//     div.setAttribute("class", "inline-alert")
+function displayInlineAlert() {
+    let div = document.createElement("div")
+    div.setAttribute("class", "inline-alert")
 
-//     let texto = document.createTextNode("Comente para publicar")
-//     div.appendChild(texto)
+    let texto = document.createTextNode("Para criar uma publicação é necessário adicionar um comentário")
+    div.appendChild(texto)
 
-//     section.insertBefore(div, postagensWrapper)
-// }
+    section.insertBefore(div, postagensWrapper)
+}
 
 
 function imprimePostagens() {
