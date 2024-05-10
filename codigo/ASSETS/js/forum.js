@@ -1,6 +1,7 @@
 // localStorage.clear();
 var id = 1
 
+
 const usuario = {
     level: 'Bronze',
     profissao: 'Estudante',
@@ -39,24 +40,45 @@ function consultaPostagens() {
 }
 
 function criaPostagem() {
-    const input = document.querySelector('#inputEntrada').value.trim()
+    const textoEntrada = document.querySelector('#textoEntrada').value.trim()
 
     //adicionar validação para não ser possível submitar sem valor de contéudo
 
-    let postagens = consultaPostagens()
-    determinaId()
+    if (textoEntrada) {
+        let postagens = consultaPostagens()
+        determinaId()
 
-    postagens.data.push({
-        id,
-        ...usuario,
-        conteudo: input,
-    })
+        postagens.data.push({
+            id,
+            ...usuario,
+            conteudo: textoEntrada,
+        })
 
-    salvaPostagens(postagens)
+        salvaPostagens(postagens)
 
-    form.reset()
-    imprimePostagens()
+        form.reset()
+        imprimePostagens()
+    } else {
+        console.log('entrei aqui')
+        // inlineAlert()
+    }
+
 }
+
+const section = document.querySelector("main section")
+const form = document.querySelector("form")
+
+
+// function inlineAlert() {
+//     let div = document.createElement("div").setAttribute("class", "inline-alert")
+//     let texto = document.createTextNode("Insira um comentário antes de publicar")
+
+//     div.appendChild(texto)
+
+//     console.log(div)
+
+//     // section.insertBefore(form, div)
+// }
 
 
 function imprimePostagens() {
@@ -87,7 +109,12 @@ function imprimePostagens() {
     document.querySelector('#postagensWrapper').innerHTML = elementosHTMl
 }
 
-document.querySelector('#btnPublicar').addEventListener('click', criaPostagem)
+document.querySelector('#btnPublicar').addEventListener('click', (evento) => {
+    evento.preventDefault()
+    criaPostagem()
+})
+
+
 window.addEventListener('load', imprimePostagens)
 
 
