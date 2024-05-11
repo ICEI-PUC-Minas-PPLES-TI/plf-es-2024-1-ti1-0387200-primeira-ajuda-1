@@ -1,4 +1,4 @@
-export const usuario = {
+export const USUARIO = {
     level: 'Bronze',
     profissao: 'Estudante',
     nome: 'Pedro da Silva',
@@ -12,4 +12,23 @@ function dataFormatada() {
         ano = data.getFullYear();
 
     return dia + "/" + mes + "/" + ano;
+}
+
+
+export const REMOVE_POSTAGEM = {
+    titulo: "Deseja excluir essa postagem?",
+    sucesso: "Sua postagem será excluída.",
+    cancelado: "Ação cancelada!",
+}
+
+export function confirmaAcao(variante) {
+    let confirma = confirm(variante.titulo)
+
+    if (confirma) {
+        alert(variante.sucesso)
+        return true
+    } else {
+        alert(variante.cancelado)
+        return false
+    }
 }

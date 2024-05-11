@@ -1,6 +1,5 @@
-import { usuario } from "./utils.js"
-
-//localStorage.clear();
+import { USUARIO, REMOVE_POSTAGEM, confirmaAcao } from "./utils.js"
+// localStorage.clear();
 
 const section = document.querySelector("#forum")
 const form = document.querySelector("form")
@@ -42,12 +41,11 @@ function criaPostagem() {
         let postagens = consultaPostagens()
         postagens.data.push({
             id: determinaId(),
-            ...usuario,
+            ...USUARIO,
             conteudo: textArea.value.trim(),
         })
 
         salvaPostagens(postagens)
-
         form.reset()
         imprimePostagens()
     } else {
@@ -65,7 +63,6 @@ function displayInlineAlert() {
 
     section.insertBefore(div, postagensWrapper)
 }
-
 
 function imprimePostagens() {
     let postagens = consultaPostagens()
@@ -88,15 +85,20 @@ function imprimePostagens() {
                     </div>
                 </div>
                 
+        
                 <div>
-                    <i id="${item.id}" class="fa-solid fa-pen-to-square"></i>
-                    <i id="${item.id}" class="fa-solid fa-trash"></i>
-                </div>
-            </div>
+                    <span onClick="editaPostagem(${item.id})">
+                        <i class="fa-solid fa-pen-to-square"></i>                   
+                    </span >
 
+                    <span onClick="removePostagem(${item.id})">
+                        <i class="fa-solid fa-trash"></i>     
+                    </span > 
+                </div>             
+            </div >
             <p>${item.conteudo}</p>        
-          </article> 
-        `
+          </article >
+    `
         , '')
 
     document.querySelector('#postagensWrapper').innerHTML = elementosHTMl
@@ -107,11 +109,19 @@ document.querySelector('#btnPublicar').addEventListener('click', (evento) => {
     criaPostagem()
 })
 
+window.removePostagem = function removePostagem(id) {
+    let postagens = consultaPostagens()
+
+    if (confirmaAcao(REMOVE_POSTAGEM)) {
+        salvaPostagens({ data: postagens.data.filter(postagem => postagem.id !== id) })
+        imprimePostagens()
+    }
+}
+
 window.addEventListener('load', () => {
     localStorage.setItem("id", 0)
     imprimePostagens()
 })
-
 
 
 
