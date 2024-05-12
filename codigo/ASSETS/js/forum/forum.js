@@ -1,5 +1,4 @@
 import { USUARIO, REMOVE_POSTAGEM, confirmaAcao } from "./utils.js"
-// localStorage.clear();
 
 const section = document.querySelector("#forum")
 const form = document.querySelector("form")
@@ -117,10 +116,6 @@ window.removePostagem = (id) => {
         salvaPostagens({ data: postagens.data.filter(postagem => postagem.id !== id) })
         imprimePostagens()
     }
-}
-
-window.editaPostagem = (id) => {
-
 }
 
 window.addEventListener('load', () => {
