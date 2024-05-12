@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/global.css" />
+    <script src="https://kit.fontawesome.com/8299ee6007.js" crossorigin="anonymous"></script>
+    <title>Fórum</title>
+</head>
+
+<body>
+    <header>
+        <div class="content">
+            <img src="../assets/img/logo.svg" width="156" alt="Logo" />
+            <nav>
+                <ul>
+                    <li>
+                        <a href="/index.html">Início</a>
+                    </li>
+                    <li>
+                        <a href="#">Pesquisa</a>
+                    </li>
+                    <li>
+                        <a href="#">Fórum</a>
+                    </li>
+                    <li>
+                        <a href="#">Cursos</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="userArea">
+                <img src="../assets/img/profile-picture.png" width="48" height="48" alt="User profile picture" />
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="forum">
+            <h2>#COMUNIDADE</h2>
+
+            <form>
+                <textarea name="textoEntrada" id="textoEntrada" placeholder="Realizar nova publicação"></textarea>
+                <button type="submit" id="btnPublicar">Salvar</button>
+            </form>
+
+            <div id="postagensWrapper"></div>
+        </section>
+    </main>
+
+    <script src="../assets/js/forum/forum.js" type="module"></script>
+
+
+    <footer>
+        <div class="content">
+            <div>
+                <img src="../assets/img/logo.svg" width="144" alt="Logo" />
+                <nav>
+                    <ul>
+                        <li>
+                            <a href="/index.html">Início</a>
+                        </li>
+                        <li>
+                            <a href="#">Pesquisa</a>
+                        </li>
+                        <li>
+                            <a href="#">Fórum</a>
+                        </li>
+                        <li>
+                            <a href="#">Cursos</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div>
+                <img src="../assets/img/logo-puc.svg" width="104" alt="Logo PUC" />
+                <button>Primeira Ajuda</button>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
