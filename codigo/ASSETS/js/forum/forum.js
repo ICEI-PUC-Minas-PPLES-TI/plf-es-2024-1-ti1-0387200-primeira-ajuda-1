@@ -129,5 +129,18 @@ window.addEventListener('load', () => {
 })
 
 
+function removePostagem(id) {
+    let postagens = consultaPostagens()
+    salvaPostagens(postagens.data.filter(postagem => postagem.id !== id))
+    imprimePostagens()
+}
+
+document.querySelector('.fa-trash').addEventListener('click', (evento) => {
+console.log(evento.target.id)
+})
+
+
+
+
 
 
