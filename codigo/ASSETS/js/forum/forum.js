@@ -72,7 +72,7 @@ function imprimePostagens() {
         postagens +
         `
           <article class="postagem">
-            <div>
+            <header>
                 <div>
                     <img>
                     <div>
@@ -95,8 +95,9 @@ function imprimePostagens() {
                         <i class="fa-solid fa-trash"></i>     
                     </span > 
                 </div>             
-            </div >
-            <p>${item.conteudo}</p>        
+            </header>
+            
+            <textarea disabled>${item.conteudo}</textarea>        
           </article >
     `
         , '')
@@ -109,13 +110,17 @@ document.querySelector('#btnPublicar').addEventListener('click', (evento) => {
     criaPostagem()
 })
 
-window.removePostagem = function removePostagem(id) {
+window.removePostagem = (id) => {
     let postagens = consultaPostagens()
 
     if (confirmaAcao(REMOVE_POSTAGEM)) {
         salvaPostagens({ data: postagens.data.filter(postagem => postagem.id !== id) })
         imprimePostagens()
     }
+}
+
+window.editaPostagem = (id) => {
+
 }
 
 window.addEventListener('load', () => {
