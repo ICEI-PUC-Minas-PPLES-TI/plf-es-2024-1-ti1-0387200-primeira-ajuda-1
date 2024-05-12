@@ -2,7 +2,7 @@ export const USUARIO = {
     level: 'Bronze',
     profissao: 'Estudante',
     nome: 'Pedro da Silva',
-    data: formatDateWithTime(new Date()),
+    data: formataData(new Date()),
 }
 
 export const REMOVE_POSTAGEM = {
@@ -11,7 +11,7 @@ export const REMOVE_POSTAGEM = {
     cancelado: "Ação cancelada!",
 }
 
-function formatDateWithTime(dateString) {
+function formataData(dateString) {
     return dateString.toLocaleString().replace(',', '')
 }
 
