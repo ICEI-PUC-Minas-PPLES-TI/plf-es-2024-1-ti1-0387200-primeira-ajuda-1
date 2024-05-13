@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/tablekits.css">
+    <script src="https://kit.fontawesome.com/9e7334b542.js" crossorigin="anonymous"></script>
+    <title>table</title>
+</head>
+<body>
+    <header> 
+
+    </header>
+    <main> 
+        <div class="Cadastro-user"></div>
+        <div class="perfil-user"></div>
+
+
+        <div class="kit-table">
+            <h1 class="title">Tabela de Kits</h1>
+            <div id="criarkit">
+            <div class="button-position">
+            <button id="btn-criar-kit" onclick="MarcarCheckEExibirPaginaCriar()" class="criar-kit">Criar Kit <i class="fa-solid fa-plus"></i></button>
+            <input type="checkbox" id="checkbox">
+
+            <!--Criar kit-->
+
+            <div class="pagina-criar-kit">
+                <div class="criar-kits">
+                    <h1><i class="fa-solid fa-kit-medical"></i>  Criar Kit</h1>
+                    <h3>Digite o nome do Kit:</h3>
+                    <input  class="input-criar-kit" type="text" placeholder="Digite o nome do Kit" id="InputKit">
+                    <h3>Liste os Itens que deseja adicionar ao seu kit:</h3>
+                    <div class="check-itens">
+                        <div class="check-itens1">
+                    <ul>
+                        <li><input type="checkbox" id="item1">   Bandagem</li>
+                        <li><input type="checkbox" id="item2">   Algodão</li>
+                        <li><input type="checkbox" id="item3">   Gaze</li>
+                        <li><input type="checkbox" id="item4">   Tesoura</li>
+                        <li><input type="checkbox" id="item5">   Pinça</li>
+                        <li><input type="checkbox" id="item6">   Analgésicos</li>
+                        <li><input type="checkbox" id="item7">   Antiséptico</li>
+                        <li><input type="checkbox" id="item8">   Pomada para Queimaduras</li>
+                    </ul>
+                </div>
+                <div class="check-itens1">
+                    <ul>
+                    <li><input type="checkbox" id="item9">   Luvas descartaveis</li>
+                    <li><input type="checkbox" id="item10">   Seringa</li>
+                    <li><input type="checkbox" id="item11">   Fitas Adesivas</li>
+                    <li><input type="checkbox" id="item12">   Compressa</li>
+                    <li><input type="checkbox" id="item13">   Solução Salina</li>
+                    <li><input type="checkbox" id="item14">   Ferramenta de Comunicação</li>
+                    <li><input type="checkbox" id="item15">   Cobertor Térmico</li>
+                    <li><input type="checkbox" id="item16">   Elástico</li>
+                </ul>
+            </div>
+                </div>
+                <div class="btn-criar-position">
+                <button class="btn-salvar-criar-kit" id="salvar-e-voltar-kits">Salvar</button>
+            </div>
+            <div class="btn-voltar-criar-position">
+                <button onclick="DesmarcarCheckEPararDeExibirPaginaCriar()" class="btn-voltar-criar-kit" id="voltar-e-voltar-kits">Voltar</button>
+            </div>
+            </div>
+            </div>
+        </div>
+
+        <!--Tabela de kits-->
+
+            <div class="container">
+           <section>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Kit</th>
+                        <th>Nome do Kit</th>
+                        <th>Editar</th>
+                        <th>Excluir</th>
+                        <th>Itens do kit</th>
+                    </tr>
+                </thead>
+                <tbody id="tbody">
+                    <tr>
+                        <td><p class="kit-logo"><i class="fa-solid fa-kit-medical"></i></p></td>
+                        <td>Kit de Queimadura</td>
+                        <td><button onclick="MarcarCheckEEditarConteudoKit()" class="button1" id="btn-editar"><i class="fa-solid fa-pencil"></i></button><input type="checkbox" id="checkbox-editar-kit"></td>
+                        <td><button class="button2"><i class="fa-solid fa-trash"></i></button></i></td>
+                        <td><button onclick="MarcarCheckEVizualizarConteudoKit()" class="veja" id="vizualizar-kit"> Veja</button><input type="checkbox" id="checkbox-vizualizar-kit"></td>
+                        </tr>
+                </tbody>
+            </table>
+           </section>
+
+           <!--Editar kit-->
+
+                <div class="pagina-criar-kit">
+                <div class="criar-kits">
+                    <h1><i class="fa-solid fa-kit-medical"></i>  Criar Kit</h1>
+                    <h3>Digite o nome do Kit:</h3>
+                    <input  class="input-criar-kit" type="text" placeholder="Digite o nome do Kit" id="InputKit">
+                    <h3>Liste os Itens que deseja adicionar ao seu kit:</h3>
+                    <div class="check-itens">
+                        <div class="check-itens1">
+                    <ul>
+                        <li><input type="checkbox" id="item1">   Bandagem</li>
+                        <li><input type="checkbox" id="item2">   Algodão</li>
+                        <li><input type="checkbox" id="item3">   Gaze</li>
+                        <li><input type="checkbox" id="item4">   Tesoura</li>
+                        <li><input type="checkbox" id="item5">   Pinça</li>
+                        <li><input type="checkbox" id="item6">   Analgésicos</li>
+                        <li><input type="checkbox" id="item7">   Antiséptico</li>
+                        <li><input type="checkbox" id="item8">   Pomada para Queimaduras</li>
+                    </ul>
+                </div>
+                <div class="check-itens1">
+                    <ul>
+                    <li><input type="checkbox" id="item9">   Luvas descartaveis</li>
+                    <li><input type="checkbox" id="item10">   Seringa</li>
+                    <li><input type="checkbox" id="item11">   Fitas Adesivas</li>
+                    <li><input type="checkbox" id="item12">   Compressa</li>
+                    <li><input type="checkbox" id="item13">   Solução Salina</li>
+                    <li><input type="checkbox" id="item14">   Ferramenta de Comunicação</li>
+                    <li><input type="checkbox" id="item15">   Cobertor Térmico</li>
+                    <li><input type="checkbox" id="item16">   Elástico</li>
+                </ul>
+            </div>
+                </div>
+                <div class="btn-editar-position">
+                <button class="btn-salvar-criar-kit" id="salvar-e-voltar-kits">Salvar</button>
+            </div>
+            <div class="btn-voltar-criar-position">
+                <button onclick="" class="btn-voltar-criar-kit" id="voltar-e-voltar-kits">Voltar</button>
+            </div>
+            </div>
+            </div>
+
+            <div class="pagina-editar-kit">
+                <div class="editar-kits">
+                    <h1><i class="fa-solid fa-kit-medical"></i>  Editar Kit</h1>
+                    <h3>Nome do Kit:</h3>
+                    <input  class="input-editar-kit" type="text" placeholder="Editite o nome do Kit" id="InputKit">
+                    <h3>Lista de itens do kit:</h3>
+                    <div class="check-itens">
+                        <div class="check-itens1">
+                    <ul>
+                        <li><input type="checkbox" id="item1">   Bandagem</li>
+                        <li><input type="checkbox" id="item2">   Algodão</li>
+                        <li><input type="checkbox" id="item3">   Gaze</li>
+                        <li><input type="checkbox" id="item4">   Tesoura</li>
+                        <li><input type="checkbox" id="item5">   Pinça</li>
+                        <li><input type="checkbox" id="item6">   Analgésicos</li>
+                        <li><input type="checkbox" id="item7">   Antiséptico</li>
+                        <li><input type="checkbox" id="item8">   Pomada para Queimaduras</li>
+                    </ul>
+                </div>
+                <div class="check-itens1">
+                    <ul>
+                    <li><input type="checkbox" id="item9">   Luvas descartaveis</li>
+                    <li><input type="checkbox" id="item10">   Seringa</li>
+                    <li><input type="checkbox" id="item11">   Fitas Adesivas</li>
+                    <li><input type="checkbox" id="item12">   Compressa</li>
+                    <li><input type="checkbox" id="item13">   Solução Salina</li>
+                    <li><input type="checkbox" id="item14">   Ferramenta de Comunicação</li>
+                    <li><input type="checkbox" id="item15">   Cobertor Térmico</li>
+                    <li><input type="checkbox" id="item16">   Elástico</li>
+                </ul>
+            </div>
+                </div>
+                <div class="btn-editar-position">
+                <button class="btn-editar-salvar-kit" id="editar-e-voltar-kits">Salvar</button>
+            </div>
+            <div class="btn-voltar-criar-position">
+                <button onclick="DesmarcarCheckEEditarConteudoKit()" class="btn-editar-kit" id="voltar-edit-kit">Voltar</button>
+            </div>
+            </div>
+            </div>
+
+            <!--Vizualizar kit-->
+
+           <div class="content-kit">
+            <div class="item-kits">
+                <h1><i class="fa-solid fa-kit-medical"> </i>  Itens do kit:</h1>
+                    <div class="check-itens-vizualizar">
+                <ul>
+                    <li><input type="checkbox" id="item1">   Bandagem</li>
+                    <li><input type="checkbox" id="item2">   Algodão</li>
+                    <li><input type="checkbox" id="item3">   Gaze</li>
+                    <li><input type="checkbox" id="item4">   Tesoura</li>
+                    <li><input type="checkbox" id="item5">   Pinça</li>
+                    <li><input type="checkbox" id="item6">   Analgésicos</li>
+                    <li><input type="checkbox" id="item7">   Antiséptico</li>
+                    <li><input type="checkbox" id="item8">   Pomada para Queimaduras</li>
+                </ul>
+                <ul>
+                <li><input type="checkbox" id="item9">   Luvas descartaveis</li>
+                <li><input type="checkbox" id="item10">   Seringa</li>
+                <li><input type="checkbox" id="item11">   Fitas Adesivas</li>
+                <li><input type="checkbox" id="item12">   Compressa</li>
+                <li><input type="checkbox" id="item13">   Solução Salina</li>
+                <li><input type="checkbox" id="item14">   Ferramenta de Comunicação</li>
+                <li><input type="checkbox" id="item15">   Cobertor Térmico</li>
+                <li><input type="checkbox" id="item16">   Elástico</li>
+            </ul>
+            <button onclick="DesmarcarCheckEPararDeVizualizar()" class="voltar-vizualizar" id="voltar-vizualizar-kits" >Voltar</button>
+           </div>
+        </div>
+        </div>
+ 
+
+
+        <div class="kit-content"></div>
+        <div class="form-gustavo"></div>
+        <div class="form-pedro"></div>
+    </main>
+    <footer>
+        
+    </footer>
+    <script src="../assets/js/js/tablekits/tablekits.js"></script>
+</body>
+</html>
