@@ -1,4 +1,6 @@
-import { USUARIO, REMOVE_POSTAGEM, confirmaAcao } from "./utils.js"
+import { USUARIO, REMOVE_POSTAGEM, CONTEUDO_INLINE_ALERT, confirmaAcao } from "./utils.js"
+
+// localStorage.clear()
 
 const section = document.querySelector("#forum")
 const form = document.querySelector("form")
@@ -7,8 +9,7 @@ const postagensWrapper = document.querySelector("#postagensWrapper")
 
 function determinaId() {
     let id = parseInt(localStorage.getItem("id"))
-    id += 1
-
+    id++
     localStorage.setItem("id", id)
     return id;
 }
@@ -19,16 +20,7 @@ function salvaPostagens(dados) {
 
 
 function consultaPostagens() {
-    let dados = localStorage.getItem('postagens')
-    let postagens = {}
-
-    if (dados) {
-        postagens = JSON.parse(dados)
-    } else {
-        postagens = { data: [] }
-    }
-
-    return postagens
+    return JSON.parse(localStorage.getItem('postagens')) || { data: [] }
 }
 
 function criaPostagem() {
@@ -44,21 +36,22 @@ function criaPostagem() {
             conteudo: textArea.value.trim(),
         })
 
-        salvaPostagens(postagens)
         form.reset()
+        salvaPostagens(postagens)
         imprimePostagens()
+
     } else {
-        if (!inlineAlert) displayInlineAlert()
+        if (!inlineAlert) exibirInlineAlert()
     }
 
 }
 
-function displayInlineAlert() {
+function exibirInlineAlert() {
     let div = document.createElement("div")
     div.setAttribute("class", "inline-alert")
 
-    let texto = document.createTextNode("Para criar uma publicação é necessário adicionar um comentário")
-    div.appendChild(texto)
+    let conteudo = document.createTextNode(CONTEUDO_INLINE_ALERT)
+    div.appendChild(conteudo)
 
     section.insertBefore(div, postagensWrapper)
 }
@@ -117,6 +110,8 @@ window.removePostagem = (id) => {
         imprimePostagens()
     }
 }
+
+window.editaPostagem = (id) => { }
 
 window.addEventListener('load', () => {
     localStorage.setItem("id", 0)
