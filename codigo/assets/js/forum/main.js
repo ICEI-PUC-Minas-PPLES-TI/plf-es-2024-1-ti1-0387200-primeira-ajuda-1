@@ -3,8 +3,8 @@ import { USUARIO, REMOVE_POSTAGEM, CONTEUDO_INLINE_ALERT, confirmaAcao } from ".
 // localStorage.clear()
 
 const section = document.querySelector("#forum")
-const form = document.querySelector("form")
-const textArea = document.querySelector('#textoEntrada')
+const mainForm = document.querySelector("#mainForm")
+const mainTextArea = document.querySelector('#mainTextArea')
 const postagensWrapper = document.querySelector("#postagensWrapper")
 
 function determinaId() {
@@ -26,17 +26,17 @@ function consultaPostagens() {
 function criaPostagem() {
     let inlineAlert = document.querySelector(".inline-alert")
 
-    if (textArea.value) {
+    if (mainTextArea.value) {
         if (inlineAlert) inlineAlert.remove()
 
         let postagens = consultaPostagens()
         postagens.data.push({
             id: determinaId(),
             ...USUARIO,
-            conteudo: textArea.value.trim(),
+            conteudo: mainTextArea.value.trim(),
         })
 
-        form.reset()
+        mainForm.reset()
         salvaPostagens(postagens)
         imprimePostagens()
 
@@ -89,7 +89,9 @@ function imprimePostagens() {
                 </div>             
             </header>
             
-            <textarea disabled>${item.conteudo}</textarea>        
+            <form>
+                <textarea id="textArea${item.id}" disabled>${item.conteudo}</textarea>        
+            </form>
           </article >
     `
         , '')
@@ -111,7 +113,35 @@ window.removePostagem = (id) => {
     }
 }
 
-window.editaPostagem = (id) => { }
+function criarGrupoDeBotoes() {
+    let div = document.createElement("div")
+    let editarBtn = document.createElement("button")
+    let cancelarBtn = document.createElement("button")
+
+    cancelarBtn.setAttribute("type", "button")
+    cancelarBtn.setAttribute("id", "cancelarBtn")
+    cancelarBtn.appendChild(document.createTextNode("Cancelar"))
+
+    editarBtn.setAttribute("type", "submit")
+    editarBtn.setAttribute("id", "editarBtn")
+    editarBtn.appendChild(document.createTextNode("Salvar Alterações"))
+
+    div.appendChild(cancelarBtn)
+    div.appendChild(editarBtn)
+    return div
+}
+
+window.editaPostagem = (id) => {
+    let postTextArea = document.querySelector(`#textArea${id}`)
+    postTextArea.disabled = false
+
+    // não esquecer de disabilitar novamente ao concluir
+
+    let postForm = postTextArea.parentElement
+
+    // adiciona botão em tela 
+    postForm.appendChild(criarGrupoDeBotoes())
+}
 
 window.addEventListener('load', () => {
     localStorage.setItem("id", 0)
