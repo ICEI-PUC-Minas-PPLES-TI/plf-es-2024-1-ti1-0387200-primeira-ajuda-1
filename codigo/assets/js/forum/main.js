@@ -114,7 +114,6 @@ window.removePostagem = (id) => {
 }
 
 function criarGrupoDeBotoes() {
-    let div = document.createElement("div")
     let editarBtn = document.createElement("button")
     let cancelarBtn = document.createElement("button")
 
@@ -122,13 +121,12 @@ function criarGrupoDeBotoes() {
     cancelarBtn.setAttribute("id", "cancelarBtn")
     cancelarBtn.appendChild(document.createTextNode("Cancelar"))
 
+
     editarBtn.setAttribute("type", "submit")
     editarBtn.setAttribute("id", "editarBtn")
     editarBtn.appendChild(document.createTextNode("Salvar Alterações"))
 
-    div.appendChild(cancelarBtn)
-    div.appendChild(editarBtn)
-    return div
+    return { editarBtn, cancelarBtn }
 }
 
 window.editaPostagem = (id) => {
@@ -140,7 +138,23 @@ window.editaPostagem = (id) => {
     let postForm = postTextArea.parentElement
 
     // adiciona botão em tela 
-    postForm.appendChild(criarGrupoDeBotoes())
+    let { editarBtn, cancelarBtn } = criarGrupoDeBotoes()
+
+    cancelarBtn.addEventListener("click", () => {
+        () => console.log("cliquei em cancelar")
+        imprimePostagens()
+    })
+
+
+    editarBtn.addEventListener("click", (e) => {
+        e.preventDefault()
+        console.log("cliquei em salvar alterações")
+    })
+
+    let div = document.createElement("div")
+    div.appendChild(cancelarBtn)
+    div.appendChild(editarBtn)
+    postForm.appendChild(div)
 }
 
 window.addEventListener('load', () => {
