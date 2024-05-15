@@ -1,68 +1,72 @@
-import { USUARIO, REMOVE_POSTAGEM, CONTEUDO_INLINE_ALERT, confirmaAcao, formataData } from "./utils.js"
+import {
+    USUARIO,
+    REMOVE_POSTAGEM,
+    CONTEUDO_INLINE_ALERT,
+    confirmaAcao,
+    formataData,
+} from "./utils.js"
 
 // localStorage.clear()
 
 const section = document.querySelector("#forum")
 const mainForm = document.querySelector("#mainForm")
-const mainTextArea = document.querySelector('#mainTextArea')
+const mainTextArea = document.querySelector("#mainTextArea")
 const postagensWrapper = document.querySelector("#postagensWrapper")
 
 function determinaId() {
-    let id = parseInt(localStorage.getItem("id"))
-    id++
-    localStorage.setItem("id", id)
+    let id = parseInt(localStorage.getItem("id"));
+    id++;
+    localStorage.setItem("id", id);
     return id;
 }
 
 function salvaPostagens(dados) {
-    localStorage.setItem('postagens', JSON.stringify(dados))
+    localStorage.setItem("postagens", JSON.stringify(dados));
 }
 
-
 function consultaPostagens() {
-    return JSON.parse(localStorage.getItem('postagens')) || { data: [] }
+    return JSON.parse(localStorage.getItem("postagens")) || { data: [] };
 }
 
 function criaPostagem() {
-    let inlineAlert = document.querySelector(".inline-alert")
+    let inlineAlert = document.querySelector(".inline-alert");
 
     if (mainTextArea.value) {
-        if (inlineAlert) inlineAlert.remove()
+        if (inlineAlert) inlineAlert.remove();
 
-        let postagens = consultaPostagens()
+        let postagens = consultaPostagens();
         postagens.data.push({
             id: determinaId(),
             ...USUARIO,
             conteudo: mainTextArea.value.trim(),
-        })
+        });
 
-        mainForm.reset()
-        salvaPostagens(postagens)
-        imprimePostagens()
-
+        mainForm.reset();
+        salvaPostagens(postagens);
+        imprimePostagens();
     } else {
-        if (!inlineAlert) exibirInlineAlert()
+        if (!inlineAlert) exibirInlineAlert();
     }
-
 }
 
 function exibirInlineAlert() {
-    let div = document.createElement("div")
-    div.setAttribute("class", "inline-alert")
+    let div = document.createElement("div");
+    div.setAttribute("class", "inline-alert");
 
-    let conteudo = document.createTextNode(CONTEUDO_INLINE_ALERT)
-    div.appendChild(conteudo)
+    let conteudo = document.createTextNode(CONTEUDO_INLINE_ALERT);
+    div.appendChild(conteudo);
 
-    section.insertBefore(div, postagensWrapper)
+    section.insertBefore(div, postagensWrapper);
 }
 
 function imprimePostagens() {
-    let postagens = consultaPostagens()
-    const { data } = postagens
+    let postagens = consultaPostagens();
+    const { data } = postagens;
 
-    let elementosHTMl = data.reduce((postagens, item) =>
-        postagens +
-        `
+    let elementosHTMl = data.reduce(
+        (postagens, item) =>
+            postagens +
+            `
           <article id="${item.id} class="postagem">
             <header>
                 <div>
@@ -79,7 +83,7 @@ function imprimePostagens() {
                 
         
                 <div>
-                    <span onClick="editaPostagem(${item.id})">
+                    <span onClick="editarPostagem(${item.id})">
                         <i class="fa-solid fa-pen-to-square"></i>                   
                     </span >
 
@@ -93,96 +97,107 @@ function imprimePostagens() {
                 <textarea id="textArea${item.id}" disabled>${item.conteudo}</textarea>        
             </form>
           </article >
-    `
-        , '')
+    `,
+        ''
+    );
 
-    document.querySelector('#postagensWrapper').innerHTML = elementosHTMl
+    document.querySelector("#postagensWrapper").innerHTML = elementosHTMl;
 }
 
-document.querySelector('#btnPublicar').addEventListener('click', (evento) => {
-    evento.preventDefault()
-    criaPostagem()
-})
+document.querySelector("#btnPublicar").addEventListener("click", (evento) => {
+    evento.preventDefault();
+    criaPostagem();
+});
 
 window.removePostagem = (id) => {
-    let postagens = consultaPostagens()
+    let postagens = consultaPostagens();
 
     if (confirmaAcao(REMOVE_POSTAGEM)) {
-        salvaPostagens({ data: postagens.data.filter(postagem => postagem.id !== id) })
-        imprimePostagens()
+        salvaPostagens({
+            data: postagens.data.filter((postagem) => postagem.id !== id),
+        });
+        imprimePostagens();
     }
-}
+};
 
 function criarBotoes() {
-    let editarBtn = document.createElement("button")
-    let cancelarBtn = document.createElement("button")
+    let editarBtn = document.createElement("button");
+    let cancelarBtn = document.createElement("button");
 
-    cancelarBtn.setAttribute("type", "button")
-    cancelarBtn.setAttribute("id", "cancelarBtn")
-    cancelarBtn.appendChild(document.createTextNode("Cancelar"))
+    cancelarBtn.setAttribute("type", "button");
+    cancelarBtn.setAttribute("id", "cancelarBtn");
+    cancelarBtn.appendChild(document.createTextNode("Cancelar"));
 
+    editarBtn.setAttribute("type", "submit");
+    editarBtn.setAttribute("id", "editarBtn");
+    editarBtn.appendChild(document.createTextNode("Salvar Alterações"));
 
-    editarBtn.setAttribute("type", "submit")
-    editarBtn.setAttribute("id", "editarBtn")
-    editarBtn.appendChild(document.createTextNode("Salvar Alterações"))
-
-    return { editarBtn, cancelarBtn }
+    return { editarBtn, cancelarBtn };
 }
 
 function criarGrupoDeBotoes(editarBtn, cancelarBtn) {
-    let div = document.createElement("div")
+    let div = document.createElement("div");
+    div.setAttribute("id", "grupoDeBotoes");
 
-    div.appendChild(cancelarBtn)
-    div.appendChild(editarBtn)
-    return div
+    div.appendChild(cancelarBtn);
+    div.appendChild(editarBtn);
+    return div;
 }
 
-window.editaPostagem = (id) => {
-    let postTextArea = document.querySelector(`#textArea${id}`)
-    postTextArea.disabled = false
+function atualizarPostagens(id, conteudo) {
+    let postagens = consultaPostagens()
+    const { data } = postagens
 
-    // não esquecer de disabilitar novamente ao concluir
-    let postForm = postTextArea.parentElement
+    let postagensAtualizadas = data.reduce(
+        (postagens, item) =>
+            item.id === id
+                ? [
+                    ...postagens,
+                    {
+                        ...item,
+                        conteudo,
+                        data: formataData(new Date()),
+                    },
+                ]
+                : [...postagens, item],
+        []
+    )
 
-    // adiciona botão em tela 
+    return postagensAtualizadas
+}
+
+window.editarPostagem = (id) => {
+    let postagemTextArea = document.querySelector(`#textArea${id}`)
+    let grupoDeBotoes = document.querySelector("#grupoDeBotoes")
+    postagemTextArea.disabled = false
+
+
+
     let { editarBtn, cancelarBtn } = criarBotoes()
+    cancelarBtn.addEventListener("click", imprimePostagens)
 
-    cancelarBtn.addEventListener("click", () => {
-        () => console.log("cliquei em cancelar")
-        imprimePostagens()
-    })
 
+    // tentativa de desabilitar o botão
+    //let postagemValorInicial = postagemTextArea.value
+    // console.log('primeira checagem', postagemTextArea.value)
+    // console.log('segunda checagem', postagemTextArea.value)
+    // if (postagemValorInicial === postagemTextArea.value || !postagemTextArea.value) {
+    //     editarBtn.disabled = true
+    // }
 
     editarBtn.addEventListener("click", (e) => {
         e.preventDefault()
 
-        if (postTextArea.value) {
-            let postagens = consultaPostagens()
-            const { data } = postagens
-
-            console.log(data, "data")
-
-
-            let postagensEditadas = data.reduce((postagens, item) => item.id === id ? [...postagens, {
-                ...item,
-                data: formataData(new Date()),
-                conteudo: postTextArea.value.trim(),
-            }] : [...postagens, item], [])
-
-            console.log(postagensEditadas, "postagensEditadas")
-
-            // salvaPostagens({ data: postagensEditadas })
-            // imprimePostagens()
-        } else {
-            editarBtn.setAttribute("disabled", true)
+        if (postagemTextArea.value) {
+            salvaPostagens({ data: atualizarPostagens(id, postagemTextArea.value.trim()) })
+            imprimePostagens()
         }
     })
 
-
-    postForm.appendChild(criarGrupoDeBotoes(editarBtn, cancelarBtn))
+    if (!grupoDeBotoes) postagemTextArea.parentElement.appendChild(criarGrupoDeBotoes(editarBtn, cancelarBtn))
 }
 
-window.addEventListener('load', () => {
-    localStorage.setItem("id", 0)
-    imprimePostagens()
+window.addEventListener("load", () => {
+    localStorage.setItem("id", 0);
+    imprimePostagens();
 })
