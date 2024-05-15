@@ -135,9 +135,9 @@ function criarBotoes() {
     return { editarBtn, cancelarBtn };
 }
 
-function criarGrupoDeBotoes(editarBtn, cancelarBtn) {
+function criarGrupoDeBotoes(id, editarBtn, cancelarBtn) {
     let div = document.createElement("div");
-    div.setAttribute("id", "grupoDeBotoes");
+    div.setAttribute("id", `grupoDeBotoes${id}`);
 
     div.appendChild(cancelarBtn);
     div.appendChild(editarBtn);
@@ -168,7 +168,6 @@ function atualizarPostagens(id, conteudo) {
 
 window.editarPostagem = (id) => {
     let postagemTextArea = document.querySelector(`#textArea${id}`)
-    let grupoDeBotoes = document.querySelector("#grupoDeBotoes")
     postagemTextArea.disabled = false
 
 
@@ -194,7 +193,8 @@ window.editarPostagem = (id) => {
         }
     })
 
-    if (!grupoDeBotoes) postagemTextArea.parentElement.appendChild(criarGrupoDeBotoes(editarBtn, cancelarBtn))
+    let grupoDeBotoes = document.querySelector(`#grupoDeBotoes${id}`)
+    if (!grupoDeBotoes) postagemTextArea.parentElement.appendChild(criarGrupoDeBotoes(id, editarBtn, cancelarBtn))
 }
 
 window.addEventListener("load", () => {
