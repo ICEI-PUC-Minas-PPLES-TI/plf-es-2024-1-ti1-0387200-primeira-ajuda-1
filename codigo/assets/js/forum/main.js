@@ -160,17 +160,21 @@ window.editaPostagem = (id) => {
             let postagens = consultaPostagens()
             const { data } = postagens
 
+            console.log(data, "data")
+
 
             let postagensEditadas = data.reduce((postagens, item) => item.id === id ? [...postagens, {
                 ...item,
                 data: formataData(new Date()),
                 conteudo: postTextArea.value.trim(),
-            }] : postagens, [])
+            }] : [...postagens, item], [])
 
-            // console.log()
+            console.log(postagensEditadas, "postagensEditadas")
 
-            salvaPostagens({ data: postagensEditadas })
-            imprimePostagens()
+            // salvaPostagens({ data: postagensEditadas })
+            // imprimePostagens()
+        } else {
+            editarBtn.setAttribute("disabled", true)
         }
     })
 
