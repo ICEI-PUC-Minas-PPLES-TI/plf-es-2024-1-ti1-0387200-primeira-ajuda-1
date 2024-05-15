@@ -1,4 +1,4 @@
-import { USUARIO, REMOVE_POSTAGEM, CONTEUDO_INLINE_ALERT, confirmaAcao } from "./utils.js"
+import { USUARIO, REMOVE_POSTAGEM, CONTEUDO_INLINE_ALERT, confirmaAcao, formataData } from "./utils.js"
 
 // localStorage.clear()
 
@@ -63,7 +63,7 @@ function imprimePostagens() {
     let elementosHTMl = data.reduce((postagens, item) =>
         postagens +
         `
-          <article class="postagem">
+          <article id="${item.id} class="postagem">
             <header>
                 <div>
                     <img>
@@ -113,7 +113,7 @@ window.removePostagem = (id) => {
     }
 }
 
-function criarGrupoDeBotoes() {
+function criarBotoes() {
     let editarBtn = document.createElement("button")
     let cancelarBtn = document.createElement("button")
 
@@ -129,16 +129,23 @@ function criarGrupoDeBotoes() {
     return { editarBtn, cancelarBtn }
 }
 
+function criarGrupoDeBotoes(editarBtn, cancelarBtn) {
+    let div = document.createElement("div")
+
+    div.appendChild(cancelarBtn)
+    div.appendChild(editarBtn)
+    return div
+}
+
 window.editaPostagem = (id) => {
     let postTextArea = document.querySelector(`#textArea${id}`)
     postTextArea.disabled = false
 
     // não esquecer de disabilitar novamente ao concluir
-
     let postForm = postTextArea.parentElement
 
     // adiciona botão em tela 
-    let { editarBtn, cancelarBtn } = criarGrupoDeBotoes()
+    let { editarBtn, cancelarBtn } = criarBotoes()
 
     cancelarBtn.addEventListener("click", () => {
         () => console.log("cliquei em cancelar")
@@ -148,13 +155,27 @@ window.editaPostagem = (id) => {
 
     editarBtn.addEventListener("click", (e) => {
         e.preventDefault()
-        console.log("cliquei em salvar alterações")
+
+        if (postTextArea.value) {
+            let postagens = consultaPostagens()
+            const { data } = postagens
+
+
+            let postagensEditadas = data.reduce((postagens, item) => item.id === id ? [...postagens, {
+                ...item,
+                data: formataData(new Date()),
+                conteudo: postTextArea.value.trim(),
+            }] : postagens, [])
+
+            // console.log()
+
+            salvaPostagens({ data: postagensEditadas })
+            imprimePostagens()
+        }
     })
 
-    let div = document.createElement("div")
-    div.appendChild(cancelarBtn)
-    div.appendChild(editarBtn)
-    postForm.appendChild(div)
+
+    postForm.appendChild(criarGrupoDeBotoes(editarBtn, cancelarBtn))
 }
 
 window.addEventListener('load', () => {
