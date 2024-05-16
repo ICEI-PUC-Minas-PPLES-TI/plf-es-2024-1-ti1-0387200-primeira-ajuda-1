@@ -1,0 +1,46 @@
+section#forum {
+  width: 76%;
+  margin: 0 auto;
+}
+
+section#forum h1 {
+  font-weight: 900;
+  margin: 32px auto 32px;
+}
+
+section#forum #mainForm {
+  padding: 32px;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  background-color: #ffffff;
+  border-radius: 4.8px;
+  box-shadow: 6px 6px 6px black;
+}
+
+section#forum #mainForm #mainTextArea {
+  width: 100%;
+  height: 90px;
+  border: none;
+  resize: none;
+}
+
+section#forum #mainForm #mainTextArea:focus {
+  outline: none;
+}
+
+section#forum #mainForm #btnPublicar {
+  height: 40px;
+  width: 80px;
+}
+
+section#forum .alerta-embutido {
+  width: 100%;
+  padding: 16px;
+  border-radius: 4px;
+  margin-bottom: 24px;
+  text-align: center;
+  border: solid 1px #ffbfbf;
+  background-color: #ffd0cc;
+  color: #7e2d24;
+}
