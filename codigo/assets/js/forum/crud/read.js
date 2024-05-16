@@ -8,12 +8,12 @@ export function imprimirPostagens() {
         (postagens, item) =>
             postagens +
             `
-          <article id="${item.id} class="postagem">
-            <header>
+          <article id="${item.id}" class="postagem">
+            <header class="postagemHeader">
                 <div>
                     <img>
                     <div>
-                        <h3>${item.nome}</h3>
+                        <h4>${item.nome}</h4>
                         <p>
                             <span>${item.level} |</span>
                             <span>${item.profissao} |</span>
@@ -26,18 +26,28 @@ export function imprimirPostagens() {
                 <div>
                     <span onClick="editarPostagem(${item.id})">
                         <i class="fa-solid fa-pen-to-square"></i>                   
-                    </span >
+                    </span>
 
                     <span onClick="removerPostagem(${item.id})">
                         <i class="fa-solid fa-trash"></i>     
-                    </span > 
+                    </span> 
                 </div>             
             </header>
             
-            <form>
+            <form class="postForm">
                 <textarea id="textArea${item.id}" disabled>${item.conteudo}</textarea>        
             </form>
-          </article >
+
+            <footer class="postagemFooter">
+                <span>
+                    <i class="fa-regular fa-heart"></i>                 
+                </span>
+
+                <span>
+                    <i class="fa-regular fa-comment"></i>    
+                </span> 
+            </footer>
+          </article>
     `,
         ``
     )
