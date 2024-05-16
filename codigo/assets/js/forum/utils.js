@@ -11,13 +11,13 @@ export const REMOVE_POSTAGEM = {
     cancelado: "Ação cancelada!",
 }
 
-export const CONTEUDO_INLINE_ALERT = `Para criar uma publicação é necessário adicionar um comentário`
+export const CONTEUDO_ALERTA_EMBUTIDO = `Para criar uma publicação é necessário adicionar um comentário`
 
 export function formataData(dateString) {
     return dateString.toLocaleString().replace(',', '')
 }
 
-export function confirmaAcao(variante) {
+export function confirmarAcao(variante) {
     let confirma = confirm(variante.titulo)
 
     if (confirma) {
