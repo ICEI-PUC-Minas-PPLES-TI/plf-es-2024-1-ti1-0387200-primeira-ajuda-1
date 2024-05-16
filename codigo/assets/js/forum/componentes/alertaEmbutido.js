@@ -1,13 +1,10 @@
 import { CONTEUDO_ALERTA_EMBUTIDO } from "../utils.js"
 
-const section = document.querySelector("#forum")
-const postagensWrapper = document.querySelector("#postagensWrapper")
-
-export function exibirAlertaEmbutido() {
+export function exibirAlertaEmbutido(form, textArea) {
     let div = document.createElement("div")
 
-    div.setAttribute("class", "inline-alert")
+    div.setAttribute("class", "alerta-embutido")
     div.appendChild(document.createTextNode(CONTEUDO_ALERTA_EMBUTIDO))
 
-    section.insertBefore(div, postagensWrapper)
+    form.insertBefore(div, textArea)
 }

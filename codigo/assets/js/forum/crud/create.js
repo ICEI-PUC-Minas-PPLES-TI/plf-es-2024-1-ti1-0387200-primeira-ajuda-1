@@ -14,7 +14,7 @@ function determinarId() {
 }
 
 export function criarPostagem() {
-    let alertaEmbutido = document.querySelector(".inline-alert")
+    let alertaEmbutido = document.querySelector(".alerta-embutido")
 
     if (textAreaPrincipal.value) {
         if (alertaEmbutido) alertaEmbutido.remove()
@@ -30,6 +30,6 @@ export function criarPostagem() {
         salvarPostagens(postagens)
         imprimirPostagens()
     } else {
-        if (!alertaEmbutido) exibirAlertaEmbutido()
+        if (!alertaEmbutido) exibirAlertaEmbutido(formPrincipal, textAreaPrincipal)
     }
 }
