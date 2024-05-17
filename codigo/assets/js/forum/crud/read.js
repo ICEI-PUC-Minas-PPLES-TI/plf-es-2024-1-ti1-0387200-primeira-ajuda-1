@@ -15,8 +15,8 @@ export function imprimirPostagens() {
                     <div>
                         <h4>${item.nome}</h4>
                         <p>
-                            <span>${item.level} |</span>
-                            <span>${item.profissao} |</span>
+                            <span>${item.level} </span>
+                            <span>| ${item.profissao} |</span>
                             <span>${item.data}</span>
                         </p>
                     </div>
@@ -35,7 +35,7 @@ export function imprimirPostagens() {
             </header>
             
             <form class="postForm">
-                <textarea id="textArea${item.id}" disabled>${item.conteudo}</textarea>        
+                <textarea id="textArea${item.id}" class="textArea" disabled>${item.conteudo}</textarea>        
             </form>
 
             <footer class="postagemFooter">

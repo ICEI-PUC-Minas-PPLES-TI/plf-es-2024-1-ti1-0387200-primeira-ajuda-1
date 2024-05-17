@@ -77,8 +77,21 @@ section#forum
   .postagemHeader
   div
   > div
-  > p:first-child {
+  > p
+  > span:first-child {
+  color: #a45a03;
   font-weight: 900;
+}
+
+section#forum
+  div#postagensWrapper
+  .postagem
+  .postagemHeader
+  div
+  > div
+  > p
+  > span {
+  color: #033649;
 }
 
 section#forum div#postagensWrapper .postagem .postagemHeader img {
@@ -89,11 +102,36 @@ section#forum div#postagensWrapper .postagem .postagemHeader img {
 
 section#forum div#postagensWrapper .postagem .postForm {
   padding: 20px;
+  display: flex;
+  flex-flow: column;
+  align-items: flex-end;
+}
+
+section#forum div#postagensWrapper .postagem .postForm {
+  padding: 20px;
+  display: flex;
+  flex-flow: column;
+  align-items: flex-end;
+}
+
+section#forum div#postagensWrapper .postagem .postForm .grupoDeBotoes {
+  display: flex;
+  gap: 5px;
+}
+
+section#forum div#postagensWrapper .postagem .postForm .textArea {
+  width: 100%;
+  padding: 20px;
+  height: 90px;
+  border: none;
+  resize: none;
 }
 
 section#forum div#postagensWrapper .postagem .postagemFooter {
-  padding: 6px;
+  padding: 8px;
   background-color: #e8e8e8;
   border-bottom-left-radius: 4.8px;
   border-bottom-right-radius: 4.8px;
+  display: flex;
+  gap: 10px;
 }
