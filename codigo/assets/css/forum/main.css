@@ -44,7 +44,7 @@ section#forum .alerta-embutido {
   text-align: center;
   border: solid 1px #ffbfbf;
   background-color: #ffd0cc;
-  color: #7e2d24;
+  color: #7b2d26;
 }
 
 section#forum div#postagensWrapper .postagem {
@@ -59,7 +59,7 @@ section#forum div#postagensWrapper .postagem .postagemHeader {
   align-items: center;
   padding: 20px;
   border-bottom: solid 1px #c3c3c3;
-  box-shadow: 0 0.5px 0.5px rgba(0, 0, 0, 0.234);
+  box-shadow: 0 0 0;
 }
 
 section#forum div#postagensWrapper .postagem .postagemHeader div {
@@ -94,6 +94,7 @@ section#forum
   > div
   > p
   > span {
+  font-size: 14px;
   color: #033649;
 }
 
@@ -102,13 +103,6 @@ section#forum div#postagensWrapper .postagem .postagemHeader img {
   height: 55px;
   border-radius: 50%;
   object-fit: cover;
-}
-
-section#forum div#postagensWrapper .postagem .postForm {
-  padding: 20px;
-  display: flex;
-  flex-flow: column;
-  align-items: flex-end;
 }
 
 section#forum div#postagensWrapper .postagem .postForm {
@@ -130,6 +124,32 @@ section#forum div#postagensWrapper .postagem .postForm .textArea {
   border: none;
   resize: none;
   border-radius: 4.8px;
+}
+
+section#forum
+  div#postagensWrapper
+  .postagem
+  .postForm
+  .textArea::-webkit-scrollbar {
+  width: 10px;
+}
+
+section#forum
+  div#postagensWrapper
+  .postagem
+  .postForm
+  .textArea::-webkit-scrollbar-track {
+  background: #e8e8e8;
+}
+
+section#forum
+  div#postagensWrapper
+  .postagem
+  .postForm
+  .textArea::-webkit-scrollbar-thumb {
+  background-color: #999999;
+  border-radius: 20px;
+  border: 2px solid #e8e8e8;
 }
 
 section#forum div#postagensWrapper .postagem .postForm .textArea:focus {
