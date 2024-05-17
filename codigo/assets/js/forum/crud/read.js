@@ -4,6 +4,8 @@ export function imprimirPostagens() {
     let postagens = consultarPostagens()
     const { data } = postagens
 
+    console.log(data)
+
     let elementosHTMl = data.reduce(
         (postagens, item) =>
             postagens +
@@ -11,7 +13,7 @@ export function imprimirPostagens() {
           <article id="${item.id}" class="postagem">
             <header class="postagemHeader">
                 <div>
-                    <img>
+                    <img src="${item.avatar}" alt="avatar">
                     <div>
                         <h4>${item.nome}</h4>
                         <p>
@@ -24,11 +26,11 @@ export function imprimirPostagens() {
                 
         
                 <div>
-                    <span onClick="editarPostagem(${item.id})">
+                    <span onClick="editarPostagem(${item.id})" data-toggle="tooltip" title="Editar Postagem">
                         <i class="fa-solid fa-pen-to-square"></i>                   
                     </span>
 
-                    <span onClick="removerPostagem(${item.id})">
+                    <span onClick="removerPostagem(${item.id})" data-toggle="tooltip" title="Excluir Postagem">
                         <i class="fa-solid fa-trash"></i>     
                     </span> 
                 </div>             
@@ -40,11 +42,11 @@ export function imprimirPostagens() {
 
             <footer class="postagemFooter">
                 <span>
-                    <i class="fa-regular fa-heart"></i>                 
+                    <i class="fa-regular fa-heart" data-toggle="tooltip" title="Curtir Postagem"></i>                 
                 </span>
 
                 <span>
-                    <i class="fa-regular fa-comment"></i>    
+                    <i class="fa-regular fa-comment" data-toggle="tooltip" title="Comentar Postagem"></i>    
                 </span> 
             </footer>
           </article>

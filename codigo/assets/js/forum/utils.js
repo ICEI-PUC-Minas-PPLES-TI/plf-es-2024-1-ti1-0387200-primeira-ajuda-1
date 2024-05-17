@@ -3,6 +3,7 @@ export const USUARIO = {
     profissao: 'Estudante',
     nome: 'Pedro da Silva',
     data: formataData(new Date()),
+    avatar: '../assets/img/avatar.svg'
 }
 
 export const REMOVE_POSTAGEM = {
