@@ -1,35 +1,35 @@
+const CANCELAR_ATRIBUTOS = {
+    type: "button",
+    id: "cancelarBtn"
+}
+
+const EDITAR_ATRIBUTOS = {
+    type: "submit",
+    id: "editarBtn",
+    disabled: "true"
+}
+
 export function criarBotoes() {
     let editarBtn = document.createElement("button")
     let cancelarBtn = document.createElement("button")
 
-    let cancelarBtnAtributos = {
-        type: "button",
-        id: "cancelarBtn"
-    }
-
-    let editarBtnAtributos = {
-        type: "submit",
-        id: "editarBtn",
-        disabled: "true"
-    }
-
     cancelarBtn.appendChild(document.createTextNode("Cancelar"))
-    Object.keys(cancelarBtnAtributos).forEach((key) => cancelarBtn.setAttribute(key, cancelarBtnAtributos[key]))
+    Object.keys(CANCELAR_ATRIBUTOS).forEach((key) => cancelarBtn.setAttribute(key, CANCELAR_ATRIBUTOS[key]))
 
     editarBtn.appendChild(document.createTextNode("Salvar Alterações"))
-    Object.keys(editarBtnAtributos).forEach((key) => editarBtn.setAttribute(key, editarBtnAtributos[key]))
+    Object.keys(EDITAR_ATRIBUTOS).forEach((key) => editarBtn.setAttribute(key, EDITAR_ATRIBUTOS[key]))
 
     return { editarBtn, cancelarBtn }
 }
 
 export function criarGrupoDeBotoes(id, editarBtn, cancelarBtn) {
-    let atributos = {
+    let GRUPO_ATRIBUTOS = {
         id: `grupoDeBotoes${id}`,
         class: "grupoDeBotoes"
     }
 
     let div = document.createElement("div")
-    Object.keys(atributos).forEach((key) => div.setAttribute(key, atributos[key]))
+    Object.keys(GRUPO_ATRIBUTOS).forEach((key) => div.setAttribute(key, GRUPO_ATRIBUTOS[key]))
 
     div.appendChild(cancelarBtn)
     div.appendChild(editarBtn)

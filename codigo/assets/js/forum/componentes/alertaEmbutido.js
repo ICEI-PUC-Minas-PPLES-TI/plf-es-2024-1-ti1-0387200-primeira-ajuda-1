@@ -1,4 +1,4 @@
-import { CONTEUDO_ALERTA_EMBUTIDO } from "../utils.js"
+const CONTEUDO_ALERTA_EMBUTIDO = `Para criar uma publicação é necessário adicionar um comentário`
 
 export function exibirAlertaEmbutido(form, textArea) {
     let div = document.createElement("div")
@@ -8,3 +8,5 @@ export function exibirAlertaEmbutido(form, textArea) {
 
     form.insertBefore(div, textArea)
 }
+
+
