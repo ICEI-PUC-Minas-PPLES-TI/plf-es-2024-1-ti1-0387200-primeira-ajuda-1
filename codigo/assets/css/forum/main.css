@@ -10,6 +10,7 @@ section#forum h1 {
 
 section#forum #mainForm,
 article.postagensEmpty,
+article.postagensEmpty > div,
 section#forum div#postagensWrapper .postagem .postForm,
 section#forum div#postagensWrapper .postagem .postForm .grupoDeBotoes {
   display: flex;
@@ -63,6 +64,11 @@ article.postagensEmpty {
   padding: 24px;
   flex-direction: row;
   align-items: center;
+}
+
+article.postagensEmpty > div {
+  flex-flow: column;
+  gap: 12px;
 }
 
 section#forum div#postagensWrapper .postagem {
