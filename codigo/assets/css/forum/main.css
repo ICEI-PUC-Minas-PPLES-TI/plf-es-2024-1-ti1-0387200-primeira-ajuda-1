@@ -8,9 +8,15 @@ section#forum h1 {
   margin: 32px auto 32px;
 }
 
+section#forum #mainForm,
+article.postagensEmpty,
+section#forum div#postagensWrapper .postagem .postForm,
+section#forum div#postagensWrapper .postagem .postForm .grupoDeBotoes {
+  display: flex;
+}
+
 section#forum #mainForm {
   padding: 32px;
-  display: flex;
   flex-flow: column;
   align-items: center;
   background-color: #ffffff;
@@ -19,15 +25,20 @@ section#forum #mainForm {
   box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.234);
 }
 
-section#forum #mainForm #mainTextArea {
+section#forum #mainForm #mainTextArea,
+section#forum div#postagensWrapper .postagem .postForm .textArea {
   width: 100%;
-  height: 90px;
   border: none;
   resize: none;
+}
+
+section#forum #mainForm #mainTextArea {
+  height: 90px;
   font-size: 16px;
 }
 
-section#forum #mainForm #mainTextArea:focus {
+section#forum #mainForm #mainTextArea:focus,
+section#forum div#postagensWrapper .postagem .postForm .textArea:focus {
   outline: none;
 }
 
@@ -47,6 +58,13 @@ section#forum .alerta-embutido {
   color: #7b2d26;
 }
 
+article.postagensEmpty {
+  margin: 32px auto 32px;
+  padding: 24px;
+  flex-direction: row;
+  align-items: center;
+}
+
 section#forum div#postagensWrapper .postagem {
   margin: 32px auto 32px;
   border-radius: 4.8px;
@@ -56,22 +74,23 @@ section#forum div#postagensWrapper .postagem {
 }
 
 section#forum div#postagensWrapper .postagem .postagemHeader {
+  justify-content: space-between;
   align-items: center;
   padding: 20px;
   border-bottom: solid 1px #c3c3c3;
   box-shadow: 0 0 0;
 }
 
-section#forum div#postagensWrapper .postagem .postagemHeader div {
-  display: flex;
-  gap: 12px;
+i {
+  cursor: pointer;
 }
 
-section#forum div#postagensWrapper .postagem .postagemHeader div > div {
-  display: flex;
-  flex-flow: column;
-  gap: 0;
-  justify-content: center;
+i:hover {
+  opacity: 0.6;
+}
+
+section#forum div#postagensWrapper .postagem .postagemHeader div {
+  gap: 12px;
 }
 
 section#forum
@@ -99,30 +118,25 @@ section#forum
 }
 
 section#forum div#postagensWrapper .postagem .postagemHeader img {
-  width: 55px;
-  height: 55px;
+  width: 56px;
+  height: 56px;
+  border: solid 2px #c3c3c3;
   border-radius: 50%;
-  object-fit: cover;
 }
 
 section#forum div#postagensWrapper .postagem .postForm {
   padding: 20px;
-  display: flex;
   flex-flow: column;
   align-items: flex-end;
 }
 
 section#forum div#postagensWrapper .postagem .postForm .grupoDeBotoes {
-  display: flex;
   gap: 5px;
 }
 
 section#forum div#postagensWrapper .postagem .postForm .textArea {
-  width: 100%;
   height: 100%;
   padding: 20px;
-  border: none;
-  resize: none;
   border-radius: 4.8px;
 }
 
@@ -152,27 +166,15 @@ section#forum
   border: 2px solid #e8e8e8;
 }
 
-section#forum div#postagensWrapper .postagem .postForm .textArea:focus {
-  outline: none;
-}
-
 section#forum div#postagensWrapper .postagem .postForm .textArea:disabled {
   background-color: #ffffff;
 }
 
 section#forum div#postagensWrapper .postagem .postagemFooter {
   padding: 8px;
+  flex-flow: row;
+  gap: 10px;
   background-color: #e8e8e8;
   border-bottom-left-radius: 4.8px;
   border-bottom-right-radius: 4.8px;
-  display: flex;
-  gap: 10px;
-}
-
-i {
-  cursor: pointer;
-}
-
-i:hover {
-  opacity: 0.6;
 }

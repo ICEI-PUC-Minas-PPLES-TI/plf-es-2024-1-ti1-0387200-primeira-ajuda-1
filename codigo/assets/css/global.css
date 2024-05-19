@@ -84,73 +84,70 @@ body {
   background-color: #f2f4f3;
 }
 
-header {
-  width: 100%;
-  padding: 12px;
+header,
+header > div,
+header nav ul,
+main article.emptyBanner,
+footer {
   display: flex;
-  justify-content: space-between;
+}
+
+header {
+  padding: 12px;
   gap: 24px;
+  align-items: center;
+  justify-content: space-around;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.234);
 }
 
-header .content,
-footer .content {
-  width: 100%;
-  max-width: 1200px;
-  margin-inline: auto;
-  padding-inline: 16px;
-  display: flex;
+header > div {
   align-items: center;
-  justify-content: space-between;
+  gap: 44px;
+}
+
+header nav ul {
   gap: 24px;
 }
 
-header nav,
-footer nav {
-  margin-inline: 100px;
-  flex: 1;
-}
-
-header nav ul,
-footer nav ul {
-  display: flex;
-  gap: 24px;
-}
-
-header nav ul li,
-footer nav ul li {
+header nav ul li {
   font-size: 16px;
   transition: opacity 0.2s;
 }
 
-header nav ul li:hover,
-footer nav ul li:hover {
+header nav ul li:hover {
   opacity: 0.8;
+  text-decoration: underline;
+  text-decoration-color: #242424;
 }
 
-header .userArea img {
+img#avatar {
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
+  border: solid 2px #c3c3c3;
+}
+
+main article.emptyBanner {
+  width: 75%;
+  padding: 16px;
+  margin: 62px auto;
+  align-items: center;
+  gap: 24px;
+}
+
+main article.emptyBanner img#bannerImg {
+  width: 350px;
+  height: 350px;
 }
 
 footer {
-  padding: 55px 0;
+  padding: 16px;
+  flex-flow: column;
+  align-items: center;
+  gap: 16px;
   background-color: #d6dde5;
 }
 
-footer div:nth-child(1) nav {
-  margin: 16px 0 0;
-}
-
-footer div:nth-child(2) {
-  text-align: center;
-}
-
-footer button {
-  display: block;
-  margin-top: 8px;
-  padding: 0 8px;
-  background-color: transparent;
-  border: 1px solid #031634;
-  border-radius: 4px;
-  font-size: 18px;
+footer img#LogoPUC {
+  width: 104px;
 }
