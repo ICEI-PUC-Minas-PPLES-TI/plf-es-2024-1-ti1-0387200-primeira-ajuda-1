@@ -2,7 +2,6 @@ export const USUARIO = {
     level: 'Bronze',
     profissao: 'Estudante',
     nome: 'Pedro da Silva',
-    data: formataData(new Date()),
     avatar: '../assets/img/avatar.svg'
 }
 
