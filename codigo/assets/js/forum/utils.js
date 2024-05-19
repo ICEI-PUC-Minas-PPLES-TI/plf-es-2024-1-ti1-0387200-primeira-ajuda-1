@@ -3,6 +3,7 @@ export const USUARIO = {
     profissao: 'Estudante',
     nome: 'Pedro da Silva',
     data: formataData(new Date()),
+    avatar: '../assets/img/avatar.svg'
 }
 
 export const REMOVE_POSTAGEM = {
@@ -11,11 +12,12 @@ export const REMOVE_POSTAGEM = {
     cancelado: "Ação cancelada!",
 }
 
-function formataData(dateString) {
+
+export function formataData(dateString) {
     return dateString.toLocaleString().replace(',', '')
 }
 
-export function confirmaAcao(variante) {
+export function confirmarAcao(variante) {
     let confirma = confirm(variante.titulo)
 
     if (confirma) {

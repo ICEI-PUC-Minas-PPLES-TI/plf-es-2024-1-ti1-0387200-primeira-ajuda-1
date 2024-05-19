@@ -4,23 +4,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../assets/css/global.css" />
+    <link rel="stylesheet" href="../assets/css/global.css">
+    <link rel="stylesheet" href="../assets/css/forum/main.css">
+    <link rel="shortcut icon" href="../assets/img/favIcon.svg" type="image/x-icon">
     <script src="https://kit.fontawesome.com/8299ee6007.js" crossorigin="anonymous"></script>
     <title>Fórum</title>
 </head>
 
 <body>
     <header>
-        <div class="content">
-            <img src="../assets/img/logo.svg" width="156" alt="Logo" />
+        <a href="../index.html">
+            <img src="../assets/img/logo.svg" width="156" alt="logo">
+        </a>
+
+        <div>
             <nav>
                 <ul>
-                    <li>
-                        <a href="/index.html">Início</a>
-                    </li>
-                    <li>
-                        <a href="#">Pesquisa</a>
-                    </li>
                     <li>
                         <a href="#">Fórum</a>
                     </li>
@@ -29,19 +28,18 @@
                     </li>
                 </ul>
             </nav>
-            <div class="userArea">
-                <img src="../assets/img/profile-picture.png" width="48" height="48" alt="User profile picture" />
-            </div>
+
+            <img src="../assets/img/profile-picture.png" id="avatar" alt="avatar">
         </div>
     </header>
 
     <main>
         <section id="forum">
-            <h2>#COMUNIDADE</h2>
+            <h1>#COMUNIDADE</h1>
 
-            <form>
-                <textarea name="textoEntrada" id="textoEntrada" placeholder="Realizar nova publicação"></textarea>
-                <button type="submit" id="btnPublicar">Salvar</button>
+            <form id="mainForm">
+                <textarea name="mainTextArea" id="mainTextArea" placeholder="Realizar nova publicação"></textarea>
+                <button type="submit" id="btnPublicar">Publicar</button>
             </form>
 
             <div id="postagensWrapper"></div>
@@ -49,31 +47,8 @@
     </main>
 
     <footer>
-        <div class="content">
-            <div>
-                <img src="../assets/img/logo.svg" width="144" alt="Logo" />
-                <nav>
-                    <ul>
-                        <li>
-                            <a href="/index.html">Início</a>
-                        </li>
-                        <li>
-                            <a href="#">Pesquisa</a>
-                        </li>
-                        <li>
-                            <a href="#">Fórum</a>
-                        </li>
-                        <li>
-                            <a href="#">Cursos</a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-            <div>
-                <img src="../assets/img/logo-puc.svg" width="104" alt="Logo PUC" />
-                <button>Primeira Ajuda</button>
-            </div>
-        </div>
+        <img src="../assets/img/logo-puc.svg" id="LogoPUC" alt="LogoPUC">
+        <p>© Copyright 2024. Direitos reservados a Primeira Ajuda.</p>
     </footer>
 
     <script src="../assets/js/forum/main.js" type="module"></script>

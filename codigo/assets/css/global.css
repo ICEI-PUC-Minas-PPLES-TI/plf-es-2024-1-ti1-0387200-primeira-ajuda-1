@@ -1,11 +1,25 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap");
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Inter", sans-serif;
+  font-family: "Mulish", sans-serif;
   color: #242424;
+}
+
+body::-webkit-scrollbar {
+  width: 12px;
+}
+
+body::-webkit-scrollbar-track {
+  background: #e8e8e8;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #7b2d26;
+  border-radius: 20px;
+  border: 2px solid #e8e8e8;
 }
 
 a {
@@ -24,6 +38,10 @@ button {
 
 button:hover {
   opacity: 0.8;
+}
+
+button[disabled] {
+  opacity: 0.2;
 }
 
 form input,
@@ -66,74 +84,72 @@ body {
   background-color: #f2f4f3;
 }
 
-header {
-  width: 100%;
-  padding: 12px 0;
-  display: flex;
-  justify-content: space-between;
-  gap: 24px;
-}
-
-header .content,
-footer .content {
-  width: 100%;
-  max-width: 1200px;
-  margin-inline: auto;
-  padding-inline: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 24px;
-}
-
-header nav,
-footer nav {
-  margin-inline: 100px;
-  flex: 1;
-}
-
+header,
+header > div,
 header nav ul,
-footer nav ul {
+main article.emptyBanner,
+footer {
   display: flex;
+}
+
+header {
+  padding: 12px;
+  gap: 24px;
+  align-items: center;
+  justify-content: space-around;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.234);
+}
+
+header > div {
+  align-items: center;
+  gap: 44px;
+}
+
+header nav ul {
   gap: 24px;
 }
 
-header nav ul li,
-footer nav ul li {
+header nav ul li {
   font-size: 16px;
   transition: opacity 0.2s;
 }
 
-header nav ul li:hover,
-footer nav ul li:hover {
+header nav ul li:hover {
   opacity: 0.8;
+  text-decoration: underline;
+  text-decoration-color: #242424;
 }
 
-header .userArea img {
+img#avatar {
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
+  border: solid 2px #c3c3c3;
+}
+
+main article.emptyBanner {
+  width: 75%;
+  padding: 16px;
+  margin: 62px auto;
+  align-items: center;
+  gap: 24px;
+}
+
+main article.emptyBanner img#bannerImg {
+  width: 350px;
+  height: 350px;
 }
 
 footer {
-  padding: 55px 0;
-  background-color: #D6DDE5;
+  padding: 16px;
+  flex-flow: column;
+  align-items: center;
+  gap: 16px;
+  background-color: #d6dde5;
 }
 
-footer div:nth-child(1) nav {
-  margin: 16px 0 0;
-}
-
-footer div:nth-child(2) {
-  text-align: center;
-}
-
-footer button {
-  display: block;
-  margin-top: 8px;
-  padding: 0 8px;
-  background-color: transparent;
-  border: 1px solid #031634;
-  border-radius: 4px;
-  font-size: 18px;
+footer img#LogoPUC {
+  width: 104px;
 }
 
 table {
