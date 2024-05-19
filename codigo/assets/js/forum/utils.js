@@ -12,7 +12,6 @@ export const REMOVE_POSTAGEM = {
     cancelado: "Ação cancelada!",
 }
 
-export const CONTEUDO_ALERTA_EMBUTIDO = `Para criar uma publicação é necessário adicionar um comentário`
 
 export function formataData(dateString) {
     return dateString.toLocaleString().replace(',', '')
