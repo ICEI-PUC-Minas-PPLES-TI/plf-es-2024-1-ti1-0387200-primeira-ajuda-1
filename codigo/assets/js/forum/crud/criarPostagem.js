@@ -1,5 +1,5 @@
 import { USUARIO } from "../utils.js"
-import { imprimirPostagens } from "./read.js"
+import { imprimirPostagens } from "./exibirPostagem.js"
 import { salvarPostagens, consultarPostagens } from "../main.js"
 import { exibirAlertaEmbutido } from "../componentes/alertaEmbutido.js"
 

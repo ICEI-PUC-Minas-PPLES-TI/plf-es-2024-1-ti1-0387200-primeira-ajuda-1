@@ -1,10 +1,11 @@
 import { consultarPostagens } from "../main.js"
+import { exibirBanner } from "../componentes/banner.js"
+
+const section = document.querySelector("#forum")
 
 export function imprimirPostagens() {
     let postagens = consultarPostagens()
     const { data } = postagens
-
-    console.log(data)
 
     let elementosHTMl = data.reduce(
         (postagens, item) =>
@@ -30,7 +31,7 @@ export function imprimirPostagens() {
                         <i class="fa-solid fa-pen-to-square"></i>                   
                     </span>
 
-                    <span onClick="removerPostagem(${item.id})" data-toggle="tooltip" title="Excluir Postagem">
+                    <span onClick="deletarPostagem(${item.id})" data-toggle="tooltip" title="Excluir Postagem">
                         <i class="fa-solid fa-trash"></i>     
                     </span> 
                 </div>             
@@ -53,6 +54,13 @@ export function imprimirPostagens() {
     `,
         ``
     )
+
+    let banner = document.querySelector(".postagensEmpty")
+    if (elementosHTMl.length === 0) {
+        if (!banner) exibirBanner(section)
+    } else {
+        if (banner) banner.remove()
+    }
 
     document.querySelector("#postagensWrapper").innerHTML = elementosHTMl
 }
