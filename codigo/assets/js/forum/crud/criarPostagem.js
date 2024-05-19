@@ -1,4 +1,4 @@
-import { USUARIO } from "../utils.js"
+import { USUARIO, formataData } from "../utils.js"
 import { imprimirPostagens } from "./exibirPostagem.js"
 import { salvarPostagens, consultarPostagens } from "../main.js"
 import { exibirAlertaEmbutido } from "../componentes/alertaEmbutido.js"
@@ -23,6 +23,7 @@ export function criarPostagem() {
         postagens.data.push({
             id: determinarId(),
             ...USUARIO,
+            data: formataData(new Date()),
             conteudo: textAreaPrincipal.value.trim(),
         })
 
