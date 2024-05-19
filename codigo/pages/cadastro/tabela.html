@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Primeira Ajuda</title>
+    <link rel="stylesheet" href="../../assets/css/global.css" />
+    <link rel="stylesheet" href="../../assets/css/cadastro/principal.css" />
+    <script src="../../assets/js/cadastro/principal.js" defer></script>
+    <script src="../../assets/js/cadastro/tabela.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <div class="content">
+        <img src="../../assets/img/logo.svg" width="156" alt="Logo" />
+        <nav>
+          <ul>
+            <li><a href="/index.html">Início</a></li>
+            <li><a href="#">Pesquisa</a></li>
+            <li><a href="#">Fórum</a></li>
+            <li><a href="#">Cursos</a></li>
+          </ul>
+        </nav>
+        <div class="userArea">
+          <img
+            src="../../assets/img/profile-picture.png"
+            width="48"
+            height="48"
+            alt="User profile picture"
+          />
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section id="registration">
+        <div class="container" style="max-width: initial">
+          <div class="content">
+            <form id="userRegistration">
+              <label for="name">
+                <span>Nome</span>
+                <input id="name" type="text" placeholder="Seu nome" required />
+              </label>
+              <label for="phone">
+                <span>Telefone</span>
+                <input
+                  id="phone"
+                  type="text"
+                  placeholder="(##) #####-####"
+                  required
+                />
+              </label>
+              <label for="city">
+                <span>Cidade</span>
+                <input
+                  id="city"
+                  type="text"
+                  placeholder="Sua cidade"
+                  required
+                />
+              </label>
+              <label for="profession">
+                <span>Profissão</span>
+                <input
+                  id="profession"
+                  type="text"
+                  placeholder="Sua profissão"
+                  required
+                />
+              </label>
+              <label for="email">
+                <span>Email</span>
+                <input
+                  id="email"
+                  type="email"
+                  placeholder="seu@email.com"
+                  required
+                />
+              </label>
+              <label for="password">
+                <span>Senha</span>
+                <input
+                  id="password"
+                  type="password"
+                  placeholder="******"
+                  required
+                />
+              </label>
+              <button type="submit">Salvar</button>
+            </form>
+          </div>
+          <table style="margin-left: 50px" border="1" id="dataTable">
+            <thead>
+              <tr>
+                <th>Nome</th>
+                <th>Telefone</th>
+                <th>Cidade</th>
+                <th>Profissão</th>
+                <th>Email</th>
+                <th>Senha</th>
+                <th>Editar</th>
+                <th>Excluir</th>
+                <th>Perfil</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Conteúdo da tabela será inserido aqui pelo JavaScript -->
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="content">
+        <div>
+          <img src="../../assets/img/logo.svg" width="144" alt="Logo" />
+          <nav>
+            <ul>
+              <li><a href="/index.html">Início</a></li>
+              <li><a href="#">Pesquisa</a></li>
+              <li><a href="#">Fórum</a></li>
+              <li><a href="#">Cursos</a></li>
+            </ul>
+          </nav>
+        </div>
+        <div>
+          <img src="../../assets/img/logo-puc.svg" width="104" alt="Logo PUC" />
+          <button>Primeira Ajuda</button>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

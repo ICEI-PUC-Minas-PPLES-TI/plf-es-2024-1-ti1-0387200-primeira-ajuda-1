@@ -135,3 +135,28 @@ footer button {
   border-radius: 4px;
   font-size: 18px;
 }
+
+table {
+  width: 100%; /*Define a largura da tabela para 100% da largura do contêiner pai.*/
+  border-collapse: collapse; /*Remove o espaço entre as bordas das células da tabela, colapsando-as.*/
+}
+
+th, td {
+  border: 1px solid #dddddd; /*Adiciona uma borda cinza clara de 1 pixel em torno das células.*/
+  text-align: left; /*Alinha o texto à esquerda nas células.*/
+  padding: 8px; /*Adiciona um preenchimento interno de 8 pixels nas células.*/
+}
+
+th {
+  background-color: #f2f2f2; /*Define a cor de fundo das células do cabeçalho para um cinza claro.*/
+}
+
+/* Define estilos para linhas pares (nth-child(even)) da tabela.*/
+tr:nth-child(even) { 
+  background-color: #f9f9f9; /*Define a cor de fundo das linhas pares para um cinza muito claro.*/
+}
+
+/*Define estilos para as linhas quando o mouse passa sobre elas.*/
+tr:hover {
+  background-color: #e0e0e0; /*Define uma cor de fundo mais escura ao passar o mouse sobre a linha.*/
+}
