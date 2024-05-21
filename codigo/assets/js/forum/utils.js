@@ -1,29 +1,15 @@
-export const USUARIO = {
-    level: 'Bronze',
-    profissao: 'Estudante',
-    nome: 'Pedro da Silva',
-    avatar: '../assets/img/avatar.svg'
-}
-
-export const REMOVE_POSTAGEM = {
-    titulo: "Deseja excluir essa postagem?",
-    sucesso: "Sua postagem será excluída.",
-    cancelado: "Ação cancelada!",
-}
-
-
 export function formataData(dateString) {
     return dateString.toLocaleString().replace(',', '')
 }
 
-export function confirmarAcao(variante) {
-    let confirma = confirm(variante.titulo)
+export function confirmarAcao() {
+    let confirma = confirm("Deseja excluir essa postagem?")
 
     if (confirma) {
-        alert(variante.sucesso)
-        return true
+        alert("Sua postagem será excluída.")
     } else {
-        alert(variante.cancelado)
-        return false
+        alert("Ação cancelada!")
     }
+
+    return confirma
 }

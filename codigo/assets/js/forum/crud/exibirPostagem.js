@@ -59,8 +59,10 @@ export function imprimirPostagens() {
     if (elementosHTMl.length === 0) {
         if (!banner) exibirBanner(section)
     } else {
-        if (banner) banner.remove()
+        banner.remove()
     }
 
     document.querySelector("#postagensWrapper").innerHTML = elementosHTMl
 }
+
+

@@ -1,18 +1,6 @@
-import { criarPostagem } from "./crud/criarPostagem.js"
-import { editarPostagem } from "./crud/editarPostagem.js"
-import { deletarPostagem } from "./crud/deletarPostagem.js"
-import { imprimirPostagens } from "./crud/exibirPostagem.js"
+import { criarPostagem, editarPostagem, deletarPostagem, imprimirPostagens } from './postagemController.js'
 
-export function salvarPostagens(dados) {
-    localStorage.setItem("postagens", JSON.stringify(dados))
-}
-
-export function consultarPostagens() {
-    return JSON.parse(localStorage.getItem("postagens")) || { data: [] }
-}
-
-
-document.querySelector("#btnPublicar").addEventListener("click", (evento) => {
+document.querySelector("#mainForm").addEventListener("submit", (evento) => {
     evento.preventDefault()
     criarPostagem()
 })
