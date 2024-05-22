@@ -141,11 +141,12 @@ main article.emptyBanner img#bannerImg {
 }
 
 footer {
-  padding: 16px;
+  padding: 12px;
   flex-flow: column;
   align-items: center;
   gap: 16px;
-  background-color: #d6dde5;
+  font-size: 12px;
+  background-color: #e8e8e8;
 }
 
 footer img#LogoPUC {
@@ -157,7 +158,8 @@ table {
   border-collapse: collapse; /*Remove o espaço entre as bordas das células da tabela, colapsando-as.*/
 }
 
-th, td {
+th,
+td {
   border: 1px solid #dddddd; /*Adiciona uma borda cinza clara de 1 pixel em torno das células.*/
   text-align: left; /*Alinha o texto à esquerda nas células.*/
   padding: 8px; /*Adiciona um preenchimento interno de 8 pixels nas células.*/
@@ -168,7 +170,7 @@ th {
 }
 
 /* Define estilos para linhas pares (nth-child(even)) da tabela.*/
-tr:nth-child(even) { 
+tr:nth-child(even) {
   background-color: #f9f9f9; /*Define a cor de fundo das linhas pares para um cinza muito claro.*/
 }
 

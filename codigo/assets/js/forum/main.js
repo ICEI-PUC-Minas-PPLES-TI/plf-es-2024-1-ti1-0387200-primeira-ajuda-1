@@ -7,4 +7,7 @@ document.querySelector("#mainForm").addEventListener("submit", (evento) => {
 
 window.editarPostagem = (id) => editarPostagem(id)
 window.deletarPostagem = (id) => deletarPostagem(id)
-window.addEventListener("load", imprimirPostagens)
+
+
+
+window.addEventListener("load", () => imprimirPostagens())
