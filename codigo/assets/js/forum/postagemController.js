@@ -272,8 +272,7 @@ document.querySelector("#mainForm").addEventListener("submit", (evento) => {
 })
 
 textAreaPrincipal.addEventListener("input", () => {
-    btnPublicar.disabled = false;
-    if (!textAreaPrincipal.value) btnPublicar.disabled = true
+    btnPublicar.disabled = textAreaPrincipal.value.trim() === ''
 })
 
 window.addEventListener("load", () => {
