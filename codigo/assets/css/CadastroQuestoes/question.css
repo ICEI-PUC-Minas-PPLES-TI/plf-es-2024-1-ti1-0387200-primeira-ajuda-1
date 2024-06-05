@@ -84,6 +84,35 @@ main{
     color:  #031634;
 }
 
+.op-correct{
+    padding: 10px;  
+}
+.op-correct p{
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+.op-correct ul{
+    display: flex;
+    justify-content: space-around;
+    padding-top: 10px;
+    font-size: 16px;
+}
+#correct-awnser1{
+    transform: scale(1.2);
+    margin-right: 5px; 
+}
+#correct-awnser2{
+    transform: scale(1.2);
+    margin-right: 5px; 
+}
+#correct-awnser3{
+    transform: scale(1.2);
+    margin-right: 5px; 
+}
+#correct-awnser4{
+    transform: scale(1.2);
+    margin-right: 5px; 
+}
 
 
 @media screen and (max-width:1200px) {
@@ -96,5 +125,12 @@ main{
     }
    main{
     margin: 10px;
+   }
+   .op-correct ul{
+    display: flex;
+    flex-direction: column;
+   }
+   .op-correct ul li{
+    padding: 10px;
    }
 }
