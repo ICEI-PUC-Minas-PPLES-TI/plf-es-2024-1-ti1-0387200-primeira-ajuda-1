@@ -28,7 +28,7 @@ function getNovasPerguntas() {
         },
         {
             id: getNextID(),
-            pergunta: "Qual é o número de emergência para chamar uma ambulância no Brasil?",
+            pergunta: "Qual é o número de emergência do SAMU no Brasil?",
             Alternativa1: "192",
             Alternativa2: "190",
             Alternativa3: "193",
