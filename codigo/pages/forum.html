@@ -20,12 +20,8 @@
         <div>
             <nav>
                 <ul>
-                    <li>
-                        <a href="#">Fórum</a>
-                    </li>
-                    <li>
-                        <a href="#">Cursos</a>
-                    </li>
+                    <li><a href="#">Fórum</a></li>
+                    <li><a href="#">Cursos</a></li>
                 </ul>
             </nav>
 
@@ -39,8 +35,10 @@
 
             <form id="mainForm">
                 <textarea name="mainTextArea" id="mainTextArea" class="ls-textarea-autoresize"
-                    placeholder="Realizar nova publicação"></textarea>
-                <button type="submit" id="btnPublicar" disabled><i class="fa-solid fa-plus"></i></button>
+                    placeholder="Sobre o que você quer falar?"></textarea>
+                <button type="submit" id="btnPublicar" data-toggle="tooltip" title="Publicar" disabled>
+                    <i class="fa-solid fa-plus"></i>
+                </button>
             </form>
 
             <div id="postagensWrapper"></div>

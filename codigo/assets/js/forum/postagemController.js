@@ -1,8 +1,16 @@
 const section = document.querySelector("#forum")
 const formPrincipal = document.querySelector("#mainForm")
 const btnPublicar = document.querySelector("#btnPublicar")
+const iconePublicar = document.querySelector("#btnPublicar i")
 const textAreaPrincipal = document.querySelector("#mainTextArea")
 const postagensWrapper = document.querySelector("#postagensWrapper")
+
+const USUARIO = {
+    level: 'Bronze',
+    profissao: 'Estudante',
+    nome: 'Pedro da Silva',
+    avatar: '../assets/img/avatar.svg'
+}
 
 function salvarPostagens(dados) {
     localStorage.setItem("postagens", JSON.stringify(dados))
@@ -23,31 +31,40 @@ function formataData(dateString) {
     return dateString.toLocaleString().replace(',', '')
 }
 
+function posicionarCursor(seletor) {
+    seletor.setSelectionRange(0, 0)
+    seletor.focus()
+}
 
-const USUARIO = {
-    level: 'Bronze',
-    profissao: 'Estudante',
-    nome: 'Pedro da Silva',
-    avatar: '../assets/img/avatar.svg'
+function redimensionarAltura() {
+    textAreaPrincipal.style.height = 'auto'
+    textAreaPrincipal.style.height = textAreaPrincipal.scrollHeight + 'px'
+}
+
+function controlarBtnPublicar() {
+    let verificador = textAreaPrincipal.value.trim() === ''
+
+    btnPublicar.disabled = verificador
+    btnPublicar.style.cursor = verificador ? 'not-allowed' : 'pointer'
+    iconePublicar.style.cursor = verificador ? 'not-allowed' : 'pointer'
+    formPrincipal.style.flexFlow = verificador ? 'row' : 'column'
 }
 
 function criarPostagem() {
-    if (textAreaPrincipal.value) {
-        let postagens = consultarPostagens()
-        postagens.data.push({
-            id: determinarId(),
-            ...USUARIO,
-            data: formataData(new Date()),
-            conteudo: textAreaPrincipal.value.trim(),
-        })
+    let postagens = consultarPostagens()
 
-        formPrincipal.reset()
-        salvarPostagens(postagens)
-        imprimirPostagens()
-    }
+    postagens.data.push({
+        id: determinarId(),
+        ...USUARIO,
+        data: formataData(new Date()),
+        conteudo: textAreaPrincipal.value.trim(),
+    })
+
+    salvarPostagens(postagens)
+    imprimirPostagens()
 }
 
-function exibirBanner(section) {
+function exibirBanner() {
     let h2 = document.createElement("h2")
     h2.textContent = "Vamos Começar?"
 
@@ -70,22 +87,29 @@ function exibirBanner(section) {
     section.appendChild(article)
 }
 
+function montarIcone(classNames, tooltip) {
+    let icone = document.createElement("i");
+    icone.setAttribute("data-toggle", "tooltip");
+    icone.setAttribute("title", tooltip);
+    classNames.forEach(className => icone.classList.add(className));
+    return icone;
+}
+
 function montarPostagem(item) {
     let img = document.createElement("img")
-    img.src = `${item.avatar}`
+    img.src = item.avatar
     img.alt = "avatar"
 
     let h4 = document.createElement("h4")
-    h4.textContent = `${item.nome}`
+    h4.textContent = item.nome
 
     let p = document.createElement("p")
-    let conteudo = [`${item.level} `, `| ${item.profissao} |`, ` ${item.data}`]
-    conteudo.forEach((value) => {
+    let conteudos = [`${item.level} `, `| ${item.profissao} |`, ` ${item.data}`]
+    conteudos.forEach((conteudo) => {
         let span = document.createElement("span")
-        span.textContent = value
+        span.textContent = conteudo
         p.appendChild(span)
     })
-
 
     let infoDiv = document.createElement("div")
     infoDiv.appendChild(h4)
@@ -95,20 +119,10 @@ function montarPostagem(item) {
     divSuperior.appendChild(img)
     divSuperior.appendChild(infoDiv)
 
+    let iconeEditar = montarIcone(["fa-solid", "fa-pen-to-square"], "Editar Postagem")
+    let iconeDeletar = montarIcone(["fa-solid", "fa-trash"], "Excluir Postagem")
 
-    let iconeEditar = document.createElement("i")
-    iconeEditar.setAttribute("data-toggle", "tooltip")
-    iconeEditar.setAttribute("title", "Editar Postagem")
-    iconeEditar.classList.add("fa-solid", "fa-pen-to-square")
-
-    iconeEditar.addEventListener('click', () => editarPostagem(`${item.id}`))
-
-    let iconeDeletar = document.createElement("i")
-    iconeDeletar.setAttribute("data-toggle", "tooltip")
-    iconeDeletar.setAttribute("title", "Excluir Postagem")
-    iconeDeletar.classList.add("fa-solid", "fa-trash")
-
-    iconeDeletar.addEventListener('click', () => deletarPostagem(`${item.id}`))
+    iconeEditar.addEventListener("click", console.log('teste'))
 
     let divInferior = document.createElement("div")
     divInferior.appendChild(iconeEditar)
@@ -124,21 +138,14 @@ function montarPostagem(item) {
     textArea.id = `textArea${item.id}`
     textArea.className = "textArea"
     textArea.disabled = true
-    textArea.textContent = `${item.conteudo}`
+    textArea.textContent = item.conteudo
 
     let form = document.createElement("form")
     form.className = "postForm"
     form.appendChild(textArea)
 
-    let iconeCurtir = document.createElement("i")
-    iconeCurtir.setAttribute("data-toggle", "tooltip")
-    iconeCurtir.setAttribute("title", "Curtir Postagem")
-    iconeCurtir.classList.add("fa-regular", "fa-heart")
-
-    let iconeComentar = document.createElement("i")
-    iconeComentar.setAttribute("data-toggle", "tooltip")
-    iconeComentar.setAttribute("title", "Comentar Postagem")
-    iconeComentar.classList.add("fa-regular", "fa-comment")
+    let iconeCurtir = montarIcone(["fa-regular", "fa-heart"], "Curtir Postagem")
+    let iconeComentar = montarIcone(["fa-regular", "fa-comment"], "Comentar Postagem")
 
     let footer = document.createElement("footer")
     footer.className = "postagemFooter"
@@ -146,12 +153,11 @@ function montarPostagem(item) {
     footer.appendChild(iconeComentar)
 
     let article = document.createElement("article")
+    article.id = item.id
     article.className = "postagem"
-    article.id = `${item.id}`
     article.appendChild(header)
     article.appendChild(form)
     article.appendChild(footer)
-
     return article
 }
 
@@ -160,9 +166,8 @@ function imprimirPostagens() {
     let { data } = postagens
 
     let banner = document.querySelector(".postagensEmpty")
-
     if (data.length === 0) {
-        if (!banner) exibirBanner(section)
+        if (!banner) exibirBanner()
     } else {
         if (banner) banner.remove()
         postagensWrapper.innerHTML = data.reduce((postagens, item) => postagens + `${montarPostagem(item).outerHTML}`, ``)
@@ -198,10 +203,10 @@ function criarBotoes() {
     let editarBtn = document.createElement("button")
     let cancelarBtn = document.createElement("button")
 
-    cancelarBtn.appendChild(document.createTextNode("Cancelar"))
+    cancelarBtn.textContent = "Cancelar"
     Object.keys(CANCELAR_ATRIBUTOS).forEach((key) => cancelarBtn.setAttribute(key, CANCELAR_ATRIBUTOS[key]))
 
-    editarBtn.appendChild(document.createTextNode("Salvar Alterações"))
+    editarBtn.textContent = "Salvar Alterações"
     Object.keys(EDITAR_ATRIBUTOS).forEach((key) => editarBtn.setAttribute(key, EDITAR_ATRIBUTOS[key]))
 
     return { editarBtn, cancelarBtn }
@@ -265,18 +270,24 @@ function editarPostagem(id) {
     if (!grupoDeBotoes) postagemTextArea.parentElement.appendChild(criarGrupoDeBotoes(id, editarBtn, cancelarBtn))
 }
 
-
-document.querySelector("#mainForm").addEventListener("submit", (evento) => {
-    evento.preventDefault()
-    criarPostagem()
+textAreaPrincipal.addEventListener("input", () => {
+    controlarBtnPublicar()
+    redimensionarAltura()
 })
 
-textAreaPrincipal.addEventListener("input", () => {
-    btnPublicar.disabled = textAreaPrincipal.value.trim() === ''
+formPrincipal.addEventListener("submit", (evento) => {
+    evento.preventDefault()
+
+    criarPostagem()
+    formPrincipal.reset()
+    controlarBtnPublicar()
+    redimensionarAltura()
+    posicionarCursor(textAreaPrincipal)
+
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 })
 
 window.addEventListener("load", () => {
     imprimirPostagens()
-    textAreaPrincipal.setSelectionRange(0, 0)
-    textAreaPrincipal.focus()
+    posicionarCursor(textAreaPrincipal)
 })
