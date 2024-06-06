@@ -1,16 +1,18 @@
-const section = document.querySelector("#forum")
-const formPrincipal = document.querySelector("#mainForm")
-const btnPublicar = document.querySelector("#btnPublicar")
-const iconePublicar = document.querySelector("#btnPublicar i")
-const textAreaPrincipal = document.querySelector("#mainTextArea")
-const postagensWrapper = document.querySelector("#postagensWrapper")
-
 const USUARIO = {
     level: 'Bronze',
     profissao: 'Estudante',
     nome: 'Pedro da Silva',
     avatar: '../assets/img/avatar.svg'
 }
+
+const consultarSeletor = (variante) => document.querySelector(variante)
+
+const section = consultarSeletor("#forum")
+const formPrincipal = consultarSeletor("#mainForm")
+const btnPublicar = consultarSeletor("#btnPublicar")
+const iconePublicar = consultarSeletor("#btnPublicar i")
+const textAreaPrincipal = consultarSeletor("#mainTextArea")
+const postagensWrapper = consultarSeletor("#postagensWrapper")
 
 function salvarPostagens(dados) {
     localStorage.setItem("postagens", JSON.stringify(dados))
@@ -42,7 +44,7 @@ function redimensionarAltura() {
 }
 
 function controlarBtnPublicar() {
-    let verificador = textAreaPrincipal.value.trim() === ''
+    const verificador = textAreaPrincipal.value.trim() === ''
 
     btnPublicar.disabled = verificador
     btnPublicar.style.cursor = verificador ? 'not-allowed' : 'pointer'
@@ -51,7 +53,7 @@ function controlarBtnPublicar() {
 }
 
 function criarPostagem() {
-    let postagens = consultarPostagens()
+    const postagens = consultarPostagens()
 
     postagens.data.push({
         id: determinarId(),
@@ -64,22 +66,22 @@ function criarPostagem() {
     imprimirPostagens()
 }
 
-function exibirBanner() {
-    let h2 = document.createElement("h2")
+function montarBanner() {
+    const h2 = document.createElement("h2")
     h2.textContent = "Vamos Começar?"
 
-    let p = document.createElement("p")
+    const p = document.createElement("p")
     p.textContent = "Parece que não temos nenhuma informação por aqui...Que tal criar uma nova publicação?"
 
-    let div = document.createElement("div")
+    const div = document.createElement("div")
     div.appendChild(h2)
     div.appendChild(p)
 
-    let img = document.createElement("img")
+    const img = document.createElement("img")
     img.src = "../assets/img/forum.svg"
     img.alt = "postagensEmpty"
 
-    let article = document.createElement("article")
+    const article = document.createElement("article")
     article.className = "postagensEmpty"
 
     article.appendChild(div)
@@ -87,72 +89,71 @@ function exibirBanner() {
     section.appendChild(article)
 }
 
-function montarIcone(classNames, tooltip) {
-    let icone = document.createElement("i");
+function montarIcone(id, classes, tooltip, callback) {
+    const icone = document.createElement("i");
     icone.setAttribute("data-toggle", "tooltip");
     icone.setAttribute("title", tooltip);
-    classNames.forEach(className => icone.classList.add(className));
+    icone.addEventListener("click", () => callback(id))
+    classes.forEach(classe => icone.classList.add(classe));
     return icone;
 }
 
 function montarPostagem(item) {
-    let img = document.createElement("img")
+    const img = document.createElement("img")
     img.src = item.avatar
     img.alt = "avatar"
 
-    let h4 = document.createElement("h4")
+    const h4 = document.createElement("h4")
     h4.textContent = item.nome
 
-    let p = document.createElement("p")
-    let conteudos = [`${item.level} `, `| ${item.profissao} |`, ` ${item.data}`]
+    const p = document.createElement("p")
+    const conteudos = [`${item.level} `, `| ${item.profissao} |`, ` ${item.data}`]
     conteudos.forEach((conteudo) => {
-        let span = document.createElement("span")
+        const span = document.createElement("span")
         span.textContent = conteudo
         p.appendChild(span)
     })
 
-    let infoDiv = document.createElement("div")
+    const infoDiv = document.createElement("div")
     infoDiv.appendChild(h4)
     infoDiv.appendChild(p)
 
-    let divSuperior = document.createElement("div")
+    const divSuperior = document.createElement("div")
     divSuperior.appendChild(img)
     divSuperior.appendChild(infoDiv)
 
-    let iconeEditar = montarIcone(["fa-solid", "fa-pen-to-square"], "Editar Postagem")
-    let iconeDeletar = montarIcone(["fa-solid", "fa-trash"], "Excluir Postagem")
+    const iconeEditar = montarIcone(item.id, ["fa-solid", "fa-pen-to-square"], "Editar Postagem", editarPostagem)
+    const iconeDeletar = montarIcone(item.id, ["fa-solid", "fa-trash"], "Excluir Postagem", deletarPostagem)
 
-    iconeEditar.addEventListener("click", console.log('teste'))
-
-    let divInferior = document.createElement("div")
+    const divInferior = document.createElement("div")
     divInferior.appendChild(iconeEditar)
     divInferior.appendChild(iconeDeletar)
 
-    let header = document.createElement("header")
+    const header = document.createElement("header")
     header.className = "postagemHeader"
 
     header.appendChild(divSuperior)
     header.appendChild(divInferior)
 
-    let textArea = document.createElement("textarea")
+    const textArea = document.createElement("textarea")
     textArea.id = `textArea${item.id}`
     textArea.className = "textArea"
     textArea.disabled = true
     textArea.textContent = item.conteudo
 
-    let form = document.createElement("form")
+    const form = document.createElement("form")
     form.className = "postForm"
     form.appendChild(textArea)
 
-    let iconeCurtir = montarIcone(["fa-regular", "fa-heart"], "Curtir Postagem")
-    let iconeComentar = montarIcone(["fa-regular", "fa-comment"], "Comentar Postagem")
+    const iconeCurtir = montarIcone(item.id, ["fa-regular", "fa-heart"], "Curtir Postagem", console.log)
+    const iconeComentar = montarIcone(item.id, ["fa-regular", "fa-comment"], "Comentar Postagem", console.log)
 
-    let footer = document.createElement("footer")
+    const footer = document.createElement("footer")
     footer.className = "postagemFooter"
     footer.appendChild(iconeCurtir)
     footer.appendChild(iconeComentar)
 
-    let article = document.createElement("article")
+    const article = document.createElement("article")
     article.id = item.id
     article.className = "postagem"
     article.appendChild(header)
@@ -162,22 +163,29 @@ function montarPostagem(item) {
 }
 
 function imprimirPostagens() {
-    let postagens = consultarPostagens()
-    let { data } = postagens
+    const postagens = consultarPostagens()
+    const { data } = postagens
 
-    let banner = document.querySelector(".postagensEmpty")
+    postagensWrapper.innerHTML = ''
+    const banner = consultarSeletor(".postagensEmpty")
+    const fragmento = document.createDocumentFragment();
+
     if (data.length === 0) {
-        if (!banner) exibirBanner()
+        if (!banner) montarBanner()
     } else {
         if (banner) banner.remove()
-        postagensWrapper.innerHTML = data.reduce((postagens, item) => postagens + `${montarPostagem(item).outerHTML}`, ``)
+        data.forEach(item => {
+            const postagem = montarPostagem(item)
+            fragmento.appendChild(postagem)
+        })
 
+        postagensWrapper.appendChild(fragmento)
     }
 }
 
 function deletarPostagem(id) {
-    let postagens = consultarPostagens()
-    let confirma = confirm("Deseja excluir essa postagem?")
+    const postagens = consultarPostagens()
+    const confirma = confirm("Deseja excluir essa postagem?")
 
     if (confirma) {
         alert("Sua postagem será excluída.")
@@ -200,8 +208,8 @@ function criarBotoes() {
         disabled: "true"
     }
 
-    let editarBtn = document.createElement("button")
-    let cancelarBtn = document.createElement("button")
+    const editarBtn = document.createElement("button")
+    const cancelarBtn = document.createElement("button")
 
     cancelarBtn.textContent = "Cancelar"
     Object.keys(CANCELAR_ATRIBUTOS).forEach((key) => cancelarBtn.setAttribute(key, CANCELAR_ATRIBUTOS[key]))
@@ -213,12 +221,12 @@ function criarBotoes() {
 }
 
 function criarGrupoDeBotoes(id, editarBtn, cancelarBtn) {
-    let GRUPO_ATRIBUTOS = {
+    const GRUPO_ATRIBUTOS = {
         id: `grupoDeBotoes${id}`,
         class: "grupoDeBotoes"
     }
 
-    let div = document.createElement("div")
+    const div = document.createElement("div")
     Object.keys(GRUPO_ATRIBUTOS).forEach((key) => div.setAttribute(key, GRUPO_ATRIBUTOS[key]))
 
     div.appendChild(cancelarBtn)
@@ -227,47 +235,50 @@ function criarGrupoDeBotoes(id, editarBtn, cancelarBtn) {
 }
 
 function editarPostagem(id) {
-    let postagemTextArea = document.querySelector(`#textArea${id}`)
+    const postagens = consultarPostagens()
+    const { data } = postagens
+
+    const postagemTextArea = consultarSeletor(`#textArea${id}`)
+    const textAreaValorIncial = postagemTextArea.value
+
     postagemTextArea.disabled = false
+    postagemTextArea.selectionStart = postagemTextArea.value.length;
+    postagemTextArea.selectionEnd = postagemTextArea.value.length;
+    postagemTextArea.focus();
 
-    let { editarBtn, cancelarBtn } = criarBotoes()
-    cancelarBtn.addEventListener("click", imprimirPostagens)
-
-    postagemTextArea.addEventListener("change", () => {
-        editarBtn.disabled = false
-
-        editarBtn.addEventListener("click", (evento) => {
-            evento.preventDefault()
-
-            if (postagemTextArea.value) {
-                let postagens = consultarPostagens()
-                let { data } = postagens
-
-
-                salvarPostagens({
-                    data: data.reduce(
-                        (postagens, item) =>
-                            item.id === id
-                                ? [
-                                    ...postagens,
-                                    {
-                                        ...item,
-                                        conteudo: postagemTextArea.value.trim(),
-                                        data: formataData(new Date()),
-                                    },
-                                ]
-                                : [...postagens, item],
-                        []
-                    )
-                })
-                imprimirPostagens()
-            }
-        })
+    postagemTextArea.addEventListener("input", () => {
+        editarBtn.disabled = postagemTextArea.value === '' || postagemTextArea.value === textAreaValorIncial
     })
 
+    const { editarBtn, cancelarBtn } = criarBotoes()
+    cancelarBtn.addEventListener("click", imprimirPostagens)
 
-    let grupoDeBotoes = document.querySelector(`#grupoDeBotoes${id}`)
+    editarBtn.addEventListener("click", (evento) => {
+        evento.preventDefault()
+        if (postagemTextArea.value) {
+            salvarPostagens({
+                data: data.reduce(
+                    (postagens, item) =>
+                        item.id === id
+                            ? [
+                                ...postagens,
+                                {
+                                    ...item,
+                                    conteudo: postagemTextArea.value.trim(),
+                                    data: formataData(new Date()),
+                                },
+                            ]
+                            : [...postagens, item],
+                    []
+                )
+            })
+            imprimirPostagens()
+        }
+    })
+
+    const grupoDeBotoes = consultarSeletor(`#grupoDeBotoes${id}`)
     if (!grupoDeBotoes) postagemTextArea.parentElement.appendChild(criarGrupoDeBotoes(id, editarBtn, cancelarBtn))
+
 }
 
 textAreaPrincipal.addEventListener("input", () => {
@@ -277,17 +288,15 @@ textAreaPrincipal.addEventListener("input", () => {
 
 formPrincipal.addEventListener("submit", (evento) => {
     evento.preventDefault()
-
     criarPostagem()
     formPrincipal.reset()
     controlarBtnPublicar()
     redimensionarAltura()
     posicionarCursor(textAreaPrincipal)
-
     window.scrollTo({ top: 0, behavior: 'smooth' });
 })
 
-window.addEventListener("load", () => {
+window.addEventListener("DOMContentLoaded", () => {
     imprimirPostagens()
     posicionarCursor(textAreaPrincipal)
 })
