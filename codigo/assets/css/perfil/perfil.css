@@ -85,19 +85,12 @@ input {
     height: 100px;
 }
 
-.button {
+#btn {
     background-color: black;
     border: none;
-    color: white;
-    padding: 7px 15px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
     margin: 4px 2px;
     cursor: pointer;
     -webkit-transition-duration: 0.4s;
-    /* Safari */
     transition-duration: 0.4s;
 }
 
