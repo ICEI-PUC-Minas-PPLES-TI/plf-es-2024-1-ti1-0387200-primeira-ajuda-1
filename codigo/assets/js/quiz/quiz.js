@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const questionCountInput = document.getElementById('questionCount');
+    const questionCountInput = document.getElementById('contadorQuestoes');
     const perguntas = JSON.parse(localStorage.getItem('CadastroPerguntas')) || [];
 
     if (perguntas.length === 0) {
@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     questionCountInput.max = perguntas.length;
 });
 
-function getNextID() {
+function getNovoID() {
     const perguntas = JSON.parse(localStorage.getItem('CadastroPerguntas')) || [];
     return perguntas.length > 0 ? Math.max(perguntas.map(p => p.id)) + 1 : 1;
 }
@@ -18,7 +18,7 @@ function getNextID() {
 function getNovasPerguntas() {
     return [
         {
-            id: getNextID(),
+            id: getNovoID(),
             pergunta: "Qual é a primeira coisa a fazer ao chegar em uma cena de acidente?",
             Alternativa1: "Chamar ajuda profissional",
             Alternativa2: "Checar a segurança do local",
@@ -27,7 +27,7 @@ function getNovasPerguntas() {
             Resposta: "Checar a segurança do local"
         },
         {
-            id: getNextID(),
+            id: getNovoID(),
             pergunta: "Qual é o número de emergência do SAMU no Brasil?",
             Alternativa1: "192",
             Alternativa2: "190",
@@ -36,7 +36,7 @@ function getNovasPerguntas() {
             Resposta: "192"
         },
         {
-            id: getNextID(),
+            id: getNovoID(),
             pergunta: "Qual é a sequência correta da RCP em adultos?",
             Alternativa1: "Compressões, respirações, desfibrilação",
             Alternativa2: "Respirações, compressões, desfibrilação",
@@ -45,7 +45,7 @@ function getNovasPerguntas() {
             Resposta: "Compressões, respirações, desfibrilação"
         },
         {
-            id: getNextID(),
+            id: getNovoID(),
             pergunta: "O que deve ser feito em caso de queimadura de primeiro grau?",
             Alternativa1: "Aplicar gelo diretamente",
             Alternativa2: "Cobrir com pano sujo",
@@ -54,7 +54,7 @@ function getNovasPerguntas() {
             Resposta: "Resfriar com água corrente"
         },
         {
-            id: getNextID(),
+            id: getNovoID(),
             pergunta: "Como identificar uma fratura exposta?",
             Alternativa1: "Dor intensa e inchaço",
             Alternativa2: "Osso visível através da pele",
@@ -63,7 +63,7 @@ function getNovasPerguntas() {
             Resposta: "Osso visível através da pele"
         },
         {
-            id: getNextID(),
+            id: getNovoID(),
             pergunta: "O que é importante evitar ao socorrer uma vítima de choque elétrico?",
             Alternativa1: "Usar um isolante para afastar a fonte de energia",
             Alternativa2: "Tocar a vítima enquanto ainda está em contato com a fonte de energia",
@@ -72,7 +72,7 @@ function getNovasPerguntas() {
             Resposta: "Tocar a vítima enquanto ainda está em contato com a fonte de energia"
         },
         {
-            id: getNextID(),
+            id: getNovoID(),
             pergunta: "Qual é o principal sintoma de uma concussão?",
             Alternativa1: "Dor de estômago",
             Alternativa2: "Dor de cabeça",
@@ -81,7 +81,7 @@ function getNovasPerguntas() {
             Resposta: "Dor de cabeça"
         },
         {
-            id: getNextID(),
+            id: getNovoID(),
             pergunta: "O que fazer ao encontrar alguém engasgado que não pode falar?",
             Alternativa1: "Iniciar a manobra de Heimlich",
             Alternativa2: "Oferecer água",
@@ -90,7 +90,7 @@ function getNovasPerguntas() {
             Resposta: "Iniciar a manobra de Heimlich"
         },
         {
-            id: getNextID(),
+            id: getNovoID(),
             pergunta: "Como tratar uma entorse leve no tornozelo?",
             Alternativa1: "Aplicar calor",
             Alternativa2: "Aplicar gelo",
@@ -99,7 +99,7 @@ function getNovasPerguntas() {
             Resposta: "Aplicar gelo"
         },
         {
-            id: getNextID(),
+            id: getNovoID(),
             pergunta: "Qual é o primeiro passo ao realizar a RCP?",
             Alternativa1: "Verificar a resposta da vítima",
             Alternativa2: "Ligar para os serviços de emergência",
@@ -108,7 +108,7 @@ function getNovasPerguntas() {
             Resposta: "Verificar a resposta da vítima"
         },
         {
-            id: getNextID(),
+            id: getNovoID(),
             pergunta: "O que é uma hemorragia interna?",
             Alternativa1: "Perda de sangue visível fora do corpo",
             Alternativa2: "Acúmulo de sangue dentro do corpo",
@@ -117,7 +117,7 @@ function getNovasPerguntas() {
             Resposta: "Acúmulo de sangue dentro do corpo"
         },
         {
-            id: getNextID(),
+            id: getNovoID(),
             pergunta: "Como ajudar uma pessoa com crise convulsiva?",
             Alternativa1: "Imobilizar a pessoa",
             Alternativa2: "Colocar algo na boca da pessoa",
@@ -126,7 +126,7 @@ function getNovasPerguntas() {
             Resposta: "Proteger a cabeça da pessoa"
         },
         {
-            id: getNextID(),
+            id: getNovoID(),
             pergunta: "Qual é o procedimento correto para tratar uma picada de abelha?",
             Alternativa1: "Aplicar gelo",
             Alternativa2: "Retirar o ferrão com pinça",
@@ -135,7 +135,7 @@ function getNovasPerguntas() {
             Resposta: "Retirar o ferrão com pinça"
         },
         {
-            id: getNextID(),
+            id: getNovoID(),
             pergunta: "O que deve ser feito primeiro em caso de afogamento?",
             Alternativa1: "Realizar respiração boca-a-boca",
             Alternativa2: "Chamar ajuda profissional",
@@ -144,7 +144,7 @@ function getNovasPerguntas() {
             Resposta: "Retirar a vítima da água"
         },
         {
-            id: getNextID(),
+            id: getNovoID(),
             pergunta: "Como proceder em caso de suspeita de envenenamento?",
             Alternativa1: "Induzir vômito imediatamente",
             Alternativa2: "Dar água para diluir o veneno",
@@ -155,8 +155,8 @@ function getNovasPerguntas() {
     ];
 }
 
-function startQuiz() {
-    const questionCount = parseInt(document.getElementById('questionCount').value);
+function funcaoQuiz() {
+    const questionCount = parseInt(document.getElementById('contadorQuestoes').value);
     const quizContainer = document.getElementById('quiz-container');
     const setupContainer = document.getElementById('setup-container');
     const quizButtons = document.querySelector('.quiz-buttons');
@@ -167,9 +167,9 @@ function startQuiz() {
     }
 
     const perguntas = JSON.parse(localStorage.getItem('CadastroPerguntas')) || [];
-    const numberOfQuestions = Math.min(questionCount, perguntas.length);
+    const numeroQuestoes = Math.min(questionCount, perguntas.length);
 
-    if (numberOfQuestions === 0) {
+    if (numeroQuestoes === 0) {
         quizContainer.innerHTML = '<p>Não há perguntas cadastradas.</p>';
         return;
     }
@@ -180,7 +180,7 @@ function startQuiz() {
 
     quizContainer.innerHTML = '';
 
-    const shuffledQuestions = perguntas.sort(() => 0.5 - Math.random()).slice(0, numberOfQuestions);
+    const shuffledQuestions = perguntas.sort(() => 0.5 - Math.random()).slice(0, numeroQuestoes);
 
     shuffledQuestions.forEach((pergunta, index) => {
         const questionHTML = `
@@ -208,16 +208,16 @@ function startQuiz() {
 
 function submitQuiz() {
     const perguntas = JSON.parse(localStorage.getItem('CadastroPerguntas')) || [];
-    const questionCount = parseInt(document.getElementById('questionCount').value);
-    const numberOfQuestions = Math.min(questionCount, perguntas.length);
+    const questionCount = parseInt(document.getElementById('contadorQuestoes').value);
+    const numeroQuestoes = Math.min(questionCount, perguntas.length);
     let score = 0;
 
-    perguntas.slice(0, numberOfQuestions).forEach((pergunta, index) => {
+    perguntas.slice(0, numeroQuestoes).forEach((pergunta, index) => {
         const userAnswer = document.querySelector(`input[name="question${index}"]:checked`);
         if (userAnswer && userAnswer.value === pergunta.Resposta) {
             score++;
         }
     });
 
-    alert(`Você acertou ${score} de ${numberOfQuestions} perguntas.`);
+    alert(`Você acertou ${score} de ${numeroQuestoes} perguntas.`);
 }
