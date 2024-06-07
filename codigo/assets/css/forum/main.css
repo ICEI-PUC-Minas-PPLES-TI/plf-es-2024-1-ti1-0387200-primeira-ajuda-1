@@ -12,7 +12,15 @@ section#forum #mainForm,
 article.postagensEmpty,
 article.postagensEmpty > div,
 section#forum div#postagensWrapper .postagem .postForm,
-section#forum div#postagensWrapper .postagem .postForm .grupoDeBotoes {
+section#forum div#postagensWrapper .postagem .postForm .grupoDeBotoes,
+section#forum div#postagensWrapper .postagem .postagemFooter .divIcones,
+section#forum div#postagensWrapper .postagem .postagemFooter .commentForm,
+section#forum
+  div#postagensWrapper
+  .postagem
+  .postagemFooter
+  .commentForm
+  .grupoDeBotoes {
   display: flex;
 }
 
@@ -31,19 +39,37 @@ section#forum #mainForm {
 }
 
 section#forum #mainForm #mainTextArea,
-section#forum div#postagensWrapper .postagem .postForm .textArea {
+section#forum div#postagensWrapper .postagem .postForm .textArea,
+section#forum
+  div#postagensWrapper
+  .postagem
+  .postagemFooter
+  .comentarioTextArea {
   width: 100%;
   border: none;
   resize: none;
 }
 
 section#forum #mainForm #mainTextArea:focus,
-section#forum div#postagensWrapper .postagem .postForm .textArea:focus {
+section#forum div#postagensWrapper .postagem .postForm .textArea:focus,
+section#forum
+  div#postagensWrapper
+  .postagem
+  .postagemFooter
+  .comentarioTextArea {
   outline: none;
 }
 
 section#forum #mainForm #mainTextArea {
   font-size: 16px;
+}
+
+section#forum #mainForm #mainTextArea,
+section#forum
+  div#postagensWrapper
+  .postagem
+  .postagemFooter
+  .comentarioTextArea {
   overflow: hidden;
   text-align: justify;
 }
@@ -146,10 +172,15 @@ section#forum div#postagensWrapper .postagem .postForm {
 }
 
 section#forum div#postagensWrapper .postagem .postForm .grupoDeBotoes {
-  gap: 5px;
+  gap: 4px;
 }
 
-section#forum div#postagensWrapper .postagem .postForm .textArea {
+section#forum div#postagensWrapper .postagem .postForm .textArea,
+section#forum
+  div#postagensWrapper
+  .postagem
+  .postagemFooter
+  .comentarioTextArea {
   padding: 6px;
   font-size: 14px;
   border-radius: 4.8px;
@@ -187,11 +218,41 @@ section#forum div#postagensWrapper .postagem .postForm .textArea:disabled {
 }
 
 section#forum div#postagensWrapper .postagem .postagemFooter {
-  flex-flow: row;
-  gap: 10px;
+  flex-flow: column;
+  gap: 16px;
   border-top: 1px solid #c3c3c3;
   background-color: #ffffff;
   border-bottom-left-radius: 4.8px;
   border-bottom-right-radius: 4.8px;
   font-size: 16px;
+}
+
+section#forum div#postagensWrapper .postagem .postagemFooter .divIcones {
+  align-self: start;
+  gap: 8px;
+}
+
+section#forum div#postagensWrapper .postagem .postagemFooter .commentForm {
+  width: 100%;
+  display: none;
+  flex-flow: column;
+}
+
+section#forum
+  div#postagensWrapper
+  .postagem
+  .postagemFooter
+  .commentForm
+  .grupoDeBotoes {
+  align-self: end;
+  gap: 4px;
+}
+
+section#forum
+  div#postagensWrapper
+  .postagem
+  .postagemFooter
+  .comentarioTextArea {
+  width: 100%;
+  border: 1px solid #c3c3c3;
 }
