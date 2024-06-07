@@ -8,6 +8,7 @@ function preencherTabela() {
           <td>${u.name}</td>
           <td>${u.phone}</td>
           <td>${u.city}</td>
+          <td>${u.neighborhood}</td>
           <td>${u.profession}</td>
           <td>${u.email}</td>
           <td>${u.password}</td>
@@ -36,6 +37,7 @@ function preencherFormularioDeCadastro(id) {
   nameField.value = usuario.name;
   phoneField.value = usuario.phone;
   cityField.value = usuario.city;
+  neighborhoodField.value = usuario.neighborhood;
   professionField.value = usuario.profession;
   emailField.value = usuario.email;
   passwordField.value = usuario.password;

@@ -3,6 +3,7 @@ const userRegistrationForm = document.querySelector("form#userRegistration");
 const nameField = userRegistrationForm.querySelector("#name");
 const phoneField = userRegistrationForm.querySelector("#phone");
 const cityField = userRegistrationForm.querySelector("#city");
+const neighborhoodField = userRegistrationForm.querySelector("#neighborhood");
 const professionField = userRegistrationForm.querySelector("#profession");
 const emailField = userRegistrationForm.querySelector("#email");
 const passwordField = userRegistrationForm.querySelector("#password");
@@ -27,7 +28,15 @@ function buscarUsuario(id) {
   return usuario;
 }
 
-function cadastrarUsuario(name, phone, city, profession, email, password) {
+function cadastrarUsuario(
+  name,
+  phone,
+  city,
+  neighborhood,
+  profession,
+  email,
+  password
+) {
   const usuarios = buscarUsuarios();
 
   usuarios.push({
@@ -35,6 +44,7 @@ function cadastrarUsuario(name, phone, city, profession, email, password) {
     name,
     phone,
     city,
+    neighborhood,
     profession,
     email,
     password,
@@ -43,7 +53,16 @@ function cadastrarUsuario(name, phone, city, profession, email, password) {
   localStorage.setItem("usuarios", JSON.stringify(usuarios));
 }
 
-function editarUsuario(id, name, phone, city, profession, email, password) {
+function editarUsuario(
+  id,
+  name,
+  phone,
+  city,
+  neighborhood,
+  profession,
+  email,
+  password
+) {
   const usuarios = buscarUsuarios();
 
   for (let i = 0; i < usuarios.length; i++) {
@@ -53,6 +72,7 @@ function editarUsuario(id, name, phone, city, profession, email, password) {
         name,
         phone,
         city,
+        neighborhood,
         profession,
         email,
         password,
@@ -84,6 +104,7 @@ userRegistrationForm.addEventListener("submit", (e) => {
       nameField.value,
       phoneField.value,
       cityField.value,
+      neighborhoodField.value,
       professionField.value,
       emailField.value,
       passwordField.value
@@ -98,6 +119,7 @@ userRegistrationForm.addEventListener("submit", (e) => {
     nameField.value,
     phoneField.value,
     cityField.value,
+    neighborhoodField.value,
     professionField.value,
     emailField.value,
     passwordField.value
