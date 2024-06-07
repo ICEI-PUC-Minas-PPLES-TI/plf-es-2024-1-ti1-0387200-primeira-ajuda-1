@@ -140,9 +140,9 @@ function montarPostagem(item) {
     textArea.disabled = true
     textArea.textContent = item.conteudo
 
-    const form = document.createElement("form")
-    form.className = "postForm"
-    form.appendChild(textArea)
+    const formPostagem = document.createElement("form")
+    formPostagem.className = "postForm"
+    formPostagem.appendChild(textArea)
 
     const iconeCurtir = montarIcone({
         id: item.id,
@@ -167,7 +167,7 @@ function montarPostagem(item) {
     article.id = item.id
     article.className = "postagem"
     article.appendChild(header)
-    article.appendChild(form)
+    article.appendChild(formPostagem)
     article.appendChild(footer)
     return article
 }
