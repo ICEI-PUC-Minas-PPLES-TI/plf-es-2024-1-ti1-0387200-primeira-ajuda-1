@@ -6,7 +6,6 @@ const USUARIO = {
 }
 
 const consultarSeletor = (variante) => document.querySelector(variante)
-
 const section = consultarSeletor("#forum")
 const formPrincipal = consultarSeletor("#mainForm")
 const btnPublicar = consultarSeletor("#btnPublicar")
@@ -188,7 +187,6 @@ function deletarPostagem(id) {
     const confirma = confirm("Deseja excluir essa postagem?")
 
     if (confirma) {
-        alert("Sua postagem será excluída.")
         salvarPostagens({ data: postagens.data.filter((postagem) => postagem.id !== id) })
         imprimirPostagens()
     } else {
