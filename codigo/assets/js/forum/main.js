@@ -12,7 +12,9 @@ const USUARIO2 = {
     avatar: '../assets/img/avatar.svg'
 }
 
+const criarElemento = (variante) => document.createElement(variante)
 const consultarSeletor = (variante) => document.querySelector(variante)
+
 const section = consultarSeletor('#forum')
 const formPrincipal = consultarSeletor('#mainForm')
 const btnPublicar = consultarSeletor('#btnPublicar')
@@ -62,21 +64,21 @@ function controlarBtnPublicar() {
 }
 
 function montarBanner() {
-    const h2 = document.createElement('h2')
+    const h2 = criarElemento('h2')
     h2.textContent = 'Vamos Começar?'
 
-    const p = document.createElement('p')
+    const p = criarElemento('p')
     p.textContent = 'Parece que não temos nenhuma informação por aqui...Que tal criar uma nova publicação?'
 
-    const div = document.createElement('div')
+    const div = criarElemento('div')
     div.appendChild(h2)
     div.appendChild(p)
 
-    const img = document.createElement('img')
+    const img = criarElemento('img')
     img.src = '../assets/img/forum.svg'
     img.alt = 'postagensEmpty'
 
-    const article = document.createElement('article')
+    const article = criarElemento('article')
     article.className = 'postagensEmpty'
 
     article.appendChild(div)
@@ -85,7 +87,7 @@ function montarBanner() {
 }
 
 function montarIcone({ id, classes, tooltip, callback }) {
-    const icone = document.createElement('i')
+    const icone = criarElemento('i')
     icone.setAttribute('data-toggle', 'tooltip')
     icone.setAttribute('title', tooltip)
     icone.addEventListener('click', () => callback(id))
@@ -93,166 +95,116 @@ function montarIcone({ id, classes, tooltip, callback }) {
     return icone
 }
 
-function montarPostagem(item) {
-    const img = document.createElement('img')
+function montarPostagem({ item, isComment = false }) {
+    const img = criarElemento('img')
     img.src = item.avatar
     img.alt = 'avatar'
 
-    const h4 = document.createElement('h4')
+    const h4 = criarElemento('h4')
     h4.textContent = item.nome
 
-    const p = document.createElement('p')
+    const p = criarElemento('p')
     const conteudos = [`${item.level} `, `| ${item.profissao} |`, ` ${item.data}`]
     conteudos.forEach((conteudo) => {
-        const span = document.createElement('span')
+        const span = criarElemento('span')
         span.textContent = conteudo
         p.appendChild(span)
     })
 
-    const infoDiv = document.createElement('div')
+    const infoDiv = criarElemento('div')
     infoDiv.appendChild(h4)
     infoDiv.appendChild(p)
 
-    const divSuperior = document.createElement('div')
+    const divSuperior = criarElemento('div')
     divSuperior.appendChild(img)
     divSuperior.appendChild(infoDiv)
 
     const iconeEditar = montarIcone({
         id: item.id,
         classes: ['fa-solid', 'fa-pen-to-square'],
-        tooltip: 'Editar Postagem',
+        tooltip: !isComment ? 'Editar Postagem' : 'Editar Comentário',
         callback: editarPostagem
     })
 
     const iconeDeletar = montarIcone({
         id: item.id,
         classes: ['fa-solid', 'fa-trash'],
-        tooltip: 'Excluir Postagem',
+        tooltip: !isComment ? 'Excluir Postagem' : 'Excluir Comentário',
         callback: deletarPostagem
     })
 
-    const divInferior = document.createElement('div')
+    const divInferior = criarElemento('div')
     divInferior.appendChild(iconeEditar)
     divInferior.appendChild(iconeDeletar)
 
-    const header = document.createElement('header')
-    header.className = 'postagemHeader'
+    const header = criarElemento('header')
+    header.className = !isComment ? 'postagemHeader' : 'comentarioHeader'
 
     header.appendChild(divSuperior)
     header.appendChild(divInferior)
 
-    const postTextArea = document.createElement('textarea')
-    postTextArea.id = `textArea${item.id}`
+    const postTextArea = criarElemento('textarea')
+    postTextArea.id = !isComment ? `textArea${item.id}` : `comentarioTextArea${item.id}`
     postTextArea.className = 'textArea'
     postTextArea.disabled = true
     postTextArea.textContent = item.conteudo
 
-    const postForm = document.createElement('form')
+    const postForm = criarElemento('form')
     postForm.className = 'postForm'
     postForm.appendChild(postTextArea)
 
-    const iconeCurtir = montarIcone({
-        id: item.id,
-        classes: ['fa-regular', 'fa-heart'],
-        tooltip: 'Curtir Postagem',
-        callback: console.log
-    })
 
-    const iconeComentar = montarIcone({
-        id: item.id,
-        classes: ['fa-regular', 'fa-comment'],
-        tooltip: 'Comentar Postagem',
-        callback: criarComentario
-    })
+    if (!isComment) {
+        const iconeCurtir = montarIcone({
+            id: item.id,
+            classes: ['fa-regular', 'fa-heart'],
+            tooltip: 'Curtir Postagem',
+            callback: console.log
+        })
 
-    const divIcones = document.createElement('div')
-    divIcones.className = 'divIcones'
-    divIcones.appendChild(iconeCurtir)
-    divIcones.appendChild(iconeComentar)
+        const iconeComentar = montarIcone({
+            id: item.id,
+            classes: ['fa-regular', 'fa-comment'],
+            tooltip: 'Comentar Postagem',
+            callback: criarComentario
+        })
 
-    const commentTextArea = document.createElement('textarea')
-    commentTextArea.id = `comentarioTextArea${item.id}`
-    commentTextArea.className = 'comentarioTextArea'
+        const divIcones = criarElemento('div')
+        divIcones.className = 'divIcones'
+        divIcones.appendChild(iconeCurtir)
+        divIcones.appendChild(iconeComentar)
 
-    const commentForm = document.createElement('form')
-    commentForm.id = `comentarioForm${item.id}`
-    commentForm.className = 'commentForm'
-    commentForm.appendChild(commentTextArea)
+        const commentTextArea = criarElemento('textarea')
+        commentTextArea.id = `comentarioTextArea${item.id}`
+        commentTextArea.className = 'comentarioTextArea'
 
-    const footer = document.createElement('footer')
-    footer.className = 'postagemFooter'
-    footer.appendChild(divIcones)
-    footer.appendChild(commentForm)
+        const commentForm = criarElemento('form')
+        commentForm.id = `comentarioForm${item.id}`
+        commentForm.className = 'commentForm'
+        commentForm.appendChild(commentTextArea)
 
-    const article = document.createElement('article')
+        const footer = criarElemento('footer')
+        footer.className = 'postagemFooter'
+        footer.appendChild(divIcones)
+        footer.appendChild(commentForm)
+
+        const article = criarElemento('article')
+        article.id = item.id
+        article.className = 'postagem'
+
+        article.appendChild(header)
+        article.appendChild(postForm)
+        article.appendChild(footer)
+        return article
+    }
+
+    const article = criarElemento('article')
     article.id = item.id
-    article.className = 'postagem'
+    article.className = 'comentarioPostagem'
+
     article.appendChild(header)
     article.appendChild(postForm)
-    article.appendChild(footer)
     return article
-}
-
-function criarComentario(id) {
-    const postagens = consultarPostagens()
-    const { data } = postagens
-
-    const comentarioForm = consultarSeletor(`#comentarioForm${id}`)
-    comentarioForm.style.display = 'flex'
-
-    const comentarioTextArea = consultarSeletor(`#comentarioTextArea${id}`)
-    posicionarCursor(comentarioTextArea)
-
-    comentarioTextArea.addEventListener('input', () => {
-        redimensionarAltura(comentarioTextArea)
-        publicarBtn.disabled = comentarioTextArea.value === ''
-    })
-
-    const { cancelarBtn, publicarBtn } = criarBotoes()
-    cancelarBtn.addEventListener('click', () => {
-        comentarioForm.style.display = 'none'
-    })
-
-    publicarBtn.addEventListener('click', (evento) => {
-        evento.preventDefault()
-
-        if (comentarioTextArea.value.trim()) {
-            salvarPostagens({
-                data: data.reduce(
-                    (postagens, item) =>
-                        item.id === id
-                            ? [
-                                ...postagens,
-                                {
-                                    ...item,
-                                    comentarios: [
-                                        ...item?.comentarios,
-                                        {
-                                            ...USUARIO2,
-                                            id: item.comentarios.length += 1,
-                                            conteudo: comentarioTextArea.value.trim(),
-                                            data: formataData(new Date()),
-                                        }
-                                    ]
-                                },
-                            ]
-                            : [...postagens, item],
-                    []
-                )
-            })
-            imprimirPostagens()
-        }
-    })
-
-    const grupoDeBotoes = consultarSeletor(`#commentGrupoDeBotoes${id}`)
-    if (!grupoDeBotoes) comentarioForm.appendChild(
-        criarGrupoDeBotoes({
-            id,
-            isComment: true,
-            varianteBtn1: cancelarBtn,
-            varianteBtn2: publicarBtn
-        })
-    )
 }
 
 function criarBotoes() {
@@ -273,7 +225,7 @@ function criarBotoes() {
         disabled: 'true'
     }
 
-    const criarBotao = () => document.createElement('button')
+    const criarBotao = () => criarElemento('button')
 
     const cancelarBtn = criarBotao()
     cancelarBtn.textContent = 'Cancelar'
@@ -296,7 +248,7 @@ function criarGrupoDeBotoes({ id, isComment = false, varianteBtn1, varianteBtn2 
         class: 'grupoDeBotoes'
     }
 
-    const div = document.createElement('div')
+    const div = criarElemento('div')
     Object.keys(GRUPO_ATRIBUTOS).forEach((key) => div.setAttribute(key, GRUPO_ATRIBUTOS[key]))
 
     div.appendChild(varianteBtn1)
@@ -332,10 +284,22 @@ function imprimirPostagens() {
     } else {
         if (banner) banner.remove()
         data.forEach(item => {
-            const postagem = montarPostagem(item)
-            fragmento.appendChild(postagem)
-        })
+            const postagemWrapper = criarElemento('div');
+            postagemWrapper.className = 'postagemWrapper'
 
+            const postagem = montarPostagem({ item })
+            postagemWrapper.appendChild(postagem)
+
+            item.comentarios.forEach(comentario => {
+                const comentarioElemento = montarPostagem({
+                    item: comentario,
+                    isComment: true
+                })
+
+                postagemWrapper.appendChild(comentarioElemento)
+            })
+            fragmento.appendChild(postagemWrapper)
+        })
         postagensWrapper.appendChild(fragmento)
     }
 }
@@ -401,6 +365,68 @@ function editarPostagem(id) {
             id,
             varianteBtn1: cancelarBtn,
             varianteBtn2: editarBtn
+        })
+    )
+}
+
+function criarComentario(id) {
+    const postagens = consultarPostagens()
+    const { data } = postagens
+
+    const comentarioForm = consultarSeletor(`#comentarioForm${id}`)
+    comentarioForm.style.display = 'flex'
+
+    const comentarioTextArea = consultarSeletor(`#comentarioTextArea${id}`)
+    posicionarCursor(comentarioTextArea)
+
+    comentarioTextArea.addEventListener('input', () => {
+        redimensionarAltura(comentarioTextArea)
+        publicarBtn.disabled = comentarioTextArea.value === ''
+    })
+
+    const { cancelarBtn, publicarBtn } = criarBotoes()
+    cancelarBtn.addEventListener('click', () => {
+        comentarioForm.style.display = 'none'
+    })
+
+    publicarBtn.addEventListener('click', (evento) => {
+        evento.preventDefault()
+
+        if (comentarioTextArea.value.trim()) {
+            salvarPostagens({
+                data: data.reduce(
+                    (postagens, item) =>
+                        item.id === id
+                            ? [
+                                ...postagens,
+                                {
+                                    ...item,
+                                    comentarios: [
+                                        ...item.comentarios,
+                                        {
+                                            ...USUARIO2,
+                                            id: item.comentarios.length += 100,
+                                            conteudo: comentarioTextArea.value.trim(),
+                                            data: formataData(new Date()),
+                                        }
+                                    ]
+                                },
+                            ]
+                            : [...postagens, item],
+                    []
+                )
+            })
+            imprimirPostagens()
+        }
+    })
+
+    const grupoDeBotoes = consultarSeletor(`#commentGrupoDeBotoes${id}`)
+    if (!grupoDeBotoes) comentarioForm.appendChild(
+        criarGrupoDeBotoes({
+            id,
+            isComment: true,
+            varianteBtn1: cancelarBtn,
+            varianteBtn2: publicarBtn
         })
     )
 }
