@@ -130,7 +130,7 @@ function montarPostagem({ item, isComment = false }) {
         id: item.id,
         classes: ['fa-solid', 'fa-trash'],
         tooltip: !isComment ? 'Excluir Postagem' : 'Excluir Comentário',
-        callback: deletarPostagem
+        callback: !isComment ? deletarPostagem : deletarComentario
     })
 
     const divInferior = criarElemento('div')
@@ -285,6 +285,7 @@ function imprimirPostagens() {
         if (banner) banner.remove()
         data.forEach(item => {
             const postagemWrapper = criarElemento('div');
+            postagemWrapper.id = item.id
             postagemWrapper.className = 'postagemWrapper'
 
             const postagem = montarPostagem({ item })
@@ -306,10 +307,29 @@ function imprimirPostagens() {
 
 function deletarPostagem(id) {
     const postagens = consultarPostagens()
-    const confirma = confirm('Deseja excluir essa postagem?')
+    const { data } = postagens
 
+    const confirma = confirm('Deseja excluir essa postagem?')
     if (confirma) {
-        salvarPostagens({ data: postagens.data.filter((postagem) => postagem.id !== id) })
+        salvarPostagens({ data: data.filter((postagem) => postagem.id !== id) })
+        imprimirPostagens()
+    } else {
+        alert('Ação cancelada!')
+    }
+}
+
+function deletarComentario(id) {
+    const postagens = consultarPostagens()
+    const { data } = postagens
+
+    const confirma = confirm('Deseja excluir esse comentário?')
+    if (confirma) {
+        salvarPostagens({
+            data: data.reduce((postagens, item) => {
+                const comentariosRecuperados = item.comentarios.filter((comentario) => comentario.id !== id)
+                return [...postagens, { ...item, comentarios: comentariosRecuperados }]
+            }, [])
+        })
         imprimirPostagens()
     } else {
         alert('Ação cancelada!')
@@ -405,7 +425,7 @@ function criarComentario(id) {
                                         ...item.comentarios,
                                         {
                                             ...USUARIO2,
-                                            id: item.comentarios.length += 100,
+                                            id: determinarId(),
                                             conteudo: comentarioTextArea.value.trim(),
                                             data: formataData(new Date()),
                                         }
