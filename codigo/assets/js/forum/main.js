@@ -6,7 +6,7 @@ const USUARIO = {
 }
 
 const USUARIO2 = {
-    level: 'PRATA',
+    level: 'Prata',
     profissao: 'Bancária',
     nome: 'Branca Letícia de Barros Motta',
     avatar: '../assets/img/avatar.svg'
@@ -150,7 +150,7 @@ function montarPostagem({ item, isComment = false }) {
     postTextArea.textContent = item.conteudo
 
     const postForm = criarElemento('form')
-    postForm.className = 'postForm'
+    postForm.className = !isComment ? 'postForm' : 'comentarioForm'
     postForm.appendChild(postTextArea)
 
 

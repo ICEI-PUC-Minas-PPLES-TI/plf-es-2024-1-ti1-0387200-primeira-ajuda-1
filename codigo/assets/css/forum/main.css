@@ -66,7 +66,13 @@ section#forum
   .postagemWrapper
   .postagem
   .postagemFooter
-  .comentarioTextArea {
+  .comentarioTextArea,
+section#forum
+  div#postagensWrapper
+  .postagemWrapper
+  .comentarioPostagem
+  .comentarioForm
+  .textArea {
   width: 100%;
   border: none;
   resize: none;
@@ -152,7 +158,12 @@ section#forum div#postagensWrapper .postagemWrapper .comentarioPostagem {
   align-self: end;
 }
 
-section#forum div#postagensWrapper .postagemWrapper .postagem .postagemHeader {
+section#forum div#postagensWrapper .postagemWrapper .postagem .postagemHeader,
+section#forum
+  div#postagensWrapper
+  .postagemWrapper
+  .comentarioPostagem
+  .comentarioHeader {
   justify-content: space-between;
   align-items: center;
   padding: 20px;
@@ -173,6 +184,12 @@ section#forum
   .postagemWrapper
   .postagem
   .postagemHeader
+  div,
+section#forum
+  div#postagensWrapper
+  .postagemWrapper
+  .comentarioPostagem
+  .comentarioHeader
   div {
   gap: 8px;
   align-self: start;
@@ -194,8 +211,30 @@ section#forum
 section#forum
   div#postagensWrapper
   .postagemWrapper
+  .comentarioPostagem
+  .comentarioHeader
+  div
+  > div
+  > p
+  > span:first-child {
+  color: #cfcfcf;
+  font-weight: 900;
+}
+
+section#forum
+  div#postagensWrapper
+  .postagemWrapper
   .postagem
   .postagemHeader
+  div
+  > div
+  > p
+  > span,
+section#forum
+  div#postagensWrapper
+  .postagemWrapper
+  .comentarioPostagem
+  .comentarioHeader
   div
   > div
   > p
@@ -209,6 +248,12 @@ section#forum
   .postagemWrapper
   .postagem
   .postagemHeader
+  img,
+section#forum
+  div#postagensWrapper
+  .postagemWrapper
+  .comentarioPostagem
+  .comentarioHeader
   img {
   width: 56px;
   height: 56px;
@@ -217,7 +262,12 @@ section#forum
   max-width: 100%;
 }
 
-section#forum div#postagensWrapper .postagemWrapper .postagem .postForm {
+section#forum div#postagensWrapper .postagemWrapper .postagem .postForm,
+section#forum
+  div#postagensWrapper
+  .postagemWrapper
+  .comentarioPostagem
+  .comentarioForm {
   padding: 20px;
   flex-flow: column;
   align-items: flex-end;
@@ -255,6 +305,12 @@ section#forum
   .postagemWrapper
   .postagem
   .postForm
+  .textArea::-webkit-scrollbar,
+section#forum
+  div#postagensWrapper
+  .postagemWrapper
+  .comentarioPostagem
+  .comentarioForm
   .textArea::-webkit-scrollbar {
   width: 10px;
 }
@@ -264,6 +320,12 @@ section#forum
   .postagemWrapper
   .postagem
   .postForm
+  .textArea::-webkit-scrollbar-track,
+section#forum
+  div#postagensWrapper
+  .postagemWrapper
+  .comentarioPostagem
+  .comentarioForm
   .textArea::-webkit-scrollbar-track {
   background: #e8e8e8;
 }
@@ -273,6 +335,12 @@ section#forum
   .postagemWrapper
   .postagem
   .postForm
+  .textArea::-webkit-scrollbar-thumb,
+section#forum
+  div#postagensWrapper
+  .postagemWrapper
+  .comentarioPostagem
+  .comentarioForm
   .textArea::-webkit-scrollbar-thumb {
   background-color: #999999;
   border-radius: 20px;
@@ -284,6 +352,12 @@ section#forum
   .postagemWrapper
   .postagem
   .postForm
+  .textArea:disabled,
+section#forum
+  div#postagensWrapper
+  .postagemWrapper
+  .comentarioPostagem
+  .comentarioForm
   .textArea:disabled {
   background-color: #ffffff;
 }
