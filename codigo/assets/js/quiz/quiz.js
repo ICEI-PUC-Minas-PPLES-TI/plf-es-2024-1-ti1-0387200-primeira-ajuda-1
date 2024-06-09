@@ -220,4 +220,4 @@ function submitQuiz() {
     });
 
     alert(`Você acertou ${score} de ${numeroQuestoes} perguntas.`);
-}
+} 
