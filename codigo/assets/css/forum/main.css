@@ -33,6 +33,17 @@ section#forum
   .commentForm,
 section#forum
   div#postagensWrapper
+  .postagemWrapper
+  .comentarioPostagem
+  .comentarioForm,
+section#forum
+  div#postagensWrapper
+  .postagemWrapper
+  .comentarioPostagem
+  .comentarioForm
+  .grupoDeBotoes,
+section#forum
+  div#postagensWrapper
   .postagem
   .postagemFooter
   .commentForm
@@ -90,7 +101,13 @@ section#forum
   .postagemWrapper
   .postagem
   .postagemFooter
-  .comentarioTextArea {
+  .comentarioTextArea:focus,
+section#forum
+  div#postagensWrapper
+  .postagemWrapper
+  .comentarioPostagem
+  .comentarioForm
+  .textArea:focus {
   outline: none;
 }
 
@@ -278,6 +295,12 @@ section#forum
   .postagemWrapper
   .postagem
   .postForm
+  .grupoDeBotoes,
+section#forum
+  div#postagensWrapper
+  .postagemWrapper
+  .comentarioPostagem
+  .comentarioForm
   .grupoDeBotoes {
   gap: 4px;
 }
@@ -399,6 +422,12 @@ section#forum
   .postagem
   .postagemFooter
   .commentForm
+  .grupoDeBotoes,
+section#forum
+  div#postagensWrapper
+  .postagemWrapper
+  .comentarioPostagem
+  .comentarioForm
   .grupoDeBotoes {
   align-self: end;
   gap: 4px;

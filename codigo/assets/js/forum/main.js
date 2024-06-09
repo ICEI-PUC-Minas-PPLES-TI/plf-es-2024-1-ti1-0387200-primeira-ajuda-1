@@ -49,6 +49,12 @@ function posicionarCursor(seletor) {
     seletor.focus()
 }
 
+function posicionarCursorVarianteTexto(seletor) {
+    seletor.selectionStart = seletor.value.length
+    seletor.selectionEnd = seletor.value.length
+    seletor.focus()
+}
+
 function redimensionarAltura(seletor) {
     seletor.style.height = 'auto'
     seletor.style.height = seletor.scrollHeight + 'px'
@@ -123,7 +129,7 @@ function montarPostagem({ item, isComment = false }) {
         id: item.id,
         classes: ['fa-solid', 'fa-pen-to-square'],
         tooltip: !isComment ? 'Editar Postagem' : 'Editar Comentário',
-        callback: editarPostagem
+        callback: !isComment ? editarPostagem : editarComentario
     })
 
     const iconeDeletar = montarIcone({
@@ -225,17 +231,15 @@ function criarBotoes() {
         disabled: 'true'
     }
 
-    const criarBotao = () => criarElemento('button')
-
-    const cancelarBtn = criarBotao()
+    const cancelarBtn = criarElemento('button')
     cancelarBtn.textContent = 'Cancelar'
     Object.keys(CANCELAR_ATRIBUTOS).forEach((key) => cancelarBtn.setAttribute(key, CANCELAR_ATRIBUTOS[key]))
 
-    const editarBtn = criarBotao()
+    const editarBtn = criarElemento('button')
     editarBtn.textContent = 'Salvar Alterações'
     Object.keys(EDITAR_ATRIBUTOS).forEach((key) => editarBtn.setAttribute(key, EDITAR_ATRIBUTOS[key]))
 
-    const publicarBtn = criarBotao()
+    const publicarBtn = criarElemento('button')
     publicarBtn.textContent = 'Publicar'
     Object.keys(PUBLICAR_ATRIBUTOS).forEach((key) => publicarBtn.setAttribute(key, PUBLICAR_ATRIBUTOS[key]))
 
@@ -305,6 +309,55 @@ function imprimirPostagens() {
     }
 }
 
+function editarPostagem(id) {
+    const postagens = consultarPostagens()
+    const { data } = postagens
+
+    const postagemTextArea = consultarSeletor(`#textArea${id}`)
+    const textAreaValorIncial = postagemTextArea.value
+
+    postagemTextArea.disabled = false
+    posicionarCursorVarianteTexto(postagemTextArea)
+
+    const { editarBtn, cancelarBtn } = criarBotoes()
+    cancelarBtn.addEventListener('click', imprimirPostagens)
+
+    postagemTextArea.addEventListener('input', () => {
+        redimensionarAltura(postagemTextArea)
+        editarBtn.disabled = postagemTextArea.value.trim() === '' || postagemTextArea.value === textAreaValorIncial
+    })
+
+    editarBtn.addEventListener('click', (evento) => {
+        evento.preventDefault()
+        salvarPostagens({
+            data: data.reduce(
+                (postagens, item) =>
+                    item.id === id
+                        ? [
+                            ...postagens,
+                            {
+                                ...item,
+                                conteudo: postagemTextArea.value.trim(),
+                                data: formataData(new Date()),
+                            },
+                        ]
+                        : [...postagens, item],
+                []
+            )
+        })
+        imprimirPostagens()
+    })
+
+    const grupoDeBotoes = consultarSeletor(`#grupoDeBotoes${id}`)
+    if (!grupoDeBotoes) postagemTextArea.parentElement.appendChild(
+        criarGrupoDeBotoes({
+            id,
+            varianteBtn1: cancelarBtn,
+            varianteBtn2: editarBtn
+        })
+    )
+}
+
 function deletarPostagem(id) {
     const postagens = consultarPostagens()
     const { data } = postagens
@@ -316,6 +369,121 @@ function deletarPostagem(id) {
     } else {
         alert('Ação cancelada!')
     }
+}
+
+function criarComentario(id) {
+    const postagens = consultarPostagens()
+    const { data } = postagens
+
+    const comentarioForm = consultarSeletor(`#comentarioForm${id}`)
+    comentarioForm.style.display = 'flex'
+
+    const comentarioTextArea = consultarSeletor(`#comentarioTextArea${id}`)
+    posicionarCursor(comentarioTextArea)
+
+    const { cancelarBtn, publicarBtn } = criarBotoes()
+    comentarioTextArea.addEventListener('input', () => {
+        redimensionarAltura(comentarioTextArea)
+        publicarBtn.disabled = comentarioTextArea.value.trim() === ''
+    })
+
+    cancelarBtn.addEventListener('click', () => {
+        comentarioForm.style.display = 'none'
+    })
+
+    publicarBtn.addEventListener('click', (evento) => {
+        evento.preventDefault()
+        salvarPostagens({
+            data: data.reduce(
+                (postagens, item) =>
+                    item.id === id
+                        ? [
+                            ...postagens,
+                            {
+                                ...item,
+                                comentarios: [
+                                    ...item.comentarios,
+                                    {
+                                        ...USUARIO2,
+                                        id: determinarId(),
+                                        conteudo: comentarioTextArea.value.trim(),
+                                        data: formataData(new Date()),
+                                    }
+                                ]
+                            },
+                        ]
+                        : [...postagens, item],
+                []
+            )
+        })
+        imprimirPostagens()
+    })
+
+    const grupoDeBotoes = consultarSeletor(`#commentGrupoDeBotoes${id}`)
+    if (!grupoDeBotoes) comentarioForm.appendChild(
+        criarGrupoDeBotoes({
+            id,
+            isComment: true,
+            varianteBtn1: cancelarBtn,
+            varianteBtn2: publicarBtn
+        })
+    )
+}
+
+function editarComentario(id) {
+    const postagens = consultarPostagens()
+    const { data } = postagens
+
+    const comentarioTextArea = consultarSeletor(`#comentarioTextArea${id}`)
+    const textAreaValorIncial = comentarioTextArea.value
+
+    comentarioTextArea.disabled = false
+    posicionarCursorVarianteTexto(comentarioTextArea)
+
+    const { editarBtn, cancelarBtn } = criarBotoes()
+    cancelarBtn.addEventListener('click', imprimirPostagens)
+
+    comentarioTextArea.addEventListener('input', () => {
+        redimensionarAltura(comentarioTextArea)
+        editarBtn.disabled = comentarioTextArea.value.trim() === '' || comentarioTextArea.value === textAreaValorIncial
+    })
+
+    editarBtn.addEventListener('click', (evento) => {
+        evento.preventDefault()
+        salvarPostagens({
+            data: data.reduce(
+                (postagens, item) =>
+                    item.comentarios.find((comentario) => comentario.id === id)
+                        ? [
+                            ...postagens,
+                            {
+                                ...item,
+                                comentarios: item.comentarios.map((comentario) =>
+                                    comentario.id === id
+                                        ? {
+                                            ...comentario,
+                                            conteudo: comentarioTextArea.value.trim(),
+                                            data: formataData(new Date()),
+                                        }
+                                        : comentario
+                                ),
+                            },
+                        ]
+                        : [...postagens, item],
+                []
+            )
+        })
+        imprimirPostagens()
+    })
+
+    const grupoDeBotoes = consultarSeletor(`#grupoDeBotoes${id}`)
+    if (!grupoDeBotoes) comentarioTextArea.parentElement.appendChild(
+        criarGrupoDeBotoes({
+            id,
+            varianteBtn1: cancelarBtn,
+            varianteBtn2: editarBtn
+        })
+    )
 }
 
 function deletarComentario(id) {
@@ -334,121 +502,6 @@ function deletarComentario(id) {
     } else {
         alert('Ação cancelada!')
     }
-}
-
-function editarPostagem(id) {
-    const postagens = consultarPostagens()
-    const { data } = postagens
-
-    const postagemTextArea = consultarSeletor(`#textArea${id}`)
-    const textAreaValorIncial = postagemTextArea.value
-
-    postagemTextArea.disabled = false
-    postagemTextArea.selectionStart = postagemTextArea.value.length
-    postagemTextArea.selectionEnd = postagemTextArea.value.length
-    postagemTextArea.focus()
-
-    postagemTextArea.addEventListener('input', () => {
-        redimensionarAltura(postagemTextArea)
-        editarBtn.disabled = postagemTextArea.value === '' || postagemTextArea.value === textAreaValorIncial
-    })
-
-    const { editarBtn, cancelarBtn } = criarBotoes()
-    cancelarBtn.addEventListener('click', imprimirPostagens)
-
-    editarBtn.addEventListener('click', (evento) => {
-        evento.preventDefault()
-        if (postagemTextArea.value.trim()) {
-            salvarPostagens({
-                data: data.reduce(
-                    (postagens, item) =>
-                        item.id === id
-                            ? [
-                                ...postagens,
-                                {
-                                    ...item,
-                                    conteudo: postagemTextArea.value.trim(),
-                                    data: formataData(new Date()),
-                                },
-                            ]
-                            : [...postagens, item],
-                    []
-                )
-            })
-            imprimirPostagens()
-        }
-    })
-
-    const grupoDeBotoes = consultarSeletor(`#grupoDeBotoes${id}`)
-    if (!grupoDeBotoes) postagemTextArea.parentElement.appendChild(
-        criarGrupoDeBotoes({
-            id,
-            varianteBtn1: cancelarBtn,
-            varianteBtn2: editarBtn
-        })
-    )
-}
-
-function criarComentario(id) {
-    const postagens = consultarPostagens()
-    const { data } = postagens
-
-    const comentarioForm = consultarSeletor(`#comentarioForm${id}`)
-    comentarioForm.style.display = 'flex'
-
-    const comentarioTextArea = consultarSeletor(`#comentarioTextArea${id}`)
-    posicionarCursor(comentarioTextArea)
-
-    comentarioTextArea.addEventListener('input', () => {
-        redimensionarAltura(comentarioTextArea)
-        publicarBtn.disabled = comentarioTextArea.value === ''
-    })
-
-    const { cancelarBtn, publicarBtn } = criarBotoes()
-    cancelarBtn.addEventListener('click', () => {
-        comentarioForm.style.display = 'none'
-    })
-
-    publicarBtn.addEventListener('click', (evento) => {
-        evento.preventDefault()
-
-        if (comentarioTextArea.value.trim()) {
-            salvarPostagens({
-                data: data.reduce(
-                    (postagens, item) =>
-                        item.id === id
-                            ? [
-                                ...postagens,
-                                {
-                                    ...item,
-                                    comentarios: [
-                                        ...item.comentarios,
-                                        {
-                                            ...USUARIO2,
-                                            id: determinarId(),
-                                            conteudo: comentarioTextArea.value.trim(),
-                                            data: formataData(new Date()),
-                                        }
-                                    ]
-                                },
-                            ]
-                            : [...postagens, item],
-                    []
-                )
-            })
-            imprimirPostagens()
-        }
-    })
-
-    const grupoDeBotoes = consultarSeletor(`#commentGrupoDeBotoes${id}`)
-    if (!grupoDeBotoes) comentarioForm.appendChild(
-        criarGrupoDeBotoes({
-            id,
-            isComment: true,
-            varianteBtn1: cancelarBtn,
-            varianteBtn2: publicarBtn
-        })
-    )
 }
 
 textAreaPrincipal.addEventListener('input', () => {
