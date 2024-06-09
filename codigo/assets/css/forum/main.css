@@ -1,3 +1,6 @@
+main {
+  margin-bottom: 28px;
+}
 section#forum {
   width: 76%;
   margin: 0 auto;
@@ -157,7 +160,7 @@ section#forum div#postagensWrapper .postagemWrapper .postagem,
 section#forum div#postagensWrapper .postagemWrapper .comentarioPostagem {
   width: 100%;
   padding: 12px;
-  margin: 28px auto 16px;
+  margin: 28px auto 4px;
   border-radius: 4.8px;
   border: solid 1px #c3c3c3;
   box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.234);
