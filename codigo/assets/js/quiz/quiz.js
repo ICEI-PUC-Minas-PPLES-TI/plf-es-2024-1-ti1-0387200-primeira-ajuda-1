@@ -1,10 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
     const questionCountInput = document.getElementById('contadorQuestoes');
-    const perguntas = JSON.parse(localStorage.getItem('CadastroPerguntas')) || [];
+    let perguntas = JSON.parse(localStorage.getItem('CadastroPerguntas')) || [];
 
     if (perguntas.length === 0) {
         const novasPerguntas = getNovasPerguntas();
         localStorage.setItem('CadastroPerguntas', JSON.stringify(novasPerguntas));
+        perguntas = novasPerguntas; // Atualiza as perguntas para refletir o armazenamento
     }
 
     questionCountInput.max = perguntas.length;
@@ -12,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function getNovoID() {
     const perguntas = JSON.parse(localStorage.getItem('CadastroPerguntas')) || [];
-    return perguntas.length > 0 ? Math.max(perguntas.map(p => p.id)) + 1 : 1;
+    return perguntas.length > 0 ? Math.max(...perguntas.map(p => p.id)) + 1 : 1;
 }
 
 function getNovasPerguntas() {
@@ -182,6 +183,9 @@ function funcaoQuiz() {
 
     const shuffledQuestions = perguntas.sort(() => 0.5 - Math.random()).slice(0, numeroQuestoes);
 
+    // Armazenar as perguntas selecionadas no localStorage com a chave 'armazenarQuestoes'
+    localStorage.setItem('armazenarQuestoes', JSON.stringify(shuffledQuestions));
+
     shuffledQuestions.forEach((pergunta, index) => {
         const questionHTML = `
             <div class="question">
@@ -207,17 +211,15 @@ function funcaoQuiz() {
 }
 
 function submitQuiz() {
-    const perguntas = JSON.parse(localStorage.getItem('CadastroPerguntas')) || [];
-    const questionCount = parseInt(document.getElementById('contadorQuestoes').value);
-    const numeroQuestoes = Math.min(questionCount, perguntas.length);
+    const selectedQuestions = JSON.parse(localStorage.getItem('armazenarQuestoes')) || [];
     let score = 0;
 
-    perguntas.slice(0, numeroQuestoes).forEach((pergunta, index) => {
+    selectedQuestions.forEach((pergunta, index) => {
         const userAnswer = document.querySelector(`input[name="question${index}"]:checked`);
         if (userAnswer && userAnswer.value === pergunta.Resposta) {
             score++;
         }
     });
 
-    alert(`Você acertou ${score} de ${numeroQuestoes} perguntas.`);
-} 
+    alert(`Você acertou ${score} de ${selectedQuestions.length} perguntas.`);
+}
