@@ -41,7 +41,6 @@ function formataData(dateString) {
     const data = dateString.toLocaleString().replace(',', '')
     const componentesData = data.split(':')
     return `${componentesData[0]}:${componentesData[1]}`
-
 }
 
 function posicionarCursor(seletor) {
@@ -163,10 +162,11 @@ function montarPostagem({ item, isComment = false }) {
     if (!isComment) {
         const iconeCurtir = montarIcone({
             id: item.id,
-            classes: ['fa-regular', 'fa-heart'],
+            classes: [item.curtida ? 'fa-solid' : 'fa-regular', 'fa-heart'],
             tooltip: 'Curtir Postagem',
-            callback: console.log
+            callback: gerenciarCurtidasPostagem
         })
+        iconeCurtir.style.color = item.curtida ? '#e10e0e' : '#b5b5b5'
 
         const iconeComentar = montarIcone({
             id: item.id,
@@ -213,7 +213,7 @@ function montarPostagem({ item, isComment = false }) {
     return article
 }
 
-function criarBotoes() {
+function montarBotoes() {
     const CANCELAR_ATRIBUTOS = {
         type: 'button',
         id: 'cancelarBtn'
@@ -246,7 +246,7 @@ function criarBotoes() {
     return { editarBtn, publicarBtn, cancelarBtn }
 }
 
-function criarGrupoDeBotoes({ id, isComment = false, varianteBtn1, varianteBtn2 }) {
+function montarGrupoDeBotoes({ id, isComment = false, varianteBtn1, varianteBtn2 }) {
     const GRUPO_ATRIBUTOS = {
         id: isComment ? `commentGrupoDeBotoes${id}` : `grupoDeBotoes${id}`,
         class: 'grupoDeBotoes'
@@ -262,13 +262,15 @@ function criarGrupoDeBotoes({ id, isComment = false, varianteBtn1, varianteBtn2 
 
 function criarPostagem() {
     const postagens = consultarPostagens()
+    const { data } = postagens
 
-    postagens.data.push({
+    data.push({
         id: determinarId(),
         ...USUARIO,
         data: formataData(new Date()),
         conteudo: textAreaPrincipal.value.trim(),
         comentarios: [],
+        curtida: false,
     })
 
     salvarPostagens(postagens)
@@ -319,7 +321,7 @@ function editarPostagem(id) {
     postagemTextArea.disabled = false
     posicionarCursorVarianteTexto(postagemTextArea)
 
-    const { editarBtn, cancelarBtn } = criarBotoes()
+    const { editarBtn, cancelarBtn } = montarBotoes()
     cancelarBtn.addEventListener('click', imprimirPostagens)
 
     postagemTextArea.addEventListener('input', () => {
@@ -350,7 +352,7 @@ function editarPostagem(id) {
 
     const grupoDeBotoes = consultarSeletor(`#grupoDeBotoes${id}`)
     if (!grupoDeBotoes) postagemTextArea.parentElement.appendChild(
-        criarGrupoDeBotoes({
+        montarGrupoDeBotoes({
             id,
             varianteBtn1: cancelarBtn,
             varianteBtn2: editarBtn
@@ -381,7 +383,7 @@ function criarComentario(id) {
     const comentarioTextArea = consultarSeletor(`#comentarioTextArea${id}`)
     posicionarCursor(comentarioTextArea)
 
-    const { cancelarBtn, publicarBtn } = criarBotoes()
+    const { cancelarBtn, publicarBtn } = montarBotoes()
     comentarioTextArea.addEventListener('input', () => {
         redimensionarAltura(comentarioTextArea)
         publicarBtn.disabled = comentarioTextArea.value.trim() === ''
@@ -421,7 +423,7 @@ function criarComentario(id) {
 
     const grupoDeBotoes = consultarSeletor(`#commentGrupoDeBotoes${id}`)
     if (!grupoDeBotoes) comentarioForm.appendChild(
-        criarGrupoDeBotoes({
+        montarGrupoDeBotoes({
             id,
             isComment: true,
             varianteBtn1: cancelarBtn,
@@ -440,7 +442,7 @@ function editarComentario(id) {
     comentarioTextArea.disabled = false
     posicionarCursorVarianteTexto(comentarioTextArea)
 
-    const { editarBtn, cancelarBtn } = criarBotoes()
+    const { editarBtn, cancelarBtn } = montarBotoes()
     cancelarBtn.addEventListener('click', imprimirPostagens)
 
     comentarioTextArea.addEventListener('input', () => {
@@ -478,7 +480,7 @@ function editarComentario(id) {
 
     const grupoDeBotoes = consultarSeletor(`#grupoDeBotoes${id}`)
     if (!grupoDeBotoes) comentarioTextArea.parentElement.appendChild(
-        criarGrupoDeBotoes({
+        montarGrupoDeBotoes({
             id,
             varianteBtn1: cancelarBtn,
             varianteBtn2: editarBtn
@@ -503,6 +505,29 @@ function deletarComentario(id) {
         alert('Ação cancelada!')
     }
 }
+
+function gerenciarCurtidasPostagem(id) {
+    const postagens = consultarPostagens()
+    const { data } = postagens
+
+    salvarPostagens({
+        data: data.reduce(
+            (postagens, item) =>
+                item.id === id
+                    ? [
+                        ...postagens,
+                        {
+                            ...item,
+                            curtida: item.curtida ? false : true
+                        },
+                    ]
+                    : [...postagens, item],
+            []
+        )
+    })
+    imprimirPostagens()
+}
+
 
 textAreaPrincipal.addEventListener('input', () => {
     controlarBtnPublicar()
