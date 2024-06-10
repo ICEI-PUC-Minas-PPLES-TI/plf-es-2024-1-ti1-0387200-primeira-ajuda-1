@@ -216,10 +216,37 @@ function submitQuiz() {
 
     selectedQuestions.forEach((pergunta, index) => {
         const userAnswer = document.querySelector(`input[name="question${index}"]:checked`);
+        const respostas = document.getElementsByName(`question${index}`);
+        let respostaCorretaEncontrada = false;
+
+        
+        respostas.forEach((opcao) => {
+            if (opcao.value === pergunta.Resposta) {
+                opcao.parentElement.style.color = 'green'; 
+                respostaCorretaEncontrada = true;
+            } else {
+                opcao.parentElement.style.color = 'black'; 
+            }
+        });
+
+        
         if (userAnswer && userAnswer.value === pergunta.Resposta) {
             score++;
+            userAnswer.parentElement.style.color = 'green'; 
+        } else if (userAnswer && userAnswer.value !== pergunta.Resposta) {
+            userAnswer.parentElement.style.color = 'red'; 
+        }
+
+        
+        if (!respostaCorretaEncontrada && !userAnswer) {
+            respostas.forEach((opcao) => {
+                if (opcao.value === pergunta.Resposta) {
+                    opcao.parentElement.style.color = 'green'; 
+                }
+            });
         }
     });
 
+    
     alert(`Você acertou ${score} de ${selectedQuestions.length} perguntas.`);
 }
