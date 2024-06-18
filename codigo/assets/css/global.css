@@ -44,6 +44,7 @@ button[disabled] {
   opacity: 0.2;
 }
 
+button,
 form input,
 form button {
   border: none;
@@ -69,6 +70,7 @@ form label input {
   border: 1px solid #9b9b9b;
 }
 
+button,
 form button {
   width: auto;
   height: 32px;
@@ -77,7 +79,10 @@ form button {
   padding-inline: 8px;
   background-color: #031634;
   border-radius: 4px;
-  color: #fff;
+  color: #ffffff;
+}
+button a i.fa-solid {
+  color: #ffffff;
 }
 
 body {
@@ -174,13 +179,25 @@ header div span img#avatar {
 }
 
 main section.banner {
-  width: 75%;
+  width: 80%;
   padding: 16px;
   margin: 62px auto;
   justify-content: center;
   align-items: center;
   gap: 24px;
   line-height: 32px;
+}
+
+main section.banner div h1 {
+  text-transform: uppercase;
+  font-weight: 900;
+}
+
+button#cadastrar {
+  padding: 12px;
+  height: 100%;
+  font-size: 16px;
+  font-weight: 500;
 }
 
 footer {
