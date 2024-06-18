@@ -83,6 +83,7 @@ form button {
 }
 button a i.fa-solid {
   color: #ffffff;
+  margin-left: 8px;
 }
 
 body {
@@ -193,11 +194,10 @@ main section.banner div h1 {
   font-weight: 900;
 }
 
-button#cadastrar {
+main section.banner div button#cadastrar {
   padding: 12px;
   height: 100%;
   font-size: 16px;
-  font-weight: 500;
 }
 
 footer {
