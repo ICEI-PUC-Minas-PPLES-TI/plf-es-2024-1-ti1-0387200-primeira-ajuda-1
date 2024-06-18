@@ -86,7 +86,7 @@ body {
 
 header,
 header > div,
-header nav ul,
+header div nav ul.menu,
 main article.emptyBanner,
 footer {
   display: flex;
@@ -105,19 +105,61 @@ header > div {
   gap: 44px;
 }
 
-header nav ul {
+header div nav ul.menu {
   gap: 24px;
 }
 
-header nav ul li {
+header div nav ul.menu li {
   font-size: 16px;
   transition: opacity 0.2s;
 }
 
-header nav ul li:hover {
+header div nav ul.menu li:hover,
+header div span nav ul.dropdown li a:hover {
   opacity: 0.8;
   text-decoration: underline;
   text-decoration-color: #242424;
+}
+
+header div span nav {
+  position: relative;
+}
+
+header div span nav ul.dropdown {
+  margin: 0;
+  padding: 15px;
+  width: 100px;
+  position: absolute;
+  left: 50%;
+  top: calc(100% + 4px);
+  transform: translateX(-50%) rotateX(-90deg);
+  transform-origin: top center;
+  transition: all 150ms ease-in;
+  opacity: 0.25;
+  background-color: #e8e8e8;
+  border-radius: 4.8px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.234);
+}
+
+header div span img:hover ~ nav ul.dropdown,
+header div span nav ul.dropdown:hover {
+  opacity: 1;
+  transform: translateX(-50%) rotateX(0);
+  transition-timing-function: ease-out;
+}
+
+header div span nav ul.dropdown::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: -14px;
+  transform: translateX(-50%);
+  border: 8px solid transparent;
+  border-bottom-color: #e8e8e8;
+}
+
+header div span nav ul.dropdown li:not(:last-child) {
+  margin-bottom: 10px;
 }
 
 img#avatar {
@@ -147,7 +189,6 @@ footer {
   gap: 16px;
   font-size: 12px;
   background-color: #e8e8e8;
-  /* margin-top: 28px; */
 }
 
 footer img#LogoPUC {
