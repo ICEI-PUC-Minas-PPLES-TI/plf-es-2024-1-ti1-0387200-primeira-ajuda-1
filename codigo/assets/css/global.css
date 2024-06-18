@@ -87,7 +87,7 @@ body {
 header,
 header > div,
 header div nav ul.menu,
-main article.emptyBanner,
+main section.banner,
 footer {
   display: flex;
 }
@@ -98,6 +98,10 @@ header {
   align-items: center;
   justify-content: space-around;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.234);
+}
+
+header img#logo {
+  width: 160px;
 }
 
 header > div {
@@ -162,24 +166,21 @@ header div span nav ul.dropdown li:not(:last-child) {
   margin-bottom: 10px;
 }
 
-img#avatar {
+header div span img#avatar {
   width: 48px;
   height: 48px;
   border-radius: 50%;
   border: solid 2px #c3c3c3;
 }
 
-main article.emptyBanner {
+main section.banner {
   width: 75%;
   padding: 16px;
   margin: 62px auto;
+  justify-content: center;
   align-items: center;
   gap: 24px;
-}
-
-main article.emptyBanner img#bannerImg {
-  width: 350px;
-  height: 350px;
+  line-height: 32px;
 }
 
 footer {
