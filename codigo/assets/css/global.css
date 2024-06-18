@@ -146,7 +146,7 @@ header div span nav ul.dropdown {
   transform-origin: top center;
   transition: all 150ms ease-in;
   opacity: 0.25;
-  background-color: #e8e8e8;
+  background-color: #ffffff;
   border-radius: 4.8px;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.234);
 }
@@ -165,7 +165,7 @@ header div span nav ul.dropdown::after {
   top: -14px;
   transform: translateX(-50%);
   border: 8px solid transparent;
-  border-bottom-color: #e8e8e8;
+  border-bottom-color: #ffffff;
 }
 
 header div span nav ul.dropdown li:not(:last-child) {
