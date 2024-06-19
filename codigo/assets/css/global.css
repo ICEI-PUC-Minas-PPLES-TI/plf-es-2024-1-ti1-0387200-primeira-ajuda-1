@@ -238,3 +238,269 @@ tr:nth-child(even) {
 tr:hover {
   background-color: #e0e0e0; /*Define uma cor de fundo mais escura ao passar o mouse sobre a linha.*/
 }
+
+
+
+
+
+
+
+
+
+
+
+
+/* teste */
+.cpg{
+  display: grid;
+  grid-template-columns: 1fr;
+}
+.cp-1{
+  height:430px;
+  background-color: #F2F4F3;
+}
+.cp-2{
+  height: 220px;
+  display: grid;
+  justify-content: center;
+  background-color: #F2F4F3;
+}
+.cp-2-5{
+  height: 550px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url(/codigo/imgInicial/back2.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.cp-3{
+  height: 700px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #F2F4F3;
+}
+.cp-4{
+  height: 700px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #F2F4F3;
+  background-image: url(/codigo/imgInicial/back3.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* CP2  */
+.cp2-container{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  height: 200px;
+  width: 1000px;
+  box-shadow: 4px 4px 4px 0px #0000001a;
+  border-radius: 0.3rem;
+}
+/* CP2   imagens */
+.cp2-container img{
+  width: 70px;
+  }
+  /* CP2  divisões */
+.cp2c1{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 0.3rem;
+  border-right: 1px solid rgb(202, 202, 202);
+}
+.cp2c2{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 0.3rem;
+  border-right: 1px solid rgb(202, 202, 202);
+}
+.cp2c3{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 0.3rem;
+}
+/* CP2 divisões hovers */
+.cp2c1:hover{
+transform: scale(1.02);
+border: 1px solid rgb(202, 202, 202);
+}
+.cp2c2:hover{
+  transform: scale(1.02);
+  border: 1px solid rgb(202, 202, 202);
+}
+.cp2c3:hover{
+  transform: scale(1.02);
+  border: 1px solid rgb(202, 202, 202);
+}
+
+
+/* CP25 */
+.cp25-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+  padding: 20px;
+  margin-top: 10%;
+}
+.cp-25-1{
+  height: 400px;
+  width: 250px;
+  margin: 20px;
+  position: relative;
+}
+.cp25-logo{
+  height: 120px;
+  width: 120px;
+  background-color: #cfe9ec;
+  border-radius: 50%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: -80px;
+  right: 60px;
+  font-size: 50px;
+  z-index: 1;
+}
+.cp25-conteudo{
+  height: 80%;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 0.3rem;
+  background-color: white;
+  position: relative;
+  transition: 0.4s;
+}
+.cp25-conteudo h1{
+  font-size: 20px;
+  font-weight: 700;
+  position: absolute;
+  align-items: center;
+  top: 40px;
+}
+.cp25-conteudo button{
+    color: white;
+    border: 2px solid #031634;
+    border-radius: 0.3rem;
+    width: 120px;
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: absolute;
+    bottom: 20px;
+}
+.cp25-conteudo button:hover{
+  opacity: 0.7;
+}
+.cp25-conteudo:hover{
+  transform: scale(1.02);
+}
+
+/* CP3 */
+.cp3-conteudo{
+  display: flex;
+}
+.cp3-img1{
+  width: 600px;
+  height: 500px;
+  padding: 20px;
+}
+.cp3-img2{
+  width: 650px;
+  height: 500px;
+  padding: 20px;
+}
+.cp3h1{
+  display: flex;
+  justify-content: start;
+  width: 70%;
+  flex-direction: column;
+}
+.cp3h1 h1{
+  font-weight: 900;
+  }
+  .cp3-button{
+    display: flex;
+    align-items: flex-end;
+    width: 70%;
+    flex-direction: column;
+  }
+  .btn-cp3{
+    background-color: #ffffff;
+    color: #031634;
+    border: 2px solid #031634;
+    border-radius: 0.3rem;
+    width: 120px;
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .btn-cp3:hover{
+    background-color: #f2f4f3;
+  }
+
+
+/* CP4 */
+.cp4-cards{
+display: flex;
+padding: 10px;
+}
+.cp4h1{
+  display: flex;
+  justify-content: start;
+  width: 70%;
+}
+.cp4h1 h1{
+font-weight: 900;
+
+}
+.card img{
+  height: 200px;
+}
+.card{
+  margin: 10px;
+  transition: 0.4s;
+}
+.card-body{
+  background-color: #F2F4F3;
+}
+.card a{
+  font-size: 18px;
+  color: #242424;
+  font-weight: bold;
+  text-decoration: none;
+}
+/* CP4 divisões hovers */
+.card:hover{
+  transform: scale(1.02);
+}
+
+/* Responsividade */
+@media  and (max-height:1270px) {
+  
+}
