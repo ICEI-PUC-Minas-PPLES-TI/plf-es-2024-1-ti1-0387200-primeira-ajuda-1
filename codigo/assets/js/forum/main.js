@@ -1,3 +1,7 @@
+import { ForumService } from "../../services/forumService"
+
+const forumService = new ForumService()
+
 const USUARIO = {
     level: 'Bronze',
     profissao: 'Estudante',
