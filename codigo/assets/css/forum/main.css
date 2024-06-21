@@ -322,6 +322,14 @@ section#forum
   text-align: justify;
 }
 
+div#postagensWrapper
+  .postagemWrapper
+  .comentarioPostagem
+  .comentarioForm
+  .textArea {
+  font-size: 14px;
+}
+
 section#forum
   div#postagensWrapper
   .postagemWrapper
@@ -441,4 +449,14 @@ section#forum
   .comentarioTextArea {
   width: 100%;
   border: 1px solid #c3c3c3;
+}
+
+section#forum
+  div#postagensWrapper
+  .postagemWrapper
+  .postagem
+  .postagemFooter
+  .divIcones
+  i {
+  font-size: 16px;
 }
