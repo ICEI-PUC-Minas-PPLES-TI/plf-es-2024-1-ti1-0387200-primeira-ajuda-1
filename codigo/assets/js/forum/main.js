@@ -269,7 +269,7 @@ function montarGrupoDeBotoes({ id, isComment = false, varianteBtn1, varianteBtn2
 }
 
 async function criarPostagem() {
-    await forumService.createPostagem({
+    const resposta = await forumService.createPostagem({
         id: determinarId(),
         ...USUARIO,
         data: formataData(new Date()),
@@ -277,6 +277,8 @@ async function criarPostagem() {
         comentarios: [],
         curtida: false,
     })
+
+    if (resposta) await imprimirPostagens()
 }
 
 
@@ -540,9 +542,7 @@ textAreaPrincipal.addEventListener('input', () => {
 
 formPrincipal.addEventListener('submit', (evento) => {
     evento.preventDefault()
-
     criarPostagem()
-    imprimirPostagens()
 
     formPrincipal.reset()
     controlarBtnPublicar()
