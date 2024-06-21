@@ -1,0 +1,45 @@
+main section#registration {
+    padding: 60px 20px;
+  }
+  
+  main section#registration .container {
+    width: 100%;
+    max-width: 900px;
+    margin-inline: auto;
+    padding: 36px 52px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fff;
+    box-shadow: 4px 4px 4px 0px #0000001a;
+    border-left: 16px solid #033649;
+    border-radius: 16px;
+    margin-bottom: 100px;
+  }
+
+.video-section {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.video {
+    flex: 1 1 calc(33.333% - 20px);
+    box-sizing: border-box;
+}
+
+.video img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+}
+
+h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    max-width: 900px;
+    margin-inline: auto;
+    padding: 36px 52px;
+    
+}
