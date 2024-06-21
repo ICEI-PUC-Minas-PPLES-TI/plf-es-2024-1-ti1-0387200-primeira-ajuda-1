@@ -25,15 +25,7 @@ const iconePublicar = consultarSeletor('#btnPublicar i')
 const textAreaPrincipal = consultarSeletor('#mainTextArea')
 const postagensWrapper = consultarSeletor('#postagensWrapper')
 
-function salvarPostagens(dados) {
-    localStorage.setItem('postagens', JSON.stringify(dados))
-}
-
-function consultarPostagens() {
-    return JSON.parse(localStorage.getItem('postagens')) || { data: [] }
-}
-
-function determinarId() {
+function obterId() {
     let id = parseInt(localStorage.getItem('id')) || 0
     id++
     localStorage.setItem('id', id)
@@ -269,7 +261,7 @@ function montarGrupoDeBotoes({ id, isComment = false, varianteBtn1, varianteBtn2
 
 async function criarPostagem() {
     const resposta = await forumService.createPostagem({
-        id: determinarId(),
+        id: obterId(),
         ...USUARIO,
         data: formataData(new Date()),
         conteudo: textAreaPrincipal.value.trim(),
@@ -279,7 +271,6 @@ async function criarPostagem() {
 
     if (resposta) await imprimirPostagens()
 }
-
 
 async function imprimirPostagens() {
     const data = await forumService.getPostagens()
@@ -326,14 +317,13 @@ async function editarPostagem(id) {
     const { editarBtn, cancelarBtn } = montarBotoes()
     cancelarBtn.addEventListener('click', imprimirPostagens)
 
-    postagemTextArea.addEventListener('input', () => {
-        redimensionarAltura(postagemTextArea)
-        editarBtn.disabled = postagemTextArea.value.trim() === '' || postagemTextArea.value.trim() === textAreaValorIncial
+    postagemTextArea.addEventListener('input', ({ target }) => {
+        redimensionarAltura(target)
+        editarBtn.disabled = target.value.trim() === '' || target.value.trim() === textAreaValorIncial
     })
 
     editarBtn.addEventListener('click', async (evento) => {
         evento.preventDefault()
-
         const resposta = await forumService.updatePostagem(id, {
             ...postagem,
             conteudo: postagemTextArea.value.trim(),
@@ -367,10 +357,9 @@ async function deletarPostagem(id) {
 
 async function gerenciarCurtidasPostagem(id) {
     const postagem = await forumService.getPostagemById(id)
-
     const resposta = await forumService.updatePostagem(id, {
         ...postagem,
-        curtida: postagem.curtida ? false : true
+        curtida: !postagem.curtida
     })
 
     if (resposta) await imprimirPostagens()
@@ -386,25 +375,24 @@ async function criarComentario(id) {
     posicionarCursor(comentarioTextArea)
 
     const { cancelarBtn, publicarBtn } = montarBotoes()
-    comentarioTextArea.addEventListener('input', () => {
-        redimensionarAltura(comentarioTextArea)
-        publicarBtn.disabled = comentarioTextArea.value.trim() === ''
-    })
-
     cancelarBtn.addEventListener('click', () => {
         comentarioForm.style.display = 'none'
     })
 
+    comentarioTextArea.addEventListener('input', ({ target }) => {
+        redimensionarAltura(target)
+        publicarBtn.disabled = target.value.trim() === ''
+    })
+
     publicarBtn.addEventListener('click', async (evento) => {
         evento.preventDefault()
-
         const resposta = await forumService.updatePostagem(id, {
             ...postagem,
             comentarios: [
                 ...postagem.comentarios,
                 {
                     ...USUARIO2,
-                    id: determinarId(),
+                    id: obterId(),
                     conteudo: comentarioTextArea.value.trim(),
                     data: formataData(new Date()),
                 }
@@ -427,7 +415,7 @@ async function criarComentario(id) {
 }
 
 async function editarComentario(id) {
-    const comentario = consultarSeletor(`[id="${id}"]`)
+    const comentario = consultarSeletor(`[id='${id}']`)
     const postagem = await forumService.getPostagemById(comentario.parentElement.id)
 
     const comentarioTextArea = consultarSeletor(`#comentarioTextArea${id}`)
@@ -439,14 +427,13 @@ async function editarComentario(id) {
     const { editarBtn, cancelarBtn } = montarBotoes()
     cancelarBtn.addEventListener('click', imprimirPostagens)
 
-    comentarioTextArea.addEventListener('input', () => {
-        redimensionarAltura(comentarioTextArea)
-        editarBtn.disabled = comentarioTextArea.value.trim() === '' || comentarioTextArea.value.trim() === textAreaValorIncial
+    comentarioTextArea.addEventListener('input', ({ target }) => {
+        redimensionarAltura(target)
+        editarBtn.disabled = target.value.trim() === '' || target.value.trim() === textAreaValorIncial
     })
 
     editarBtn.addEventListener('click', async (evento) => {
         evento.preventDefault()
-
         const resposta = await forumService.updatePostagem(comentario.parentElement.id, {
             ...postagem,
             comentarios: postagem.comentarios.map(comentario =>
@@ -474,41 +461,40 @@ async function editarComentario(id) {
     )
 }
 
-function deletarComentario(id) {
-    const postagens = consultarPostagens()
-    const { data } = postagens
+async function deletarComentario(id) {
+    const comentario = consultarSeletor(`[id='${id}']`)
+    const postagem = await forumService.getPostagemById(comentario.parentElement.id)
 
     const confirma = confirm('Deseja excluir esse comentário?')
     if (confirma) {
-        salvarPostagens({
-            data: data.reduce((postagens, item) => {
-                const comentariosRecuperados = item.comentarios.filter(comentario => comentario.id !== id)
-                return [...postagens, { ...item, comentarios: comentariosRecuperados }]
-            }, [])
+        const resposta = await forumService.updatePostagem(comentario.parentElement.id, {
+            ...postagem,
+            comentarios: postagem.comentarios.filter(comentario => comentario.id !== id)
         })
-        imprimirPostagens()
+        if (resposta) comentario.remove()
     } else {
         alert('Ação cancelada!')
     }
 }
 
-textAreaPrincipal.addEventListener('input', () => {
+textAreaPrincipal.addEventListener('input', ({ target }) => {
     controlarBtnPublicar()
-    redimensionarAltura(textAreaPrincipal)
+    redimensionarAltura(target)
 })
 
-formPrincipal.addEventListener('submit', (evento) => {
+formPrincipal.addEventListener('submit', async (evento) => {
     evento.preventDefault()
-    criarPostagem()
 
+    await criarPostagem()
     formPrincipal.reset()
     controlarBtnPublicar()
+
     posicionarCursor(textAreaPrincipal)
     redimensionarAltura(textAreaPrincipal)
     gerenciarScroll()
 })
 
-window.addEventListener('DOMContentLoaded', () => {
-    imprimirPostagens()
+window.addEventListener('DOMContentLoaded', async () => {
+    await imprimirPostagens()
     posicionarCursor(textAreaPrincipal)
 })
