@@ -365,14 +365,12 @@ function editarPostagem(id) {
     )
 }
 
-function deletarPostagem(id) {
-    const postagens = consultarPostagens()
-    const { data } = postagens
-
+async function deletarPostagem(id) {
     const confirma = confirm('Deseja excluir essa postagem?')
+
     if (confirma) {
-        salvarPostagens({ data: data.filter(postagem => postagem.id !== id) })
-        imprimirPostagens()
+        const resposta = await forumService.deletePostagem(id)
+        if (resposta) await imprimirPostagens()
     } else {
         alert('Ação cancelada!')
     }
