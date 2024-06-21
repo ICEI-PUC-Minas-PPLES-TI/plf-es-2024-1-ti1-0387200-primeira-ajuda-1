@@ -8,6 +8,11 @@ export class ForumService {
         return resposta.json()
     }
 
+    async getPostagemById(id) {
+        const resposta = await fetch(`${this.urlBase}/${id}`)
+        return resposta.json()
+    }
+
     async createPostagem(postagem) {
         const resposta = await fetch(this.urlBase, {
             method: 'POST',
