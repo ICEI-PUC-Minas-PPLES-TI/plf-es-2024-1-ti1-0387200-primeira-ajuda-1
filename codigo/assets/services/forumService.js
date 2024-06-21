@@ -1,10 +1,12 @@
 export class ForumService {
     constructor() {
-        this.urlBase = ''
+        this.urlBase = 'https://primeira-ajuda-api.vercel.app/postagens'
     }
 
     async getPostagens() {
-        const resposta = await fetch(this.urlBase)
+        const resposta = await fetch(this.urlBase, {
+            method: 'GET',
+        })
         return resposta.json()
     }
 

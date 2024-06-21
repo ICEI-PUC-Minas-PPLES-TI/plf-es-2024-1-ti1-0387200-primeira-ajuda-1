@@ -1,4 +1,4 @@
-import { ForumService } from "../../services/forumService"
+import { ForumService } from "../../services/forumService.js"
 
 const forumService = new ForumService()
 
@@ -285,9 +285,9 @@ function criarPostagem() {
     imprimirPostagens()
 }
 
-function imprimirPostagens() {
-    const postagens = consultarPostagens()
-    const { data } = postagens
+
+async function imprimirPostagens() {
+    const data = await forumService.getPostagens()
 
     postagensWrapper.innerHTML = ''
     const banner = consultarSeletor('.postagensEmpty')
