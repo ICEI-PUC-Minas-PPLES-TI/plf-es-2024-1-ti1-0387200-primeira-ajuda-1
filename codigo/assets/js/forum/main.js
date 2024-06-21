@@ -18,7 +18,6 @@ const forumService = new ForumService()
 const criarElemento = (variante) => document.createElement(variante)
 const consultarSeletor = (variante) => document.querySelector(variante)
 
-const section = consultarSeletor('#forum')
 const formPrincipal = consultarSeletor('#mainForm')
 const btnPublicar = consultarSeletor('#btnPublicar')
 const iconePublicar = consultarSeletor('#btnPublicar i')
@@ -65,29 +64,6 @@ function controlarBtnPublicar() {
     btnPublicar.style.cursor = verificador ? 'not-allowed' : 'pointer'
     iconePublicar.style.cursor = verificador ? 'not-allowed' : 'pointer'
     formPrincipal.style.flexFlow = verificador ? 'row' : 'column'
-}
-
-function montarBanner() {
-    const h2 = criarElemento('h2')
-    h2.textContent = 'Vamos Começar?'
-
-    const p = criarElemento('p')
-    p.textContent = 'Parece que não temos nenhuma informação por aqui...Que tal criar uma nova publicação?'
-
-    const div = criarElemento('div')
-    div.appendChild(h2)
-    div.appendChild(p)
-
-    const img = criarElemento('img')
-    img.src = '../assets/img/forum.svg'
-    img.alt = 'postagensEmpty'
-
-    const article = criarElemento('article')
-    article.className = 'postagensEmpty'
-
-    article.appendChild(div)
-    article.appendChild(img)
-    section.appendChild(article)
 }
 
 function montarIcone({ id, classes, tooltip, callback }) {
@@ -274,14 +250,15 @@ async function criarPostagem() {
 async function imprimirPostagens() {
     const data = await forumService.getPostagens()
 
-    postagensWrapper.innerHTML = ''
     const banner = consultarSeletor('.postagensEmpty')
     const fragmento = document.createDocumentFragment()
+    postagensWrapper.innerHTML = ''
 
     if (data.length === 0) {
-        if (!banner) montarBanner()
+        banner.style.display = 'flex'
     } else {
-        if (banner) banner.remove()
+        banner.style.display = 'none'
+
         data.forEach(item => {
             const postagemWrapper = criarElemento('div');
             postagemWrapper.id = item.id
