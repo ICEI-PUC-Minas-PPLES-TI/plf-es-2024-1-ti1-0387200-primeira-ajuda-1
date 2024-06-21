@@ -4,9 +4,7 @@ export class ForumService {
     }
 
     async getPostagens() {
-        const resposta = await fetch(this.urlBase, {
-            method: 'GET',
-        })
+        const resposta = await fetch(this.urlBase)
         return resposta.json()
     }
 

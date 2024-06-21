@@ -268,11 +268,8 @@ function montarGrupoDeBotoes({ id, isComment = false, varianteBtn1, varianteBtn2
     return div
 }
 
-function criarPostagem() {
-    const postagens = consultarPostagens()
-    const { data } = postagens
-
-    data.push({
+async function criarPostagem() {
+    await forumService.createPostagem({
         id: determinarId(),
         ...USUARIO,
         data: formataData(new Date()),
@@ -280,9 +277,6 @@ function criarPostagem() {
         comentarios: [],
         curtida: false,
     })
-
-    salvarPostagens(postagens)
-    imprimirPostagens()
 }
 
 
@@ -546,7 +540,10 @@ textAreaPrincipal.addEventListener('input', () => {
 
 formPrincipal.addEventListener('submit', (evento) => {
     evento.preventDefault()
+
     criarPostagem()
+    imprimirPostagens()
+
     formPrincipal.reset()
     controlarBtnPublicar()
     posicionarCursor(textAreaPrincipal)
