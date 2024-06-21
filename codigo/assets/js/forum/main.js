@@ -376,6 +376,7 @@ async function criarComentario(id) {
     const { cancelarBtn, publicarBtn } = montarBotoes()
     cancelarBtn.addEventListener('click', () => {
         comentarioForm.style.display = 'none'
+        comentarioTextArea.value = ''
     })
 
     comentarioTextArea.addEventListener('input', ({ target }) => {
