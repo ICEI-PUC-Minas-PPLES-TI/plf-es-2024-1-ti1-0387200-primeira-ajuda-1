@@ -336,7 +336,7 @@ async function editarPostagem(id) {
 
         const resposta = await forumService.updatePostagem(id, {
             ...postagem,
-            conteudo: postagemTextArea.value,
+            conteudo: postagemTextArea.value.trim(),
             data: formataData(new Date()),
         })
 
@@ -367,6 +367,7 @@ async function deletarPostagem(id) {
 
 async function gerenciarCurtidasPostagem(id) {
     const postagem = await forumService.getPostagemById(id)
+
     const resposta = await forumService.updatePostagem(id, {
         ...postagem,
         curtida: postagem.curtida ? false : true
@@ -425,9 +426,9 @@ async function criarComentario(id) {
     )
 }
 
-function editarComentario(id) {
-    const postagens = consultarPostagens()
-    const { data } = postagens
+async function editarComentario(id) {
+    const comentario = consultarSeletor(`[id="${id}"]`)
+    const postagem = await forumService.getPostagemById(comentario.parentElement.id)
 
     const comentarioTextArea = consultarSeletor(`#comentarioTextArea${id}`)
     const textAreaValorIncial = comentarioTextArea.value
@@ -443,32 +444,23 @@ function editarComentario(id) {
         editarBtn.disabled = comentarioTextArea.value.trim() === '' || comentarioTextArea.value.trim() === textAreaValorIncial
     })
 
-    editarBtn.addEventListener('click', (evento) => {
+    editarBtn.addEventListener('click', async (evento) => {
         evento.preventDefault()
-        salvarPostagens({
-            data: data.reduce(
-                (postagens, item) =>
-                    item.comentarios.find(comentario => comentario.id === id)
-                        ? [
-                            ...postagens,
-                            {
-                                ...item,
-                                comentarios: item.comentarios.map(comentario =>
-                                    comentario.id === id
-                                        ? {
-                                            ...comentario,
-                                            conteudo: comentarioTextArea.value.trim(),
-                                            data: formataData(new Date()),
-                                        }
-                                        : comentario
-                                ),
-                            },
-                        ]
-                        : [...postagens, item],
-                []
-            )
+
+        const resposta = await forumService.updatePostagem(comentario.parentElement.id, {
+            ...postagem,
+            comentarios: postagem.comentarios.map(comentario =>
+                comentario.id === id
+                    ? {
+                        ...comentario,
+                        conteudo: comentarioTextArea.value.trim(),
+                        data: formataData(new Date()),
+                    }
+                    : comentario
+            ),
         })
-        imprimirPostagens()
+
+        if (resposta) await imprimirPostagens()
         gerenciarScroll()
     })
 
