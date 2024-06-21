@@ -1,7 +1,5 @@
 import { ForumService } from "../../services/forumService.js"
 
-const forumService = new ForumService()
-
 const USUARIO = {
     level: 'Bronze',
     profissao: 'Estudante',
@@ -16,6 +14,7 @@ const USUARIO2 = {
     avatar: '../assets/img/avatar2.svg'
 }
 
+const forumService = new ForumService()
 const criarElemento = (variante) => document.createElement(variante)
 const consultarSeletor = (variante) => document.querySelector(variante)
 
@@ -335,13 +334,13 @@ async function editarPostagem(id) {
     editarBtn.addEventListener('click', async (evento) => {
         evento.preventDefault()
 
-        const response = await forumService.updatePostagem(id, {
+        const resposta = await forumService.updatePostagem(id, {
             ...postagem,
             conteudo: postagemTextArea.value,
             data: formataData(new Date()),
         })
 
-        if (response) await imprimirPostagens()
+        if (resposta) await imprimirPostagens()
         gerenciarScroll()
     })
 
@@ -368,17 +367,16 @@ async function deletarPostagem(id) {
 
 async function gerenciarCurtidasPostagem(id) {
     const postagem = await forumService.getPostagemById(id)
-    const response = await forumService.updatePostagem(id, {
+    const resposta = await forumService.updatePostagem(id, {
         ...postagem,
         curtida: postagem.curtida ? false : true
     })
 
-    if (response) await imprimirPostagens()
+    if (resposta) await imprimirPostagens()
 }
 
-function criarComentario(id) {
-    const postagens = consultarPostagens()
-    const { data } = postagens
+async function criarComentario(id) {
+    const postagem = await forumService.getPostagemById(id)
 
     const comentarioForm = consultarSeletor(`#comentarioForm${id}`)
     comentarioForm.style.display = 'flex'
@@ -396,32 +394,23 @@ function criarComentario(id) {
         comentarioForm.style.display = 'none'
     })
 
-    publicarBtn.addEventListener('click', (evento) => {
+    publicarBtn.addEventListener('click', async (evento) => {
         evento.preventDefault()
-        salvarPostagens({
-            data: data.reduce(
-                (postagens, item) =>
-                    item.id === id
-                        ? [
-                            ...postagens,
-                            {
-                                ...item,
-                                comentarios: [
-                                    ...item.comentarios,
-                                    {
-                                        ...USUARIO2,
-                                        id: determinarId(),
-                                        conteudo: comentarioTextArea.value.trim(),
-                                        data: formataData(new Date()),
-                                    }
-                                ]
-                            },
-                        ]
-                        : [...postagens, item],
-                []
-            )
+
+        const resposta = await forumService.updatePostagem(id, {
+            ...postagem,
+            comentarios: [
+                ...postagem.comentarios,
+                {
+                    ...USUARIO2,
+                    id: determinarId(),
+                    conteudo: comentarioTextArea.value.trim(),
+                    data: formataData(new Date()),
+                }
+            ]
         })
-        imprimirPostagens()
+
+        if (resposta) await imprimirPostagens()
         gerenciarScroll()
     })
 
@@ -451,7 +440,7 @@ function editarComentario(id) {
 
     comentarioTextArea.addEventListener('input', () => {
         redimensionarAltura(comentarioTextArea)
-        editarBtn.disabled = comentarioTextArea.value.trim() === '' || comentarioTextArea.value === textAreaValorIncial
+        editarBtn.disabled = comentarioTextArea.value.trim() === '' || comentarioTextArea.value.trim() === textAreaValorIncial
     })
 
     editarBtn.addEventListener('click', (evento) => {
