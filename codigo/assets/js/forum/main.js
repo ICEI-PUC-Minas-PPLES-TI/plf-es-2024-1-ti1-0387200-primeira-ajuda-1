@@ -1,3 +1,5 @@
+import { ForumService } from "../../services/forumService.js"
+
 const USUARIO = {
     level: 'Bronze',
     profissao: 'Estudante',
@@ -12,6 +14,7 @@ const USUARIO2 = {
     avatar: '../assets/img/avatar2.svg'
 }
 
+const forumService = new ForumService()
 const criarElemento = (variante) => document.createElement(variante)
 const consultarSeletor = (variante) => document.querySelector(variante)
 
@@ -22,15 +25,7 @@ const iconePublicar = consultarSeletor('#btnPublicar i')
 const textAreaPrincipal = consultarSeletor('#mainTextArea')
 const postagensWrapper = consultarSeletor('#postagensWrapper')
 
-function salvarPostagens(dados) {
-    localStorage.setItem('postagens', JSON.stringify(dados))
-}
-
-function consultarPostagens() {
-    return JSON.parse(localStorage.getItem('postagens')) || { data: [] }
-}
-
-function determinarId() {
+function obterId() {
     let id = parseInt(localStorage.getItem('id')) || 0
     id++
     localStorage.setItem('id', id)
@@ -162,12 +157,11 @@ function montarPostagem({ item, isComment = false }) {
     postForm.className = !isComment ? 'postagemForm' : 'comentarioForm'
     postForm.appendChild(postTextArea)
 
-
     if (!isComment) {
         const iconeCurtir = montarIcone({
             id: item.id,
             classes: [item.curtida ? 'fa-solid' : 'fa-regular', 'fa-heart'],
-            tooltip: 'Curtir Postagem',
+            tooltip: item.curtida ? 'Descurtir' : 'Curtir Postagem',
             callback: gerenciarCurtidasPostagem
         })
         iconeCurtir.style.color = item.curtida ? '#e10e0e' : '#b5b5b5'
@@ -264,12 +258,9 @@ function montarGrupoDeBotoes({ id, isComment = false, varianteBtn1, varianteBtn2
     return div
 }
 
-function criarPostagem() {
-    const postagens = consultarPostagens()
-    const { data } = postagens
-
-    data.push({
-        id: determinarId(),
+async function criarPostagem() {
+    const resposta = await forumService.createPostagem({
+        id: obterId(),
         ...USUARIO,
         data: formataData(new Date()),
         conteudo: textAreaPrincipal.value.trim(),
@@ -277,13 +268,11 @@ function criarPostagem() {
         curtida: false,
     })
 
-    salvarPostagens(postagens)
-    imprimirPostagens()
+    if (resposta) await imprimirPostagens()
 }
 
-function imprimirPostagens() {
-    const postagens = consultarPostagens()
-    const { data } = postagens
+async function imprimirPostagens() {
+    const data = await forumService.getPostagens()
 
     postagensWrapper.innerHTML = ''
     const banner = consultarSeletor('.postagensEmpty')
@@ -315,9 +304,8 @@ function imprimirPostagens() {
     }
 }
 
-function editarPostagem(id) {
-    const postagens = consultarPostagens()
-    const { data } = postagens
+async function editarPostagem(id) {
+    const postagem = await forumService.getPostagemById(id)
 
     const postagemTextArea = consultarSeletor(`#textArea${id}`)
     const textAreaValorIncial = postagemTextArea.value
@@ -328,30 +316,20 @@ function editarPostagem(id) {
     const { editarBtn, cancelarBtn } = montarBotoes()
     cancelarBtn.addEventListener('click', imprimirPostagens)
 
-    postagemTextArea.addEventListener('input', () => {
-        redimensionarAltura(postagemTextArea)
-        editarBtn.disabled = postagemTextArea.value.trim() === '' || postagemTextArea.value === textAreaValorIncial
+    postagemTextArea.addEventListener('input', ({ target }) => {
+        redimensionarAltura(target)
+        editarBtn.disabled = target.value.trim() === '' || target.value.trim() === textAreaValorIncial
     })
 
-    editarBtn.addEventListener('click', (evento) => {
+    editarBtn.addEventListener('click', async (evento) => {
         evento.preventDefault()
-        salvarPostagens({
-            data: data.reduce(
-                (postagens, item) =>
-                    item.id === id
-                        ? [
-                            ...postagens,
-                            {
-                                ...item,
-                                conteudo: postagemTextArea.value.trim(),
-                                data: formataData(new Date()),
-                            },
-                        ]
-                        : [...postagens, item],
-                []
-            )
+        const resposta = await forumService.updatePostagem(id, {
+            ...postagem,
+            conteudo: postagemTextArea.value.trim(),
+            data: formataData(new Date()),
         })
-        imprimirPostagens()
+
+        if (resposta) await imprimirPostagens()
         gerenciarScroll()
     })
 
@@ -365,44 +343,29 @@ function editarPostagem(id) {
     )
 }
 
-function deletarPostagem(id) {
-    const postagens = consultarPostagens()
-    const { data } = postagens
-
+async function deletarPostagem(id) {
     const confirma = confirm('Deseja excluir essa postagem?')
+
     if (confirma) {
-        salvarPostagens({ data: data.filter(postagem => postagem.id !== id) })
-        imprimirPostagens()
+        const resposta = await forumService.deletePostagem(id)
+        if (resposta) await imprimirPostagens()
     } else {
         alert('Ação cancelada!')
     }
 }
 
-function gerenciarCurtidasPostagem(id) {
-    const postagens = consultarPostagens()
-    const { data } = postagens
-
-    salvarPostagens({
-        data: data.reduce(
-            (postagens, item) =>
-                item.id === id
-                    ? [
-                        ...postagens,
-                        {
-                            ...item,
-                            curtida: item.curtida ? false : true
-                        },
-                    ]
-                    : [...postagens, item],
-            []
-        )
+async function gerenciarCurtidasPostagem(id) {
+    const postagem = await forumService.getPostagemById(id)
+    const resposta = await forumService.updatePostagem(id, {
+        ...postagem,
+        curtida: !postagem.curtida
     })
-    imprimirPostagens()
+
+    if (resposta) await imprimirPostagens()
 }
 
-function criarComentario(id) {
-    const postagens = consultarPostagens()
-    const { data } = postagens
+async function criarComentario(id) {
+    const postagem = await forumService.getPostagemById(id)
 
     const comentarioForm = consultarSeletor(`#comentarioForm${id}`)
     comentarioForm.style.display = 'flex'
@@ -411,41 +374,32 @@ function criarComentario(id) {
     posicionarCursor(comentarioTextArea)
 
     const { cancelarBtn, publicarBtn } = montarBotoes()
-    comentarioTextArea.addEventListener('input', () => {
-        redimensionarAltura(comentarioTextArea)
-        publicarBtn.disabled = comentarioTextArea.value.trim() === ''
-    })
-
     cancelarBtn.addEventListener('click', () => {
         comentarioForm.style.display = 'none'
+        comentarioTextArea.value = ''
     })
 
-    publicarBtn.addEventListener('click', (evento) => {
+    comentarioTextArea.addEventListener('input', ({ target }) => {
+        redimensionarAltura(target)
+        publicarBtn.disabled = target.value.trim() === ''
+    })
+
+    publicarBtn.addEventListener('click', async (evento) => {
         evento.preventDefault()
-        salvarPostagens({
-            data: data.reduce(
-                (postagens, item) =>
-                    item.id === id
-                        ? [
-                            ...postagens,
-                            {
-                                ...item,
-                                comentarios: [
-                                    ...item.comentarios,
-                                    {
-                                        ...USUARIO2,
-                                        id: determinarId(),
-                                        conteudo: comentarioTextArea.value.trim(),
-                                        data: formataData(new Date()),
-                                    }
-                                ]
-                            },
-                        ]
-                        : [...postagens, item],
-                []
-            )
+        const resposta = await forumService.updatePostagem(id, {
+            ...postagem,
+            comentarios: [
+                ...postagem.comentarios,
+                {
+                    ...USUARIO2,
+                    id: obterId(),
+                    conteudo: comentarioTextArea.value.trim(),
+                    data: formataData(new Date()),
+                }
+            ]
         })
-        imprimirPostagens()
+
+        if (resposta) await imprimirPostagens()
         gerenciarScroll()
     })
 
@@ -460,9 +414,9 @@ function criarComentario(id) {
     )
 }
 
-function editarComentario(id) {
-    const postagens = consultarPostagens()
-    const { data } = postagens
+async function editarComentario(id) {
+    const comentario = consultarSeletor(`[id='${id}']`)
+    const postagem = await forumService.getPostagemById(comentario.parentElement.id)
 
     const comentarioTextArea = consultarSeletor(`#comentarioTextArea${id}`)
     const textAreaValorIncial = comentarioTextArea.value
@@ -473,37 +427,27 @@ function editarComentario(id) {
     const { editarBtn, cancelarBtn } = montarBotoes()
     cancelarBtn.addEventListener('click', imprimirPostagens)
 
-    comentarioTextArea.addEventListener('input', () => {
-        redimensionarAltura(comentarioTextArea)
-        editarBtn.disabled = comentarioTextArea.value.trim() === '' || comentarioTextArea.value === textAreaValorIncial
+    comentarioTextArea.addEventListener('input', ({ target }) => {
+        redimensionarAltura(target)
+        editarBtn.disabled = target.value.trim() === '' || target.value.trim() === textAreaValorIncial
     })
 
-    editarBtn.addEventListener('click', (evento) => {
+    editarBtn.addEventListener('click', async (evento) => {
         evento.preventDefault()
-        salvarPostagens({
-            data: data.reduce(
-                (postagens, item) =>
-                    item.comentarios.find(comentario => comentario.id === id)
-                        ? [
-                            ...postagens,
-                            {
-                                ...item,
-                                comentarios: item.comentarios.map(comentario =>
-                                    comentario.id === id
-                                        ? {
-                                            ...comentario,
-                                            conteudo: comentarioTextArea.value.trim(),
-                                            data: formataData(new Date()),
-                                        }
-                                        : comentario
-                                ),
-                            },
-                        ]
-                        : [...postagens, item],
-                []
-            )
+        const resposta = await forumService.updatePostagem(comentario.parentElement.id, {
+            ...postagem,
+            comentarios: postagem.comentarios.map(comentario =>
+                comentario.id === id
+                    ? {
+                        ...comentario,
+                        conteudo: comentarioTextArea.value.trim(),
+                        data: formataData(new Date()),
+                    }
+                    : comentario
+            ),
         })
-        imprimirPostagens()
+
+        if (resposta) await imprimirPostagens()
         gerenciarScroll()
     })
 
@@ -517,40 +461,40 @@ function editarComentario(id) {
     )
 }
 
-function deletarComentario(id) {
-    const postagens = consultarPostagens()
-    const { data } = postagens
+async function deletarComentario(id) {
+    const comentario = consultarSeletor(`[id='${id}']`)
+    const postagem = await forumService.getPostagemById(comentario.parentElement.id)
 
     const confirma = confirm('Deseja excluir esse comentário?')
     if (confirma) {
-        salvarPostagens({
-            data: data.reduce((postagens, item) => {
-                const comentariosRecuperados = item.comentarios.filter(comentario => comentario.id !== id)
-                return [...postagens, { ...item, comentarios: comentariosRecuperados }]
-            }, [])
+        const resposta = await forumService.updatePostagem(comentario.parentElement.id, {
+            ...postagem,
+            comentarios: postagem.comentarios.filter(comentario => comentario.id !== id)
         })
-        imprimirPostagens()
+        if (resposta) comentario.remove()
     } else {
         alert('Ação cancelada!')
     }
 }
 
-textAreaPrincipal.addEventListener('input', () => {
+textAreaPrincipal.addEventListener('input', ({ target }) => {
     controlarBtnPublicar()
-    redimensionarAltura(textAreaPrincipal)
+    redimensionarAltura(target)
 })
 
-formPrincipal.addEventListener('submit', (evento) => {
+formPrincipal.addEventListener('submit', async (evento) => {
     evento.preventDefault()
-    criarPostagem()
+
+    await criarPostagem()
     formPrincipal.reset()
     controlarBtnPublicar()
+
     posicionarCursor(textAreaPrincipal)
     redimensionarAltura(textAreaPrincipal)
     gerenciarScroll()
 })
 
-window.addEventListener('DOMContentLoaded', () => {
-    imprimirPostagens()
+window.addEventListener('DOMContentLoaded', async () => {
+    await imprimirPostagens()
     posicionarCursor(textAreaPrincipal)
 })
