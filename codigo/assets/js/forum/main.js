@@ -157,7 +157,6 @@ function montarPostagem({ item, isComment = false }) {
     postForm.className = !isComment ? 'postagemForm' : 'comentarioForm'
     postForm.appendChild(postTextArea)
 
-
     if (!isComment) {
         const iconeCurtir = montarIcone({
             id: item.id,

@@ -4,41 +4,61 @@ export class ForumService {
     }
 
     async getPostagens() {
-        const resposta = await fetch(this.urlBase)
-        return resposta.json()
+        try {
+            const resposta = await fetch(this.urlBase)
+            return resposta.json()
+        } catch (error) {
+            console.error(error)
+        }
     }
 
     async getPostagemById(id) {
-        const resposta = await fetch(`${this.urlBase}/${id}`)
-        return resposta.json()
+        try {
+            const resposta = await fetch(`${this.urlBase}/${id}`)
+            return resposta.json()
+        } catch (error) {
+            console.error(error)
+        }
     }
 
     async createPostagem(postagem) {
-        const resposta = await fetch(this.urlBase, {
-            method: 'POST',
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(postagem)
-        })
-        return resposta.json()
+        try {
+            const resposta = await fetch(this.urlBase, {
+                method: 'POST',
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(postagem)
+            })
+            return resposta.json()
+        } catch (error) {
+            console.error(error)
+        }
     }
 
     async updatePostagem(id, postagem) {
-        const resposta = await fetch(`${this.urlBase}/${id}`, {
-            method: 'PUT',
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(postagem)
-        })
-        return resposta.json()
+        try {
+            const resposta = await fetch(`${this.urlBase}/${id}`, {
+                method: 'PUT',
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(postagem)
+            })
+            return resposta.json()
+        } catch (error) {
+            console.error(error)
+        }
     }
 
     async deletePostagem(id) {
-        const resposta = await fetch(`${this.urlBase}/${id}`, {
-            method: 'DELETE',
-        })
-        return resposta.json()
+        try {
+            const resposta = await fetch(`${this.urlBase}/${id}`, {
+                method: 'DELETE',
+            })
+            return resposta.json()
+        } catch (error) {
+            console.error(error)
+        }
     }
 }
