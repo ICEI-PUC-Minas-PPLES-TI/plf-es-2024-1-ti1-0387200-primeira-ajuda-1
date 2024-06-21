@@ -1,6 +1,6 @@
-function preencherTabela() {
+async function preencherTabela() {
   const dataTableBody = document.querySelector("#dataTable tbody");
-  const usuarios = buscarUsuarios();
+  const usuarios = await buscarUsuarios();
 
   usuarios.forEach((u) => {
     dataTableBody.innerHTML += `
@@ -13,13 +13,13 @@ function preencherTabela() {
           <td>${u.email}</td>
           <td>${u.password}</td>
           <td>
-            <a href="${window.location.pathname}?id=${u.id}">Editar</a>
+            <a href="${window.location.pathname}?id=${u.id}"><button>Editar</button></a>
           </td>
           <td>
-            <buttom onclick="deletarUsuario(${u.id})">Excluir</buttom>
+            <button onclick="deletarUsuario(${u.id})">Excluir</button>
           </td>
           <td>
-            <a href="/codigo/pages/perfil.html?id=${u.id}" target="_blank"> Acessar Perfil </a>
+            <a href="/codigo/pages/perfil.html?id=${u.id}" target="_blank"><button>Acessar Perfil</button></a>
           </td>
         </tr>
       `;
@@ -27,8 +27,8 @@ function preencherTabela() {
 }
 1;
 
-function preencherFormularioDeCadastro(id) {
-  const usuario = buscarUsuario(id);
+async function preencherFormularioDeCadastro(id) {
+  const usuario = await buscarUsuario(id);
   if (!usuario) {
     window.location.href = window.location.pathname;
     return;

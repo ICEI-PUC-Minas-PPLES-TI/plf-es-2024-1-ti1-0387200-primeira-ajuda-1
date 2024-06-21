@@ -1,3 +1,5 @@
+const BASE_URL = "http://localhost:3000";
+
 const userRegistrationForm = document.querySelector("form#userRegistration");
 
 const nameField = userRegistrationForm.querySelector("#name");
@@ -8,15 +10,16 @@ const professionField = userRegistrationForm.querySelector("#profession");
 const emailField = userRegistrationForm.querySelector("#email");
 const passwordField = userRegistrationForm.querySelector("#password");
 
-function buscarUsuarios() {
-  const localStorageUsuarios = localStorage.getItem("usuarios");
-  const usuarios = localStorageUsuarios ? JSON.parse(localStorageUsuarios) : [];
+async function buscarUsuarios() {
+  const usuarios = await fetch(BASE_URL + "/usuarios").then((response) =>
+    response.json()
+  );
 
   return usuarios;
 }
 
-function buscarUsuario(id) {
-  const usuarios = buscarUsuarios();
+async function buscarUsuario(id) {
+  const usuarios = await buscarUsuarios();
 
   const usuario = usuarios.find((u) => u.id == id);
 
@@ -28,7 +31,7 @@ function buscarUsuario(id) {
   return usuario;
 }
 
-function cadastrarUsuario(
+async function cadastrarUsuario(
   name,
   phone,
   city,
@@ -37,10 +40,7 @@ function cadastrarUsuario(
   email,
   password
 ) {
-  const usuarios = buscarUsuarios();
-
-  usuarios.push({
-    id: usuarios.length + 1,
+  const data = {
     name,
     phone,
     city,
@@ -48,12 +48,18 @@ function cadastrarUsuario(
     profession,
     email,
     password,
-  });
+  };
 
-  localStorage.setItem("usuarios", JSON.stringify(usuarios));
+  await fetch(BASE_URL + "/usuarios", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(data),
+  });
 }
 
-function editarUsuario(
+async function editarUsuario(
   id,
   name,
   phone,
@@ -63,34 +69,32 @@ function editarUsuario(
   email,
   password
 ) {
-  const usuarios = buscarUsuarios();
+  const data = {
+    name,
+    phone,
+    city,
+    neighborhood,
+    profession,
+    email,
+    password,
+  };
 
-  for (let i = 0; i < usuarios.length; i++) {
-    if (usuarios[i].id == id) {
-      usuarios[i] = {
-        id,
-        name,
-        phone,
-        city,
-        neighborhood,
-        profession,
-        email,
-        password,
-      };
-
-      break;
-    }
-  }
-
-  localStorage.setItem("usuarios", JSON.stringify(usuarios));
+  await fetch(BASE_URL + "/usuarios/" + id, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(data),
+  });
 }
 
-function deletarUsuario(id) {
-  const usuarios = buscarUsuarios();
+async function deletarUsuario(id) {
+  await fetch(BASE_URL + "/usuarios/" + id, {
+    method: "DELETE",
+  });
 
-  const novaListaUsuarios = usuarios.filter((u) => u.id != id);
+  alert("Deletado com sucesso!");
 
-  localStorage.setItem("usuarios", JSON.stringify(novaListaUsuarios));
   location.reload();
 }
 
