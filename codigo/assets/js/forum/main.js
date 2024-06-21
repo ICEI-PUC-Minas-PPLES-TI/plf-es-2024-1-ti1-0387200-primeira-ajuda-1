@@ -171,7 +171,7 @@ function montarPostagem({ item, isComment = false }) {
         const iconeCurtir = montarIcone({
             id: item.id,
             classes: [item.curtida ? 'fa-solid' : 'fa-regular', 'fa-heart'],
-            tooltip: 'Curtir Postagem',
+            tooltip: item.curtida ? 'Descurtir' : 'Curtir Postagem',
             callback: gerenciarCurtidasPostagem
         })
         iconeCurtir.style.color = item.curtida ? '#e10e0e' : '#b5b5b5'
@@ -315,9 +315,8 @@ async function imprimirPostagens() {
     }
 }
 
-function editarPostagem(id) {
-    const postagens = consultarPostagens()
-    const { data } = postagens
+async function editarPostagem(id) {
+    const postagem = await forumService.getPostagemById(id)
 
     const postagemTextArea = consultarSeletor(`#textArea${id}`)
     const textAreaValorIncial = postagemTextArea.value
@@ -330,28 +329,19 @@ function editarPostagem(id) {
 
     postagemTextArea.addEventListener('input', () => {
         redimensionarAltura(postagemTextArea)
-        editarBtn.disabled = postagemTextArea.value.trim() === '' || postagemTextArea.value === textAreaValorIncial
+        editarBtn.disabled = postagemTextArea.value.trim() === '' || postagemTextArea.value.trim() === textAreaValorIncial
     })
 
-    editarBtn.addEventListener('click', (evento) => {
+    editarBtn.addEventListener('click', async (evento) => {
         evento.preventDefault()
-        salvarPostagens({
-            data: data.reduce(
-                (postagens, item) =>
-                    item.id === id
-                        ? [
-                            ...postagens,
-                            {
-                                ...item,
-                                conteudo: postagemTextArea.value.trim(),
-                                data: formataData(new Date()),
-                            },
-                        ]
-                        : [...postagens, item],
-                []
-            )
+
+        const response = await forumService.updatePostagem(id, {
+            ...postagem,
+            conteudo: postagemTextArea.value,
+            data: formataData(new Date()),
         })
-        imprimirPostagens()
+
+        if (response) await imprimirPostagens()
         gerenciarScroll()
     })
 
@@ -376,26 +366,14 @@ async function deletarPostagem(id) {
     }
 }
 
-function gerenciarCurtidasPostagem(id) {
-    const postagens = consultarPostagens()
-    const { data } = postagens
-
-    salvarPostagens({
-        data: data.reduce(
-            (postagens, item) =>
-                item.id === id
-                    ? [
-                        ...postagens,
-                        {
-                            ...item,
-                            curtida: item.curtida ? false : true
-                        },
-                    ]
-                    : [...postagens, item],
-            []
-        )
+async function gerenciarCurtidasPostagem(id) {
+    const postagem = await forumService.getPostagemById(id)
+    const response = await forumService.updatePostagem(id, {
+        ...postagem,
+        curtida: postagem.curtida ? false : true
     })
-    imprimirPostagens()
+
+    if (response) await imprimirPostagens()
 }
 
 function criarComentario(id) {
