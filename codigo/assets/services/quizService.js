@@ -1,42 +1,66 @@
-export class ApiService {
+export class QuizService {
     constructor() {
         this.urlBase = 'https://primeira-ajuda-api.vercel.app/perguntas'
     }
 
     async getPerguntas() {
         try {
-            const response = await fetch(this.urlBase);
-            if (!response.ok) {
-                throw new Error('Erro ao buscar perguntas');
-            }
-            const data = await response.json();
-            return data;
+            const resposta = await fetch(this.urlBase)
+            return resposta.json()
         } catch (error) {
-            console.error(error);
+            console.error(error)
             return [];
         }
     }
 
-    async addPergunta(pergunta) {
+    async getPerguntaById(id) {
         try {
-            const response = await fetch(this.urlBase, {
+            const resposta = await fetch(`${this.urlBase}/${id}`)
+            return resposta.json()
+        } catch (error) {
+            console.error(error)
+        }
+    }
+
+    async createPergunta(pergunta) {
+        try {
+            const resposta = await fetch(this.urlBase, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify(pergunta)
             });
-            if (!response.ok) {
-                throw new Error('Erro ao adicionar pergunta');
-            }
-            const data = await response.json();
-            return data;
+            return resposta.json();
         } catch (error) {
             console.error(error);
-            return null;
         }
     }
-}
 
-const apiService = new ApiService();
-export default apiService;
+    async updatePergunta(id, pergunta) {
+        try {
+            const resposta = await fetch(`${this.urlBase}/${id}`, {
+                method: 'PUT',
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(pergunta)
+            })
+            return resposta.json()
+        } catch (error) {
+            console.error(error)
+        }
+    }
+
+    async deletePergunta(id) {
+        try {
+            const resposta = await fetch(`${this.urlBase}/${id}`, {
+                method: 'DELETE',
+            })
+            return resposta.json()
+        } catch (error) {
+            console.error(error)
+        }
+    }
+
+}
