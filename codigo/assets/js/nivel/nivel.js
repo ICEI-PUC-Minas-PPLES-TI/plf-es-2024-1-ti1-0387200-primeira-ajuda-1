@@ -18,11 +18,11 @@ function updateProgressBar() {
     if (progress >= 100) {
         progressBar.style.backgroundColor = 'gold'; // Cor para 100%
     } else if (progress >= 50) {
-        progressBar.style.backgroundColor = 'green'; // Cor para 50%
-    } else {
-        progressBar.style.backgroundColor = 'blue'; // Cor padrão
+        progressBar.style.backgroundColor = 'grey'; // Cor para 50%
+    } else if (progress <= 25) {
+        progressBar.style.backgroundColor = 'blue'; // Cor para 25%
     }
 }
 
 
-addPoints(0); // Deixa a barra zerada para o teste por meio do botão//
+addPoints(0); 
