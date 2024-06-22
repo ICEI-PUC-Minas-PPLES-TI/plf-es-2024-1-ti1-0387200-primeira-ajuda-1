@@ -51,6 +51,11 @@
         <img src="../assets/img/logo-puc.svg" id="LogoPUC" alt="LogoPUC">
         <p>© Copyright 2024. Direitos reservados a Primeira Ajuda.</p>
     </footer>
-    <script src="../assets/js/Quiz/quiz.js"></script>
+    <script type="module">
+        import { funcaoQuiz, submitQuiz } from '../assets/js/quiz/quiz.js';
+
+        window.funcaoQuiz = funcaoQuiz;
+        window.submitQuiz = submitQuiz;
+    </script>
 </body>
 </html>

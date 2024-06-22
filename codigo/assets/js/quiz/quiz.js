@@ -1,11 +1,13 @@
-document.addEventListener('DOMContentLoaded', () => {
+import apiService from '../../services/quizService.js';
+
+document.addEventListener('DOMContentLoaded', async () => {
     const questionCountInput = document.getElementById('contadorQuestoes');
     let perguntas = JSON.parse(localStorage.getItem('CadastroPerguntas')) || [];
 
     if (perguntas.length === 0) {
-        const novasPerguntas = getNovasPerguntas();
+        const novasPerguntas = await apiService.getPerguntas();
         localStorage.setItem('CadastroPerguntas', JSON.stringify(novasPerguntas));
-        perguntas = novasPerguntas; // Atualiza as perguntas para refletir o armazenamento
+        perguntas = novasPerguntas;
     }
 
     questionCountInput.max = perguntas.length;
@@ -16,7 +18,7 @@ function getNovoID() {
     return perguntas.length > 0 ? Math.max(...perguntas.map(p => p.id)) + 1 : 1;
 }
 
-function getNovasPerguntas() {
+async function getNovasPerguntas() {
     return [
         {
             id: getNovoID(),
@@ -153,10 +155,11 @@ function getNovasPerguntas() {
             Alternativa4: "Esperar a pessoa melhorar",
             Resposta: "Ligar para o centro de intoxicações"
         }
+        // Adicione mais perguntas conforme necessário...
     ];
 }
 
-function funcaoQuiz() {
+export function funcaoQuiz() {
     const questionCount = parseInt(document.getElementById('contadorQuestoes').value);
     const quizContainer = document.getElementById('quiz-container');
     const setupContainer = document.getElementById('setup-container');
@@ -183,7 +186,6 @@ function funcaoQuiz() {
 
     const shuffledQuestions = perguntas.sort(() => 0.5 - Math.random()).slice(0, numeroQuestoes);
 
-    // Armazenar as perguntas selecionadas no localStorage com a chave 'armazenarQuestoes'
     localStorage.setItem('armazenarQuestoes', JSON.stringify(shuffledQuestions));
 
     shuffledQuestions.forEach((pergunta, index) => {
@@ -210,7 +212,7 @@ function funcaoQuiz() {
     });
 }
 
-function submitQuiz() {
+export function submitQuiz() {
     const selectedQuestions = JSON.parse(localStorage.getItem('armazenarQuestoes')) || [];
     let score = 0;
 
@@ -219,7 +221,6 @@ function submitQuiz() {
         const respostas = document.getElementsByName(`question${index}`);
         let respostaCorretaEncontrada = false;
 
-        
         respostas.forEach((opcao) => {
             if (opcao.value === pergunta.Resposta) {
                 opcao.parentElement.style.color = 'green'; 
@@ -229,7 +230,6 @@ function submitQuiz() {
             }
         });
 
-        
         if (userAnswer && userAnswer.value === pergunta.Resposta) {
             score++;
             userAnswer.parentElement.style.color = 'green'; 
@@ -237,7 +237,6 @@ function submitQuiz() {
             userAnswer.parentElement.style.color = 'red'; 
         }
 
-        
         if (!respostaCorretaEncontrada && !userAnswer) {
             respostas.forEach((opcao) => {
                 if (opcao.value === pergunta.Resposta) {
@@ -247,6 +246,5 @@ function submitQuiz() {
         }
     });
 
-    
     alert(`Você acertou ${score} de ${selectedQuestions.length} perguntas.`);
 }

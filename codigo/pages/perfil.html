@@ -12,27 +12,26 @@
 </head>
 
 <body>
+    <header>
+        <a href="../index.html">
+            <img src="../assets/img/logo.svg" width="156" alt="logo">
+        </a>
 
-  <header>
-    <a href="../index.html">
-        <img src="../assets/img/logo.svg" width="156" alt="logo">
-    </a>
+        <div>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="#">Fórum</a>
+                    </li>
+                    <li>
+                        <a href="#">Cursos</a>
+                    </li>
+                </ul>
+            </nav>
 
-    <div>
-        <nav>
-            <ul>
-                <li>
-                    <a href="#">Fórum</a>
-                </li>
-                <li>
-                    <a href="#">Cursos</a>
-                </li>
-            </ul>
-        </nav>
-
-        <img src="../assets/img/profile-picture.png" id="avatar" alt="avatar">
-    </div>
-</header>
+            <img src="../assets/img/profile-picture.png" id="avatar" alt="avatar">
+        </div>
+    </header>
 
     <main class="container">
         <div class="painel-progress">
@@ -52,24 +51,24 @@
                 </div>
             </div>
             <div class="container-2">
-                <form action="#">
+                <form id="form-perfil" action="#">
                     <label for="nome">Nome</label>
                     <input type="text" name="nome" id="nome" placeholder="Usuário">
                     
                     <label for="telefone">Telefone</label>
                     <input type="tel" name="telefone" id="telefone" placeholder="(11) 99998888">
 
-                    <label for="nome">Cidade</label>
+                    <label for="cidade">Cidade</label>
                     <input type="text" name="cidade" id="cidade" placeholder="Cidade">
 
                     <label for="email">Email</label>
                     <input type="email" name="email" id="email" placeholder="pedrodasilva@gmail.com">
 
-                    <label for="nome">Senha</label>
+                    <label for="senha">Senha</label>
                     <input type="password" name="senha" id="senha" placeholder="********">
 
                     <label for="profissao">Profissão</label>
-                    <input type="profissao" name="profissao" id="profissao" placeholder="Estudante">
+                    <input type="text" name="profissao" id="profissao" placeholder="Estudante">
                     <br>
                     <div class="container-btn">
                         <button id="btn" class="button">Editar</button>
@@ -78,19 +77,16 @@
             </div>
         </div>
 
-
         <div class="container-kits">
             <h3>Seus kits:</h3>
         </div>
     </main>
     <footer>
-      <img src="../assets/img/logo-puc.svg" id="LogoPUC" alt="LogoPUC">
-      <p>© Copyright 2024. Direitos reservados a Primeira Ajuda.</p>
-  </footer>
-    </body>
-  </html>
-  
-    <script src="/codigo/assets/js/perfil/perfil.js"></script>
+        <img src="../assets/img/logo-puc.svg" id="LogoPUC" alt="LogoPUC">
+        <p>© Copyright 2024. Direitos reservados a Primeira Ajuda.</p>
+    </footer>
+
+    <script src="/codigo/assets/js/perfil/perfil.js" type="module"></script>
 </body>
 
 </html>
