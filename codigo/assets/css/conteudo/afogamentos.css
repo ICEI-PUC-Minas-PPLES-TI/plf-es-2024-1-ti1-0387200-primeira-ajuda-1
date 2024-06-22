@@ -1,0 +1,70 @@
+/* Estilos específicos para a página de afogamentos */
+
+main {
+    padding: 24px;
+  }
+  
+  main article h1 {
+    font-size: 32px;
+    margin-bottom: 24px;
+  }
+  
+  main article section {
+    margin-bottom: 32px;
+  }
+  
+  main article section h2 {
+    font-size: 24px;
+    margin-top: 40px;
+    margin-bottom: 16px;
+  }
+  
+  main article section p {
+    margin-bottom: 16px;
+    line-height: 1.6;
+  }
+  
+  main article section ul {
+    margin-bottom: 24px;
+  }
+  
+  main article section ul li {
+    margin-bottom: 8px;
+  }
+  
+  footer {
+    padding: 12px;
+    flex-flow: column;
+    align-items: center;
+    gap: 16px;
+    font-size: 12px;
+    background-color: #e8e8e8;
+  }
+  
+  footer img#LogoPUC {
+    width: 104px;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  th {
+    background-color: #f2f2f2;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  tr:hover {
+    background-color: #e0e0e0;
+  }
+  
