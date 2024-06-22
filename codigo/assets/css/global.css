@@ -250,6 +250,7 @@ tr:hover {
 .menu i{
   color: #b1b1b1;
   transition: 0.4s;
+  display: none;
 }
 .menu i:hover{
   opacity: 0.7;
@@ -329,7 +330,7 @@ opacity: 0.7;
   background-color: #F2F4F3;
 }
 .cp-4{
-  height: 700px;
+  height: 600px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -601,7 +602,7 @@ font-weight: 900;
 }
 @media (max-width:930px){
 
- 
+  
 
   .cp2-container{
     display: grid;
@@ -656,6 +657,13 @@ font-weight: 900;
 
 }
 @media (max-width:700px){
+
+  .menu i{
+    color: #b1b1b1;
+    transition: 0.4s;
+    display: block;
+  }
+
   #bannerImg{
     height: 300px;
     width: 300px;
