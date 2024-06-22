@@ -1,43 +1,53 @@
-main section#registration {
-  padding: 60px 20px;
-}
-
-main section#registration .container {
-  width: 100%;
-  max-width: 900px;
-  margin-inline: auto;
-  padding: 36px 52px;
+main,
+main section.content form,
+main section.content form fieldset {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background-color: #fff;
-  box-shadow: 4px 4px 4px 0px #0000001a;
-  border-left: 16px solid #033649;
-  border-radius: 16px;
 }
 
-main section#registration .container > img {
-  margin-top: 30px;
+main {
+  width: 90%;
+  margin: 0 auto;
+  padding: 60px;
+  justify-content: space-around;
 }
 
-main section#registration .content {
-  width: 100%;
-  max-width: 300px;
-}
-
-main section#registration .content h1 {
+main section.content h1 {
   text-align: center;
-  font-size: 24px;
-  font-weight: 700;
+  font-weight: 900;
+  text-transform: uppercase;
 }
 
-main section#registration .content h1 + p {
-  margin-top: 12px;
+main section.content h4 {
+  margin: 12px auto 16px;
   text-align: center;
-  font-size: 16px;
 }
 
-main section#registration .content form {
-  display: flex;
+main section.content form {
   flex-direction: column;
+  gap: 8px;
+}
+
+main section.content form fieldset.inputs,
+main section.content form fieldset.grupoDeBotoes {
+  border: none;
+}
+
+main section.content form fieldset.inputs {
+  justify-content: space-between;
+  gap: 4px;
+}
+main section.content form fieldset input {
+  width: 50%;
+}
+
+main section.content form input {
+  padding: 12px;
+  border-radius: 4.8px;
+  border: 1px solid rgb(221, 221, 221);
+}
+
+main section.content form fieldset.grupoDeBotoes {
+  width: 20%;
+  gap: 4px;
+  align-self: end;
 }
