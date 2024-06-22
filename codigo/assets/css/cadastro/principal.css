@@ -11,6 +11,10 @@ main {
   justify-content: space-around;
 }
 
+main section.content {
+  width: 40%;
+}
+
 main section.content h1 {
   text-align: center;
   font-weight: 900;
