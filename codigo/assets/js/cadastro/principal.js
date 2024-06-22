@@ -3,6 +3,7 @@ import { CadastroService } from "../../services/cadastroService.js";
 const cadastroService = new CadastroService()
 const consultarSeletor = (variante) => document.querySelector(variante)
 
+var senhasValidadas = false
 const form = consultarSeletor("form")
 const senha = consultarSeletor("#senha")
 const telefone = consultarSeletor("#telefone")
@@ -27,19 +28,23 @@ telefone.addEventListener('input', ({ target }) => {
 
 confirmaSenha.addEventListener('keyup', ({ target }) => {
   if (target.value.length === 0) {
+    senhasValidadas = false
+
     target.classList.remove('senhasValidas')
     target.classList.remove('senhasInvalidas')
-
     senha.classList.remove('senhasValidas')
     senha.classList.remove('senhasInvalidas')
 
   } else if (target.value != senha.value) {
+    senhasValidadas = false
+
     target.classList.add('senhasInvalidas')
     senha.classList.add('senhasInvalidas')
   } else {
+    senhasValidadas = true
+
     target.classList.remove('senhasInvalidas')
     target.classList.add('senhasValidas')
-
     senha.classList.remove('senhasInvalidas')
     senha.classList.add('senhasValidas')
   }
@@ -52,96 +57,22 @@ form.addEventListener('reset', () => {
   confirmaSenha.classList.remove('senhasInvalidas')
 })
 
+form.addEventListener("submit", async (evento) => {
+  evento.preventDefault()
 
+  if (senhasValidadas) {
+    const dadosCadastroUsuario = {}
 
-// async function buscarUsuarios() {
-//   const usuarios = await fetch(BASE_URL + "/usuarios").then((response) =>
-//     response.json()
-//   );
+    const valoresFormulario = new FormData(evento.target)
+    valoresFormulario.forEach((value, key) => dadosCadastroUsuario[key] = value)
 
-//   return usuarios;
-// }
-
-// async function buscarUsuario(id) {
-//   const usuarios = await buscarUsuarios();
-
-//   const usuario = usuarios.find((u) => u.id == id);
-
-//   if (!usuario) {
-//     alert("Usuário não encontrado!");
-//     return;
-//   }
-
-//   return usuario;
-// }
-
-async function cadastrarUsuario(data) {
-  const resposta = await cadastroService.createUsuario(data)
-
-  if (resposta) window.location.href = ""
-}
-
-async function editarUsuario(
-  id,
-  name,
-  phone,
-  city,
-  neighborhood,
-  profession,
-  email,
-  password
-) {
-  const data = {
-    name,
-    phone,
-    city,
-    neighborhood,
-    profession,
-    email,
-    password,
-  };
-
-  await cadastroService.updateUsuario(id, data)
-}
-
-async function deletarUsuario(id) {
-  await cadastroService.deleteUsuario(id)
-  alert("Deletado com sucesso!");
-}
-
-
-userRegistrationForm.addEventListener("submit", (e) => {
-  e.preventDefault();
-
-  const urlSearchParams = new URLSearchParams(window.location.search);
-  if (urlSearchParams.has("id")) {
-    editarUsuario(
-      urlSearchParams.get("id"),
-      nameField.value,
-      phoneField.value,
-      cityField.value,
-      neighborhoodField.value,
-      professionField.value,
-      emailField.value,
-      passwordField.value
-    );
-
-    alert("Usuário editado com sucesso!");
-    window.location.href = window.location.pathname;
-    return;
+    const resposta = await cadastroService.createUsuario(dadosCadastroUsuario)
+    if (resposta) {
+      evento.target.reset()
+      alert("Usuário cadastrado com sucesso!")
+      window.location.href = ""
+    }
   }
+})
 
-  cadastrarUsuario(
-    nameField.value,
-    phoneField.value,
-    cityField.value,
-    neighborhoodField.value,
-    professionField.value,
-    emailField.value,
-    passwordField.value
-  );
 
-  // alert("Usuário cadastrado com sucesso!");
-
-  // location.reload();
-});
