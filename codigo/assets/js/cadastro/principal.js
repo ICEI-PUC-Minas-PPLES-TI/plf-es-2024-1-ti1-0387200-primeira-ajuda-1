@@ -1,7 +1,8 @@
-const BASE_URL = "http://localhost:3000";
+import { CadastroService } from "../../services/cadastroService.js";
+
+const cadastroService = new CadastroService()
 
 const userRegistrationForm = document.querySelector("form#userRegistration");
-
 const nameField = userRegistrationForm.querySelector("#name");
 const phoneField = userRegistrationForm.querySelector("#phone");
 const cityField = userRegistrationForm.querySelector("#city");
@@ -10,26 +11,27 @@ const professionField = userRegistrationForm.querySelector("#profession");
 const emailField = userRegistrationForm.querySelector("#email");
 const passwordField = userRegistrationForm.querySelector("#password");
 
-async function buscarUsuarios() {
-  const usuarios = await fetch(BASE_URL + "/usuarios").then((response) =>
-    response.json()
-  );
 
-  return usuarios;
-}
+// async function buscarUsuarios() {
+//   const usuarios = await fetch(BASE_URL + "/usuarios").then((response) =>
+//     response.json()
+//   );
 
-async function buscarUsuario(id) {
-  const usuarios = await buscarUsuarios();
+//   return usuarios;
+// }
 
-  const usuario = usuarios.find((u) => u.id == id);
+// async function buscarUsuario(id) {
+//   const usuarios = await buscarUsuarios();
 
-  if (!usuario) {
-    alert("Usuário não encontrado!");
-    return;
-  }
+//   const usuario = usuarios.find((u) => u.id == id);
 
-  return usuario;
-}
+//   if (!usuario) {
+//     alert("Usuário não encontrado!");
+//     return;
+//   }
+
+//   return usuario;
+// }
 
 async function cadastrarUsuario(
   name,
@@ -50,13 +52,7 @@ async function cadastrarUsuario(
     password,
   };
 
-  await fetch(BASE_URL + "/usuarios", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(data),
-  });
+  await cadastroService.createUsuario(data)
 }
 
 async function editarUsuario(
@@ -79,23 +75,12 @@ async function editarUsuario(
     password,
   };
 
-  await fetch(BASE_URL + "/usuarios/" + id, {
-    method: "PUT",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(data),
-  });
+  await cadastroService.updateUsuario(id, data)
 }
 
 async function deletarUsuario(id) {
-  await fetch(BASE_URL + "/usuarios/" + id, {
-    method: "DELETE",
-  });
-
+  await cadastroService.deleteUsuario(id)
   alert("Deletado com sucesso!");
-
-  location.reload();
 }
 
 userRegistrationForm.addEventListener("submit", (e) => {
@@ -129,7 +114,7 @@ userRegistrationForm.addEventListener("submit", (e) => {
     passwordField.value
   );
 
-  alert("Usuário cadastrado com sucesso!");
+  // alert("Usuário cadastrado com sucesso!");
 
-  location.reload();
+  // location.reload();
 });
