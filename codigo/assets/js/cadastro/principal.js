@@ -1,15 +1,57 @@
 import { CadastroService } from "../../services/cadastroService.js";
 
 const cadastroService = new CadastroService()
+const consultarSeletor = (variante) => document.querySelector(variante)
 
-const userRegistrationForm = document.querySelector("form#userRegistration");
-const nameField = userRegistrationForm.querySelector("#name");
-const phoneField = userRegistrationForm.querySelector("#phone");
-const cityField = userRegistrationForm.querySelector("#city");
-const neighborhoodField = userRegistrationForm.querySelector("#neighborhood");
-const professionField = userRegistrationForm.querySelector("#profession");
-const emailField = userRegistrationForm.querySelector("#email");
-const passwordField = userRegistrationForm.querySelector("#password");
+const form = consultarSeletor("form")
+const senha = consultarSeletor("#senha")
+const telefone = consultarSeletor("#telefone")
+const confirmaSenha = consultarSeletor("#confirmaSenha")
+
+telefone.addEventListener('input', ({ target }) => {
+  let valor = target.value.replace(/\D/g, '')
+  let valorFormatado = ''
+
+  if (valor.length > 0) {
+    valorFormatado += '(' + valor.substring(0, 2)
+  }
+  if (valor.length >= 3) {
+    valorFormatado += ') ' + valor.substring(2, 7)
+  }
+  if (valor.length >= 8) {
+    valorFormatado += '-' + valor.substring(7, 11)
+  }
+
+  target.value = valorFormatado
+})
+
+confirmaSenha.addEventListener('keyup', ({ target }) => {
+  if (target.value.length === 0) {
+    target.classList.remove('senhasValidas')
+    target.classList.remove('senhasInvalidas')
+
+    senha.classList.remove('senhasValidas')
+    senha.classList.remove('senhasInvalidas')
+
+  } else if (target.value != senha.value) {
+    target.classList.add('senhasInvalidas')
+    senha.classList.add('senhasInvalidas')
+  } else {
+    target.classList.remove('senhasInvalidas')
+    target.classList.add('senhasValidas')
+
+    senha.classList.remove('senhasInvalidas')
+    senha.classList.add('senhasValidas')
+  }
+})
+
+form.addEventListener('reset', () => {
+  senha.classList.remove('senhasValidas')
+  senha.classList.remove('senhasInvalidas')
+  confirmaSenha.classList.remove('senhasValidas')
+  confirmaSenha.classList.remove('senhasInvalidas')
+})
+
 
 
 // async function buscarUsuarios() {
@@ -33,26 +75,10 @@ const passwordField = userRegistrationForm.querySelector("#password");
 //   return usuario;
 // }
 
-async function cadastrarUsuario(
-  name,
-  phone,
-  city,
-  neighborhood,
-  profession,
-  email,
-  password
-) {
-  const data = {
-    name,
-    phone,
-    city,
-    neighborhood,
-    profession,
-    email,
-    password,
-  };
+async function cadastrarUsuario(data) {
+  const resposta = await cadastroService.createUsuario(data)
 
-  await cadastroService.createUsuario(data)
+  if (resposta) window.location.href = ""
 }
 
 async function editarUsuario(
@@ -82,6 +108,7 @@ async function deletarUsuario(id) {
   await cadastroService.deleteUsuario(id)
   alert("Deletado com sucesso!");
 }
+
 
 userRegistrationForm.addEventListener("submit", (e) => {
   e.preventDefault();

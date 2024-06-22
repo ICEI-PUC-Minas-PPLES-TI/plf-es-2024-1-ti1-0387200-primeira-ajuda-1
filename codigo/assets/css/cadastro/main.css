@@ -47,11 +47,19 @@ main section.content form fieldset input {
 main section.content form input {
   padding: 12px;
   border-radius: 4.8px;
-  border: 1px solid rgb(221, 221, 221);
+  border: 1px solid #c3c3c3;
 }
 
 main section.content form fieldset.grupoDeBotoes {
   width: 20%;
   gap: 4px;
   align-self: end;
+}
+
+main section.content form input.senhasValidas {
+  border: 1px solid #228b22;
+}
+
+main section.content form input.senhasInvalidas {
+  border: 1px solid #ec2300;
 }
