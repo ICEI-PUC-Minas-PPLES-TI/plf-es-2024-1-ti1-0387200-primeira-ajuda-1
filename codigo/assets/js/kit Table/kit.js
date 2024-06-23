@@ -59,11 +59,12 @@ function UpdateKitTable() {
     kits.forEach(kit => {
         const tr = document.createElement("tr");
         tr.innerHTML = `
-            <td>${kit.id}</td>
+            <td><p class="kit-logo"><i class="fa-solid fa-kit-medical"></i></p></td>
             <td>${kit.name}</td>
             <td>${kit.date}</td>
             <td>
-                <button onclick="ViewOrEditKitContent(${kit.id})">Ver/Editar</button>
+                <button onclick="ViewOrEditKitContent(${kit.id})" class="button1" id="btn-editar"><i class="fa-solid fa-pen-to-square"></i></button>
+                <button onclick="removerow(this, ${kit.id})" class="button2" id="remove-kit"><i class="fa-solid fa-trash"></i></button>
             </td>
         `;
         tbody.appendChild(tr);
@@ -88,7 +89,7 @@ function ViewOrEditKitContent(kitId) {
 
     marcarItensKitAoEditar(kit);
     document.querySelector(".content-kit").style.display = "block";
-    document.querySelector(".kit-table").style.display = "none";
+    
     document.querySelector('.item-kits').dataset.kitId = kit.id;
 }
 
@@ -117,6 +118,32 @@ function saveEditedKit() {
 function ReturnToTable() {
     document.querySelector(".content-kit").style.display = "none";
     document.querySelector(".kit-table").style.display = "block";
+}
+
+function removerow(button, kitId) {
+    const row = button.closest("tr");
+
+    if (row) {
+        const confirmacao = confirm("Tem certeza de que deseja apagar esse kit?");
+        if (confirmacao) {
+            // Obtém os kits do localStorage
+            let kits = JSON.parse(localStorage.getItem("kits")) || [];
+
+            // Encontra o índice do kit a ser removido
+            const indexToDelete = kits.findIndex(kit => kit.id === kitId);
+
+            if (indexToDelete !== -1) {
+                // Remove o kit do array
+                kits.splice(indexToDelete, 1);
+
+                // Atualiza o localStorage
+                localStorage.setItem("kits", JSON.stringify(kits));
+            }
+
+            // Remove a linha da tabela
+            row.remove();
+        }
+    }
 }
 
 // Inicializar a tabela de kits na página

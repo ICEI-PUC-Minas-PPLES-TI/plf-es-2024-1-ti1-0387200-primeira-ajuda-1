@@ -220,12 +220,9 @@ tbody td .button2:hover{
     display: none;
     align-items: center;
     justify-content: center;
-    position:fixed;
     background-color: rgba(0, 0, 0, 0.241);
     height: 100%;
     width:100%;
-    top:0px;
-    left:0px;
     overflow: hidden;
 
 }
