@@ -103,6 +103,7 @@ header {
   gap: 24px;
   align-items: center;
   justify-content: space-around;
+  margin-bottom: 6px;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.234);
 }
 
