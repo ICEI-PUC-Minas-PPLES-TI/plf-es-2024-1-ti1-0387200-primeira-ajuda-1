@@ -2,28 +2,43 @@ main {
   padding: 60px;
 }
 
-.painel-progress {
-  margin-top: 60px;
-  background-color: white;
+.nivelWrapper,
+.container,
+form {
+  border-radius: 4.8px;
+  background-color: #ffffff;
+  box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.234);
+}
+
+.nivelWrapper h2 {
+  font-weight: 700;
+}
+
+.perfilWrapper,
+.container,
+form {
+  display: flex;
+}
+
+.nivelWrapper {
+  width: 80%;
   padding: 20px;
+  margin: 0 auto;
+  margin-bottom: 40px;
 }
 
 .perfilWrapper {
   width: 80%;
   margin: 0 auto;
-  display: flex;
+  gap: 12px;
 }
 
 .container {
-  width: 36%;
-  display: flex;
+  width: 40%;
   flex-flow: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-  background-color: #ffffff;
-  border-radius: 4.8px;
-  box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.234);
 }
 
 .container img {
@@ -44,11 +59,7 @@ main {
 form {
   width: 60%;
   padding: 20px;
-  background-color: #ffffff;
-  display: flex;
-  flex-direction: column;
-  border-radius: 4.8px;
-  box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.234);
+  flex-flow: column;
 }
 
 form h3 {
@@ -62,9 +73,9 @@ form fieldset {
 }
 
 form input {
-  margin-bottom: 12px;
   width: 100%;
   padding: 6px;
+  margin-bottom: 12px;
   border-radius: 4.8px;
   border: 1px solid #c3c3c3;
 }

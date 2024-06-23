@@ -20,6 +20,31 @@ const avatar = consultarSeletores("#avatar")
 const usuarioNome = consultarSeletor("#usuarioNome")
 const usuarioLevel = consultarSeletor("#usuarioLevel")
 const usuarioProfissao = consultarSeletor("#usuarioProfissao")
+const barraProgresso = consultarSeletor(".progress-bar")
+const usuarioNivel = consultarSeletor("#usuarioNivel")
+
+function determinarProgresso(nivel) {
+    const opcoesNiveis = {
+        Bronze: {
+            width: '10%',
+            cor: '#A45A03'
+        },
+        Prata: {
+            width: '50%',
+            cor: '#C0C0C0'
+        },
+        Ouro: {
+            width: '100%',
+            cor: '#FFD700'
+        }
+    }
+    return opcoesNiveis[nivel]
+}
+
+function atualizarBarraProgresso() {
+    barraProgresso.style.width = determinarProgresso(usuario.level).width
+    barraProgresso.style.backgroundColor = determinarProgresso(usuario.level).cor
+}
 
 async function preencherPerfil() {
     if (!id) {
@@ -38,8 +63,11 @@ async function preencherPerfil() {
     avatar[0].src = usuario.avatar
     avatar[1].src = usuario.avatar
 
+    atualizarBarraProgresso()
+
     usuarioNome.textContent = usuario.nome
     usuarioProfissao.textContent = usuario.profissao
+    usuarioNivel.textContent = `Seu nível é ${usuario.level}!`
 
     usuarioLevel.textContent = usuario.level
     usuarioLevel.style.color = usuario.level === 'Bronze' ? '#A45A03' : usuario.level === 'Prata' ? '#C0C0C0' : '#FFD700'
