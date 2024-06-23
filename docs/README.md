@@ -24,7 +24,7 @@ Objetivos Específicos:
 
 ## Justificativa
 
-A urgência de resolver esta questão reside no fato de que muitas pessoas carecem de conhecimentos fundamentais em primeiros socorros, o que pode desencadear consequências graves durante emergências. O desenvolvimento deste software visa preencher essa lacuna, democratizando o acesso a informações essenciais sobre primeiros socorros. A opção por recursos interativos é motivada pela necessidade de engajar os usuários e facilitar a absorção do conteúdo. A utilização de questionários, entrevistas e análises estatísticas nos permitirá entender de forma mais aprofundada as necessidades e deficiências de conhecimento do público-alvo, orientando assim o desenvolvimento da solução.
+A urgência de resolver esta questão reside no fato de que muitas pessoas carecem de conhecimentos fundamentais em primeiros socorros, o que pode desencadear consequências graves durante emergências. O desenvolvimento deste software visa preencher essa lacuna, democratizando o acesso a informações essenciais sobre primeiros socorros. A opção por recursos interativos é motivada pela necessidade de engajar os usuários e facilitar a absorção do conteúdo. A utilização de questionários, quizzes, entrevistas e análises estatísticas nos permitirá entender de forma mais aprofundada as necessidades e deficiências de conhecimento do público-alvo, orientando assim o desenvolvimento da solução.
 
 
 ## Público-Alvo
