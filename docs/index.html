@@ -343,23 +343,7 @@
                     </tr>
                     <tr>
                       <th scope="row">Usuário do sistema</th>
-                      <td>Abrir o site e conseguir contatar facilmente ajuda de terceiros, que podem variar de acordo
-                        com a minha emergência, sendo necessário conseguir optar pelo contato adequado (bombeiros,
-                        polícia ou hospitais).</td>
-                      <td>Não podendo prestar o socorro inicial consiga acessar de forma rápida os
-                        profissionais que poderão.</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">Usuário do sistema</th>
-                      <td>Preciso encontrar no site um botão de chamada de emergência que me conecte diretamente ao
-                        serviço de atendimento médico de emergência (SAMU).</td>
-                      <td>Chamar rapidamente uma ambulância e receba orientações de profissionais qualificados em casos
-                        de urgência médica grave.
-                      </td>
-                    </tr>
-                    <tr>
-                      <th scope="row">Usuário do sistema</th>
-                      <td>Desejo encontrar um mapa interativo que me mostre a localização e a disponibilidade dos postos
+                      <td>Encontrar um mapa interativo que me mostre a localização e a disponibilidade dos postos
                         de atendimento médico mais próximos, como hospitais, clínicas e unidades de pronto-atendimento.
                       </td>
                       <td>Identificar facilmente onde obter assistência médica em caso de emergência ou
@@ -368,16 +352,7 @@
                     </tr>
                     <tr>
                       <th scope="row">Usuário do sistema</th>
-                      <td>Desejo encontrar um mapa interativo mostrando a localização dos centros de treinamento de
-                        primeiros socorros mais próximos da minha região.
-                      </td>
-                      <td>Participar de cursos e treinamentos
-                        para adquirir habilidades de resgate e atendimento em situações de emergência.
-                      </td>
-                    </tr>
-                    <tr>
-                      <th scope="row">Usuário do sistema</th>
-                      <td>Gostaria de ter acesso a vídeos curtos e diretos ensinando manobras de primeiros socorros,
+                      <td>Ter acesso a vídeos curtos e diretos ensinando manobras de primeiros socorros,
                         como a de engasgamento.
                       </td>
                       <td>Agir rapidamente em situações de emergência sem dificuldade.</td>
@@ -385,11 +360,9 @@
                     <tr>
                       <th scope="row">Usuário do sistema</th>
                       <td>
-                        Preciso de uma barra de tarefas com palavras-chave de rápido acesso para encontrar rapidamente
-                        informações específicas sobre primeiros socorros, como "engasgamento", "ressuscitação
-                        cardiopulmonar" ou "ferimentos".
+                        De interações dinâmicas que me ajude a testar meus conhecimentos em primeiro socorros, como quiz de perguntas e respostas.
                       </td>
-                      <td>Obter as orientações necessárias rapidamente em situações de emergência.</td>
+                      <td>Testar os conhecimentos.</td>
                     </tr>
                     <tr>
                       <th scope="row">Usuário do sistema</th>
@@ -399,6 +372,12 @@
                         reais.
                       </td>
                       <td>Incentivar outros a buscar conhecimento sobre primeiros socorros.</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Usuário do sistema</th>
+                      <td>De uma tela de cadastro e de perfil, onde consiga salvar todos os meus dados pessoais e o nível nos quiz interativos.
+                      </td>
+                      <td>Conseguir ter acesso ao perfil pessoal e monitorar o desempenho dos quiz sobre primeiros socorros.</td>
                     </tr>
                   </tbody>
                 </table>
@@ -440,8 +419,7 @@
                   <tbody>
                     <tr>
                       <th scope="row">RF-001</th>
-                      <td>O sistema deve disponibilizar o local de cadastro e de compartilhamento de experiências do
-                        usuários.</td>
+                      <td>O sistema deve disponibilizar o local de cadastro do usuário.</td>
                       <td>ALTA</td>
                     </tr>
                     <tr>
@@ -452,20 +430,18 @@
                     </tr>
                     <tr>
                       <th scope="row">RF-003</th>
-                      <td>O sistema deve disponibilizar recursos interativos, como vídeos explicativos e seção de mitos
-                        e verdades.</td>
+                      <td>O sistema deve disponibilizar recursos interativos, como vídeos explicativos e seção de perguntas e respostas.</td>
                       <td>MÉDIA</td>
                     </tr>
                     <tr>
                       <th scope="row">RF-004</th>
-                      <td>O sistema deve disponibilizar mapa interativo dos locais de treinamento e serviços de
-                        emergência.</td>
+                      <td>O sistema deve disponibilizar mapa interativo dos hospitais mais próximos.</td>
                       <td>MÉDIA</td>
                     </tr>
                     <tr>
                       <th scope="row">RF-005</th>
-                      <td>O sistema deve disponibilizar uma barra de pesquisa como acesso rápido para o tipo de problema
-                        que usuário estará buscando.</td>
+                      <td>O sistema deve disponibilizar o local de compartilhamento de experiências do
+                        usuários.</td>
                       <td>ALTA</td>
                     </tr>
                     <tr>
@@ -741,224 +717,366 @@
                   Estrutura de dados associada; (3) o detalhe sobre as instruções de acesso e uso.</p>
               </div>
 
-              <section>
-                <h5>Funcionalidade 1 - Cadastro de Contatos<span class="exemplo">EXEMPLO</span></h5>
-                <p>Permite a inclusão, leitura, alteração e exclusão de contatos para o sistema</p>
-                <ul class="list-unstyled">
-                  <li><strong>Estrutura de dados: </strong><a href="#ti_ed_contatos">Contatos</a></li>
-                  <li><strong>Instruções de acesso: </strong>
-                    <ul>
-                      <li>Abra o site e efetue o login</li>
-                      <li>Acesse o menu principal e escolha a opção Cadastros </li>
-                      <li>Em seguida, escolha a opção Contatos</li>
-                    </ul>
-                  </li>
-                </ul>
-                <p class="text-center"><img class="img-fluid" src="assets/images/exemplo-funcionalidade.png"
-                    alt="Tela Cadastro de Contatos"></p>
-              </section>
+            <section>
+              <h5>Funcionalidade 1 - Cadastro de Usuários</h5>
+              <p>Permite a inclusão das informações do usuário no sistema.</p>
+              <ul class="list-unstyled">
+                <li><strong>Estrutura de dados: </strong><a href="#ti_ed_contatos">Contatos</a></li>
+                <li><strong>Instruções de acesso: </strong>
+                  <ul>
+                    <li>Abra a página de cadastro.</li>
+                    <li>Preencha corretamente os campos disponíveis.</li>
+                    <li>Selecione o botão "salvar" para concluir o cadastro.</li>
+                  </ul>
+                </li>
+              </ul>
+              <p class="text-center"><img class="img-fluid" src="assets/images/pagina-de-cadastro.png"
+                  alt="Tela Cadastro de Usuários"></p>
+            </section>
+            
+
+            <section>
+              <h5>Funcionalidade 2- Tabela de Usurários Cadastrados</h5>
+              <p>Permite a inclusão das informações do usuário no sistema.</p>
+              <ul class="list-unstyled">
+                <li><strong>Estrutura de dados: </strong><a href="#ti_ed_contatos">Contatos</a></li>
+                <li><strong>Instruções de acesso: </strong>
+                  <ul>
+                    <li>Abra a página da tabela de usurários cadastrados.</li>
+                    <li>Selecione a opção desejada: editar | excluir | perfil.</li>
+                    <li>Selecionando a opção EDITAR: os dados do usuário apareceram nos campos à esquerda, permitindo as devidas edições, e serão atualizados após a seleção do botão "salvar".</li>
+                    <li>Selecionando a opção EXCLUIR: os dados do usuário serão excluidos imediatamente da tabela.</li>
+                    <li>Selecionando a opção PERFIL: abrirá a página de perfil do usuário selecionado.</li>
+                  </ul>
+                </li>
+              </ul>
+              <p class="text-center"><img class="img-fluid" src="assets/images/pagina-da-tabela-de-usuarios-cadastrados.png"
+                  alt="Tela Tabela de Usurários Cadastrados"></p>
+            </section>
+          
+
+            <section>
+              <h5>Funcionalidade 3 - Perfil do Usuário Cadastrado</h5>
+              <p>Permite a inclusão das informações do usuário no sistema.</p>
+              <ul class="list-unstyled">
+                <li><strong>Estrutura de dados: </strong><a href="#ti_ed_contatos">Contatos</a></li>
+                <li><strong>Instruções de acesso: </strong>
+                  <ul>
+                    <li>Abra a página de perfil do usuário.</li>
+                    <li>Aqui é possível visualizar as informações pessoais do usuário, o nível em que o usuário está na seção de perguntas e respostas (quiz) e os kits de primeiros socorros que o usuário já montou.</li>
+                    <li>Selecione o botão "editar" caso tenha alterado algum dado do usuário.</li>
+                  </ul>
+                </li>
+              </ul>
+              <p class="text-center"><img class="img-fluid" src="assets/images/pagina-de-perfil-1.png"
+                  alt="Tela Cadastro de Usuários"></p>
+              <p class="text-center"><img class="img-fluid" src="assets/images/pagina-de-perfil-2.png"
+                alt="Tela Perfil de Usuários"></p>
+            </section>
+        
+
+            <section>
+              <h5>Funcionalidade 4 - Forúm de Experiências</h5>
+              <p>Permite a inclusão das informações do usuário no sistema.</p>
+              <ul class="list-unstyled">
+                <li><strong>Estrutura de dados: </strong><a href="#ti_ed_contatos">Contatos</a></li>
+                <li><strong>Instruções de acesso: </strong>
+                  <ul>
+                    <li>Abra a página do forúm.</li>
+                    <li>Preencha o campo "Sobre o que você quer falar?" e selecione o botão "+" para compartilhar suas experiências.</li>
+                    <li>Selecione o botão "editar" caso queira editar algo do seu comentário.</li>
+                    <li>Selecione o botão "excluir" caso queira excluir seu comentário.</li>
+                    <li>Selecione o botão "coração" caso queira curtir o comentário.</li>
+                    <li>Selecione o botão "comentário" caso queira comentar algo no comentário.</li>
+                  </ul>
+                </li>
+              </ul>
+              <p class="text-center"><img class="img-fluid" src="assets/images/pagina-do-forum.png"
+                  alt="Tela Forúm de Experiências"></p>
+            </section>
+      
+
+            <section>
+              <h5>Funcionalidade 5 - Tabela de Kits</h5>
+              <p>Permite a inclusão das informações do usuário no sistema.</p>
+              <ul class="list-unstyled">
+                <li><strong>Estrutura de dados: </strong><a href="#ti_ed_contatos">Contatos</a></li>
+                <li><strong>Instruções de acesso: </strong>
+                  <ul>
+                    <li>Abra a página de tabela de kits.</li>
+                    <li>Selecione o botão "Criar kit +" para criar o seu kit.</li>
+                    <li>Escolha um nome para seu kit, selecione os itens que deseja adicionar ao seu kit eselecione o botão "salvar" para concluir a montagem.</li>
+                    <li>Selecione o botão "editar" caso queira editar algo do seu kit.</li>
+                    <li>Selecione o botão "excluir" caso queira excluir seu kit.</li>
+                  </ul>
+                </li>
+              </ul>
+              <p class="text-center"><img class="img-fluid" src="assets/images/pagina-de-tabela-de-kits.png"
+                  alt="Tela Tabela de Kits"></p>
+            </section>
+   
+
+            <section>
+              <h5>Funcionalidade 6 - Cadastro de Questões</h5>
+              <p>Permite a inclusão das informações do usuário no sistema.</p>
+              <ul class="list-unstyled">
+                <li><strong>Estrutura de dados: </strong><a href="#ti_ed_contatos">Contatos</a></li>
+                <li><strong>Instruções de acesso: </strong>
+                  <ul>
+                    <li>Abra a página de cadastro de questões.</li>
+                    <li>Preencha corretamente os campos disponíveis.</li>
+                    <li>Selecione o botão "cadastrar" para cadastrar a questão ao banco de questões.</li>
+                  </ul>
+                </li>
+              </ul>
+              <p class="text-center"><img class="img-fluid" src="assets/images/pagina-de-cadastro-de-questoes.png"
+                  alt="Tela Cadastro de Questões"></p>
             </section>
 
-            <!-- Estruturas de dados =============== -->
-            <section id="ti_estruturas_dados">
-              <h4>Estruturas de Dados</h4>
-              <p>Descrição das estruturas de dados utilizadas na solução com exemplos no formato JSON.
-                <button type="button" class="btn btn-light btn-sm float-right" data-toggle="collapse"
-                  href="#collapseEstruturas">Info</button>
-              </p>
-              <div class="alert alert-warning collapse" role="alert" id="collapseEstruturas">
-                <p>Apresente as estruturas de dados utilizadas na solução tanto para dados utilizados na essência da
-                  aplicação quanto outras estruturas que foram criadas para algum tipo de configuração</p>
-                <p>Nomeie a estrutura, coloque uma descrição sucinta e apresente um exemplo em formato JSON.</p>
-              </div>
-
-              <section>
-                <h5>Estrutura de Dados - Contatos<span class="exemplo">EXEMPLO</span></h5>
-                <p>Contatos da aplicação</p>
-                <pre>
-                  {
-                    "id": 1,
-                    "nome": "Leanne Graham",
-                    "cidade": "Belo Horizonte",
-                    "categoria": "amigos",
-                    "email": "Sincere@april.biz",
-                    "telefone": "1-770-736-8031",
-                    "website": "hildegard.org"
-                  }
-                </pre>
-              </section>
-
-              <section>
-                <h5>Estrutura de Dados - Usuários<span class="exemplo">EXEMPLO</span></h5>
-                <p>Registro dos usuários do sistema utilizados para login e para o perfil do sistema</p>
-                <pre>
-                  {
-                    id: "eed55b91-45be-4f2c-81bc-7686135503f9"
-                    email: "admin@abc.com"
-                    id: "eed55b91-45be-4f2c-81bc-7686135503f9"
-                    login: "admin"
-                    nome: "Administrador do Sistema"
-                    senha: "123"
-                  }
-                </pre>
-              </section>
+            <section>
+              <h5>Funcionalidade 7 - Quiz</h5>
+              <p>Permite a inclusão das informações do usuário no sistema.</p>
+              <ul class="list-unstyled">
+                <li><strong>Estrutura de dados: </strong><a href="#ti_ed_contatos">Contatos</a></li>
+                <li><strong>Instruções de acesso: </strong>
+                  <ul>
+                    <li>Abra a página de quiz.</li>
+                    <li>Informe quantas questões deseja responder e selecione o botão "iniciar".</li>
+                    <li>Marque a resposta que você acha correta e selecione o botão "enviar".</li>
+                  </ul>
+                </li>
+              </ul>
+              <p class="text-center"><img class="img-fluid" src="assets/images/pagina-de-quiz-1.png"
+                  alt="Tela Cadastro de Usuários"></p>
+              <p class="text-center"><img class="img-fluid" src="assets/images/pagina-de-quiz-2.png"
+                alt="Tela de Quiz"></p>
             </section>
+          
 
-            <!-- Módulos e APIs ================= -->
-            <section id="ti_modulos_apis">
-              <h4>Módulos e APIs</h4>
-              <p>Esta seção apresenta os módulos e APIs utilizados na solução.
-                <button type="button" class="btn btn-light btn-sm float-right" data-toggle="collapse"
-                  href="#collapseModulos">Info</button>
-              </p>
-              <div class="alert alert-warning collapse" role="alert" id="collapseModulos">
-                <p>Apresente os módulos e APIs utilizados no desenvolvimento da solução. Inclua itens como: (1)
-                  Frameworks, bibliotecas, módulos, etc. utilizados no desenvolvimento da solução; (2) APIs utilizadas
-                  para acesso a dados, serviços, etc.</p>
-              </div>
-
-              <section>
-                <h5>Images:</h5>
-                <ul>
-                  <li>Unsplash - <a target="_blank" href="https://unsplash.com/">https://unsplash.com/</a><span
-                      class="exemplo">EXEMPLO</span></li>
-                </ul>
-              </section>
-
-              <section>
-                <h5>Fonts:</h5>
-                <ul>
-                  <li>Icons Font Face - <a target="_blank"
-                      href="https://fontawesome.com/">https://fontawesome.com/</a><span class="exemplo">EXEMPLO</span>
-                  </li>
-                </ul>
-              </section>
-
-              <section>
-                <h5>Scripts:</h5>
-                <ul>
-                  <li>jQuery - <a target="_blank" href="http://www.jquery.com/">http://www.jquery.com/</a><span
-                      class="exemplo">EXEMPLO</span></li>
-                  <li>Bootstrap 4 - <a target="_blank" href="http://getbootstrap.com/">http://getbootstrap.com/</a><span
-                      class="exemplo">EXEMPLO</span></li>
-                </ul>
-              </section>
+            <section>
+              <h5>Funcionalidade 8 - Mapa Interativo</h5>
+              <p>Permite a inclusão das informações do usuário no sistema.</p>
+              <ul class="list-unstyled">
+                <li><strong>Estrutura de dados: </strong><a href="#ti_ed_contatos">Contatos</a></li>
+                <li><strong>Instruções de acesso: </strong>
+                  <ul>
+                    <li>Abra a página do mapa interativo.</li>
+                    <li>Preencha corretamente os campos do local que você deseja ver os hospitais próximos e selecione o botão "Buscar".</li>
+                    <li>Selecione o botão "↻" caso queira fazer uma nova busca.</li>
+                    <li>Selecione a opção desejada: rever | excluir | ↻.</li>
+                    <li>Selecionando a opção REVER: os dados do local serão recarregados no mapa e a localização ficará disponível novamente.</li>
+                    <li>Selecionando a opção EXCLUIR: os dados da localização serão excluidos imediatamente da tabela.</li>
+                    <li>Selecionando a opção ↻: a página será atualizada, o mapa irá sumir e será possível fazer uma nova busca.</li>
+                  </ul>
+                </li>
+              </ul>
+              <p class="text-center"><img class="img-fluid" src="assets/images/pagina-do-mapa-interativo-1.png"
+                alt="Tela Cadastro de Usuários"></p>
+              <p class="text-center"><img class="img-fluid" src="assets/images/pagina-do-mapa-interativo-2.png"
+                alt="Tela de Quiz"></p>
             </section>
-
           </section>
-          <hr class="divider">
 
-          <!-- FAQ ============================ -->
-          <section id="ti_faq">
-            <h2>FAQ</h2>
-            <p class="lead">Perguntas e respostas comuns associadas ao projeto.
+          <!-- Estruturas de dados =============== -->
+          <section id="ti_estruturas_dados">
+            <h4>Estruturas de Dados</h4>
+            <p>Descrição das estruturas de dados utilizadas na solução com exemplos no formato JSON.
               <button type="button" class="btn btn-light btn-sm float-right" data-toggle="collapse"
-                href="#collapseFAQ">Info</button>
+                href="#collapseEstruturas">Info</button>
             </p>
-            <div class="alert alert-warning collapse" role="alert" id="collapseFAQ">
-              <p>Apresente uma lista de perguntas e respostas comuns associadas ao projeto. Inclua perguntas como: (1)
-                detalhes de acesso e uso do projeto; (2) informações sobre a instalação e configuração da aplicação; (3)
-                questões sobre a manutenção da aplicação; (4) detalhes sobre a integração da aplicação com outros
-                sistemas; (5) questões sobre a segurança da aplicação.</p>
+            <div class="alert alert-warning collapse" role="alert" id="collapseEstruturas">
+              <p>Apresente as estruturas de dados utilizadas na solução tanto para dados utilizados na essência da
+                aplicação quanto outras estruturas que foram criadas para algum tipo de configuração</p>
+              <p>Nomeie a estrutura, coloque uma descrição sucinta e apresente um exemplo em formato JSON.</p>
             </div>
 
-            <span class="exemplo">EXEMPLO</span>
-            <div class="row">
-              <div class="col-lg-12">
-                <div class="accordion accordion-alterate arrow-right" id="popularTopics">
-                  <div class="card">
-                    <div class="card-header" id="heading1">
-                      <h5 class="mb-0"> <a href="#" class="collapsed" data-toggle="collapse" data-target="#collapse1"
-                          aria-expanded="false" aria-controls="collapse1">What does royalty free mean?</a> </h5>
-                    </div>
-                    <div id="collapse1" class="collapse" aria-labelledby="heading1" data-parent="#popularTopics">
-                      <div class="card-body"> Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown
-                        printer took a galley of type and scrambled it to make a type specimen book. It has survived not
-                        only five centuries, but also the leap into electronic typesetting, remaining essentially
-                        unchanged. </div>
-                    </div>
+            <section>
+              <h5>Estrutura de Dados - Contatos<span class="exemplo">EXEMPLO</span></h5>
+              <p>Contatos da aplicação</p>
+              <pre>
+                {
+                  "id": 1,
+                  "nome": "Leanne Graham",
+                  "cidade": "Belo Horizonte",
+                  "categoria": "amigos",
+                  "email": "Sincere@april.biz",
+                  "telefone": "1-770-736-8031",
+                  "website": "hildegard.org"
+                }
+              </pre>
+            </section>
+
+            <section>
+              <h5>Estrutura de Dados - Usuários<span class="exemplo">EXEMPLO</span></h5>
+              <p>Registro dos usuários do sistema utilizados para login e para o perfil do sistema</p>
+              <pre>
+                {
+                  id: "eed55b91-45be-4f2c-81bc-7686135503f9"
+                  email: "admin@abc.com"
+                  id: "eed55b91-45be-4f2c-81bc-7686135503f9"
+                  login: "admin"
+                  nome: "Administrador do Sistema"
+                  senha: "123"
+                }
+              </pre>
+            </section>
+          </section>
+
+          <!-- Módulos e APIs ================= -->
+          <section id="ti_modulos_apis">
+            <h4>Módulos e APIs</h4>
+            <p>Esta seção apresenta os módulos e APIs utilizados na solução.
+              <button type="button" class="btn btn-light btn-sm float-right" data-toggle="collapse"
+                href="#collapseModulos">Info</button>
+            </p>
+            <div class="alert alert-warning collapse" role="alert" id="collapseModulos">
+              <p>Apresente os módulos e APIs utilizados no desenvolvimento da solução. Inclua itens como: (1)
+                Frameworks, bibliotecas, módulos, etc. utilizados no desenvolvimento da solução; (2) APIs utilizadas
+                para acesso a dados, serviços, etc.</p>
+            </div>
+
+            <section>
+              <h5>Images:</h5>
+              <ul>
+                <li>Unsplash - <a target="_blank" href="https://unsplash.com/">https://unsplash.com/</a><span
+                    class="exemplo">EXEMPLO</span></li>
+              </ul>
+            </section>
+
+            <section>
+              <h5>Fonts:</h5>
+              <ul>
+                <li>Icons Font Face - <a target="_blank"
+                    href="https://fontawesome.com/">https://fontawesome.com/</a><span class="exemplo">EXEMPLO</span>
+                </li>
+              </ul>
+            </section>
+
+            <section>
+              <h5>Scripts:</h5>
+              <ul>
+                <li>jQuery - <a target="_blank" href="http://www.jquery.com/">http://www.jquery.com/</a><span
+                    class="exemplo">EXEMPLO</span></li>
+                <li>Bootstrap 4 - <a target="_blank" href="http://getbootstrap.com/">http://getbootstrap.com/</a><span
+                    class="exemplo">EXEMPLO</span></li>
+              </ul>
+            </section>
+          </section>
+
+        </section>
+        <hr class="divider">
+
+        <!-- FAQ ============================ -->
+        <section id="ti_faq">
+          <h2>FAQ</h2>
+          <p class="lead">Perguntas e respostas comuns associadas ao projeto.
+            <button type="button" class="btn btn-light btn-sm float-right" data-toggle="collapse"
+              href="#collapseFAQ">Info</button>
+          </p>
+          <div class="alert alert-warning collapse" role="alert" id="collapseFAQ">
+            <p>Apresente uma lista de perguntas e respostas comuns associadas ao projeto. Inclua perguntas como: (1)
+              detalhes de acesso e uso do projeto; (2) informações sobre a instalação e configuração da aplicação; (3)
+              questões sobre a manutenção da aplicação; (4) detalhes sobre a integração da aplicação com outros
+              sistemas; (5) questões sobre a segurança da aplicação.</p>
+          </div>
+
+          <span class="exemplo">EXEMPLO</span>
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="accordion accordion-alterate arrow-right" id="popularTopics">
+                <div class="card">
+                  <div class="card-header" id="heading1">
+                    <h5 class="mb-0"> <a href="#" class="collapsed" data-toggle="collapse" data-target="#collapse1"
+                        aria-expanded="false" aria-controls="collapse1">What does royalty free mean?</a> </h5>
                   </div>
-                  <div class="card">
-                    <div class="card-header" id="heading2">
-                      <h5 class="mb-0"> <a href="#" class="collapsed" data-toggle="collapse" data-target="#collapse2"
-                          aria-expanded="false" aria-controls="collapse2">What is a single application?</a> </h5>
-                    </div>
-                    <div id="collapse2" class="collapse" aria-labelledby="heading2" data-parent="#popularTopics">
-                      <div class="card-body"> Iisque Anim pariatur cliche reprehenderit, enim eiusmod high life
-                        accusamus terry richardson ad squid. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf
-                        moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch
-                        et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea
-                        proident. Ad vegan excepteur butcher vice lomo. </div>
-                    </div>
+                  <div id="collapse1" class="collapse" aria-labelledby="heading1" data-parent="#popularTopics">
+                    <div class="card-body"> Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                      Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown
+                      printer took a galley of type and scrambled it to make a type specimen book. It has survived not
+                      only five centuries, but also the leap into electronic typesetting, remaining essentially
+                      unchanged. </div>
                   </div>
-                  <div class="card">
-                    <div class="card-header" id="heading3">
-                      <h5 class="mb-0"> <a href="#" class="collapsed" data-toggle="collapse" data-target="#collapse3"
-                          aria-expanded="false" aria-controls="collapse3">What are some examples of permitted end
-                          products?</a> </h5>
-                    </div>
-                    <div id="collapse3" class="collapse" aria-labelledby="heading3" data-parent="#popularTopics">
-                      <div class="card-body"> Iisque persius interesset his et, in quot quidam persequeris vim, ad mea
-                        essent possim iriure. Mutat tacimates id sit. Ridens mediocritatem ius an, eu nec magna
-                        imperdiet. </div>
-                    </div>
+                </div>
+                <div class="card">
+                  <div class="card-header" id="heading2">
+                    <h5 class="mb-0"> <a href="#" class="collapsed" data-toggle="collapse" data-target="#collapse2"
+                        aria-expanded="false" aria-controls="collapse2">What is a single application?</a> </h5>
+                  </div>
+                  <div id="collapse2" class="collapse" aria-labelledby="heading2" data-parent="#popularTopics">
+                    <div class="card-body"> Iisque Anim pariatur cliche reprehenderit, enim eiusmod high life
+                      accusamus terry richardson ad squid. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf
+                      moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch
+                      et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea
+                      proident. Ad vegan excepteur butcher vice lomo. </div>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="card-header" id="heading3">
+                    <h5 class="mb-0"> <a href="#" class="collapsed" data-toggle="collapse" data-target="#collapse3"
+                        aria-expanded="false" aria-controls="collapse3">What are some examples of permitted end
+                        products?</a> </h5>
+                  </div>
+                  <div id="collapse3" class="collapse" aria-labelledby="heading3" data-parent="#popularTopics">
+                    <div class="card-body"> Iisque persius interesset his et, in quot quidam persequeris vim, ad mea
+                      essent possim iriure. Mutat tacimates id sit. Ridens mediocritatem ius an, eu nec magna
+                      imperdiet. </div>
                   </div>
                 </div>
               </div>
             </div>
+          </div>
 
-          </section>
-          <hr class="divider">
+        </section>
+        <hr class="divider">
 
-          <!-- Referências Bibliográficas ================= -->
-          <section id="ti_referencias">
-            <h2>Referências Bibliográficas</h2>
-            <p class="lead">Esta seção apresenta as referências bibliográficas utilizadas no projeto.
-              <button type="button" class="btn btn-light btn-sm float-right" data-toggle="collapse"
-                href="#collapseReferencias">Info</button>
-            </p>
-            <div class="alert alert-warning collapse" role="alert" id="collapseReferencias">
-              <p>Apresente as referências bibliográficas utilizadas no projeto. Inclua itens como: (1) livros, artigos,
-                tutoriais, etc. utilizados no desenvolvimento da solução; (2) links para sites, blogs, etc. utilizados
-                no desenvolvimento da solução.</p>
-            </div>
-            <p>...... COLOQUE AQUI O SEU TEXTO ......</p>
-          </section>
+        <!-- Referências Bibliográficas ================= -->
+        <section id="ti_referencias">
+          <h2>Referências Bibliográficas</h2>
+          <p class="lead">Esta seção apresenta as referências bibliográficas utilizadas no projeto.
+            <button type="button" class="btn btn-light btn-sm float-right" data-toggle="collapse"
+              href="#collapseReferencias">Info</button>
+          </p>
+          <div class="alert alert-warning collapse" role="alert" id="collapseReferencias">
+            <p>Apresente as referências bibliográficas utilizadas no projeto. Inclua itens como: (1) livros, artigos,
+              tutoriais, etc. utilizados no desenvolvimento da solução; (2) links para sites, blogs, etc. utilizados
+              no desenvolvimento da solução.</p>
+          </div>
+          <p>...... COLOQUE AQUI O SEU TEXTO ......</p>
+        </section>
 
-        </div>
       </div>
-      <!-- Content end -->
-    </main>
+    </div>
+    <!-- Content end -->
+  </main>
 
-    <!-- Footer
-  ============================ -->
-    <footer id="footer" class="section bg-dark footer-text-light">
-      <div class="container">
-        <p class="text-center"><strong>Trabalho Interdisciplinar - ICEI PUC Minas</strong><br>Modelo adaptado de <a
-            href="http://www.harnishdesign.net/idocs-one-page-documentation-html-template/">iDocs</a> - Design &amp;
-          Develop by <a class="btn-link" target="_blank" href="http://www.harnishdesign.net/">HarnishDesign</a></p>
-      </div>
-    </footer>
-    <!-- Footer end -->
+  <!-- Footer
+============================ -->
+  <footer id="footer" class="section bg-dark footer-text-light">
+    <div class="container">
+      <p class="text-center"><strong>Trabalho Interdisciplinar - ICEI PUC Minas</strong><br>Modelo adaptado de <a
+          href="http://www.harnishdesign.net/idocs-one-page-documentation-html-template/">iDocs</a> - Design &amp;
+        Develop by <a class="btn-link" target="_blank" href="http://www.harnishdesign.net/">HarnishDesign</a></p>
+    </div>
+  </footer>
+  <!-- Footer end -->
 
-    <!-- Document Wrapper end -->
-  </div>
+  <!-- Document Wrapper end -->
+</div>
 
-  <!-- Back To Top -->
-  <a id="back-to-top" data-toggle="tooltip" title="Topo" href="javascript:void(0)"><i class="fa fa-chevron-up"></i></a>
+<!-- Back To Top -->
+<a id="back-to-top" data-toggle="tooltip" title="Topo" href="javascript:void(0)"><i class="fa fa-chevron-up"></i></a>
 
-  <!-- JavaScript ============================ -->
-  <script src="assets/vendor/jquery/jquery.min.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <!-- Highlight JS -->
-  <script src="assets/vendor/highlight.js/highlight.min.js"></script>
-  <!-- Easing -->
-  <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
-  <!-- Magnific Popup -->
-  <script src="assets/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
-  <!-- Custom Script -->
-  <script src="assets/js/theme.js"></script>
+<!-- JavaScript ============================ -->
+<script src="assets/vendor/jquery/jquery.min.js"></script>
+<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- Highlight JS -->
+<script src="assets/vendor/highlight.js/highlight.min.js"></script>
+<!-- Easing -->
+<script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+<!-- Magnific Popup -->
+<script src="assets/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+<!-- Custom Script -->
+<script src="assets/js/theme.js"></script>
 </body>
 
 </html>
