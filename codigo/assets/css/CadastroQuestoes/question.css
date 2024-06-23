@@ -4,7 +4,6 @@
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
 }
-
 main{
     display: flex;
     align-items: center;
@@ -12,6 +11,14 @@ main{
     height: 70%;
     margin:  40px;
     background-color: #f5f5f5;
+    padding: 24px;
+}
+form{
+    display: flex; 
+    flex-flow: column;
+}
+fieldset{
+    margin-top: 24px; border:none;
 }
 .container{
     background-color: #ffffff;
@@ -23,8 +30,9 @@ main{
     align-items: center;
     border-radius: 0.3rem;
 }
-
-/*Parte opções*/
+.botoes{
+    align-self: end;
+}
 .inputoption{
     height:40px;
     width: 100%;
@@ -33,77 +41,9 @@ main{
     border-radius: 0.3rem;
     border: 2px solid rgb(221, 221, 221);
 }
-.options{
-    padding: 5px;
+input{
+    border: 1px solid #c3c3c3;
 }
-.optionh2{
-    margin-top: 20px;
-    font-size: 18px;
-    font-weight: 100;
-}
-
-/* Parte da pergunta */
-.h2question{
-    margin-top: 20px;
-    font-size: 25px;
-    margin-left: 5px;
-    font-weight: 300;
-}
-
-/* botão regitrar */
-
-.register-button{
-    display: flex;
-    justify-content: flex-end;
-    margin: 10px;
-}
-#btn-register{
-    padding: 7px;
-    background-color:  #031634;
-    color: aliceblue;
-    border-radius: 0.3rem;
-    transition: 0.4s;
-    border: 0px;
-}
-#btn-register:hover{
-    background-color: #055470;
-}
-
-.fa-solid{
-    color:  #031634;
-}
-
-.op-correct{
-    padding: 10px;  
-}
-.op-correct p{
-    font-size: 20px;
-    margin-bottom: 10px;
-}
-.op-correct ul{
-    display: flex;
-    justify-content: space-around;
-    padding-top: 10px;
-    font-size: 16px;
-}
-#correct-awnser1{
-    transform: scale(1.2);
-    margin-right: 5px; 
-}
-#correct-awnser2{
-    transform: scale(1.2);
-    margin-right: 5px; 
-}
-#correct-awnser3{
-    transform: scale(1.2);
-    margin-right: 5px; 
-}
-#correct-awnser4{
-    transform: scale(1.2);
-    margin-right: 5px; 
-}
-
-
 @media screen and (max-width:1200px) {
     .selection{
         display: none;
@@ -122,4 +62,21 @@ main{
    .op-correct ul li{
     padding: 10px;
    }
+}
+@media all and (max-width:435px){
+    form{
+        max-width: 350px;
+    }
+  
+    h1{
+        font-size: 25px;
+    }
+} 
+@media all and (max-width:350px){
+    form{
+        max-width: 320px;
+    }
+    h1{
+        font-size: 20px;
+    }
 }

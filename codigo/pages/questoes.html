@@ -11,8 +11,34 @@
 </head>
 
 <body>
-    <main style="padding: 24px;">
-        <form style="display: flex; flex-flow: column;">
+<header>
+    <a href="../index.html">
+        <img src="../assets/img/logo.svg" id="logo" alt="logo">
+    </a>
+
+    <div>
+        <nav>
+            <ul class="menu">
+                <li><a href="#">Fórum</a></li>
+                <li><a href="#">Cursos</a></li>
+            </ul>
+        </nav>
+
+        <span>
+            <img src="../assets/img/profile-picture.png" id="avatar" alt="avatar">
+
+            <nav>
+                <ul class="dropdown">
+                    <li><a href="">Entrar</a></li>
+                    <li><a href="">Perfil</a></li>
+                    <li>Logout</li>
+                </ul>
+            </nav>
+        </span>
+    </div>
+</header>
+    <main>
+        <form>
             <h1 style="text-transform: uppercase; font-weight: 900;">#cadastrarquestões</h1>
             <fieldset style="border: none;">
                 <input id="pergunta" name="pergunta" type="text" placeholder="Digite a pergunta" class="inputoption">
@@ -27,13 +53,13 @@
                     class="inputoption" required>
             </fieldset>
 
-            <fieldset style="margin-top: 24px; border:none;">
+            <fieldset>
                 <p>Digite a resposta no campo abaixo:</p>
                 <input id="resposta" name="resposta" type="text" placeholder="Digite alternativa correta"
                     class="inputoption" required>
             </fieldset>
 
-            <div style="align-self: end;">
+            <div class="botoes">
                 <button type="reset">Limpar</button>
                 <button id="btn-register" type="submit">Cadastrar</button>
             </div>

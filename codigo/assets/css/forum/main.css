@@ -8,6 +8,7 @@ section#forum {
 
 section#forum h1 {
   font-weight: 900;
+  text-transform: uppercase;
   margin: 32px auto 32px;
 }
 
