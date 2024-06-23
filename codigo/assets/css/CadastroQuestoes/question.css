@@ -17,6 +17,10 @@ form{
     display: flex; 
     flex-flow: column;
 }
+form h1{
+    text-transform: uppercase; 
+    font-weight: 900;
+}
 fieldset{
     margin-top: 24px; border:none;
 }
