@@ -67,7 +67,7 @@ async function preencherPerfil() {
 
     usuarioNome.textContent = usuario.nome
     usuarioProfissao.textContent = usuario.profissao
-    usuarioNivel.textContent = `Seu nível é ${usuario.level}!`
+    usuarioNivel.textContent = `Nível ${usuario.level}`
 
     usuarioLevel.textContent = usuario.level
     usuarioLevel.style.color = usuario.level === 'Bronze' ? '#A45A03' : usuario.level === 'Prata' ? '#C0C0C0' : '#FFD700'
