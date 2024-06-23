@@ -47,46 +47,21 @@ O software é direcionado a um público diversificado, compreendendo uma ampla f
 
 ## Histórias de Usuários
 
-- Como usuário, eu preciso abrir o site e ter facilidade de visualização das seções de
-primeiros socorros adequados ao tipo de situação emergencial para que eu possa
+- Como usuário, eu preciso abrir o site e ter facilidade de visualização das seções de primeiros socorros adequados ao tipo de situação emergencial para que eu possa
 encontrar rapidamente a informação necessária para prestar o socorro para um
 terceiro ou para mim mesmo.
 
-- Como usuário, eu preciso abrir o site e conseguir contatar facilmente ajuda de
-terceiros, que podem variar de acordo com a minha emergência, sendo necessário
-conseguir optar pelo contato adequado (bombeiros, polícia ou hospitais), para que eu
-não podendo prestar o socorro inicial consiga acessar de forma rápida os profissionais
-que poderão.
+- Como usuário, eu preciso encontrar um mapa interativo que me mostre a localização e a disponibilidade dos postos de atendimento médico mais próximos, como hospitais, clínicas e unidades de pronto-atendimento. Para identificar facilmente onde obter assistência médica em caso de emergência ou necessidade de cuidados médicos urgentes.
+  
+- Como usuário, eu desejo ter acesso a vídeos curtos e diretos ensinando manobras de primeiros socorros, como a de engasgamento. Para poder agir rapidamente em situações de emergência sem dificuldade.
+  
+- Como usuário, gostaria de ter interações dinâmicas que me ajude a testar meus conhecimentos em primeiro socorros, como quiz de perguntas e respostas. Para testar os conhecimentos.
 
-- Como usuário, eu preciso encontrar no site um botão de chamada de emergência que me
-conecte diretamente ao serviço de atendimento médico de emergência (SAMU), permitindo
-que eu chame rapidamente uma ambulância e receba orientações de profissionais qualificados
-em casos de urgência médica grave.
+- Como usuário, gostaria de uma aba no site dedicada à divulgação de experiências dos usuários, onde as pessoas podem compartilhar como o site os ajudou em situações de emergência, oferecendo dicas e relatos reais para incentivar outros a buscar conhecimento sobre primeiros socorros.
 
-- Como usuário, ao acessar o site, desejo encontrar um mapa interativo que me mostre a 
- localização e a disponibilidade dos postos de atendimento médico mais próximos, como 
- hospitais, clínicas e unidades de pronto-atendimento, para que eu possa identificar 
- facilmente onde obter assistência médica em caso de emergência ou necessidade de cuidados
- médicos urgentes.
+- De uma tela de cadastro e de perfil, onde consiga salvar todos os meus dados pessoais e o nível nos quiz interativos. Para conseguir ter acesso ao perfil pessoal e monitorar o desempenho dos quiz sobre primeiros socorros.
 
- - Como usuário, desejo encontrar um mapa interativo mostrando a localização dos centros de treinamento de 
-primeiros socorros mais próximos da minha região, para que eu possa participar de cursos e treinamentos
-para adquirir habilidades de resgate e atendimento em situações de emergência.
-
-- Como usuário, gostaria de ter acesso a vídeos curtos e diretos ensinando manobras de
-primeiros socorros, como a de engasgamento, para que eu possa agir rapidamente em
-situações de emergência sem dificuldade.
-
-- Como usuário, preciso de uma barra de tarefas com palavras-chave de rápido acesso para
-encontrar rapidamente informações específicas sobre primeiros socorros, como "engasgamento",
-"ressuscitação cardiopulmonar" ou "ferimentos", para que eu possa obter as orientações necessárias
-rapidamente em situações de emergência.
-
-- Como usuário, gostaria de uma aba no site dedicada à divulgação de experiências dos usuários, onde as 
-pessoas podem compartilhar como o site os ajudou em situações de emergência, oferecendo dicas e relatos
-reais para incentivar outros a buscar conhecimento sobre primeiros socorros.
-
-- Como usuário, desejo encontrar uma seção dedicada aos tópicos mais buscados na plataforma, para que eu possa visualizar e acessar o conteúdo mais prestigiado.
+- Como usuário, eu preciso encontrar no site um local de divulgação de contatos de emergência que me conecte diretamente ao serviço de atendimento médico de emergência (SAMU), permitindo que eu chame rapidamente uma ambulância e receba orientações de profissionais qualificados em casos de urgência médica grave.
 
 - Como usuário, gostaria de ter acesso à minha classificação baseada no conteúdo que consumi, bem como, nos quizzes que realizei ao longo do tempo de uso da plataforma, para entender minha evolução no contexto de prestação de primeiros socorros.
 
@@ -96,16 +71,16 @@ reais para incentivar outros a buscar conhecimento sobre primeiros socorros.
 
 Requisitos Funcionais (RF):
 
-- O sistema deve disponibilizar o local de cadastro e de compartilhamento de experiências do usuários.
 - O sistema deve disponibilizar conteúdo educacional sobre primeiros socorros, dividido em seções temáticas.
-- O sistema deve disponibilizar recursos interativos, como vídeos explicativos e seção de mitos e verdades.
-- O sistema deve disponibilizar mapa interativo dos locais de treinamento e serviços de emergência.
-- O sistema deve disponibilizar uma barra de pesquisa como acesso rápido para o tipo de problema que usuário estará buscando.
-- O sistema deve disponibilizar um botão que irá facilitar a comunicação do usuário com um profissional capacitado em práticas de primeiros socorros.
-- O sistema deve fornecer um gráfico que apresente os tópicos mais frequentemente buscados dentro da plataforma.
+- O sistema deve disponibilizar mapa interativo que me mostre a localização e a disponibilidade dos postos de atendimento médico mais próximos, como hospitais, clínicas e unidades de pronto-atendimento.
+- O sistema deve disponibilizar uma página com acesso a vídeos curtos e diretos ensinando manobras de primeiros socorros.
+- O sistema deve oferecer testes de conhecimento(quizzes de múltipla escolha), que serão destinados a realização dos usuários após consumo de alguma seção informativa de práticas de primeiros socorros, para avaliar as habilidades adquiridas a partir do conteúdo disponibilizado. Os resultados dos testes contribuirão para o progresso do usuário em sua classificação de capacitação.
+- O sistema deve disponibilizar uma página voltada para o compartilhamento de experiências do usuários.
+- O sistema deve disponibilizar o local de cadastro de usuários.
+- O sistema deve disponibilizar um recurso de contatos de emergência que conecte diretamente ao serviço de atendimento médico de emergência (SAMU), especialista em práticas de primeiros socorros, com o usuário.
 - O sistema deve incluir um painel do usuário com uma barra de progresso que indica a classificação do usuário, a qual será determinada pelo conteúdo que ele já consumiu.
 - O sistema deve fornecer uma tabela para listagem de kits de primeiros socorros montados pelo próprio usuário para diferentes situações, possibilitando sua visualização, edição e exclusão.
-- O sistema deve oferecer testes de conhecimento(quizzes de múltipla escolha), que serão destinados a realização dos usuários após consumo de alguma seção informativa de práticas de primeiros socorros, para avaliar as habilidades adquiridas a partir do conteúdo disponibilizado. Os resultados dos testes contribuirão para o progresso do usuário em sua classificação de capacitação.
+
 
 
 Requisitos Não Funcionais (RNF):
