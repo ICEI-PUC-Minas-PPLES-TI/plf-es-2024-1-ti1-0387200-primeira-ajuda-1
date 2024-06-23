@@ -1,116 +1,82 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Primeira Ajuda</title>
-    <link rel="stylesheet" href="../../assets/css/global.css" />
-    <link rel="stylesheet" href="../../assets/css/cadastro/principal.css" />
-    <script src="../../assets/js/cadastro/principal.js" defer></script>
-  </head>
-  <body>
-    <header>
-      <a href="../index.html">
-        <img src="../../assets/img/logo.svg" width="156" alt="logo" />
-      </a>
+<html lang="pt-BR">
 
-      <div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../../assets/css/global.css" />
+  <link rel="stylesheet" href="../../assets/css/cadastro/main.css" />
+  <title>Cadastrar</title>
+</head>
+
+<body>
+  <header>
+    <a href="../../index.html">
+      <img src="../../assets/img/logo.svg" id="logo" alt="logo">
+    </a>
+
+    <div>
+      <span>
+        <img src="../../assets/img/profile-picture.png" id="avatar" alt="avatar">
+
         <nav>
-          <ul>
-            <li>
-              <a href="#">Fórum</a>
-            </li>
-            <li>
-              <a href="#">Cursos</a>
-            </li>
+          <ul class="dropdown">
+            <li><a href="">Entrar</a></li>
+            <li><a href="">Perfil</a></li>
+            <li><a href="">Forum</a></li>
+            <li><a href="">Quiz</a></li>
+            <li><a href="">Mapa de Hospitais</a></li>
+            <li><a href="">Cadastro de Questões</a></li>
+            <li>Logout</li>
           </ul>
         </nav>
+      </span>
+    </div>
+  </header>
 
-        <img
-          src="../../assets/img/profile-picture.png"
-          id="avatar"
-          alt="avatar"
-        />
-      </div>
-    </header>
-    <main>
-      <section id="registration">
-        <div class="container">
-          <img
-            src="../../assets/img/registration-art.svg"
-            alt="Registration art"
-          />
-          <div class="content">
-            <h1>Cadastrar</h1>
-            <p>Faça o cadastro no sistema para uma melhor experiência!</p>
-            <form id="userRegistration">
-              <label for="name">
-                <span>Nome</span>
-                <input id="name" type="text" placeholder="Seu nome" required />
-              </label>
-              <label for="phone">
-                <span>Telefone</span>
-                <input
-                  id="phone"
-                  type="text"
-                  placeholder="(##) #####-####"
-                  required
-                />
-              </label>
-              <label for="city">
-                <span>Cidade</span>
-                <input
-                  id="city"
-                  type="text"
-                  placeholder="Sua cidade"
-                  required
-                />
-              </label>
-              <label for="neighborhood">
-                <span>Bairro</span>
-                <input
-                  id="neighborhood"
-                  type="text"
-                  placeholder="Seu bairro"
-                  required
-                />
-              </label>
-              <label for="profession">
-                <span>Profissão</span>
-                <input
-                  id="profession"
-                  type="text"
-                  placeholder="Sua profissão"
-                  required
-                />
-              </label>
-              <label for="email">
-                <span>Email</span>
-                <input
-                  id="email"
-                  type="email"
-                  placeholder="seu@email.com"
-                  required
-                />
-              </label>
-              <label for="password">
-                <span>Senha</span>
-                <input
-                  id="password"
-                  type="password"
-                  placeholder="******"
-                  required
-                />
-              </label>
-              <button type="submit">Salvar</button>
-            </form>
-          </div>
-        </div>
-      </section>
-    </main>
-    <footer>
-      <img src="../../assets/img/logo-puc.svg" id="LogoPUC" alt="LogoPUC" />
-      <p>© Copyright 2024. Direitos reservados a Primeira Ajuda.</p>
-    </footer>
-  </body>
+  <main>
+    <img src="../../assets/img/registration-art.svg" alt="Registration art" />
+
+    <section class="content">
+      <h1>#cadastrar</h1>
+      <h4>Faça seu cadastro para uma melhor experiência!</h4>
+
+      <form>
+        <input id="nome" name="nome" type="text" placeholder="Nome completo" required />
+
+        <fieldset class="inputs">
+          <input id="bairro" name="bairro" type="text" placeholder="Bairro" required />
+          <input id="cidade" name="cidade" type="text" placeholder="Cidade" required />
+        </fieldset>
+
+        <fieldset class="inputs">
+          <input id="telefone" name="telefone" type="text" placeholder="Telefone" required />
+          <input id="profissao" name="profissao" type="text" placeholder="Profissão" required />
+        </fieldset>
+
+        <input id="email" name="email" type="email" placeholder="Email" required />
+
+        <fieldset class="inputs">
+          <input id="senha" name="senha" type="password" placeholder="Senha" required />
+          <input id="confirmaSenha" name="confirmaSenha" type="password" placeholder="Confirmar Senha" required />
+        </fieldset>
+
+        <p id="mensagemErro">As senhas informadas não coincidem.</p>
+
+        <fieldset class="grupoDeBotoes">
+          <button type="reset">Limpar</button>
+          <button type="submit">Cadastrar</button>
+        </fieldset>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <img src="../../assets/img/logo-puc.svg" id="LogoPUC" alt="LogoPUC" />
+    <p>© Copyright 2024. Direitos reservados a Primeira Ajuda.</p>
+  </footer>
+
+  <script type="module" src="../../assets/js/cadastro/main.js"></script>
+</body>
+
 </html>

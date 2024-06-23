@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,54 +9,70 @@
     <script src="https://kit.fontawesome.com/9e7334b542.js" crossorigin="anonymous"></script>
     <title>Cadastrar Perguntas</title>
 </head>
+
 <body>
-    <header>
-        <a href="../index.html">
-            <img src="../assets/img/logo.svg" width="156" alt="logo">
-        </a>
-    
-        <div>
+<header>
+    <a href="../index.html">
+        <img src="../assets/img/logo.svg" id="logo" alt="logo">
+    </a>
+
+    <div>
+        <nav>
+            <ul class="menu">
+                <li><a href="#">Fórum</a></li>
+                <li><a href="#">Cursos</a></li>
+            </ul>
+        </nav>
+
+        <span>
+            <img src="../assets/img/profile-picture.png" id="avatar" alt="avatar">
+
             <nav>
-                <ul>
-                    <li>
-                        <a href="#">Fórum</a>
-                    </li>
-                    <li>
-                        <a href="#">Cursos</a>
-                    </li>
+                <ul class="dropdown">
+                    <li><a href="">Entrar</a></li>
+                    <li><a href="">Perfil</a></li>
+                    <li>Logout</li>
                 </ul>
             </nav>
-    
-            <img src="../assets/img/profile-picture.png" id="avatar" alt="avatar">
-        </div>
-    </header>
-    
+        </span>
+    </div>
+</header>
     <main>
-       <div class="container">
-        <div class="question-register">
-            <h1><i class="fa-solid fa-clipboard-question"></i> Cadastrar Questões</h1>
-            <div class="options">
-                <div class="question"><input type="text" placeholder="Digite a pergunta" class="inputoption" id="inputquestion"></div>
-                <div class="option1"><input type="text" placeholder="Primeira alternativa" class="inputoption" id="option1"></div>
-                <div class="option2"><input type="text" placeholder="Segunda alternativa" class="inputoption" id="option2"></div>
-                <div class="option3"><input type="text" placeholder="Terceira alternativa" class="inputoption" id="option3"></div>
-                <div class="option4"><input type="text" placeholder="Quarta alternativa" class="inputoption" id="option4"></div>
-            </div>
-            <div class="op-correct">
+        <form>
+            <h1>#cadastrarquestões</h1>
+            <fieldset>
+                <input id="pergunta" name="pergunta" type="text" placeholder="Digite a pergunta" class="inputoption">
+
+                <input id="alternativa1" name="alternativa1" type="text" placeholder="Primeira alternativa"
+                    class="inputoption" required>
+                <input id="alternativa2" name="alternativa2" type="text" placeholder="Segunda alternativa"
+                    class="inputoption" required>
+                <input id="alternativa3" name="alternativa3" type="text" placeholder="Terceira alternativa"
+                    class="inputoption" required>
+                <input id="alternativa4" name="alternativa4" type="text" placeholder="Quarta alternativa"
+                    class="inputoption" required>
+            </fieldset>
+
+            <fieldset>
                 <p>Digite a resposta no campo abaixo:</p>
-                <div class="option4"><input type="text" placeholder="Digite alternativa correta" class="inputoption" id="answer"></div>
+                <input id="resposta" name="resposta" type="text" placeholder="Digite alternativa correta"
+                    class="inputoption" required>
+            </fieldset>
+
+            <div class="botoes">
+                <button type="reset">Limpar</button>
+                <button id="btn-register" type="submit">Cadastrar</button>
             </div>
-            <div class="register-button">
-                <button id="btn-register" onclick="SalvarPergunta()">Cadastrar</button>
-            </div>
-        </div>
-       </div>
+        </form>
+
     </main>
 
     <footer>
         <img src="../assets/img/logo-puc.svg" id="LogoPUC" alt="LogoPUC">
         <p>© Copyright 2024. Direitos reservados a Primeira Ajuda.</p>
     </footer>
-    <script src="../assets/js/CadastroQuestoes/questoes.js"></script>
+
+    <script type="module" src="../assets/js/quiz/cadastroQuestoes/main.js"></script>
 </body>
+
 </html>
