@@ -8,116 +8,105 @@
     <title>table</title>
 </head>
 <body>
-    <header> 
-
-    </header>
+    <header></header>
     <main> 
-       
         <div class="kit-table">
             <h1 class="title">Tabela de Kits</h1>
             <div id="creatkit">
-            <div class="button-position">
-            <button id="btn-criar-kit" onclick="OpenCreatKitPage()" class="creat-kit">Criar Kit <i class="fa-solid fa-plus"></i></button>
-            <input type="checkbox" id="checkbox">
-
-            <!--Criar kit-->   <!--Parte nathan Funcionalidade criar kit-->
-
-            <div class="creat-kits-page">
-                <div class="creatkits">
-                    <h1><i class="fa-solid fa-kit-medical"></i>  Criar Kit</h1>
-                    <h3>Digite o nome do Kit:</h3>
-                    <input  class="input-creatkits" type="text" placeholder="Digite o nome do Kit" id="Inputkit">
-                    <h3>Liste os Itens que deseja adicionar ao seu kit:</h3>
-                    <div class="check-items">
-                        <div class="check-items1">
-                    <ul>
-                        <li><input type="checkbox" id="item1" value="Bandagem">   Bandagem</li>
-                        <li><input type="checkbox" id="item2" value="Algodão">   Algodão</li>
-                        <li><input type="checkbox" id="item3" value="Gaze">   Gaze</li>
-                        <li><input type="checkbox" id="item4" value="Tesoura">   Tesoura</li>
-                        <li><input type="checkbox" id="item5" value="Pinça">   Pinça</li>
-                        <li><input type="checkbox" id="item6" value="Analgésicos">   Analgésicos</li>
-                        <li><input type="checkbox" id="item7" value="Antiséptico">   Antiséptico</li>
-                        <li><input type="checkbox" id="item8" value="Pomada de Queimaduras">   Pomada para Queimaduras</li>
-                    </ul>
+                <div class="button-position">
+                    <button id="btn-criar-kit" onclick="OpenCreatKitPage()" class="creat-kit">Criar Kit <i class="fa-solid fa-plus"></i></button>
+                    <input type="checkbox" id="checkbox">
+                    <div class="creat-kits-page">
+                        <div class="creatkits">
+                            <h1><i class="fa-solid fa-kit-medical"></i>  Criar Kit</h1>
+                            <h3>Digite o nome do Kit:</h3>
+                            <input class="input-creatkits" type="text" placeholder="Digite o nome do Kit" id="Inputkit">
+                            <h3>Liste os Itens que deseja adicionar ao seu kit:</h3>
+                            <div class="check-items">
+                                <div class="check-items1">
+                                    <ul>
+                                        <li><input type="checkbox" id="item1" value="Bandagem">   Bandagem</li>
+                                        <li><input type="checkbox" id="item2" value="Algodão">   Algodão</li>
+                                        <li><input type="checkbox" id="item3" value="Gaze">   Gaze</li>
+                                        <li><input type="checkbox" id="item4" value="Tesoura">   Tesoura</li>
+                                        <li><input type="checkbox" id="item5" value="Pinça">   Pinça</li>
+                                        <li><input type="checkbox" id="item6" value="Analgésicos">   Analgésicos</li>
+                                        <li><input type="checkbox" id="item7" value="Antiséptico">   Antiséptico</li>
+                                        <li><input type="checkbox" id="item8" value="Pomada de Queimaduras">   Pomada para Queimaduras</li>
+                                    </ul>
+                                </div>
+                                <div class="check-items1">
+                                    <ul>
+                                        <li><input type="checkbox" id="item9" value="Luvas dercartaveis">   Luvas descartaveis</li>
+                                        <li><input type="checkbox" id="item10" value="Seringa">   Seringa</li>
+                                        <li><input type="checkbox" id="item11" value="Fitas Adesivas">   Fitas Adesivas</li>
+                                        <li><input type="checkbox" id="item12" value="Compressa">   Compressa</li>
+                                        <li><input type="checkbox" id="item13" value="Solução salina">   Solução Salina</li>
+                                        <li><input type="checkbox" id="item14" value="Ferramenta de comunicação">   Ferramenta de Comunicação</li>
+                                        <li><input type="checkbox" id="item15" value="Cobertor Térmico">   Cobertor Térmico</li>
+                                        <li><input type="checkbox" id="item16" value="Elástico">   Elástico</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="btn-save-creat-position">
+                                <button onclick="SaveNewKit()" class="save-creat-kits" id="save-creat-kits">Salvar</button>
+                            </div>
+                            <button onclick="CleanCloseCreatKitPage()" class="btn-return-creat-kits-page" id="return-creat-page">Voltar</button>
+                        </div>
+                    </div>
                 </div>
-                <div class="check-items1">
-                    <ul>
-                    <li><input type="checkbox" id="item9" value="Luvas dercartaveis">   Luvas descartaveis</li>
-                    <li><input type="checkbox" id="item10" value="Seringa">   Seringa</li>
-                    <li><input type="checkbox" id="item11" value="Fitas Adesivas">   Fitas Adesivas</li>
-                    <li><input type="checkbox" id="item12" value="Compressa">   Compressa</li>
-                    <li><input type="checkbox" id="item13" value="Solução salina">   Solução Salina</li>
-                    <li><input type="checkbox" id="item14" value="Ferramenta de comunicação">   Ferramenta de Comunicação</li>
-                    <li><input type="checkbox" id="item15" value="Cobertor Térmico">   Cobertor Térmico</li>
-                    <li><input type="checkbox" id="item16" value="Elástico">   Elástico</li>
-                </ul>
             </div>
-                </div>
-                <div class="btn-save-creat-position">
-                <button onclick="SaveNewKit()" class="save-creat-kits" id="save-creat-kits">Salvar</button>
-            </div>
-                <button onclick="CleanCloseCreatKitPage()" class="btn-return-creat-kits-page" id="return-creat-page">Voltar</button>
-            </div>
-            </div>
-        </div>
-
-        <!--Tabela de kits-->   <!-- Parte Vitor Funcionalidades da tabela -->
 
             <div class="container">
-           <section>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Kit</th>
-                        <th>Nome</th>
-                        <th>Data</th>
-                        <th>Ações</th>
-                    </tr>
-                </thead>
-                <tbody id="tablerow">
-                   
-                </tbody>
-            </table>
-           </section>
+                <section>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Kit</th>
+                                <th>Nome</th>
+                                <th>Data</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tablerow"></tbody>
+                    </table>
+                </section>
+            </div>
+        </div>
 
-
-            <!--Vizualizar e editar itens do kit-->
-
-           <div class="content-kit">
+        <div class="content-kit" style="display: none;">
             <div class="item-kits">
-                <h1><i class="fa-solid fa-kit-medical"> </i>  Itens do kit:</h1>
-                    <div class="check-items-view">
-                <ul>
-                    <li><input type="checkbox" id="item1" value="Bandagem">   Bandagem</li>
-                        <li><input type="checkbox" id="item2" value="Algodão">   Algodão</li>
-                        <li><input type="checkbox" id="item3" value="Gaze">   Gaze</li>
-                        <li><input type="checkbox" id="item4" value="Tesoura">   Tesoura</li>
-                        <li><input type="checkbox" id="item5" value="Pinça">   Pinça</li>
-                        <li><input type="checkbox" id="item6" value="Analgésicos">   Analgésicos</li>
-                        <li><input type="checkbox" id="item7" value="Antiséptico">   Antiséptico</li>
-                        <li><input type="checkbox" id="item8" value="Pomada de Queimaduras">   Pomada para Queimaduras</li>
-                </ul>
-                <ul>
-                    <li><input type="checkbox" id="item9" value="Luvas dercartaveis">   Luvas descartaveis</li>
-                    <li><input type="checkbox" id="item10" value="Seringa">   Seringa</li>
-                    <li><input type="checkbox" id="item11" value="Fitas Adesivas">   Fitas Adesivas</li>
-                    <li><input type="checkbox" id="item12" value="Compressa">   Compressa</li>
-                    <li><input type="checkbox" id="item13" value="Solução salina">   Solução Salina</li>
-                    <li><input type="checkbox" id="item14" value="Ferramenta de comunicação">   Ferramenta de Comunicação</li>
-                    <li><input type="checkbox" id="item15" value="Cobertor Térmico">   Cobertor Térmico</li>
-                    <li><input type="checkbox" id="item16" value="Elástico">   Elástico</li>
-            </ul>
-            <div class="view-kitsbt-container">
-            <button onclick="ReturnToTable()" class="return-view" id="return-view-kits" >Voltar</button>
-            <button onclick="" class="save-edit" id="save-edit-kits" >Salvar</button>
-        </div>
-           </div>
-        </div>
+                <h1><i class="fa-solid fa-kit-medical"></i>  Itens do kit:</h1>
+                <div class="check-items-view">
+                    <ul>
+                        <li><input type="checkbox" id="edit-item1" value="Bandagem">   Bandagem</li>
+                        <li><input type="checkbox" id="edit-item2" value="Algodão">   Algodão</li>
+                        <li><input type="checkbox" id="edit-item3" value="Gaze">   Gaze</li>
+                        <li><input type="checkbox" id="edit-item4" value="Tesoura">   Tesoura</li>
+                        <li><input type="checkbox" id="edit-item5" value="Pinça">   Pinça</li>
+                        <li><input type="checkbox" id="edit-item6" value="Analgésicos">   Analgésicos</li>
+                        <li><input type="checkbox" id="edit-item7" value="Antiséptico">   Antiséptico</li>
+                        <li><input type="checkbox" id="edit-item8" value="Pomada de Queimaduras">   Pomada para Queimaduras</li>
+                    </ul>
+                    <ul>
+                        <li><input type="checkbox" id="edit-item9" value="Luvas dercartaveis">   Luvas descartaveis</li>
+                        <li><input type="checkbox" id="edit-item10" value="Seringa">   Seringa</li>
+                        <li><input type="checkbox" id="edit-item11" value="Fitas Adesivas">   Fitas Adesivas</li>
+                        <li><input type="checkbox" id="edit-item12" value="Compressa">   Compressa</li>
+                        <li><input type="checkbox" id="edit-item13" value="Solução salina">   Solução Salina</li>
+                        <li><input type="checkbox" id="edit-item14" value="Ferramenta de comunicação">   Ferramenta de Comunicação</li>
+                        <li><input type="checkbox" id="edit-item15" value="Cobertor Térmico">   Cobertor Térmico</li>
+                        <li><input type="checkbox" id="edit-item16" value="Elástico">   Elástico</li>
+                    </ul>
+                    <div class="view-kitsbt-container">
+                        <button onclick="ReturnToTable()" class="return-view" id="return-view-kits">Voltar</button>
+                        <button onclick="saveEditedKit()" class="save-edit" id="save-edit-kits">Salvar</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
 
     <script src="../assets/js/kit Table/kit.js"></script>
-
 </body>
 </html>
