@@ -56,6 +56,12 @@ main section.content form fieldset.grupoDeBotoes {
   align-self: end;
 }
 
+main section.content form p#mensagemErro {
+  color: #ec2300;
+  font-weight: bold;
+  display: none;
+}
+
 main section.content form input.senhasValidas {
   border: 1px solid #228b22;
 }

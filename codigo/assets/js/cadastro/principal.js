@@ -7,6 +7,7 @@ var senhasValidadas = false
 const form = consultarSeletor("form")
 const senha = consultarSeletor("#senha")
 const telefone = consultarSeletor("#telefone")
+const mensagemErro = consultarSeletor("#mensagemErro")
 const confirmaSenha = consultarSeletor("#confirmaSenha")
 
 telefone.addEventListener('input', ({ target }) => {
@@ -29,6 +30,7 @@ telefone.addEventListener('input', ({ target }) => {
 confirmaSenha.addEventListener('keyup', ({ target }) => {
   if (target.value.length === 0) {
     senhasValidadas = false
+    mensagemErro.style.display = 'none'
 
     target.classList.remove('senhasValidas')
     target.classList.remove('senhasInvalidas')
@@ -37,11 +39,13 @@ confirmaSenha.addEventListener('keyup', ({ target }) => {
 
   } else if (target.value != senha.value) {
     senhasValidadas = false
+    mensagemErro.style.display = 'block'
 
     target.classList.add('senhasInvalidas')
     senha.classList.add('senhasInvalidas')
   } else {
     senhasValidadas = true
+    mensagemErro.style.display = 'none'
 
     target.classList.remove('senhasInvalidas')
     target.classList.add('senhasValidas')
