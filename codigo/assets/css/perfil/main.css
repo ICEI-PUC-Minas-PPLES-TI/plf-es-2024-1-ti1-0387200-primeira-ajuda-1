@@ -3,7 +3,15 @@ main {
 }
 
 .nivelWrapper,
+.perfilWrapper,
+.containerKits {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.nivelWrapper,
 .container,
+.containerKits,
 form {
   border-radius: 4.8px;
   background-color: #ffffff;
@@ -16,21 +24,19 @@ form {
 
 .perfilWrapper,
 .container,
+.containerKits,
 form {
   display: flex;
 }
 
 .nivelWrapper {
-  width: 80%;
   padding: 20px;
-  margin: 0 auto;
   margin-bottom: 40px;
 }
 
 .perfilWrapper {
-  width: 80%;
-  margin: 0 auto;
   gap: 12px;
+  margin-bottom: 40px;
 }
 
 .container {
@@ -78,4 +84,9 @@ form input {
   margin-bottom: 12px;
   border-radius: 4.8px;
   border: 1px solid #c3c3c3;
+}
+
+.containerKits {
+  padding: 20px;
+  flex-flow: column;
 }
