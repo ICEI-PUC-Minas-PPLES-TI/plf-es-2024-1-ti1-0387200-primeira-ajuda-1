@@ -18,21 +18,6 @@
     </a>
 
     <div>
-      <nav>
-        <ul class="menu">
-          <p id="nav-bars"><i class="fa-solid fa-bars"></i></p>
-        </ul>
-      </nav>
-      <div class="nav-lateral">
-        <h1><i id="sair-menu" class="fa-regular fa-circle-xmark"></i> Menu</h1>
-        <div class="nav-conteudo">
-        <p><i class="fa-regular fa-user"></i>    Perfil</p>
-        <p><i class="fa-regular fa-message"></i>  Forum</p>
-        <p><i class="fa-regular fa-pen-to-square"></i>  Quiz</p>
-        <p><i class="fa-regular fa-circle-question"></i>  Cadastro de Questões</p>
-        <p><i class="fa-regular fa-map"></i>  Mapa de Hospitais</p>
-      </div>
-      </div>
       <span>
         <img src="./assets/img/profile-picture.png" id="avatar" alt="avatar">
 
@@ -40,6 +25,10 @@
           <ul class="dropdown">
             <li><a href="">Entrar</a></li>
             <li><a href="">Perfil</a></li>
+            <li><a href="">Forum</a></li>
+            <li><a href="">Quiz</a></li>
+            <li><a href="">Mapa de Hospitais</a></li>
+            <li><a href="">Cadastro de Questões</a></li>
             <li>Logout</li>
           </ul>
         </nav>
@@ -48,137 +37,154 @@
   </header>
 
   <main>
-    <div class="cpg">
+    <section class="banner">
+      <div>
+        <h1>#contecomigo</h1>
+        <h3>Viva sem medo de emergências. Conte conosco para te ajudar!</h3>
 
-      <div class="cp-1">
-          <section class="banner">
-              <div>
-                <h1>#contecomigo</h1>
-                <h3>Viva sem medo de emergências. Conte conosco para te ajudar!</h3>
-        
-                <button type="button" id="cadastrar">Cadastrar
-                  <a href="">
-                    <i class="fa-solid fa-arrow-right"></i>
-                  </a>
-                </button>
-              </div>
-        
-              <img src="./assets/img/home.svg" id="bannerImg" alt="banner">
-            </section>
+        <a href="./pages/cadastro/index.html">
+          <button type="button" id="cadastrar">Cadastrar
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </a>
+
       </div>
-      <div class="cp-2">
-        <div class="cp2-container">
 
-          <div class="cp2c1">
-            <img src="./imgInicial/Bombeiro.png" alt="">
-            <h3>Bombeiros</h3>
-            <p>193</p>
+      <img src="./assets/img/home.svg" id="bannerImg" alt="banner">
+    </section>
+
+    <div class="cp-2">
+      <div class="cp2-container">
+        <div class="cp2c1">
+          <img src="./imgInicial/Bombeiro.png" alt="">
+          <h3>Bombeiros</h3>
+          <p>193</p>
+        </div>
+
+        <div class="cp2c2">
+          <img src="./imgInicial/Policial.png" alt="">
+          <h3>Polícia</h3>
+          <p>190</p>
+        </div>
+        <div class="cp2c3">
+          <img src="./imgInicial/Samu.png" alt="">
+          <h3>Samu</h3>
+          <p>192</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="cp-2-5">
+      <div class="cp25-container">
+        <div class="cp-25-1">
+          <div class="cp25-logo">
+            <i class="fa-solid fa-truck-medical"></i>
           </div>
-          
-          <div class="cp2c2">
-            <img src="./imgInicial/Policial.png" alt="">
-            <h3>Polícia</h3>
-            <p>190</p>
+          <div class="cp25-conteudo">
+            <h1>Preparação para <br>Emergências</h1>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates ex perferendis exercitationem.</p>
+            <button>Veja mais ➝</button>
           </div>
-          <div class="cp2c3">
-            <img src="./imgInicial/Samu.png" alt="">
-            <h3>Samu</h3>
-            <p>192</p>
+        </div>
+
+        <div class="cp-25-1">
+          <div class="cp25-logo">
+            <i class="fa-solid fa-bandage"></i>
+          </div>
+          <div class="cp25-conteudo">
+            <h1>Primeiros Socorros</h1>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates ex perferendis exercitationem.</p>
+            <button>Veja mais ➝</button>
+          </div>
+        </div>
+        <div class="cp-25-1">
+          <div class="cp25-logo">
+            <i class="fa-solid fa-kit-medical"></i>
+          </div>
+          <div class="cp25-conteudo">
+            <h1>Kit Socorro</h1>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates ex perferendis exercitationem.</p>
+            <button>Veja mais ➝</button>
+          </div>
+        </div>
+
+        <div class="cp-25-1">
+          <div class="cp25-logo">
+            <i class="fa-regular fa-comments"></i>
+          </div>
+          <div class="cp25-conteudo">
+            <h1>Comunicação</h1>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates ex perferendis exercitationem.</p>
+            <button>Veja mais ➝</button>
           </div>
         </div>
       </div>
-      <div class="cp-2-5">
-        <div class="cp25-container">
-          <div class="cp-25-1">
-            <div class="cp25-logo">
-              <i class="fa-solid fa-truck-medical"></i>
-            </div>
-            <div class="cp25-conteudo">
-              <h1>Preparação para <br>Emergências</h1>
-              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates ex perferendis exercitationem.</p>
-              <button>Veja mais ➝</button>
-            </div>
-          </div>
-
-          <div class="cp-25-1">
-            <div class="cp25-logo">
-              <i class="fa-solid fa-bandage"></i>
-            </div>
-            <div class="cp25-conteudo">
-              <h1>Primeiros Socorros</h1>
-              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates ex perferendis exercitationem.</p>
-              <button>Veja mais ➝</button>
-            </div>
-          </div>
-          <div class="cp-25-1">
-            <div class="cp25-logo">
-              <i class="fa-solid fa-kit-medical"></i>
-            </div>
-            <div class="cp25-conteudo">
-              <h1>Kit Socorro</h1>
-              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates ex perferendis exercitationem.</p>
-              <button>Veja mais ➝</button>
-            </div>
-          </div>
-
-          <div class="cp-25-1">
-            <div class="cp25-logo">
-              <i class="fa-regular fa-comments"></i>
-            </div>
-            <div class="cp25-conteudo">
-              <h1>Comunicação</h1>
-              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates ex perferendis exercitationem.</p>
-              <button>Veja mais ➝</button>
-            </div>
-          </div>
-        </div>
+    </div>
+    <div class="cp-3">
+      <div class="cp3h1">
+        <h1>#COMUNIDADE</h1>
+        <P>Venha explorar e se engajar na nossa vibrante comunidade de primeiros socorros. Acesse abaixo o que temos
+          para oferecer na aba comunidade!</P>
       </div>
-      <div class="cp-3">
-        <div class="cp3h1"><h1>#COMUNIDADE</h1>
-          <P>Venha explorar e se engajar na nossa vibrante comunidade de primeiros socorros. Acesse abaixo o que temos para oferecer na aba comunidade!</P>
-        </div>
-        <div class="cp3-conteudo">
-          <div class="cp3-img">
+      <div class="cp3-conteudo">
+        <div class="cp3-img">
           <img src="./imgInicial/CP3-IMG.png" alt="" class="cp3-img1">
           <img src="./imgInicial/Exemplo de comentarios.png" alt="" class="cp3-img2">
         </div>
-        </div>
-        <div class="cp3-button"><a href="./pages/forum.html"><button class="btn-cp3">Veja mais ➝</button></a></div>
       </div>
+      <div class="cp3-button"><a href="./pages/forum.html"><button class="btn-cp3">Veja mais ➝</button></a></div>
+    </div>
 
-      <div class="cp-4">
-        <div class="cp4h1"><h1>#NOTÍCIAS</h1></div>
-        <div class="cp4-cards">
+    <div class="cp-4">
+      <div class="cp4h1">
+        <h1>#NOTÍCIAS</h1>
+      </div>
+      <div class="cp4-cards">
         <div class="card" style="width: 18rem;">
-          <img src="https://s2-g1.glbimg.com/gIEN8iYMLnvYTlS7gYJQueX4Brw=/0x305:1400x1249/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2022/d/6/ZWcIaBSdq5HFcJtBjwtw/porteiro-de-escola-municipal-salva-vida-de-aluno-que-convulsinou.jpg" class="card-img-top" alt="...">
+          <img
+            src="https://s2-g1.glbimg.com/gIEN8iYMLnvYTlS7gYJQueX4Brw=/0x305:1400x1249/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2022/d/6/ZWcIaBSdq5HFcJtBjwtw/porteiro-de-escola-municipal-salva-vida-de-aluno-que-convulsinou.jpg"
+            class="card-img-top" alt="...">
           <div class="card-body">
-            <a href="https://g1.globo.com/sp/santos-regiao/noticia/2022/09/03/porteiro-recem-treinado-em-primeiros-socorros-salva-vida-de-aluno-em-escola-no-litoral-de-sp.ghtml#:~:text=O%20porteiro%20de%20uma%20Escola,poucos%20dias%20antes%20do%20ocorrido." target="_blank">Porteiro salva vida de aluno de uma escola do litoral de SP</a>
-            <p class="card-text">Menino de 9 anos convulsionou na escola em que estuda, em Santos (SP). Dias antes, o profissional da unidade passou por um curso com o Samu.</p>
+            <a href="https://g1.globo.com/sp/santos-regiao/noticia/2022/09/03/porteiro-recem-treinado-em-primeiros-socorros-salva-vida-de-aluno-em-escola-no-litoral-de-sp.ghtml#:~:text=O%20porteiro%20de%20uma%20Escola,poucos%20dias%20antes%20do%20ocorrido."
+              target="_blank">Porteiro salva vida de aluno de uma escola do litoral de SP</a>
+            <p class="card-text">Menino de 9 anos convulsionou na escola em que estuda, em Santos (SP). Dias antes, o
+              profissional da unidade passou por um curso com o Samu.</p>
           </div>
         </div>
         <div class="card" style="width: 18rem;">
-          <img src="https://s2-g1.glbimg.com/BWoejB4pwc_9K65txb_--Gs267E=/0x0:1427x766/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2019/C/Y/5S7k9ZRAO3exPzOpyG9Q/inarto.jpg" class="card-img-top" alt="...">
+          <img
+            src="https://s2-g1.glbimg.com/BWoejB4pwc_9K65txb_--Gs267E=/0x0:1427x766/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2019/C/Y/5S7k9ZRAO3exPzOpyG9Q/inarto.jpg"
+            class="card-img-top" alt="...">
           <div class="card-body">
-            <a href="https://g1.globo.com/rs/rio-grande-do-sul/noticia/2019/10/17/com-parada-cardiorrespiratoria-pintor-e-salvo-por-alunos-durante-curso-de-primeiros-socorros-em-porto-alegre.ghtml#:~:text=Uma%20feliz%20coincid%C3%AAncia%20salvou%20a,bairro%20Santana%2C%20em%20Porto%20Alegre." target="_blank">Pintor é salvo por alunos durante curso de primeiros socorros em Porto Alegre</a>
-            <p class="card-text">Flávio Teixeira, de 50 anos, desmaiou enquanto aguardava na fila de uma churrascaria. Profissionais da saúde, que treinavam procedimentos de reanimação do outro lado da rua, atenderam o homem.</p>
+            <a href="https://g1.globo.com/rs/rio-grande-do-sul/noticia/2019/10/17/com-parada-cardiorrespiratoria-pintor-e-salvo-por-alunos-durante-curso-de-primeiros-socorros-em-porto-alegre.ghtml#:~:text=Uma%20feliz%20coincid%C3%AAncia%20salvou%20a,bairro%20Santana%2C%20em%20Porto%20Alegre."
+              target="_blank">Pintor é salvo por alunos durante curso de primeiros socorros em Porto Alegre</a>
+            <p class="card-text">Flávio Teixeira, de 50 anos, desmaiou enquanto aguardava na fila de uma churrascaria.
+              Profissionais da saúde, que treinavam procedimentos de reanimação do outro lado da rua, atenderam o
+              homem.</p>
           </div>
         </div>
         <div class="card" style="width: 18rem;">
-          <img src="https://files.adventistas.org/noticias/pt/2024/06/WhatsApp-Image-2024-06-14-at-09.50.49.jpeg" class="card-img-top" alt="...">
+          <img src="https://files.adventistas.org/noticias/pt/2024/06/WhatsApp-Image-2024-06-14-at-09.50.49.jpeg"
+            class="card-img-top" alt="...">
           <div class="card-body">
-            <a href="https://noticias.adventistas.org/pt/heroi-na-escola-desbravador-de-12-anos-usa-primeiros-socorros-e-salva-vida/" target="_blank">Herói na escola: desbravador de 12 anos usa primeiros socorros e salva vida</a>
-            <p class="card-text">Treinamento de primeiros socorros no Clube de Desbravadores capacitou jovem a salvar vida de colega durante recreio escolar.</p>
+            <a href="https://noticias.adventistas.org/pt/heroi-na-escola-desbravador-de-12-anos-usa-primeiros-socorros-e-salva-vida/"
+              target="_blank">Herói na escola: desbravador de 12 anos usa primeiros socorros e salva vida</a>
+            <p class="card-text">Treinamento de primeiros socorros no Clube de Desbravadores capacitou jovem a salvar
+              vida de colega durante recreio escolar.</p>
           </div>
         </div>
         <div class="card" style="width: 18rem;">
           <img src="https://midias.correio24horas.com.br/2023/03/20/-1398721.jpg" class="card-img-top" alt="...">
           <div class="card-body">
-            <a href="https://www.correio24horas.com.br/salvador/pequenos-salva-vidas-tem-aulas-de-primeiros-socorros-em-projeto-do-gbmba-0119#:~:text=A%20iniciativa%20%C3%A9%20uma%20esp%C3%A9cie,quartel%20do%20Corpo%20de%20Bombeiros." target="_blank">"Pequenos salva-vidas" têm aulas de primeiros socorros em projeto do GBM/BA</a>
-            <p class="card-text">A iniciativa "Anjinhos da Praia" acontece ao longo desta semana, em Piatã, com crianças de 7 a 13 anos.</p>
+            <a href="https://www.correio24horas.com.br/salvador/pequenos-salva-vidas-tem-aulas-de-primeiros-socorros-em-projeto-do-gbmba-0119#:~:text=A%20iniciativa%20%C3%A9%20uma%20esp%C3%A9cie,quartel%20do%20Corpo%20de%20Bombeiros."
+              target="_blank">"Pequenos salva-vidas" têm aulas de primeiros socorros em projeto do GBM/BA</a>
+            <p class="card-text">A iniciativa "Anjinhos da Praia" acontece ao longo desta semana, em Piatã, com
+              crianças de 7 a 13 anos.</p>
           </div>
         </div>
       </div>
     </div>
+    <!-- </div> -->
   </main>
 
   <footer>

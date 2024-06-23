@@ -1,130 +1,99 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Primeira Ajuda</title>
-    <link rel="stylesheet" href="../../assets/css/global.css" />
-    <link rel="stylesheet" href="../../assets/css/cadastro/principal.css" />
-    <script src="../../assets/js/cadastro/principal.js" defer></script>
-    <script src="../../assets/js/cadastro/tabela.js" defer></script>
-  </head>
-  <body>
-    <header>
-      <a href="../index.html">
-        <img src="../../assets/img/logo.svg" width="156" alt="logo" />
-      </a>
 
-      <div>
-        <nav>
-          <ul>
-            <li>
-              <a href="#">Fórum</a>
-            </li>
-            <li>
-              <a href="#">Cursos</a>
-            </li>
-          </ul>
-        </nav>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Primeira Ajuda</title>
+  <link rel="stylesheet" href="../../assets/css/global.css" />
+  <link rel="stylesheet" href="../../assets/css/cadastro/principal.css" />
+  <script src="../../assets/js/cadastro/principal.js" defer></script>
+  <script src="../../assets/js/cadastro/tabela.js" defer></script>
+</head>
 
-        <img
-          src="../../assets/img/profile-picture.png"
-          id="avatar"
-          alt="avatar"
-        />
-      </div>
-    </header>
-    <main>
-      <section id="registration">
-        <div class="container" style="max-width: initial">
-          <div class="content">
-            <form id="userRegistration">
-              <label for="name">
-                <span>Nome</span>
-                <input id="name" type="text" placeholder="Seu nome" required />
-              </label>
-              <label for="phone">
-                <span>Telefone</span>
-                <input
-                  id="phone"
-                  type="text"
-                  placeholder="(##) #####-####"
-                  required
-                />
-              </label>
-              <label for="city">
-                <span>Cidade</span>
-                <input
-                  id="city"
-                  type="text"
-                  placeholder="Sua cidade"
-                  required
-                />
-              </label>
-              <label for="neighborhood">
-                <span>Bairro</span>
-                <input
-                  id="neighborhood"
-                  type="text"
-                  placeholder="Seu bairro"
-                  required
-                />
-              </label>
-              <label for="profession">
-                <span>Profissão</span>
-                <input
-                  id="profession"
-                  type="text"
-                  placeholder="Sua profissão"
-                  required
-                />
-              </label>
-              <label for="email">
-                <span>Email</span>
-                <input
-                  id="email"
-                  type="email"
-                  placeholder="seu@email.com"
-                  required
-                />
-              </label>
-              <label for="password">
-                <span>Senha</span>
-                <input
-                  id="password"
-                  type="password"
-                  placeholder="******"
-                  required
-                />
-              </label>
-              <button type="submit">Salvar</button>
-            </form>
-          </div>
-          <table style="margin-left: 50px" border="1" id="dataTable">
-            <thead>
-              <tr>
-                <th>Nome</th>
-                <th>Telefone</th>
-                <th>Cidade</th>
-                <th>Bairro</th>
-                <th>Profissão</th>
-                <th>Email</th>
-                <th>Senha</th>
-                <th>Editar</th>
-                <th>Excluir</th>
-                <th>Perfil</th>
-              </tr>
-            </thead>
-            <tbody>
-              <!-- Conteúdo da tabela será inserido aqui pelo JavaScript -->
-            </tbody>
-          </table>
+<body>
+  <!-- <header>
+    <a href="../index.html">
+      <img src="../../assets/img/logo.svg" width="156" alt="logo" />
+    </a>
+
+    <div>
+      <nav>
+        <ul>
+          <li>
+            <a href="#">Fórum</a>
+          </li>
+          <li>
+            <a href="#">Cursos</a>
+          </li>
+        </ul>
+      </nav>
+
+      <img src="../../assets/img/profile-picture.png" id="avatar" alt="avatar" />
+    </div>
+  </header> -->
+  <main>
+    <section id="registration">
+      <div class="container" style="max-width: initial">
+        <div class="content">
+          <form id="userRegistration">
+            <label for="name">
+              <span>Nome</span>
+              <input id="name" type="text" placeholder="Seu nome" required />
+            </label>
+            <label for="phone">
+              <span>Telefone</span>
+              <input id="phone" type="text" placeholder="(##) #####-####" required />
+            </label>
+            <label for="city">
+              <span>Cidade</span>
+              <input id="city" type="text" placeholder="Sua cidade" required />
+            </label>
+            <label for="neighborhood">
+              <span>Bairro</span>
+              <input id="neighborhood" type="text" placeholder="Seu bairro" required />
+            </label>
+            <label for="profession">
+              <span>Profissão</span>
+              <input id="profession" type="text" placeholder="Sua profissão" required />
+            </label>
+            <label for="email">
+              <span>Email</span>
+              <input id="email" type="email" placeholder="seu@email.com" required />
+            </label>
+            <label for="password">
+              <span>Senha</span>
+              <input id="password" type="password" placeholder="******" required />
+            </label>
+            <button type="submit">Salvar</button>
+          </form>
         </div>
-      </section>
-    </main>
-    <footer>
-      <img src="../../assets/img/logo-puc.svg" id="LogoPUC" alt="LogoPUC" />
-      <p>© Copyright 2024. Direitos reservados a Primeira Ajuda.</p>
-    </footer>
-  </body>
+        <table style="margin-left: 50px" border="1" id="dataTable">
+          <thead>
+            <tr>
+              <th>Nome</th>
+              <th>Telefone</th>
+              <th>Cidade</th>
+              <th>Bairro</th>
+              <th>Profissão</th>
+              <th>Email</th>
+              <th>Senha</th>
+              <th>Editar</th>
+              <th>Excluir</th>
+              <th>Perfil</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Conteúdo da tabela será inserido aqui pelo JavaScript -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <img src="../../assets/img/logo-puc.svg" id="LogoPUC" alt="LogoPUC" />
+    <p>© Copyright 2024. Direitos reservados a Primeira Ajuda.</p>
+  </footer>
+</body>
+
 </html>
