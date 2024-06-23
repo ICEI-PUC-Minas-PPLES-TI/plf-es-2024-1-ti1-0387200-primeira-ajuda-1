@@ -88,8 +88,7 @@ function ViewOrEditKitContent(kitId) {
     if (!kit) return;
 
     marcarItensKitAoEditar(kit);
-    document.querySelector(".content-kit").style.display = "block";
-    
+    document.querySelector(".content-kit").style.display = "flex";
     document.querySelector('.item-kits').dataset.kitId = kit.id;
 }
 
