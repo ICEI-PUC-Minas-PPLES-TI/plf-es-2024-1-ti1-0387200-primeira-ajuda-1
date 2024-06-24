@@ -173,6 +173,10 @@ header div span nav ul.dropdown li:not(:last-child) {
   margin-bottom: 10px;
 }
 
+header div span nav ul.dropdown li#logout {
+  display: none;
+}
+
 header div span img#avatar {
   width: 48px;
   height: 48px;

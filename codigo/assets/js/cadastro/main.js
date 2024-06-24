@@ -93,6 +93,8 @@ form.addEventListener("submit", async (evento) => {
       ...dadosCadastroUsuario
     })
 
+
+    localStorage.setItem('usuario', JSON.stringify(resposta))
     evento.target.reset()
 
     if (resposta) {

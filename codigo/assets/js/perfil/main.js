@@ -1,5 +1,7 @@
 import { CadastroService } from "../../services/cadastroService.js";
 
+const usuarioLogado = JSON.parse(localStorage.getItem('usuario'))
+
 let usuario = {}
 const cadastroService = new CadastroService()
 const buscarParametro = new URLSearchParams(window.location.search)
@@ -47,16 +49,22 @@ function atualizarBarraProgresso() {
 }
 
 async function preencherPerfil() {
-    if (!id) {
+    if (!id && !usuarioLogado.id) {
         console.error("ID do usuário não fornecido na URL")
-        window.location.href = `/codigo/index.html`
+        window.location.href = `/codigo/pages/login/login.html`
+        return
+    }
+
+    if (!id && usuarioLogado.id) {
+        window.location.href = `/codigo/pages/perfil.html?id=${usuarioLogado.id}`
+        window.reload()
         return
     }
 
     usuario = await cadastroService.getUsuario(id)
     if (Object.values(usuario).length === 0) {
         console.error("Usuário não encontrado")
-        window.location.href = `/codigo/index.html`
+        window.location.href = `/codigo/pages/login/login.html`
         return
     }
 
@@ -104,10 +112,13 @@ form.addEventListener('submit', async (evento) => {
     const valoresFormulario = new FormData(evento.target)
     valoresFormulario.forEach((value, key) => dadosEditarUsuario[key] = value)
 
+
     const resposta = await cadastroService.updateUsuario(id, {
         ...usuario,
         ...dadosEditarUsuario
     })
+
+    localStorage.setItem('usuario', JSON.stringify(resposta))
 
     if (resposta) {
         alert('Dados alterados com sucesso')

@@ -1,6 +1,8 @@
 import { CadastroService } from "../../services/cadastroService.js";
 import { QuizService } from "../../services/quizService.js";
 
+const usuario = JSON.parse(localStorage.getItem('usuario'))
+
 let perguntas = []
 let score = 0
 let level = ''
@@ -11,6 +13,7 @@ const cadastroService = new CadastroService()
 
 const consultarSeletor = (variante) => document.querySelector(variante)
 const btnQuiz = consultarSeletor('#btn-quiz')
+const btnSair = consultarSeletor('#btn-sair')
 const btnSubmit = consultarSeletor('#btn-submit')
 
 const questionCountInput = consultarSeletor('#contadorQuestoes')
@@ -189,7 +192,9 @@ function criarQuiz() {
     }
 
     setupContainer.style.display = 'none'
-    quizContainer.style.display = 'block'
+    quizContainer.style.display = 'flex'
+    quizContainer.style.flexFlow = 'column'
+    quizContainer.style.padding = '28px'
     quizButtons.style.display = 'flex'
     quizContainer.innerHTML = ''
 
@@ -224,12 +229,12 @@ function submitQuiz() {
     const selectedQuestions = JSON.parse(localStorage.getItem('armazenarQuestoes')) || []
 
     selectedQuestions.forEach((pergunta, index) => {
-        const userAnswer = consultarSeletor(`input[name="question${index}"]:checked`)
+        const userAnswer = document.querySelector(`input[name="question${index}"]:checked`)
         const respostas = document.getElementsByName(`question${index}`)
         let respostaCorretaEncontrada = false
 
         respostas.forEach((opcao) => {
-            if (opcao.value === pergunta.Resposta) {
+            if (opcao.value === pergunta.resposta) {
                 opcao.parentElement.style.color = 'green'
                 respostaCorretaEncontrada = true
             } else {
@@ -237,16 +242,16 @@ function submitQuiz() {
             }
         })
 
-        if (userAnswer && userAnswer.value === pergunta.Resposta) {
+        if (userAnswer && userAnswer.value === pergunta.resposta) {
             score++;
             userAnswer.parentElement.style.color = 'green'
-        } else if (userAnswer && userAnswer.value !== pergunta.Resposta) {
+        } else if (userAnswer && userAnswer.value !== pergunta.resposta) {
             userAnswer.parentElement.style.color = 'red'
         }
 
         if (!respostaCorretaEncontrada && !userAnswer) {
             respostas.forEach((opcao) => {
-                if (opcao.value === pergunta.Resposta) {
+                if (opcao.value === pergunta.resposta) {
                     opcao.parentElement.style.color = 'green'
                 }
             })
@@ -256,19 +261,27 @@ function submitQuiz() {
     alert(`Você acertou ${score} de ${selectedQuestions.length} perguntas.`)
 }
 
-btnQuiz.addEventListener('click', criarQuiz)
+btnQuiz.addEventListener('click', () => {
+    if (Object.values(usuario).length === 0) {
+        window.location.href = `/codigo/pages/login/login.html`
+        return
+    }
+    criarQuiz()
+})
+
 btnSubmit.addEventListener('click', async () => {
     submitQuiz()
-
-    const usuario = await cadastroService.getUsuario()
     determinarProgresso()
 
-    const resposta = await cadastroService.updateUsuario({
+    const resposta = await cadastroService.updateUsuario(usuario.id, {
         ...usuario,
         level
     })
+    if (resposta) localStorage.setItem('usuario', JSON.stringify(resposta))
+})
 
-    if (resposta) window.location.href = `/codigo/pages/perfil.html?id=${usuario.id}`
+btnSair.addEventListener('click', () => {
+    window.location.href = `/codigo/pages/perfil.html?id=${usuario.id}`
 })
 
 document.addEventListener('DOMContentLoaded', async () => {
@@ -277,7 +290,6 @@ document.addEventListener('DOMContentLoaded', async () => {
         localStorage.setItem('CadastroPerguntas', JSON.stringify(obeterNovasPerguntas()))
         perguntas = JSON.parse(localStorage.getItem('CadastroPerguntas')) || []
     }
-
     questionCountInput.max = perguntas.length;
 })
 

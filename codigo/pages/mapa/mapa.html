@@ -1,95 +1,82 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hospitais Próximos</title>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-    <link rel="stylesheet" href="../../assets/css/global.css" />
-    <link rel="stylesheet" href="../../assets/css/mapa/main.css" />
-    <link rel="shortcut icon" href="../../assets/img/favIcon.svg" type="image/x-icon">
-    <script src="../../assets/js/mapa/main.js" defer></script>
-  </head>
-  <body>
-    <header>
-      <a href="../../index.html">
-        <img src="../../assets/img/logo.svg" id="logo" alt="logo" />
-      </a>
-      <div>
-        <span>
-          <img
-            src="../../assets/img/profile-picture.png"
-            id="avatar"
-            alt="avatar"
-          />
-          <nav>
-            <ul class="dropdown">
-              <li><a href="">Entrar</a></li>
-              <li><a href="../../pages/perfil.html">Perfil</a></li>
-              <li><a href="../../pages/forum.html">Forum</a></li>
-              <li><a href="../quiz.html">Quiz</a></li>
-              <li><a href="./mapa.html">Mapa de Hospitais</a></li>
-              <li><a href="../questoes.html">Cadastro de Questões</a></li>
-              <li>Logout</li>
-            </ul>
-          </nav>
-        </span>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <link rel="stylesheet" href="../../assets/css/global.css" />
+  <link rel="stylesheet" href="../../assets/css/mapa/main.css" />
+  <link rel="shortcut icon" href="../../assets/img/favIcon.svg" type="image/x-icon">
+  <script src="../../assets/js/mapa/main.js" defer></script>
+  <title>Mapa de Hospitais</title>
+</head>
+
+<body>
+  <header>
+    <a href="../../index.html">
+      <img src="../../assets/img/logo.svg" id="logo" alt="logo" />
+    </a>
+    <div>
+      <span>
+        <img src="../../assets/img/profile-picture.png" id="avatar" alt="avatar" />
+        <nav>
+          <ul class="dropdown">
+            <li id="login"><a href="../login/login.html">Entrar</a></li>
+            <li><a href="../../pages/perfil.html">Perfil</a></li>
+            <li><a href="../../pages/forum.html">Forum</a></li>
+            <li><a href="../quiz.html">Quiz</a></li>
+            <li><a href="./mapa.html">Mapa de Hospitais</a></li>
+            <li><a href="../questoes.html">Cadastro de Questões</a></li>
+            <li id="logout"><a href="#">Logout</a></li>
+          </ul>
+        </nav>
+      </span>
+    </div>
+  </header>
+
+  <main>
+    <section id="registration">
+      <div class="container">
+        <h1>#BUSCARÁPIDA</h1>
+        <h2>Encontre Hospitais Próximos:</h2>
+        <form id="locationForm">
+          <label for="city"><input type="text" placeholder="Cidade" id="city" name="city" required />
+            <br /></label>
+          <label for="neighborhood">
+            <input type="text" id="neighborhood" name="neighborhood" placeholder="Bairro" required />
+            <br /></label>
+          <button type="submit">Buscar</button>
+          <button type="button" id="refreshButton">↻</button>
+        </form>
+        <div id="map"></div>
       </div>
-    </header>
+      <div class="container-ultimas-buscas">
+        <table border="1" id="dataTable">
+          <thead>
+            <tr>
+              <h1>Últimas buscas:</h1>
+              <th>Cidade</th>
+              <th>Bairro</th>
+              <th>Funções</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Conteúdo da tabela será inserido aqui pelo JavaScript -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
 
-    <main>
-      <section id="registration">
-        <div class="container">
-          <h1>#BUSCARÁPIDA</h1>
-          <h2>Encontre Hospitais Próximos:</h2>
-          <form id="locationForm">
-            <label for="city"
-              ><input
-                type="text"
-                placeholder="Cidade"
-                id="city"
-                name="city"
-                required />
-              <br
-            /></label>
-            <label for="neighborhood">
-              <input
-                type="text"
-                id="neighborhood"
-                name="neighborhood"
-                placeholder="Bairro"
-                required />
-              <br
-            /></label>
-            <button type="submit">Buscar</button>
-            <button type="button" id="refreshButton">↻</button>
-          </form>
-          <div id="map"></div>
-        </div>
-        <div class="container-ultimas-buscas">
-          <table border="1" id="dataTable">
-            <thead>
-              <tr>
-                <h1>Últimas buscas:</h1>
-                <th>Cidade</th>
-                <th>Bairro</th>
-                <th>Funções</th>
-              </tr>
-            </thead>
-            <tbody>
-              <!-- Conteúdo da tabela será inserido aqui pelo JavaScript -->
-            </tbody>
-          </table>
-        </div>
-      </section>
-    </main>
+  <footer>
+    <img src="../../assets/img/logo-puc.svg" id="LogoPUC" alt="LogoPUC" />
+    <p>© Copyright 2024. Direitos reservados a Primeira Ajuda.</p>
+  </footer>
 
-    <footer>
-      <img src="../../assets/img/logo-puc.svg" id="LogoPUC" alt="LogoPUC" />
-      <p>© Copyright 2024. Direitos reservados a Primeira Ajuda.</p>
-    </footer>
+  <script src="../../assets/js/login/main.js"></script>
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</body>
 
-    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-  </body>
 </html>
