@@ -1,0 +1,86 @@
+main section#registration {
+  padding: 60px 20px;
+}
+
+main section#registration .container {
+  width: 100%;
+  max-width: 1000px;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 4.8px;
+  margin-bottom: 30px;
+}
+.container h1{
+  text-transform: uppercase;
+  font-weight: 900;
+  margin-bottom: 10px;
+}
+
+
+.container form input{
+  height:40px;
+  width: 50%;
+  padding: 6px;
+  margin-bottom: 12px;
+  border-radius: 4.8px;
+  border: 1px solid #c3c3c3;
+}
+
+
+main section .container-ultimas-buscas {
+  width: 100%;
+  max-width: 1000px;
+  margin-inline: auto;
+  padding: 36px 52px;
+  background-color: #fff;
+  border-radius: 4.8px;
+  box-shadow: 6px 6px 6px #0000001a;
+}
+
+main section .container-ultimas-buscas h1 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+#map {
+  height: 500px;
+  width: 100%;
+  margin-left: 15px;
+  margin-top: 50px;
+}
+
+.container {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+}
+
+tr th {
+  padding: 12px;
+  border-radius: 4.8px;
+  text-align: center;
+  background-color: #f8f8f8;
+  border: none;
+}
+
+tbody tr td {
+  padding: 8px;
+  border: none;
+  text-align: center;
+  border-radius: 4.8px;
+}
+
+tbody tr:hover {
+  transition: 0.4s;
+  transform: scale(1.02);
+  background-color: #f8f8f8;
+}
+
+td button{
+  margin-bottom: 20px;
+}
+table{
+  border:  none;
+}
