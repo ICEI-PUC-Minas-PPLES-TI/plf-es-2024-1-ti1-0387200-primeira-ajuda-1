@@ -21,7 +21,7 @@ main {
   padding: 20px;
   box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.234);
   align-items: center;
-  border-radius: 0.3rem;
+  border-radius: 4.8px;
 }
 
 #setup-container {
@@ -30,8 +30,10 @@ main {
 
 #setup-container input {
   width: 50px;
-  text-align: center;
+  padding: 6px;
   margin: 10px 0;
+  border-radius: 4.8px;
+  border: 1px solid #c3c3c3;
 }
 
 .question {
@@ -59,28 +61,4 @@ main {
   display: flex;
   justify-content: center;
   margin-top: 20px;
-}
-
-#btn-submit {
-  padding: 10px;
-  background-color: #031634;
-  color: aliceblue;
-  border-radius: 0.3rem;
-  transition: 0.4s;
-  border: 0px;
-}
-
-#btn-submit:hover {
-  background-color: #055470;
-}
-
-#btn-quiz {
-  padding: 4px;
-  background-color: #031634;
-  color: aliceblue;
-  border-radius: 0.3rem;
-  transition: 0.4s;
-  border: 0px;
-  padding-left: 10px;
-  padding-right: 10px;
 }
