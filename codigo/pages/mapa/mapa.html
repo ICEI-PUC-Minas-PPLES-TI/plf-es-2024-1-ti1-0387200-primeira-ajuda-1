@@ -41,21 +41,21 @@
         <h1>#BUSCARÁPIDA</h1>
         <h2>Encontre Hospitais Próximos:</h2>
         <form id="locationForm">
-          <label for="city"><input type="text" placeholder="Cidade" id="city" name="city" required />
-            <br /></label>
-          <label for="neighborhood">
-            <input type="text" id="neighborhood" name="neighborhood" placeholder="Bairro" required />
-            <br /></label>
-          <button type="submit">Buscar</button>
-          <button type="button" id="refreshButton">↻</button>
+          <input type="text" placeholder="Cidade" id="city" name="city" required />
+          <input type="text" id="neighborhood" name="neighborhood" placeholder="Bairro" required />
+          <div id="buttonWrapper">
+            <button type="submit">Buscar</button>
+            <button type="button" id="refreshButton">↻</button>
+          </div>
         </form>
-        <div id="map"></div>
+        <div id="map" style="display: none;"></div>
       </div>
+
       <div class="container-ultimas-buscas">
         <table border="1" id="dataTable">
           <thead>
             <tr>
-              <h1>Últimas buscas:</h1>
+              <h1>#últimasbuscas</h1>
               <th>Cidade</th>
               <th>Bairro</th>
               <th>Funções</th>
