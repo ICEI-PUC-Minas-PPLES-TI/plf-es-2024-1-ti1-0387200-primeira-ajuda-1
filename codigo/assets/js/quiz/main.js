@@ -29,8 +29,7 @@ function getNovoID() {
 }
 
 function determinarProgresso() {
-    const progresso = (score / questionCount) * 100
-    if (progresso < 60) {
+    if (usuario.score < 60) {
         level = 'Bronze'
     } else if (progresso <= 75) {
         level = 'Prata'
@@ -275,6 +274,7 @@ btnSubmit.addEventListener('click', async () => {
 
     const resposta = await cadastroService.updateUsuario(usuario.id, {
         ...usuario,
+        score: score += usuario.score,
         level
     })
     if (resposta) localStorage.setItem('usuario', JSON.stringify(resposta))

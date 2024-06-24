@@ -25,27 +25,18 @@ const usuarioProfissao = consultarSeletor("#usuarioProfissao")
 const barraProgresso = consultarSeletor(".progress-bar")
 const usuarioNivel = consultarSeletor("#usuarioNivel")
 
-function determinarProgresso(nivel) {
+function determinarProgresso(nivel, score) {
     const opcoesNiveis = {
-        Bronze: {
-            width: '10%',
-            cor: '#A45A03'
-        },
-        Prata: {
-            width: '50%',
-            cor: '#C0C0C0'
-        },
-        Ouro: {
-            width: '100%',
-            cor: '#FFD700'
-        }
+        Bronze: '#A45A03',
+        Prata: '#C0C0C0',
+        Ouro: '#FFD700'
     }
-    return opcoesNiveis[nivel]
+    return { cor: opcoesNiveis[nivel], width: `${score}%` }
 }
 
 function atualizarBarraProgresso() {
-    barraProgresso.style.width = determinarProgresso(usuario.level).width
-    barraProgresso.style.backgroundColor = determinarProgresso(usuario.level).cor
+    barraProgresso.style.width = determinarProgresso(usuario.level, usuario.score).width
+    barraProgresso.style.backgroundColor = determinarProgresso(usuario.level, usuario.score).cor
 }
 
 async function preencherPerfil() {
