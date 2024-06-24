@@ -1,0 +1,51 @@
+main {
+  padding: 20px;
+  max-width: 70%;
+  margin: 0 auto;
+}
+
+article {
+  display: flex;
+  flex-flow: column;
+}
+
+h1 {
+  font-weight: 900;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+h3 {
+  margin-top: 20px;
+  text-align: left;
+}
+
+p {
+  margin: 10px 0;
+}
+
+ul {
+  margin-left: 20px;
+  list-style-type: disc;
+}
+
+ul li {
+  margin-bottom: 10px;
+}
+
+.video-location {
+  height: 500px;
+  width: 100%;
+  max-width: 850px;
+  background-color: rgb(219, 219, 219);
+  margin: auto;
+}
+
+.video {
+  display: flex;
+  justify-content: center;
+}
+
+a {
+  align-self: end;
+}
