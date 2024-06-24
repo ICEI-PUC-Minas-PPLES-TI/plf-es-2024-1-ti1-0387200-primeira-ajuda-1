@@ -20,9 +20,9 @@ codigo/  (essa pasta aqui)
 │   │   ├── logo.png
 │   │   └── (outras imagens)
 │   │
-│   └── fonts/
-│       ├── font1.ttf
-│       └── (outras fontes)
+│   └── services/
+│       ├── exemploService.js
+│       └── (outrors arquivos .js)
 │
 ├── pages/
 │   ├── about.html
