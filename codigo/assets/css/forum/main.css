@@ -139,6 +139,7 @@ section#forum #mainForm button[type="submit"]#btnPublicar i {
   color: #ffffff;
   font-size: 16px;
   cursor: not-allowed;
+  margin-left: 0;
 }
 
 article.postagensEmpty {
