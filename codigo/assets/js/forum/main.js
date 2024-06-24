@@ -1,6 +1,6 @@
 import { ForumService } from "../../services/forumService.js"
 
-const USUARIO = JSON.parse(localStorage.getItem('usuario'))
+const USUARIO = JSON.parse(localStorage.getItem('usuario')) || {}
 
 const forumService = new ForumService()
 const criarElemento = (variante) => document.createElement(variante)
@@ -23,6 +23,13 @@ function formataData(dateString) {
     const data = dateString.toLocaleString().replace(',', '')
     const componentesData = data.split(':')
     return `${componentesData[0]}:${componentesData[1]}`
+}
+
+function validarUsuario() {
+    if (Object.values(USUARIO).length === 0) {
+        window.location.href = `/codigo/pages/login/login.html`
+        return
+    }
 }
 
 function posicionarCursor(seletor) {
@@ -270,6 +277,7 @@ async function imprimirPostagens() {
 }
 
 async function editarPostagem(id) {
+    validarUsuario()
     const postagem = await forumService.getPostagemById(id)
 
     const postagemTextArea = consultarSeletor(`#textArea${id}`)
@@ -309,6 +317,7 @@ async function editarPostagem(id) {
 }
 
 async function deletarPostagem(id) {
+    validarUsuario()
     const confirma = confirm('Deseja excluir essa postagem?')
 
     if (confirma) {
@@ -320,6 +329,7 @@ async function deletarPostagem(id) {
 }
 
 async function gerenciarCurtidasPostagem(id) {
+    validarUsuario()
     const postagem = await forumService.getPostagemById(id)
     const resposta = await forumService.updatePostagem(id, {
         ...postagem,
@@ -330,6 +340,7 @@ async function gerenciarCurtidasPostagem(id) {
 }
 
 async function criarComentario(id) {
+    validarUsuario()
     const postagem = await forumService.getPostagemById(id)
 
     const comentarioForm = consultarSeletor(`#comentarioForm${id}`)
@@ -380,6 +391,7 @@ async function criarComentario(id) {
 }
 
 async function editarComentario(id) {
+    validarUsuario()
     const comentario = consultarSeletor(`[id='${id}']`)
     const postagem = await forumService.getPostagemById(comentario.parentElement.id)
 
@@ -427,6 +439,7 @@ async function editarComentario(id) {
 }
 
 async function deletarComentario(id) {
+    validarUsuario()
     const comentario = consultarSeletor(`[id='${id}']`)
     const postagem = await forumService.getPostagemById(comentario.parentElement.id)
 
@@ -449,11 +462,7 @@ textAreaPrincipal.addEventListener('input', ({ target }) => {
 
 formPrincipal.addEventListener('submit', async (evento) => {
     evento.preventDefault()
-
-    if (Object.values(USUARIO).length === 0) {
-        window.location.href = `/codigo/pages/login/login.html`
-        return
-    }
+    validarUsuario()
 
     await criarPostagem()
     formPrincipal.reset()
