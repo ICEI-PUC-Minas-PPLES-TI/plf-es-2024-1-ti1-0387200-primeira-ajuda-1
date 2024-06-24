@@ -1,17 +1,19 @@
-import apiService from '../../services/quizService.js';
+import { QuizService } from "../../services/quizService.js";
+
+const quizService = new QuizService()
 
 document.addEventListener('DOMContentLoaded', async () => {
     const questionCountInput = document.getElementById('contadorQuestoes');
     let perguntas = JSON.parse(localStorage.getItem('CadastroPerguntas')) || [];
 
     if (perguntas.length === 0) {
-        const novasPerguntas = await apiService.getPerguntas();
+        const novasPerguntas = await quizService.getPerguntas();
         localStorage.setItem('CadastroPerguntas', JSON.stringify(novasPerguntas));
         perguntas = novasPerguntas;
     }
 
     questionCountInput.max = perguntas.length;
-});
+})
 
 function getNovoID() {
     const perguntas = JSON.parse(localStorage.getItem('CadastroPerguntas')) || [];
@@ -155,7 +157,6 @@ async function getNovasPerguntas() {
             Alternativa4: "Esperar a pessoa melhorar",
             Resposta: "Ligar para o centro de intoxicações"
         }
-        // Adicione mais perguntas conforme necessário...
     ];
 }
 
@@ -223,24 +224,24 @@ export function submitQuiz() {
 
         respostas.forEach((opcao) => {
             if (opcao.value === pergunta.Resposta) {
-                opcao.parentElement.style.color = 'green'; 
+                opcao.parentElement.style.color = 'green';
                 respostaCorretaEncontrada = true;
             } else {
-                opcao.parentElement.style.color = 'black'; 
+                opcao.parentElement.style.color = 'black';
             }
         });
 
         if (userAnswer && userAnswer.value === pergunta.Resposta) {
             score++;
-            userAnswer.parentElement.style.color = 'green'; 
+            userAnswer.parentElement.style.color = 'green';
         } else if (userAnswer && userAnswer.value !== pergunta.Resposta) {
-            userAnswer.parentElement.style.color = 'red'; 
+            userAnswer.parentElement.style.color = 'red';
         }
 
         if (!respostaCorretaEncontrada && !userAnswer) {
             respostas.forEach((opcao) => {
                 if (opcao.value === pergunta.Resposta) {
-                    opcao.parentElement.style.color = 'green'; 
+                    opcao.parentElement.style.color = 'green';
                 }
             });
         }
@@ -248,3 +249,6 @@ export function submitQuiz() {
 
     alert(`Você acertou ${score} de ${selectedQuestions.length} perguntas.`);
 }
+
+window.funcaoQuiz = funcaoQuiz;
+window.submitQuiz = submitQuiz;
