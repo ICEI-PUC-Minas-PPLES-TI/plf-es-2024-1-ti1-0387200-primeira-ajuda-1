@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/codigo/assets/css/global.css">
-    <link rel="stylesheet" href="../assets/css/Quiz/main.css">
+    <link rel="stylesheet" href="../assets/css/quiz/main.css">
     <link rel="shortcut icon" href="../assets/img/favIcon.svg" type="image/x-icon">
     <script src="https://kit.fontawesome.com/9e7334b542.js" crossorigin="anonymous"></script>
     <title>Quiz</title>
@@ -18,15 +18,16 @@
                 <h2>Vamos testar os seus conhecimentos!</h2>
                 <label for="contadorQuestoes">Digite o número de questões que deseja responder:</label>
 
-                <input type="number" id="contadorQuestoes" max="10">
-                <button id="btn-quiz" onclick="funcaoQuiz()">Iniciar</button>
+                <input type="number" id="contadorQuestoes" min="1">
+                <button id="btn-quiz">Iniciar</button>
             </div>
 
             <div id="quiz-container" style="display: none;">
                 <!-- As questões serão injetadas aqui pelo JavaScript -->
             </div>
+
             <div class="quiz-buttons" style="display: none;">
-                <button id="btn-submit" onclick="submitQuiz()">Enviar</button>
+                <button id="btn-submit">Enviar</button>
             </div>
         </div>
     </main>
@@ -36,7 +37,7 @@
         <p>© Copyright 2024. Direitos reservados a Primeira Ajuda.</p>
     </footer>
 
-    <script type="module" src="../assets/js/quiz/main.js"></script>
+    <script src="../assets/js/quiz/main.js" type="module"></script>
 </body>
 
 </html>
