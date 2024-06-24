@@ -1,6 +1,6 @@
 import { QuizService } from "../../../services/quizService.js";
 
-const usuario = JSON.parse(localStorage.getItem('usuario'))
+const usuario = JSON.parse(localStorage.getItem('usuario')) || {}
 const consultarSeletor = (variante) => document.querySelector(variante)
 
 const form = consultarSeletor('form')

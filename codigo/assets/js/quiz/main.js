@@ -1,7 +1,7 @@
 import { CadastroService } from "../../services/cadastroService.js";
 import { QuizService } from "../../services/quizService.js";
 
-const usuario = JSON.parse(localStorage.getItem('usuario'))
+const usuario = JSON.parse(localStorage.getItem('usuario')) || {}
 
 let perguntas = []
 let score = 0

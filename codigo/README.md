@@ -1,10 +1,6 @@
 # Código Fonte
 
-Mantenha neste diretório todo o código fonte do projeto.
-
-Se necessário, descreva neste arquivo aspectos relevantes da estrutura de diretórios criada para organização do código.
-
-Uma sugestão da estrutura de diretórios para o projeto é a seguinte:
+O projeto foi desenvolvido seguindo a sugestão de estrutura exemplificada abaixo. Esta abordagem foi adotada para garantir uma organização clara e eficiente dos arquivos e diretórios, facilitando a manutenção e a escalabilidade do código. A estrutura adotada inclui a separação adequada dos componentes, como estilos, scripts, e recursos, conforme ilustrado a seguir.
 
 ```plaintext
 codigo/  (essa pasta aqui)
@@ -36,4 +32,3 @@ codigo/  (essa pasta aqui)
 └── README.md
 ```
 
-Utilize a pasta pages para manter um arquivo para cada pessoa por artefato (sprints 2 e 3) e, com isso, isolar as alterações de cada pessoa, facilitando o trabalho de gestão do código.

@@ -1,6 +1,6 @@
 import { CadastroService } from "../../services/cadastroService.js";
 
-const usuarioLogado = JSON.parse(localStorage.getItem('usuario'))
+const usuarioLogado = JSON.parse(localStorage.getItem('usuario')) || {}
 
 let usuario = {}
 const cadastroService = new CadastroService()

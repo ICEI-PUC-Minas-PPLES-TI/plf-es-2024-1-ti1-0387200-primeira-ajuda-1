@@ -20,4 +20,4 @@ Primeiros socorros são fundamentais para lidar com uma variedade de situações
 
 ## Instruções de utilização
 
-Assim que a primeira versão do sistema estiver disponível, deverá complementar com as instruções de utilização. Descreva como instalar eventuais dependências e como executar a aplicação.
+Para executar o projeto, será necessário utilizar o Live Server. Para configurá-lo, é necessário instalar a extensão no editor de código, como o Visual Studio Code, e iniciar o servidor a partir do menu de contexto ou da barra de ferramentas.
