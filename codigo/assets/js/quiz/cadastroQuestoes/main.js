@@ -1,5 +1,6 @@
 import { QuizService } from "../../../services/quizService.js";
 
+const usuario = JSON.parse(localStorage.getItem('usuario'))
 const consultarSeletor = (variante) => document.querySelector(variante)
 
 const form = consultarSeletor('form')
@@ -34,6 +35,11 @@ function validaFormulario(dados) {
 
 form.addEventListener('submit', async (evento) => {
     evento.preventDefault()
+
+    if (Object.values(usuario).length === 0) {
+        window.location.href = `/codigo/pages/login/login.html`
+        return
+    }
 
     const dadosCadastroQuestoes = {}
     const valoresFormulario = new FormData(evento.target)

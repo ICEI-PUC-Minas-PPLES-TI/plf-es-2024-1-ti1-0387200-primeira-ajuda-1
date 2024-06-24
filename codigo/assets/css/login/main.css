@@ -1,0 +1,60 @@
+main {
+  width: 80%;
+  margin: 0 auto;
+  padding: 58px;
+  display: flex;
+  justify-content: space-between;
+}
+
+section {
+  width: 40%;
+  height: 360px;
+  padding: 40px;
+  margin: 0 auto;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  border-radius: 4.8px;
+  box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.234);
+}
+.container h1 {
+  text-transform: uppercase;
+  font-weight: 900;
+}
+
+.container form {
+  text-align: center;
+}
+
+.container form input {
+  height: 40px;
+  width: 100%;
+  margin-top: 10px;
+  padding: 8px;
+  border-radius: 4.8px;
+  border: 1px solid #c3c3c3;
+}
+
+.container form button[type="submit"] {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.container form a:hover {
+  pacity: 0.8;
+  text-decoration: underline;
+}
+
+.container p#mensagemErro,
+.container p#mensagemErroSenha {
+  color: #ec2300;
+  display: none;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+main img#loginBanner {
+  width: 36%;
+}

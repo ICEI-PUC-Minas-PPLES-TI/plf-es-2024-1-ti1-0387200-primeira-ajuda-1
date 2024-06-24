@@ -12,22 +12,20 @@ main section#registration .container {
   border-radius: 4.8px;
   margin-bottom: 30px;
 }
-.container h1{
+.container h1 {
   text-transform: uppercase;
   font-weight: 900;
   margin-bottom: 10px;
 }
 
-
-.container form input{
-  height:40px;
+.container form input {
+  height: 40px;
   width: 50%;
   padding: 6px;
   margin-bottom: 12px;
   border-radius: 4.8px;
   border: 1px solid #c3c3c3;
 }
-
 
 main section .container-ultimas-buscas {
   width: 100%;
@@ -40,14 +38,15 @@ main section .container-ultimas-buscas {
 }
 
 main section .container-ultimas-buscas h1 {
-  text-align: center;
   margin-bottom: 10px;
+  font-weight: 900;
+  text-transform: uppercase;
+  margin-bottom: 12px;
 }
 
 #map {
   height: 500px;
   width: 100%;
-  margin-left: 15px;
   margin-top: 50px;
 }
 
@@ -78,9 +77,15 @@ tbody tr:hover {
   background-color: #f8f8f8;
 }
 
-td button{
+td button {
   margin-bottom: 20px;
 }
-table{
-  border:  none;
+
+table {
+  border: none;
+}
+
+#buttonWrapper {
+  display: flex;
+  width: 10%;
 }

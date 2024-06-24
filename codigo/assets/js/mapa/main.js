@@ -28,6 +28,8 @@ function geocodeEndereco(endereco, cidade, bairro) {
         const localizacao = response.data[0];
         const lat = localizacao.lat;
         const lon = localizacao.lon;
+        const mapaWrapper = document.querySelector('#map')
+        mapaWrapper.style.display = 'flex'
         const mapa = L.map("map").setView([lat, lon], 14);
 
         L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
@@ -59,8 +61,7 @@ function encontrarHospitaisProximos(mapa, lat, lon) {
         L.marker([hospital.lat, hospital.lon])
           .addTo(mapa)
           .bindPopup(
-            `<strong>${hospital.tags.name || "Hospital"}</strong><br>${
-              hospital.tags["addr:street"] || ""
+            `<strong>${hospital.tags.name || "Hospital"}</strong><br>${hospital.tags["addr:street"] || ""
             }`
           );
       });

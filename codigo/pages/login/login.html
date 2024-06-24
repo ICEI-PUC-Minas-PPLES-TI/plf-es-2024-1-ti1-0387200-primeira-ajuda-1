@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../assets/css/global.css">
+  <link rel="stylesheet" href="../../assets/css/login/main.css">
+  <link rel="shortcut icon" href="../../assets/img/favIcon.svg" type="image/x-icon">
+  <title>Login</title>
+</head>
+
+<body>
+  <header>
+    <a href="../../index.html">
+      <img src="../../assets/img/logo.svg" id="logo" alt="logo" />
+    </a>
+    <div>
+      <span>
+        <img src="../../assets/img/profile-picture.png" id="avatar" alt="avatar" />
+        <nav>
+          <ul class="dropdown">
+            <li id="login"><a href="#">Entrar</a></li>
+            <li><a href="../../pages/perfil.html">Perfil</a></li>
+            <li><a href="../../pages/forum.html">Forum</a></li>
+            <li><a href="../quiz.html">Quiz</a></li>
+            <li><a href="../mapa/mapa.html">Mapa de Hospitais</a></li>
+            <li><a href="../questoes.html">Cadastro de Questões</a></li>
+            <li id="logout"><a href="#">Logout</a></li>
+          </ul>
+        </nav>
+      </span>
+    </div>
+  </header>
+
+  <main>
+    <section class="container">
+      <h1>#Entrar</h1>
+      <form>
+        <input type="text" name="email" id="email" placeholder="Email">
+        <input type="password" name="senha" id="senha" placeholder="Senha">
+
+        <button type="submit">Login</button>
+        <a href="../cadastro/index.html">Criar nova conta</a>
+      </form>
+
+      <p id="mensagemErro">Usuário não localizado. Tente novamente!</p>
+      <p id="mensagemErroSenha">A senha informada não está correta.</p>
+    </section>
+
+    <img src="../../assets/img/login.svg" id="loginBanner" alt="loginBanner">
+  </main>
+
+  <footer>
+    <img src="../../assets/img/logo-puc.svg" id="LogoPUC" alt="LogoPUC" />
+    <p>© Copyright 2024. Direitos reservados a Primeira Ajuda.</p>
+  </footer>
+
+  <script src="../../assets/js/login/main.js"></script>
+  <script type="module" src="../../assets/js/login/login.js"></script>
+</body>
+
+</html>

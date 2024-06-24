@@ -21,13 +21,13 @@
                 <img src="../assets/img/profile-picture.png" id="avatar" alt="avatar" />
                 <nav>
                     <ul class="dropdown">
-                        <li><a href="">Entrar</a></li>
+                        <li id="login"><a href="../pages/login/login.html">Entrar</a></li>
                         <li><a href="../pages/perfil.html">Perfil</a></li>
                         <li><a href="../pages/forum.html">Forum</a></li>
                         <li><a href="../codigo/pages/quiz.html">Quiz</a></li>
                         <li><a href="../pages/mapa/mapa.html">Mapa de Hospitais</a></li>
                         <li><a href="../pages/questoes.html">Cadastro de Questões</a></li>
-                        <li>Logout</li>
+                        <li id="logout"><a href="#">Logout</a></li>
                     </ul>
                 </nav>
             </span>
@@ -50,6 +50,7 @@
 
             <div class="quiz-buttons" style="display: none;">
                 <button id="btn-submit">Enviar</button>
+                <button id="btn-sair">Sair</button>
             </div>
         </div>
     </main>
@@ -59,6 +60,7 @@
         <p>© Copyright 2024. Direitos reservados a Primeira Ajuda.</p>
     </footer>
 
+    <script src="../assets/js/login/main.js"></script>
     <script src="../assets/js/quiz/main.js" type="module"></script>
 </body>
 

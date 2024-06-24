@@ -1,5 +1,7 @@
 import { CadastroService } from "../../services/cadastroService.js";
 
+const usuarioLogado = JSON.parse(localStorage.getItem('usuario'))
+
 let usuario = {}
 const cadastroService = new CadastroService()
 const buscarParametro = new URLSearchParams(window.location.search)
@@ -23,40 +25,37 @@ const usuarioProfissao = consultarSeletor("#usuarioProfissao")
 const barraProgresso = consultarSeletor(".progress-bar")
 const usuarioNivel = consultarSeletor("#usuarioNivel")
 
-function determinarProgresso(nivel) {
+function determinarProgresso(nivel, score) {
     const opcoesNiveis = {
-        Bronze: {
-            width: '10%',
-            cor: '#A45A03'
-        },
-        Prata: {
-            width: '50%',
-            cor: '#C0C0C0'
-        },
-        Ouro: {
-            width: '100%',
-            cor: '#FFD700'
-        }
+        Bronze: '#A45A03',
+        Prata: '#C0C0C0',
+        Ouro: '#FFD700'
     }
-    return opcoesNiveis[nivel]
+    return { cor: opcoesNiveis[nivel], width: `${score}%` }
 }
 
 function atualizarBarraProgresso() {
-    barraProgresso.style.width = determinarProgresso(usuario.level).width
-    barraProgresso.style.backgroundColor = determinarProgresso(usuario.level).cor
+    barraProgresso.style.width = determinarProgresso(usuario.level, usuario.score).width
+    barraProgresso.style.backgroundColor = determinarProgresso(usuario.level, usuario.score).cor
 }
 
 async function preencherPerfil() {
-    if (!id) {
+    if (!id && !usuarioLogado.id) {
         console.error("ID do usuário não fornecido na URL")
-        window.location.href = `/codigo/index.html`
+        window.location.href = `/codigo/pages/login/login.html`
+        return
+    }
+
+    if (!id && usuarioLogado.id) {
+        window.location.href = `/codigo/pages/perfil.html?id=${usuarioLogado.id}`
+        window.reload()
         return
     }
 
     usuario = await cadastroService.getUsuario(id)
     if (Object.values(usuario).length === 0) {
         console.error("Usuário não encontrado")
-        window.location.href = `/codigo/index.html`
+        window.location.href = `/codigo/pages/login/login.html`
         return
     }
 
@@ -104,10 +103,13 @@ form.addEventListener('submit', async (evento) => {
     const valoresFormulario = new FormData(evento.target)
     valoresFormulario.forEach((value, key) => dadosEditarUsuario[key] = value)
 
+
     const resposta = await cadastroService.updateUsuario(id, {
         ...usuario,
         ...dadosEditarUsuario
     })
+
+    localStorage.setItem('usuario', JSON.stringify(resposta))
 
     if (resposta) {
         alert('Dados alterados com sucesso')

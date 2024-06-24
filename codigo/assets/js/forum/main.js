@@ -1,18 +1,6 @@
 import { ForumService } from "../../services/forumService.js"
 
-const USUARIO = {
-    level: 'Bronze',
-    profissao: 'Estudante',
-    nome: 'Pedro da Silva',
-    avatar: '../assets/img/avatar.svg'
-}
-
-const USUARIO2 = {
-    level: 'Prata',
-    profissao: 'Bancária',
-    nome: 'Letícia de Barros Motta',
-    avatar: '../assets/img/avatar2.svg'
-}
+const USUARIO = JSON.parse(localStorage.getItem('usuario'))
 
 const forumService = new ForumService()
 const criarElemento = (variante) => document.createElement(variante)
@@ -368,7 +356,7 @@ async function criarComentario(id) {
             comentarios: [
                 ...postagem.comentarios,
                 {
-                    ...USUARIO2,
+                    ...USUARIO,
                     id: obterId(),
                     conteudo: comentarioTextArea.value.trim(),
                     data: formataData(new Date()),
@@ -461,6 +449,11 @@ textAreaPrincipal.addEventListener('input', ({ target }) => {
 
 formPrincipal.addEventListener('submit', async (evento) => {
     evento.preventDefault()
+
+    if (Object.values(USUARIO).length === 0) {
+        window.location.href = `/codigo/pages/login/login.html`
+        return
+    }
 
     await criarPostagem()
     formPrincipal.reset()

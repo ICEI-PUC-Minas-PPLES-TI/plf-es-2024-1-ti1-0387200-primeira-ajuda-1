@@ -89,10 +89,13 @@ form.addEventListener("submit", async (evento) => {
     const resposta = await cadastroService.createUsuario({
       id,
       level: "Bronze",
+      score: 10,
       avatar: gerarAvatar(dadosCadastroUsuario.nome),
       ...dadosCadastroUsuario
     })
 
+
+    localStorage.setItem('usuario', JSON.stringify(resposta))
     evento.target.reset()
 
     if (resposta) {
