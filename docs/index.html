@@ -827,7 +827,7 @@
                       <tr>
                         <th scope="row">RF-006</th>
                         <td>
-                          - O sistema deve disponibilizar o local de cadastro de
+                          O sistema deve disponibilizar o local de cadastro de
                           usuários.
                         </td>
                         <td>ALTA</td>
@@ -835,7 +835,7 @@
                       <tr>
                         <th scope="row">RF-007</th>
                         <td>
-                          - O sistema deve disponibilizar um recurso de contatos
+                          O sistema deve disponibilizar um recurso de contatos
                           de emergência que conecte diretamente ao serviço de
                           atendimento médico de emergência (SAMU), especialista
                           em práticas de primeiros socorros, com o usuário.
@@ -1026,6 +1026,15 @@
               <h2>Metodologia</h2>
               <p class="lead">
                 Detalhes sobre a organização do grupo e o ferramental empregado.
+
+                <p class="text-center">
+                  <img
+                    class="img-fluid"
+                    src="assets/images/metodologia.png"
+                    alt="Tela Cadastro de Usuários"
+                  />
+                </p>
+
                 <button
                   type="button"
                   class="btn btn-light btn-sm float-right"
@@ -1360,7 +1369,7 @@
                 </section>
 
                 <section>
-                  <h5>Funcionalidade 2- Tabela de Usurários Cadastrados</h5>
+                  <h5>Funcionalidade 2 - Tabela de Usuários Cadastrados</h5>
                   <p>
                     Permite a inclusão das informações do usuário no sistema.
                   </p>
@@ -1700,47 +1709,226 @@
 
                 <section>
                   <h5>
-                    Estrutura de Dados - Contatos<span class="exemplo"
-                      >EXEMPLO</span
-                    >
+                    Estrutura de Dados - Cadastro de Usuários
                   </h5>
-                  <p>Contatos da aplicação</p>
+                  <p>Informações do usuário: </p>
                   <pre>
-                {
-                  "id": 1,
-                  "nome": "Leanne Graham",
-                  "cidade": "Belo Horizonte",
-                  "categoria": "amigos",
-                  "email": "Sincere@april.biz",
-                  "telefone": "1-770-736-8031",
-                  "website": "hildegard.org"
-                }
+                    {
+                    "id": 1,
+                    "nome": "Maria da Silva",
+                    "Bairro": "Savassi",
+                    "cidade": "Belo Horizonte",
+                    "email": "teste@teste.com",
+                    "telefone": "31912345678",
+                    "senha": 123
+                    "confirmar senha": 123
+                    }, ....
               </pre
                   >
                 </section>
 
                 <section>
                   <h5>
-                    Estrutura de Dados - Usuários<span class="exemplo"
-                      >EXEMPLO</span
-                    >
+                    Estrutura de Dados - Tabela de Usuários Cadastrados
                   </h5>
-                  <p>
-                    Registro dos usuários do sistema utilizados para login e
-                    para o perfil do sistema
-                  </p>
+                  <p>Informações do usuário: </p>
                   <pre>
-                {
-                  id: "eed55b91-45be-4f2c-81bc-7686135503f9"
-                  email: "admin@abc.com"
-                  id: "eed55b91-45be-4f2c-81bc-7686135503f9"
-                  login: "admin"
-                  nome: "Administrador do Sistema"
-                  senha: "123"
-                }
+                    {
+                    "id": 1,
+                    "nome": "Maria da Silva",
+                    "Bairro": "Savassi",
+                    "cidade": "Belo Horizonte",
+                    "email": "teste@teste.com",
+                    "telefone": "31912345678",
+                    "senha": 123
+                    }
               </pre
                   >
                 </section>
+    
+                <section>
+                  <h5>
+                    Estrutura de Dados - Tabela de Usuários Cadastrados
+                  </h5>
+                  <p>Informações dos usuários e seus kits: </p>
+                  <pre>
+                    { [
+                        "id": 1,
+                        "nome": "Maria da Silva",
+                        "bairro": "Savassi",
+                        "cidade": "Belo Horizonte",
+                        "telefone": "31912345678",
+                        "profissão:" Professora
+                        "email": "teste@teste.com",
+                        "senha": 123
+                      ],
+                      [
+                        "id": 1,
+                        "nome": "José dos Santos",
+                        "bairro": "Centro",
+                        "cidade": "Belo Horizonte",
+                        "telefone": "31998765432",
+                        "profissão:" Porteiro
+                        "email": "testando@teste.com",
+                        "senha": 321
+                      ], ...
+                    }
+              </pre
+                  >
+                </section>
+
+                <section>
+                  <h5>
+                    Estrutura de Dados - Perfil de Usuário
+                  </h5>
+                  <p>Informações do usuário: </p>
+                  <pre>
+                    {
+                    "id": 1,
+                    "nome": "Maria da Silva",
+                    "Bairro": "Savassi",
+                    "cidade": "Belo Horizonte",
+                    "telefone": "31912345678",
+                    "profissão:" Professora
+                    "email": "teste@teste.com",
+                    "senha": 123
+                    }
+                    {
+                    "nome": "Kit Básico",
+                    "itens":
+                    [
+                      "produto": "Ataduras",
+                      "quantidade": 10
+                    ],...
+                    }
+              </pre
+                  >
+                </section>
+
+                <section>
+                  <h5>
+                    Estrutura de Dados - Forúm de Experiências
+                  </h5>
+                  <p>Comentários: </p>
+                  <pre>
+                    {
+                        "id": 1,
+                        "level": "Bronze",
+                        "profissao": "Estudante",
+                        "nome": "Pedro da Silva",
+                        "avatar": "../assets/img/avatar.svg",
+                        "data": "22/05/2024 20:54",
+                        "conteudo": "Teste criar postagem",
+                        "curtidas": 20,
+                        "comentarios": [
+                        {
+                        "id": 1,
+                        "level": "Prata",
+                        "profissao": "Bancária",
+                        "nome": "Ana Gabriela",
+                        "avatar": "../assets/img/avatar.svg",
+                        "data": "22/05/2024 22:30",
+                        "conteudo": "Teste criar comentário"
+                        },
+                        {
+                        "id": 2,
+                        "level": "Prata",
+                        "profissao": "Estudante de Veterinária",
+                        "nome": "Guilherme Montes",
+                        "avatar": "../assets/img/avatar.svg",
+                        "data": "22/05/2024 23:15",
+                        "conteudo": "Teste criar segundo comentário"
+                        }
+                      ]
+                     }
+              </pre
+                  >
+                </section>
+
+                <section>
+                  <h5>
+                    Estrutura de Dados - Tabela de Kits
+                  </h5>
+                  <p>Opções de produtos para o kit: </p>
+                  <pre>
+                    { [
+                      "id": 1,
+                      "nome": "Kit Básico",
+                      "itens": [
+                      {
+                      "produto": "Ataduras",
+                      "quantidade": 10
+                      }, { "produto": "Gaze Estéril",
+                      "quantidade": 20 }
+                      ],...
+                    }
+              </pre
+                  >
+                </section>
+
+                <section>
+                  <h5>
+                    Estrutura de Dados - Quiz
+                  </h5>
+                  <p>Perguntas e Respostas: </p>
+                  <pre>
+                    {
+                      "pageTitle": "Primeiros Socorros: Guia Essencial",
+                      "content": {
+                      "sections": [
+                      {
+                      "title": "Introdução aos Primeiros Socorros",
+                      "body": "Primeiros socorros são os cuidados
+                     imediatos fornecidos a uma pessoa doente ou ferida até
+                     a chegada de ajuda médica profissional. Este guia
+                     cobrirá os conceitos básicos que todos devem conhecer."
+                      },
+                     "quiz": {
+                      "title": "Quiz sobre Primeiros Socorros",
+                      "questions": [
+                      {
+                      "question": "Qual é o primeiro passo ao chegar em
+                     uma cena de emergência?",
+                      "options": ["Iniciar a RCP", "Avaliar a situação",
+                     "Chamar a emergência", "Verificar os sinais vitais"],
+                      "correctAnswer": "Avaliar a situação"
+                      }}}
+                    }
+              </pre
+                  >
+                </section>
+
+                <section>
+                  <h5>
+                    Estrutura de Dados - Mapa Interativo
+                  </h5>
+                  <p>Informações da localização: </p>
+                  <pre>
+                    {
+                      "id_local": "123456",
+                      "licenca": "Dados © Colaboradores do OpenStreetMap",
+                      "tipo_osm": "nó",
+                      "id_osm": "123456789",
+                      "limites": [
+                      "-23.5987654",
+                      "-23.5977654",
+                      "-46.6965791",
+                      "-46.6955791"
+                      ],
+                      "latitude": "-23.5987654",
+                      "longitude": "-46.6965791",
+                      "endereco": "Rua do Catavento, São Paulo, SP 01033-050,
+                     Brasil",
+                      "classe": "local",
+                      "tipo": "residência",
+                      "importancia": 0.511
+                      }
+                     ]
+              </pre
+                  >
+                </section>
+
+                
               </section>
 
               <!-- Módulos e APIs ================= -->
@@ -1771,43 +1959,13 @@
                 </div>
 
                 <section>
-                  <h5>Images:</h5>
+                  <h5>API</h5>
                   <ul>
                     <li>
-                      Unsplash -
-                      <a target="_blank" href="https://unsplash.com/"
-                        >https://unsplash.com/</a
-                      ><span class="exemplo">EXEMPLO</span>
-                    </li>
-                  </ul>
-                </section>
-
-                <section>
-                  <h5>Fonts:</h5>
-                  <ul>
-                    <li>
-                      Icons Font Face -
-                      <a target="_blank" href="https://fontawesome.com/"
-                        >https://fontawesome.com/</a
-                      ><span class="exemplo">EXEMPLO</span>
-                    </li>
-                  </ul>
-                </section>
-
-                <section>
-                  <h5>Scripts:</h5>
-                  <ul>
-                    <li>
-                      jQuery -
-                      <a target="_blank" href="http://www.jquery.com/"
-                        >http://www.jquery.com/</a
-                      ><span class="exemplo">EXEMPLO</span>
-                    </li>
-                    <li>
-                      Bootstrap 4 -
-                      <a target="_blank" href="http://getbootstrap.com/"
-                        >http://getbootstrap.com/</a
-                      ><span class="exemplo">EXEMPLO</span>
+                      -
+                      <a target="_blank" href="https://github.com/pedrodif/primeiraAjudaAPI"
+                        >https://github.com/pedrodif/primeiraAjudaAPI</a
+                      >
                     </li>
                   </ul>
                 </section>
@@ -1844,7 +2002,6 @@
                 </p>
               </div>
 
-              <span class="exemplo">EXEMPLO</span>
               <div class="row">
                 <div class="col-lg-12">
                   <div
@@ -1861,7 +2018,7 @@
                             data-target="#collapse1"
                             aria-expanded="false"
                             aria-controls="collapse1"
-                            >What does royalty free mean?</a
+                            >O que devo fazer se alguém estiver sufocando?</a
                           >
                         </h5>
                       </div>
@@ -1872,14 +2029,7 @@
                         data-parent="#popularTopics"
                       >
                         <div class="card-body">
-                          Lorem Ipsum is simply dummy text of the printing and
-                          typesetting industry. Lorem Ipsum has been the
-                          industry's standard dummy text ever since the 1500s,
-                          when an unknown printer took a galley of type and
-                          scrambled it to make a type specimen book. It has
-                          survived not only five centuries, but also the leap
-                          into electronic typesetting, remaining essentially
-                          unchanged.
+                          Se alguém estiver sufocando, incentive-o a tossir se ainda conseguir respirar. Se eles não conseguirem respirar ou fazer barulho, execute a manobra de Heimlich ficando atrás deles, passando os braços em volta da cintura e dando impulsos rápidos para cima no abdômen.
                         </div>
                       </div>
                     </div>
@@ -1893,7 +2043,7 @@
                             data-target="#collapse2"
                             aria-expanded="false"
                             aria-controls="collapse2"
-                            >What is a single application?</a
+                            >Como faço para tratar uma queimadura leve?</a
                           >
                         </h5>
                       </div>
@@ -1904,14 +2054,7 @@
                         data-parent="#popularTopics"
                       >
                         <div class="card-body">
-                          Iisque Anim pariatur cliche reprehenderit, enim
-                          eiusmod high life accusamus terry richardson ad squid.
-                          Food truck quinoa nesciunt laborum eiusmod. Brunch 3
-                          wolf moon tempor, sunt aliqua put a bird on it squid
-                          single-origin coffee nulla assumenda shoreditch et.
-                          Nihil anim keffiyeh helvetica, craft beer labore wes
-                          anderson cred nesciunt sapiente ea proident. Ad vegan
-                          excepteur butcher vice lomo.
+                          Para uma queimadura leve, deixe correr água fria (não fria) sobre a queimadura por vários minutos e depois cubra-a com um curativo estéril e não adesivo. Evite usar gelo, manteiga ou outros remédios caseiros.
                         </div>
                       </div>
                     </div>
@@ -1925,8 +2068,7 @@
                             data-target="#collapse3"
                             aria-expanded="false"
                             aria-controls="collapse3"
-                            >What are some examples of permitted end
-                            products?</a
+                            >Qual é a maneira correta de realizar a RCP?</a
                           >
                         </h5>
                       </div>
@@ -1937,10 +2079,57 @@
                         data-parent="#popularTopics"
                       >
                         <div class="card-body">
-                          Iisque persius interesset his et, in quot quidam
-                          persequeris vim, ad mea essent possim iriure. Mutat
-                          tacimates id sit. Ridens mediocritatem ius an, eu nec
-                          magna imperdiet.
+                          Para realizar a RCP, verifique se a pessoa não responde e não respira. Ligue para os serviços de emergência e inicie as compressões torácicas colocando as mãos no centro do peito e pressionando com força e rapidez, a uma taxa de 100-120 compressões por minuto.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card">
+                      <div class="card-header" id="heading2">
+                        <h5 class="mb-0">
+                          <a
+                            href="#"
+                            class="collapsed"
+                            data-toggle="collapse"
+                            data-target="#collapse2"
+                            aria-expanded="false"
+                            aria-controls="collapse2"
+                            >Como faço para parar o sangramento grave?</a
+                          >
+                        </h5>
+                      </div>
+                      <div
+                        id="collapse2"
+                        class="collapse"
+                        aria-labelledby="heading2"
+                        data-parent="#popularTopics"
+                      >
+                        <div class="card-body">
+                          Para estancar um sangramento grave, aplique pressão direta na ferida com um pano limpo ou curativo. Se o sangramento não parar, continue aplicando pressão e adicione mais panos, se necessário. Procure ajuda médica imediatamente.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card">
+                      <div class="card-header" id="heading2">
+                        <h5 class="mb-0">
+                          <a
+                            href="#"
+                            class="collapsed"
+                            data-toggle="collapse"
+                            data-target="#collapse2"
+                            aria-expanded="false"
+                            aria-controls="collapse2"
+                            >O que devo fazer se alguém tiver suspeita de osso quebrado?</a
+                          >
+                        </h5>
+                      </div>
+                      <div
+                        id="collapse2"
+                        class="collapse"
+                        aria-labelledby="heading2"
+                        data-parent="#popularTopics"
+                      >
+                        <div class="card-body">
+                          Se você suspeitar que alguém está com um osso quebrado, mantenha a área lesionada o mais imóvel possível. Use uma tala ou acolchoamento para imobilizar a área e aplique gelo para reduzir o inchaço. Procure atendimento médico imediatamente.
                         </div>
                       </div>
                     </div>
@@ -1977,7 +2166,16 @@
                   sites, blogs, etc. utilizados no desenvolvimento da solução.
                 </p>
               </div>
-              <p>...... COLOQUE AQUI O SEU TEXTO ......</p>
+              <ul>
+                <li>
+                  <p>FIORUC, B. E.; MOLINA, A. C.; VITTI JUNIOR, W.; LIMA, S. A. M. Educação em saúde: abordando primeiros socorros em escolas públicas no interior de São Paulo. Revista Eletrônica de Enfermagem, Goiânia, Goiás, Brasil, v. 10, n. 3, 2017. DOI: 10.5216/ree.v10.46619. Disponível em: <a target="_blank" href="https://revistas.ufg.br/fen/article/view/46619">https://revistas.ufg.br/fen/article/view/46619</a>. Acesso em: 17 abr. 2024.</p>
+                </li>
+              </ul>
+              <ul>
+                <li>
+                  <p>SESI. Primeiros socorros: como agir em situações de emergência na indústria?. [S. l.], 17 mar. 2021. Disponível em: <a target="_blank" href="https://sesirs.org.br/saude-na-empresa/primeiros-socorros-como-agir-em-situacoes-de-emergencia-na-industria">https://sesirs.org.br/saude-na-empresa/primeiros-socorros-como-agir-em-situacoes-de-emergencia-na-industria</a>. Acesso em: 16 abr. 2024.</p>
+                </li>
+              </ul>
             </section>
           </div>
         </div>
