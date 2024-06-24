@@ -4,6 +4,7 @@ import { QuizService } from "../../services/quizService.js";
 let perguntas = []
 let score = 0
 let level = ''
+let questionCount = 0
 
 const quizService = new QuizService()
 const cadastroService = new CadastroService()
@@ -17,7 +18,7 @@ const quizButtons = consultarSeletor('.quiz-buttons')
 const quizContainer = consultarSeletor('#quiz-container')
 const setupContainer = consultarSeletor('#setup-container')
 const contadorQuestoes = consultarSeletor('#contadorQuestoes')
-const questionCount = parseInt(contadorQuestoes.value)
+
 
 function getNovoID() {
     const perguntas = JSON.parse(localStorage.getItem('CadastroPerguntas')) || [];
@@ -175,6 +176,7 @@ const obeterNovasPerguntas = () => [
 
 
 function criarQuiz() {
+    questionCount = contadorQuestoes.value
     if (isNaN(questionCount) || questionCount < 1) {
         alert('Escolha um número válido de questões.')
         return;
