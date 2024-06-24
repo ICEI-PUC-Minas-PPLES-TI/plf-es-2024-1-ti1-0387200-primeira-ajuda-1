@@ -139,7 +139,7 @@ header div span nav {
 header div span nav ul.dropdown {
   margin: 0;
   padding: 15px;
-  width: 100px;
+  width: 200px;
   position: absolute;
   left: 50%;
   top: calc(100% + 4px);
