@@ -181,7 +181,7 @@ header div span img#avatar {
 }
 
 main section.banner {
-  width: 80%;
+  width: 100%;
   padding: 16px;
   margin: 62px auto;
   justify-content: center;
@@ -302,7 +302,7 @@ h1{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   height: 200px;
-  width: 1000px;
+  width: 1110px;
   box-shadow: 4px 4px 4px 0px #0000001a;
   border-radius: 0.3rem;
 }
@@ -360,7 +360,7 @@ border: 1px solid rgb(202, 202, 202);
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 90%;
+  width: 78%;
   padding: 20px;
   margin-top: 10%;
 }
@@ -424,17 +424,22 @@ border: 1px solid rgb(202, 202, 202);
   transform: scale(1.02);
 }
 
+button i.fa-solid {
+  color: #ffffff;
+  margin-left: 8px;
+}
+
 /* CP3 */
 .cp3-conteudo{
   display: flex;
 }
 .cp3-img1{
-  width: 600px;
+  width: 500px;
   height: 500px;
   padding: 20px;
 }
 .cp3-img2{
-  width: 650px;
+  width: 550px;
   height: 500px;
   padding: 20px;
 }
@@ -473,6 +478,7 @@ border: 1px solid rgb(202, 202, 202);
 .cp4-cards{
 display: flex;
 padding: 10px;
+width: 80%;
 }
 .cp4h1{
   display: flex;
