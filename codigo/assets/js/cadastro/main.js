@@ -10,6 +10,13 @@ const telefone = consultarSeletor("#telefone")
 const mensagemErro = consultarSeletor("#mensagemErro")
 const confirmaSenha = consultarSeletor("#confirmaSenha")
 
+function obterId() {
+  let id = parseInt(localStorage.getItem('id')) || 0
+  id++
+  localStorage.setItem('id', id)
+  return id
+}
+
 telefone.addEventListener('input', ({ target }) => {
   let valor = target.value.replace(/\D/g, '')
   let valorFormatado = ''
@@ -61,6 +68,12 @@ form.addEventListener('reset', () => {
   confirmaSenha.classList.remove('senhasInvalidas')
 })
 
+function gerarAvatar(nomeUsuario) {
+  const seed = nomeUsuario.split(' ')[0]
+  const avatarUrl = `https://api.dicebear.com/9.x/initials/svg?seed=${seed}`
+  return avatarUrl
+}
+
 form.addEventListener("submit", async (evento) => {
   evento.preventDefault()
 
@@ -70,11 +83,21 @@ form.addEventListener("submit", async (evento) => {
     const valoresFormulario = new FormData(evento.target)
     valoresFormulario.forEach((value, key) => dadosCadastroUsuario[key] = value)
 
-    const resposta = await cadastroService.createUsuario(dadosCadastroUsuario)
+    const id = obterId()
+    delete dadosCadastroUsuario['confirmaSenha']
+
+    const resposta = await cadastroService.createUsuario({
+      id,
+      level: "Bronze",
+      avatar: gerarAvatar(dadosCadastroUsuario.nome),
+      ...dadosCadastroUsuario
+    })
+
+    evento.target.reset()
+
     if (resposta) {
-      evento.target.reset()
       alert("Usuário cadastrado com sucesso!")
-      window.location.href = ""
+      window.location.href = `/codigo/pages/perfil.html?id=${id}`
     }
   }
 })

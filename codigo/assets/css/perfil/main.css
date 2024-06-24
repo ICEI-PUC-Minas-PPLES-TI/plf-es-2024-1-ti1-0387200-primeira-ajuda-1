@@ -1,0 +1,92 @@
+main {
+  padding: 60px;
+}
+
+.nivelWrapper,
+.perfilWrapper,
+.containerKits {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.nivelWrapper,
+.container,
+.containerKits,
+form {
+  border-radius: 4.8px;
+  background-color: #ffffff;
+  box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.234);
+}
+
+.nivelWrapper h2 {
+  font-weight: 700;
+}
+
+.perfilWrapper,
+.container,
+.containerKits,
+form {
+  display: flex;
+}
+
+.nivelWrapper {
+  padding: 20px;
+  margin-bottom: 40px;
+}
+
+.perfilWrapper {
+  gap: 12px;
+  margin-bottom: 40px;
+}
+
+.container {
+  width: 40%;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.container img {
+  max-width: 180px;
+  border-radius: 50%;
+  border: 2px solid #e8e8e8;
+}
+
+.container section {
+  margin-top: 12px;
+}
+
+.container section h3,
+.container section span#usuarioLevel {
+  font-weight: 700;
+}
+
+form {
+  width: 60%;
+  padding: 20px;
+  flex-flow: column;
+}
+
+form h3 {
+  text-transform: uppercase;
+  font-weight: 900;
+}
+
+form fieldset {
+  margin-top: 10px;
+  border: none;
+}
+
+form input {
+  width: 100%;
+  padding: 6px;
+  margin-bottom: 12px;
+  border-radius: 4.8px;
+  border: 1px solid #c3c3c3;
+}
+
+.containerKits {
+  padding: 20px;
+  flex-flow: column;
+}

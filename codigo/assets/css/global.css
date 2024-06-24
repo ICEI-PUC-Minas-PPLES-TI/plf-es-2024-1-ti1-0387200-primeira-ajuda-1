@@ -152,7 +152,7 @@ header div span nav ul.dropdown::after {
   content: "";
   position: absolute;
   left: 50%;
-  top: -14px;
+  top: -11px;
   transform: translateX(-50%);
   border: 8px solid transparent;
   border-bottom-color: #ffffff;

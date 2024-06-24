@@ -1,92 +1,200 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projeto</title>
-
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="/codigo/assets/css/global.css">
-    <link rel="stylesheet" href="/codigo/assets/css/perfil/perfil.css">
+    <script src="https://kit.fontawesome.com/9e7334b542.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../assets/css/global.css">
+    <link rel="stylesheet" href="../assets/css/perfil/main.css">
+    <link rel="stylesheet" href="../assets/css/tabelaKits/main.css">
+    <link rel="shortcut icon" href="../assets/img/favIcon.svg" type="image/x-icon">
+    <title>Perfil</title>
 </head>
 
 <body>
     <header>
         <a href="../index.html">
-            <img src="../assets/img/logo.svg" width="156" alt="logo">
+            <img src="../assets/img/logo.svg" id="logo" alt="logo">
         </a>
 
         <div>
-            <nav>
-                <ul>
-                    <li>
-                        <a href="#">Fórum</a>
-                    </li>
-                    <li>
-                        <a href="#">Cursos</a>
-                    </li>
-                </ul>
-            </nav>
-
-            <img src="../assets/img/profile-picture.png" id="avatar" alt="avatar">
+            <span>
+                <img id="avatar" alt="avatar">
+                <nav>
+                    <ul class="dropdown">
+                        <li><a href="">Entrar</a></li>
+                        <li><a href="./pages/perfil.html">Perfil</a></li>
+                        <li><a href="../pages/forum.html">Forum</a></li>
+                        <li><a href="">Quiz</a></li>
+                        <li><a href="">Mapa de Hospitais</a></li>
+                        <li><a href="">Cadastro de Questões</a></li>
+                        <li>Logout</li>
+                    </ul>
+                </nav>
+            </span>
         </div>
     </header>
 
-    <main class="container">
-        <div class="painel-progress">
-            <h2>Seu nível é bronze!</h2>
-            <div class="progress" role="progressbar" aria-label="Warning example" aria-valuenow="60" aria-valuemin="0"
-                aria-valuemax="100">
-                <div class="progress-bar" style="width: 60%; background-color: rgb(113, 84, 4);"></div>
+    <main>
+        <div class="nivelWrapper">
+            <h2 id="usuarioNivel"></h2>
+
+            <div class="progress">
+                <div class="progress-bar"></div>
             </div>
         </div>
 
-        <div class="containers">
-            <div class="container-1">
-                <div>
-                    <img src="/codigo/assets/img/perfil.png" alt="imagem-perfil">
-                    <h3>Usuário</h3>
-                    <h5>Bronze <span>| Estudante</span></h5>
+        <div class="perfilWrapper">
+            <div class="container">
+                <img id="avatar" alt="avatar">
+
+                <section>
+                    <h3 id="usuarioNome"></h3>
+
+                    <span id="usuarioLevel"></span>
+                    <span>|</span>
+                    <span id="usuarioProfissao"></span>
+                </section>
+            </div>
+
+            <form>
+                <h3>#dadoscadastrais</h3>
+
+                <fieldset>
+                    <input type="text" name="nome" id="nome" placeholder="Nome completo" required>
+                    <input type="tel" name="telefone" id="telefone" placeholder="Telefone" required>
+                    <input type="text" name="bairro" id="bairro" placeholder="Bairro" required>
+                    <input type="text" name="cidade" id="cidade" placeholder="Cidade" required>
+                    <input type="email" name="email" id="email" placeholder="Email" required>
+                    <input type="text" name="profissao" id="profissao" placeholder="Profissão" required>
+                </fieldset>
+                <button id="btnSubmit" class="button">Editar</button>
+            </form>
+
+        </div>
+
+        <div class="containerKits">
+            <section class="containerKitsHeader">
+                <h3>#seuskits</h3>
+
+                <button id="btn-criar-kit" onclick="OpenCreatKitPage()">Criar Kit
+                    <i class="fa-solid fa-plus"></i>
+                </button>
+                <input type="checkbox" id="checkbox">
+            </section>
+
+            <div class="creat-kits-page">
+                <div class="creatkits">
+                    <h2><i class="fa-solid fa-kit-medical"></i> #criarkit</h2>
+                    <input class="input-creatkits" type="text" placeholder="Nome do kit" id="Inputkit">
+
+                    <p>Liste os Itens que deseja adicionar ao seu kit:</p>
+                    <div class="check-items">
+                        <div class="check-items1">
+                            <ul>
+                                <li><input type="checkbox" id="item1" value="Bandagem"> Bandagem</li>
+                                <li><input type="checkbox" id="item2" value="Algodão"> Algodão</li>
+                                <li><input type="checkbox" id="item3" value="Gaze"> Gaze</li>
+                                <li><input type="checkbox" id="item4" value="Tesoura"> Tesoura</li>
+                                <li><input type="checkbox" id="item5" value="Pinça"> Pinça</li>
+                                <li><input type="checkbox" id="item6" value="Analgésicos"> Analgésicos</li>
+                                <li><input type="checkbox" id="item7" value="Antiséptico"> Antiséptico</li>
+                                <li><input type="checkbox" id="item8" value="Pomada de Queimaduras"> Pomada
+                                    para Queimaduras</li>
+                            </ul>
+                        </div>
+
+                        <div class="check-items1">
+                            <ul>
+                                <li><input type="checkbox" id="item9" value="Luvas dercartaveis"> Luvas
+                                    descartaveis</li>
+                                <li><input type="checkbox" id="item10" value="Seringa"> Seringa</li>
+                                <li><input type="checkbox" id="item11" value="Fitas Adesivas"> Fitas
+                                    Adesivas</li>
+                                <li><input type="checkbox" id="item12" value="Compressa"> Compressa</li>
+                                <li><input type="checkbox" id="item13" value="Solução salina"> Solução
+                                    Salina</li>
+                                <li><input type="checkbox" id="item14" value="Ferramenta de comunicação">
+                                    Ferramenta de Comunicação</li>
+                                <li><input type="checkbox" id="item15" value="Cobertor Térmico"> Cobertor
+                                    Térmico</li>
+                                <li><input type="checkbox" id="item16" value="Elástico"> Elástico</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="btn-save-creat-position">
+                        <button onclick="CleanCloseCreatKitPage()" class="btn-return-creat-kits-page"
+                            id="return-creat-page">Voltar</button>
+                        <button onclick="SaveNewKit()" class="save-creat-kits" id="save-creat-kits">Salvar</button>
+                    </div>
+
                 </div>
             </div>
-            <div class="container-2">
-                <form id="form-perfil" action="#">
-                    <label for="nome">Nome</label>
-                    <input type="text" name="nome" id="nome" placeholder="Usuário">
-                    
-                    <label for="telefone">Telefone</label>
-                    <input type="tel" name="telefone" id="telefone" placeholder="(11) 99998888">
 
-                    <label for="cidade">Cidade</label>
-                    <input type="text" name="cidade" id="cidade" placeholder="Cidade">
 
-                    <label for="email">Email</label>
-                    <input type="email" name="email" id="email" placeholder="pedrodasilva@gmail.com">
+            <table class="containerKitsTabela">
+                <thead>
+                    <tr>
+                        <th>Kit</th>
+                        <th>Nome</th>
+                        <th>Data</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody id="tablerow"></tbody>
+            </table>
+        </div>
 
-                    <label for="senha">Senha</label>
-                    <input type="password" name="senha" id="senha" placeholder="********">
+        <div class="content-kit" style="display: none;">
+            <div class="item-kits">
+                <h2><i class="fa-solid fa-kit-medical"></i> #itenskit</h2>
 
-                    <label for="profissao">Profissão</label>
-                    <input type="text" name="profissao" id="profissao" placeholder="Estudante">
-                    <br>
-                    <div class="container-btn">
-                        <button id="btn" class="button">Editar</button>
-                    </div>
-                </form>
+                <div class="check-items-view">
+                    <ul>
+                        <li><input type="checkbox" id="edit-item1" value="Bandagem"> Bandagem</li>
+                        <li><input type="checkbox" id="edit-item2" value="Algodão"> Algodão</li>
+                        <li><input type="checkbox" id="edit-item3" value="Gaze"> Gaze</li>
+                        <li><input type="checkbox" id="edit-item4" value="Tesoura"> Tesoura</li>
+                        <li><input type="checkbox" id="edit-item5" value="Pinça"> Pinça</li>
+                        <li><input type="checkbox" id="edit-item6" value="Analgésicos"> Analgésicos</li>
+                        <li><input type="checkbox" id="edit-item7" value="Antiséptico"> Antiséptico</li>
+                        <li><input type="checkbox" id="edit-item8" value="Pomada de Queimaduras"> Pomada para
+                            Queimaduras</li>
+                    </ul>
+
+                    <ul>
+                        <li><input type="checkbox" id="edit-item9" value="Luvas dercartaveis"> Luvas descartaveis
+                        </li>
+                        <li><input type="checkbox" id="edit-item10" value="Seringa"> Seringa</li>
+                        <li><input type="checkbox" id="edit-item11" value="Fitas Adesivas"> Fitas Adesivas</li>
+                        <li><input type="checkbox" id="edit-item12" value="Compressa"> Compressa</li>
+                        <li><input type="checkbox" id="edit-item13" value="Solução salina"> Solução Salina</li>
+                        <li><input type="checkbox" id="edit-item14" value="Ferramenta de comunicação"> Ferramenta de
+                            Comunicação</li>
+                        <li><input type="checkbox" id="edit-item15" value="Cobertor Térmico"> Cobertor Térmico</li>
+                        <li><input type="checkbox" id="edit-item16" value="Elástico"> Elástico</li>
+                    </ul>
+                </div>
+
+                <div class="btn-save-creat-position">
+                    <button onclick="ReturnToTable()" class="return-view" id="return-view-kits">Voltar</button>
+                    <button onclick="saveEditedKit()" class="save-edit" id="save-edit-kits">Salvar</button>
+                </div>
             </div>
         </div>
 
-        <div class="container-kits">
-            <h3>Seus kits:</h3>
-        </div>
     </main>
+
     <footer>
         <img src="../assets/img/logo-puc.svg" id="LogoPUC" alt="LogoPUC">
         <p>© Copyright 2024. Direitos reservados a Primeira Ajuda.</p>
     </footer>
 
-    <script src="/codigo/assets/js/perfil/perfil.js" type="module"></script>
+    <script type="module" src="../assets/js/perfil/main.js"></script>
+    <script src="../assets/js/tabelaKits/main.js"></script>
 </body>
 
 </html>
