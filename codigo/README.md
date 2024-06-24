@@ -16,7 +16,7 @@ codigo/  (essa pasta aqui)
 │   │   ├── main.js
 │   │   └── (outros arquivos .js)
 │   │
-│   ├── images/
+│   ├── img/
 │   │   ├── logo.png
 │   │   └── (outras imagens)
 │   │
