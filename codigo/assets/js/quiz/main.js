@@ -26,7 +26,6 @@ function getNovoID() {
 
 function determinarProgresso() {
     const progresso = (score / questionCount) * 100
-
     if (progresso < 60) {
         level = 'Bronze'
     } else if (progresso <= 75) {
