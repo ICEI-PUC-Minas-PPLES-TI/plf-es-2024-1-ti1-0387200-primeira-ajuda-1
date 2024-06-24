@@ -59,7 +59,7 @@ function UpdateKitTable() {
     kits.forEach(kit => {
         const tr = document.createElement("tr");
         tr.innerHTML = `
-            <td><p class="kit-logo"><i class="fa-solid fa-kit-medical"></i></p></td>
+            <td><i class="fa-solid fa-kit-medical"></i></td>
             <td>${kit.name}</td>
             <td>${kit.date}</td>
             <td>
@@ -146,6 +146,6 @@ function removerow(button, kitId) {
 }
 
 // Inicializar a tabela de kits na página
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     UpdateKitTable();
 });

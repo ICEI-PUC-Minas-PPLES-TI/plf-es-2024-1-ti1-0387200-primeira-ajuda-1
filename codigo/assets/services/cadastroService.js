@@ -12,7 +12,7 @@ export class CadastroService {
         }
     }
 
-    async getUsuariosById(id) {
+    async getUsuario(id) {
         try {
             const resposta = await fetch(`${this.urlBase}/${id}`)
             return resposta.json()

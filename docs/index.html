@@ -1,559 +1,1008 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no"
+    />
+    <link href="assets/images/favicon.png" rel="icon" />
+    <title>Trabalho Interdisciplinar - Documentação</title>
+    <meta
+      name="description"
+      content="Documentação do projeto da disciplina de Trabalho Interdisciplinar"
+    />
+    <meta name="author" content="Rommel Carneiro (WebTech)" />
+    <link
+      rel="shortcut icon"
+      href="assets/images/logo.png"
+      type="image/x-icon"
+    />
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no">
-  <link href="assets/images/favicon.png" rel="icon">
-  <title>Trabalho Interdisciplinar - Documentação</title>
-  <meta name="description" content="Documentação do projeto da disciplina de Trabalho Interdisciplinar">
-  <meta name="author" content="Rommel Carneiro (WebTech)">
-  <link rel="shortcut icon" href="assets/images/logo.png" type="image/x-icon">
+    <!-- Stylesheet ========================= -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="assets/vendor/bootstrap/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="assets/vendor/font-awesome/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="assets/vendor/magnific-popup/magnific-popup.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="assets/vendor/highlight.js/styles/github.css"
+    />
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" type="text/css" href="assets/css/stylesheet.css" />
+  </head>
 
-  <!-- Stylesheet ========================= -->
-  <link rel="stylesheet" type="text/css" href="assets/vendor/bootstrap/css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="assets/vendor/font-awesome/css/all.min.css">
-  <link rel="stylesheet" type="text/css" href="assets/vendor/magnific-popup/magnific-popup.min.css">
-  <link rel="stylesheet" type="text/css" href="assets/vendor/highlight.js/styles/github.css">
-  <!-- Custom Stylesheet -->
-  <link rel="stylesheet" type="text/css" href="assets/css/stylesheet.css">
-</head>
-
-<body data-spy="scroll" data-target=".idocs-navigation" data-offset="125">
-  <!-- Preloader -->
-  <div class="preloader">
-    <div class="lds-ellipsis">
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
-  </div>
-
-  <!-- Document Wrapper  =============================== -->
-  <div id="main-wrapper">
-
-    <!-- Header  ============================ -->
-    <header id="header" class="sticky-top">
-      <!-- Navbar -->
-      <nav class="primary-menu navbar navbar-expand-lg navbar-dropdown-dark">
-        <div class="container-fluid">
-          <!-- Sidebar Toggler -->
-          <button type="button" id="sidebarCollapse" class="navbar-toggler d-block d-md-none"><span></span><span
-              class="w-75"></span><span class="w-50"></span></button>
-
-          <!-- Logo -->
-          <a class="logo ml-md-3" href="index.html" title="iDocs Template"> <img src="assets/images/logo.png"
-              alt="iDocs Template"> </a>
-          <span class="text-2 ml-2">v2.0</span>
-          <!-- Logo End -->
-        </div>
-      </nav>
-    </header>
-    <!-- Header End -->
-
-    <!-- Content ============================ -->
-    <main id="content">
-
-      <!-- Sidebar Navigation	============================ -->
-      <div class="idocs-navigation bg-light">
-        <ul class="nav flex-column ">
-          <li class="nav-item"><a class="nav-link active" href="#ti_intro">Introdução</a> </li>
-          <li class="nav-item"><a class="nav-link" href="#ti_contexto">Contexto</a></li>
-          <li class="nav-item"><a class="nav-link" href="#ti_concepcao">Concepção</a>
-            <ul class="nav flex-column">
-              <li class="nav-item"><a class="nav-link" href="#ti_processo_dt">Design Thinking</a></li>
-              <li class="nav-item"><a class="nav-link" href="#ti_especificacoes">Especificações</a></li>
-              <li class="nav-item"><a class="nav-link" href="#ti_projeto_interfaces">Projeto de Interfaces</a></li>
-            </ul>
-          </li>
-          <li class="nav-item"><a class="nav-link" href="#ti_metodologia">Metodologia</a>
-            <ul class="nav flex-column">
-              <li class="nav-item"><a class="nav-link" href="#ti_ferramentas">Ferramentas</a></li>
-              <li class="nav-item"><a class="nav-link" href="#ti_gestao_projeto">Gestao do Projeto</a></li>
-              <li class="nav-item"><a class="nav-link" href="#ti_controle_versao">Controle de Versão</a></li>
-            </ul>
-          </li>
-          <li class="nav-item"><a class="nav-link" href="#ti_solucao">Solução</a>
-            <ul class="nav flex-column">
-              <li class="nav-item"><a class="nav-link" href="#ti_video">Vídeo do Projeto</a></li>
-              <li class="nav-item"><a class="nav-link" href="#ti_funcionalidades">Funcionalidades</a></li>
-              <li class="nav-item"><a class="nav-link" href="#ti_estruturas_dados">Estruturas de Dados</a></li>
-              <li class="nav-item"><a class="nav-link" href="#ti_modulos_apis">Módulos e APIs</a></li>
-            </ul>
-          </li>
-          <li class="nav-item"><a class="nav-link" href="#ti_faq">FAQ</a></li>
-          <li class="nav-item"><a class="nav-link" href="#ti_referencias">Referências</a></li>
-        </ul>
+  <body data-spy="scroll" data-target=".idocs-navigation" data-offset="125">
+    <!-- Preloader -->
+    <div class="preloader">
+      <div class="lds-ellipsis">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
       </div>
+    </div>
 
-      <!-- Docs Content ============================ -->
-      <div class="idocs-content">
-        <div class="container">
+    <!-- Document Wrapper  =============================== -->
+    <div id="main-wrapper">
+      <!-- Header  ============================ -->
+      <header id="header" class="sticky-top">
+        <!-- Navbar -->
+        <nav class="primary-menu navbar navbar-expand-lg navbar-dropdown-dark">
+          <div class="container-fluid">
+            <!-- Sidebar Toggler -->
+            <button
+              type="button"
+              id="sidebarCollapse"
+              class="navbar-toggler d-block d-md-none"
+            >
+              <span></span><span class="w-75"></span><span class="w-50"></span>
+            </button>
 
-          <!-- Introdução ============================ -->
-          <section id="ti_intro">
-            <h2>Introdução</h2>
-            <p class="lead">Primeiros socorros são fundamentais para lidar com uma variedade de situações de emergência
-              e seu desconhecimento é uma questão que afeta a segurança e o bem-estar das pessoas. Quando ocorrem
-              acidentes ou emergências médicas, a capacidade de fornecer assistência imediata pode ser decisiva, ainda
-              assim é importante lembrar que a prestação de primeiros socorros deve ser feita apenas se você estiver
-              treinado para isso. A falta de educação formal sobre o tema, medo de cometer erros e a ausência de
-              treinamento acessível evidenciam que muitas pessoas não possuem conhecimento básico sobre como agir para
-              administrar a ajuda corretamente. Abordar esse problema requer esforços para educar o público e promover a
-              conscientização sobre a importância de noções básicas de primeiros socorros. Nesse cenário temos a
-              intenção de propor uma solução que visa promover o acesso de maneira democrática a informação, em função
-              de mitigar eventualidades que podem se tornar fatalidades.</p>
+            <!-- Logo -->
+            <a class="logo ml-md-3" href="index.html" title="iDocs Template">
+              <img src="assets/images/logo.png" alt="iDocs Template" />
+            </a>
+            <span class="text-2 ml-2">v2.0</span>
+            <!-- Logo End -->
+          </div>
+        </nav>
+      </header>
+      <!-- Header End -->
 
-            <section id="ti_intro_info">
-              <h4>Informações Gerais</h4>
-              <div class="row">
-                <div class="col-12">
-                  <ul class="list-unstyled">
-                    <li><strong>Projeto:</strong> Primeira Ajuda</li>
-                    <li><strong>Repositório GitHub:</strong> <a
-                        href="https://github.com/ICEI-PUC-Minas-PPLES-TI/plf-es-2024-1-ti1-0387200-primeira-ajuda-1">Template
-                        Trabalho Interdisciplinar</a>
-                    </li>
-                    <li><strong>Membros da equipe:</strong>
-                      <ul>
-                        <li><a href="https://github.com/gabriellananda">Gabriella Fernanda Silva Pinto</a></li>
-                        <li><a href="https://github.com/NateAlves">Natan Alves Fernandes de Olivera</a></li>
-                        <li><a href="https://github.com/felipedeassis017">Felipe de Assis Soares Silva</a></li>
-                        <li><a href="https://github.com/GustavoYannes">Gustavo Yannes Souza Diniz</a></li>
-                        <li><a href="https://github.com/VitorHDMarinho">Vitor Hugo Dutra Marino</a></li>
-                        <li><a href="https://github.com/pedrodif">Pedro Augusto Ferreira de Paula</a></li>
-                      </ul>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </section>
-
-          </section>
-          <hr class="divider">
-
-          <!-- Contexto ============================ -->
-          <section id="ti_contexto">
-            <h2>Contexto</h2>
-            <p class="lead">Detalhes sobre o espaço de problema, justificativas e os objetivos do projeto.</p>
-            <section>
-              <h5>Problema
-                <button type="button" class="btn btn-light btn-sm float-right" data-toggle="collapse"
-                  href="#collapseProblema">Info</button>
-              </h5>
-              <div class="alert alert-warning collapse" role="alert" id="collapseProblema">
-                Nesse momento você deve apresentar o problema que a sua aplicação deve resolver. No entanto, não é a
-                hora de comentar sobre a aplicação. Descreva também o contexto em que essa aplicação será usada, se
-                houver: empresa, tecnologias, etc. Novamente, descreva apenas o que de fato existir, pois ainda não é a
-                hora de apresentar requisitos detalhados ou projetos.
-              </div>
-              <p>Os primeiros socorros desempenham um papel crucial na gestão de uma ampla gama de emergências, e a
-                falta de conhecimento sobre esse tema representa uma preocupação significativa para a segurança e o
-                bem-estar de todos. Especialmente para pessoas acima de 13 anos que não possuem familiaridade com o
-                assunto e precisam de orientação em situações de emergência. Tendo em vista que a capacidade de fornecer
-                assistência imediata pode ser decisiva em situações de acidentes ou emergências médicas, é importante
-                destacar que a prestação de primeiros socorros deve ser realizada apenas por pessoas devidamente
-                treinadas.
-
-                Segundo Fioruc, et al. em um estudo divulgado pela revista eletrônica da UFG, que avaliou quatro escolas
-                de ensino fundamental em São Paulo no ano de 2006, revelou brechas significativas no conhecimento dos
-                docentes e funcionários em relação ao tema. Antes do treinamento, apenas 27,75% dos voluntários
-                demonstraram um bom conhecimento para lidar com situações simples. Em casos mais graves, 61,43% dos
-                participantes não saberiam agir corretamente.
-
-                De acordo com a matéria "Primeiros socorros: como agir em situações de emergência na indústria?",
-                publicada pelo SESI e baseada nos dados do Observatório Digital de Saúde e Segurança do Trabalho do
-                Ministério Público do Trabalho, o Brasil enfrenta um desafio alarmante em relação aos acidentes de
-                trabalho. Com um intervalo médio de apenas 48 segundos entre cada acidente, mais de 335 milhões de
-                pessoas foram afastadas de seus postos de trabalho devido a incidentes entre os anos de 2012 e 2018.
-                Especificamente na indústria, entre os anos de 2015 e 2017, ocorreram cerca de 1,1 milhão de acidentes,
-                representando a maior parte do total de 1,7 milhão de casos registrados no país durante o mesmo período,
-                conforme relatado pelo Anuário Estatístico da Previdência Social.
-
-                A ausência de educação formal sobre o assunto, aliada ao receio de cometer erros e à indisponibilidade
-                de treinamento acessível destacada pelos dados apresentados, reafirma-se como uma realidade persistente
-                ao longo dos anos. Isso evidencia que muitos indivíduos possuem conhecimento limitado ou nulo sobre como
-                agir adequadamente em situações de emergência. Essa lacuna ressalta a necessidade de educar o público e
-                aumentar a conscientização sobre a importância dos princípios básicos de primeiros socorros.</p>
-            </section>
-
-            <section>
-              <h5>Objetivos
-                <button type="button" class="btn btn-light btn-sm float-right" data-toggle="collapse"
-                  href="#collapseObjetivos">Info</button>
-              </h5>
-              <div class="alert alert-warning collapse" role="alert" id="collapseObjetivos">
-                Aqui você deve descrever os objetivos do trabalho indicando que o objetivo geral é desenvolver um
-                software para solucionar o problema apresentado acima. Apresente também alguns (pelo menos 2) objetivos
-                específicos dependendo de onde você vai querer concentrar a sua prática investigativa, ou como você vai
-                aprofundar no seu trabalho.
-              </div>
-
-              <p>
-                Objetivo Geral:
-              </p>
-
-              <p>
-                Desenvolver um software dedicado à conscientização e educação em primeiros socorros visando mitigar a
-                falta de conhecimento existente no conhecimento básico sobre como agir diante de situações de
-                emergência. Este software será uma ferramenta fundamental para capacitar as pessoas, fornecendo-lhes
-                informações vitais e orientações passo a passo sobre como responder a uma variedade de cenários de
-                emergência. Ao promover uma compreensão mais profunda dos procedimentos de primeiros socorros, o
-                software não apenas aumentará a confiança das pessoas em suas habilidades de resposta, mas também poderá
-                salvar vidas em momentos críticos. Ele proporcionará uma experiência de aprendizado envolvente e
-                prática, adaptada para diversos públicos, desde jovens até adultos. Além disso, a acessibilidade será
-                priorizada, garantindo que o software seja democrático.
-              </p>
-
-              <p>
-                Objetivos Específicos:
-              </p>
-
-              <p>
-                Criar uma plataforma acessível e de fácil utilização que forneça informações sobre primeiros socorros de
-                forma clara e objetiva.
-                Desenvolver recursos interativos, como vídeos explicativos e simulações de situações de emergência, para
-                melhorar o aprendizado e retenção do conhecimento.
-              </p>
-            </section>
-
-            <section>
-              <h5>Justificativa
-                <button type="button" class="btn btn-light btn-sm float-right" data-toggle="collapse"
-                  href="#collapseJustificativa">Info</button>
-              </h5>
-              <div class="alert alert-warning collapse" role="alert" id="collapseJustificativa">
-                Descreva a importância ou a motivação para trabalhar com esta aplicação que você escolheu. Indique as
-                razões pelas quais você escolheu seus objetivos específicos ou as razões para aprofundar em certos
-                aspectos do software. O grupo de trabalho pode fazer uso de questionários, entrevistas e dados
-                estatísticos, que podem ser apresentados, com o objetivo de esclarecer detalhes do problema que será
-                abordado pelo grupo.
-              </div>
-              <p>A urgência de resolver esta questão reside no fato de que muitas pessoas carecem de conhecimentos
-                fundamentais em primeiros socorros, o que pode desencadear consequências graves durante emergências. O
-                desenvolvimento deste software visa preencher essa lacuna, democratizando o acesso a informações
-                essenciais sobre primeiros socorros. A opção por recursos interativos é motivada pela necessidade de
-                engajar os usuários e facilitar a absorção do conteúdo. A utilização de questionários, entrevistas e
-                análises estatísticas nos permitirá entender de forma mais aprofundada as necessidades e deficiências de
-                conhecimento do público-alvo, orientando assim o desenvolvimento da solução.</p>
-            </section>
-
-            <section>
-              <h5>Público-alvo
-                <button type="button" class="btn btn-light btn-sm float-right" data-toggle="collapse"
-                  href="#collapsePublico">Info</button>
-              </h5>
-              <div class="alert alert-warning collapse" role="alert" id="collapsePublico">
-                Descreva quem serão as pessoas que usarão a sua aplicação indicando os diferentes perfis. O objetivo
-                aqui não é definir quem serão os clientes ou quais serão os papéis dos usuários na aplicação. A ideia é,
-                dentro do possível, conhecer um pouco mais sobre o perfil dos usuários: conhecimentos prévios, relação
-                com a tecnologia, relações hierárquicas, etc.
-                Adicione informações sobre o público-alvo por meio de uma descrição textual, ou diagramas de personas,
-                mapa de stakeholders, ou como o grupo achar mais conveniente.
-              </div>
-              <p>O software é direcionado a um público diversificado, compreendendo uma ampla faixa etária, a partir de
-                13 anos, abrangendo desde leigos até profissionais da área da saúde. Os perfis de usuários incluem:</p>
-
-              <ul>
-                <li>Leigos: Pessoas sem conhecimento prévio em primeiros socorros.</li>
-                <li>Pais e responsáveis: Indivíduos interessados em aprender a lidar com emergências que envolvam
-                  crianças.</li>
-                <li>Profissionais da saúde: Médicos, enfermeiros e socorristas que desejam atualizar ou reforçar seus
-                  conhecimentos.</li>
-                <li>Educadores: Professores e instrutores que buscam recursos para ensinar ou prestar primeiros socorros
-                  em escolas e organizações.</li>
+      <!-- Content ============================ -->
+      <main id="content">
+        <!-- Sidebar Navigation	============================ -->
+        <div class="idocs-navigation bg-light">
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <a class="nav-link active" href="#ti_intro">Introdução</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#ti_contexto">Contexto</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#ti_concepcao">Concepção</a>
+              <ul class="nav flex-column">
+                <li class="nav-item">
+                  <a class="nav-link" href="#ti_processo_dt">Design Thinking</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#ti_especificacoes"
+                    >Especificações</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#ti_projeto_interfaces"
+                    >Projeto de Interfaces</a
+                  >
+                </li>
               </ul>
-            </section>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#ti_metodologia">Metodologia</a>
+              <ul class="nav flex-column">
+                <li class="nav-item">
+                  <a class="nav-link" href="#ti_ferramentas">Ferramentas</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#ti_gestao_projeto"
+                    >Gestao do Projeto</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#ti_controle_versao"
+                    >Controle de Versão</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#ti_solucao">Solução</a>
+              <ul class="nav flex-column">
+                <li class="nav-item">
+                  <a class="nav-link" href="#ti_video">Vídeo do Projeto</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#ti_funcionalidades"
+                    >Funcionalidades</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#ti_estruturas_dados"
+                    >Estruturas de Dados</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#ti_modulos_apis">Módulos e APIs</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="#ti_faq">FAQ</a></li>
+            <li class="nav-item">
+              <a class="nav-link" href="#ti_referencias">Referências</a>
+            </li>
+          </ul>
+        </div>
 
-          </section>
-          <hr class="divider">
-
-          <!-- Concepção ============================ -->
-          <section id="ti_concepcao">
-            <h2>Concepção (Design Thinking)</h2>
-            <p class="lead">Detalhes do processo de discovery do projeto.
-              <button type="button" class="btn btn-light btn-sm float-right" data-toggle="collapse"
-                href="#collapseConcepcao">Info</button>
-            </p>
-            <div class="alert alert-warning collapse" role="alert" id="collapseConcepcao">
-              <p>Apresente o processo de discovery do projeto. Com foco na experiência do usuário, esse processo abrange
-                a compreensão do contexto do problema e das características do usuário, a definição do problema, a
-                geração de ideias, a prototipagem e a elaboração de uma proposta de solução</p>
-            </div>
-
-            <section id="ti_processo_dt">
-              <h4>Processo de Design Thinking</h4>
-              <p>O arquivo que se segue apresenta o resultado desse processo.
-                <button type="button" class="btn btn-light btn-sm float-right" data-toggle="collapse"
-                  href="#collapseProcesso">Info</button>
+        <!-- Docs Content ============================ -->
+        <div class="idocs-content">
+          <div class="container">
+            <!-- Introdução ============================ -->
+            <section id="ti_intro">
+              <h2>Introdução</h2>
+              <p class="lead">
+                Primeiros socorros são fundamentais para lidar com uma variedade
+                de situações de emergência e seu desconhecimento é uma questão
+                que afeta a segurança e o bem-estar das pessoas. Quando ocorrem
+                acidentes ou emergências médicas, a capacidade de fornecer
+                assistência imediata pode ser decisiva, ainda assim é importante
+                lembrar que a prestação de primeiros socorros deve ser feita
+                apenas se você estiver treinado para isso. A falta de educação
+                formal sobre o tema, medo de cometer erros e a ausência de
+                treinamento acessível evidenciam que muitas pessoas não possuem
+                conhecimento básico sobre como agir para administrar a ajuda
+                corretamente. Abordar esse problema requer esforços para educar
+                o público e promover a conscientização sobre a importância de
+                noções básicas de primeiros socorros. Nesse cenário temos a
+                intenção de propor uma solução que visa promover o acesso de
+                maneira democrática a informação, em função de mitigar
+                eventualidades que podem se tornar fatalidades.
               </p>
-              <div class="alert alert-warning collapse" role="alert" id="collapseProcesso">
-                <p>Apresente o processo de Design Thinking realizado pelo grupo e documentado por meio do software Miro.
-                  No documento apresentado, devem ser incluídos: (1) a matriz CSD, (2) o mapa de stakeholders, (3) as
-                  personas, (4) as respectivas propostas de valor e (5) o processo de ideação identificando as ideias
-                  levantadas e sua priorização.</p>
-              </div>
-              <object data="assets/files/primeiraAjudaProcessoDt.pdf" type="application/pdf" width="100%"
-                height="500px">
-                <p>Não foi possível apresentar o arquivo PDF. Faça o download e abra no seu computador: <a
-                    href="/assets/files/primeiraAjudaProcessoDt.pdf">Download</a></p>
-              </object>
-            </section>
 
-            <section id="ti_especificacoes">
-              <h4>Especificações do Projeto</h4>
-              <p>Documentação das especificações do projeto.
-                <button type="button" class="btn btn-light btn-sm float-right" data-toggle="collapse"
-                  href="#collapseEspecificacao">Info</button>
-              </p>
-              <div class="alert alert-warning collapse" role="alert" id="collapseEspecificacao">
-                <p>Apresente as especificações do projeto, incluindo as histórias de usuário e os requisitos funcionais
-                  e não funcionais.</p>
-              </div>
-
-              <section>
-                <h5>Histórias de Usuários</h5>
-                <p>Com base na análise das personas foram identificadas as seguintes histórias de usuários:
-                  <button type="button" class="btn btn-light btn-sm float-right" data-toggle="collapse"
-                    href="#collapseHistorias">Info</button>
-                </p>
-                <div class="alert alert-warning collapse" role="alert" id="collapseHistorias">
-                  <p>Apresente aqui as histórias de usuário que são relevantes para o projeto de sua solução. As
-                    Histórias de Usuário consistem em uma ferramenta poderosa para a compreensão e elicitação dos
-                    requisitos funcionais e não funcionais da sua aplicação. Se possível, agrupe as histórias de usuário
-                    por contexto, para facilitar consultas recorrentes à essa parte do documento.</p>
+              <section id="ti_intro_info">
+                <h4>Informações Gerais</h4>
+                <div class="row">
+                  <div class="col-12">
+                    <ul class="list-unstyled">
+                      <li><strong>Projeto:</strong> Primeira Ajuda</li>
+                      <li>
+                        <strong>Repositório GitHub:</strong>
+                        <a
+                          href="https://github.com/ICEI-PUC-Minas-PPLES-TI/plf-es-2024-1-ti1-0387200-primeira-ajuda-1"
+                          >Template Trabalho Interdisciplinar</a
+                        >
+                      </li>
+                      <li>
+                        <strong>Membros da equipe:</strong>
+                        <ul>
+                          <li>
+                            <a href="https://github.com/gabriellananda"
+                              >Gabriella Fernanda Silva Pinto</a
+                            >
+                          </li>
+                          <li>
+                            <a href="https://github.com/NateAlves"
+                              >Natan Alves Fernandes de Olivera</a
+                            >
+                          </li>
+                          <li>
+                            <a href="https://github.com/felipedeassis017"
+                              >Felipe de Assis Soares Silva</a
+                            >
+                          </li>
+                          <li>
+                            <a href="https://github.com/GustavoYannes"
+                              >Gustavo Yannes Souza Diniz</a
+                            >
+                          </li>
+                          <li>
+                            <a href="https://github.com/VitorHDMarinho"
+                              >Vitor Hugo Dutra Marino</a
+                            >
+                          </li>
+                          <li>
+                            <a href="https://github.com/pedrodif"
+                              >Pedro Augusto Ferreira de Paula</a
+                            >
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
-                <table class="table">
-                  <thead>
-                    <tr>
-                      <th scope="col">EU COMO...<code>PERSONA</code></th>
-                      <th scope="col">QUERO/PRECISO...<code>FUNCIONALIDADE</code></th>
-                      <th scope="col">PARA...<code>MOTIVO/VALOR</code></th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <th scope="row">Usuário do sistema</th>
-                      <td>Abrir o site e ter facilidade de visualização das seções de primeiros socorros adequados ao
-                        tipo de situação emergencial.</td>
-                      <td>Encontrar rapidamente a informação necessária para prestar o socorro para um
-                        terceiro ou para mim mesmo.</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">Usuário do sistema</th>
-                      <td>Abrir o site e conseguir contatar facilmente ajuda de terceiros, que podem variar de acordo
-                        com a minha emergência, sendo necessário conseguir optar pelo contato adequado (bombeiros,
-                        polícia ou hospitais).</td>
-                      <td>Não podendo prestar o socorro inicial consiga acessar de forma rápida os
-                        profissionais que poderão.</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">Usuário do sistema</th>
-                      <td>Preciso encontrar no site um botão de chamada de emergência que me conecte diretamente ao
-                        serviço de atendimento médico de emergência (SAMU).</td>
-                      <td>Chamar rapidamente uma ambulância e receba orientações de profissionais qualificados em casos
-                        de urgência médica grave.
-                      </td>
-                    </tr>
-                    <tr>
-                      <th scope="row">Usuário do sistema</th>
-                      <td>Desejo encontrar um mapa interativo que me mostre a localização e a disponibilidade dos postos
-                        de atendimento médico mais próximos, como hospitais, clínicas e unidades de pronto-atendimento.
-                      </td>
-                      <td>Identificar facilmente onde obter assistência médica em caso de emergência ou
-                        necessidade de cuidados médicos urgentes.
-                      </td>
-                    </tr>
-                    <tr>
-                      <th scope="row">Usuário do sistema</th>
-                      <td>Desejo encontrar um mapa interativo mostrando a localização dos centros de treinamento de
-                        primeiros socorros mais próximos da minha região.
-                      </td>
-                      <td>Participar de cursos e treinamentos
-                        para adquirir habilidades de resgate e atendimento em situações de emergência.
-                      </td>
-                    </tr>
-                    <tr>
-                      <th scope="row">Usuário do sistema</th>
-                      <td>Gostaria de ter acesso a vídeos curtos e diretos ensinando manobras de primeiros socorros,
-                        como a de engasgamento.
-                      </td>
-                      <td>Agir rapidamente em situações de emergência sem dificuldade.</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">Usuário do sistema</th>
-                      <td>
-                        Preciso de uma barra de tarefas com palavras-chave de rápido acesso para encontrar rapidamente
-                        informações específicas sobre primeiros socorros, como "engasgamento", "ressuscitação
-                        cardiopulmonar" ou "ferimentos".
-                      </td>
-                      <td>Obter as orientações necessárias rapidamente em situações de emergência.</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">Usuário do sistema</th>
-                      <td>
-                        Gostaria de uma aba no site dedicada à divulgação de experiências dos usuários, onde as pessoas
-                        podem compartilhar como o site os ajudou em situações de emergência, oferecendo dicas e relatos
-                        reais.
-                      </td>
-                      <td>Incentivar outros a buscar conhecimento sobre primeiros socorros.</td>
-                    </tr>
-                  </tbody>
-                </table>
+              </section>
+            </section>
+            <hr class="divider" />
+
+            <!-- Contexto ============================ -->
+            <section id="ti_contexto">
+              <h2>Contexto</h2>
+              <p class="lead">
+                Detalhes sobre o espaço de problema, justificativas e os
+                objetivos do projeto.
+              </p>
+              <section>
+                <h5>
+                  Problema
+                  <button
+                    type="button"
+                    class="btn btn-light btn-sm float-right"
+                    data-toggle="collapse"
+                    href="#collapseProblema"
+                  >
+                    Info
+                  </button>
+                </h5>
+                <div
+                  class="alert alert-warning collapse"
+                  role="alert"
+                  id="collapseProblema"
+                >
+                  Nesse momento você deve apresentar o problema que a sua
+                  aplicação deve resolver. No entanto, não é a hora de comentar
+                  sobre a aplicação. Descreva também o contexto em que essa
+                  aplicação será usada, se houver: empresa, tecnologias, etc.
+                  Novamente, descreva apenas o que de fato existir, pois ainda
+                  não é a hora de apresentar requisitos detalhados ou projetos.
+                </div>
+                <p>
+                  Os primeiros socorros desempenham um papel crucial na gestão
+                  de uma ampla gama de emergências, e a falta de conhecimento
+                  sobre esse tema representa uma preocupação significativa para
+                  a segurança e o bem-estar de todos. Especialmente para pessoas
+                  acima de 13 anos que não possuem familiaridade com o assunto e
+                  precisam de orientação em situações de emergência. Tendo em
+                  vista que a capacidade de fornecer assistência imediata pode
+                  ser decisiva em situações de acidentes ou emergências médicas,
+                  é importante destacar que a prestação de primeiros socorros
+                  deve ser realizada apenas por pessoas devidamente treinadas.
+                  Segundo Fioruc, et al. em um estudo divulgado pela revista
+                  eletrônica da UFG, que avaliou quatro escolas de ensino
+                  fundamental em São Paulo no ano de 2006, revelou brechas
+                  significativas no conhecimento dos docentes e funcionários em
+                  relação ao tema. Antes do treinamento, apenas 27,75% dos
+                  voluntários demonstraram um bom conhecimento para lidar com
+                  situações simples. Em casos mais graves, 61,43% dos
+                  participantes não saberiam agir corretamente. De acordo com a
+                  matéria "Primeiros socorros: como agir em situações de
+                  emergência na indústria?", publicada pelo SESI e baseada nos
+                  dados do Observatório Digital de Saúde e Segurança do Trabalho
+                  do Ministério Público do Trabalho, o Brasil enfrenta um
+                  desafio alarmante em relação aos acidentes de trabalho. Com um
+                  intervalo médio de apenas 48 segundos entre cada acidente,
+                  mais de 335 milhões de pessoas foram afastadas de seus postos
+                  de trabalho devido a incidentes entre os anos de 2012 e 2018.
+                  Especificamente na indústria, entre os anos de 2015 e 2017,
+                  ocorreram cerca de 1,1 milhão de acidentes, representando a
+                  maior parte do total de 1,7 milhão de casos registrados no
+                  país durante o mesmo período, conforme relatado pelo Anuário
+                  Estatístico da Previdência Social. A ausência de educação
+                  formal sobre o assunto, aliada ao receio de cometer erros e à
+                  indisponibilidade de treinamento acessível destacada pelos
+                  dados apresentados, reafirma-se como uma realidade persistente
+                  ao longo dos anos. Isso evidencia que muitos indivíduos
+                  possuem conhecimento limitado ou nulo sobre como agir
+                  adequadamente em situações de emergência. Essa lacuna ressalta
+                  a necessidade de educar o público e aumentar a conscientização
+                  sobre a importância dos princípios básicos de primeiros
+                  socorros.
+                </p>
               </section>
 
               <section>
-                <h5>Requisitos</h5>
-                <p>As tabelas que se seguem apresentam os requisitos funcionais e não funcionais que detalham o escopo
-                  do projeto.
-                  <button type="button" class="btn btn-light btn-sm float-right" data-toggle="collapse"
-                    href="#collapseRequisitos">Info</button>
-                </p>
-                <div class="alert alert-warning collapse" role="alert" id="collapseRequisitos">
-                  <p>Com base nas Histórias de Usuário, enumere os requisitos da sua
-                    solução. Classifique esses requisitos em dois grupos:</p>
-                  <ul>
-                    <li><a href="https://pt.wikipedia.org/wiki/Requisito_funcional">Requisitos Funcionais (RF)</a>:
-                      correspondem a uma funcionalidade que deve estar presente na plataforma (ex: cadastro de usuário).
-                    </li>
-                    <li><a href="https://pt.wikipedia.org/wiki/Requisito_n%C3%A3o_funcional">Requisitos Não Funcionais
-                        (RNF)</a>: correspondem a uma característica técnica, seja de usabilidade, desempenho,
-                      confiabilidade, segurança ou outro (ex: suporte a dispositivos iOS e Android).</li>
-                  </ul>
-
-                  <p>Lembre-se que cada requisito deve corresponder à uma e somente uma característica alvo da sua
-                    solução. Além disso, certifique-se de que todos os aspectos capturados nas Histórias de Usuário
-                    foram cobertos.</p>
+                <h5>
+                  Objetivos
+                  <button
+                    type="button"
+                    class="btn btn-light btn-sm float-right"
+                    data-toggle="collapse"
+                    href="#collapseObjetivos"
+                  >
+                    Info
+                  </button>
+                </h5>
+                <div
+                  class="alert alert-warning collapse"
+                  role="alert"
+                  id="collapseObjetivos"
+                >
+                  Aqui você deve descrever os objetivos do trabalho indicando
+                  que o objetivo geral é desenvolver um software para solucionar
+                  o problema apresentado acima. Apresente também alguns (pelo
+                  menos 2) objetivos específicos dependendo de onde você vai
+                  querer concentrar a sua prática investigativa, ou como você
+                  vai aprofundar no seu trabalho.
                 </div>
 
-                <p><strong>Requisitos Funcionais</strong></p>
-                <table class="table">
-                  <thead>
-                    <tr>
-                      <th scope="col">ID</th>
-                      <th scope="col">Descrição do Requisito</th>
-                      <th scope="col">Prioridade</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <th scope="row">RF-001</th>
-                      <td>O sistema deve disponibilizar o local de cadastro e de compartilhamento de experiências do
-                        usuários.</td>
-                      <td>ALTA</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">RF-002</th>
-                      <td>O sistema deve disponibilizar conteúdo educacional sobre primeiros socorros, dividido em
-                        seções temáticas.</td>
-                      <td>MÉDIA</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">RF-003</th>
-                      <td>O sistema deve disponibilizar recursos interativos, como vídeos explicativos e seção de mitos
-                        e verdades.</td>
-                      <td>MÉDIA</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">RF-004</th>
-                      <td>O sistema deve disponibilizar mapa interativo dos locais de treinamento e serviços de
-                        emergência.</td>
-                      <td>MÉDIA</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">RF-005</th>
-                      <td>O sistema deve disponibilizar uma barra de pesquisa como acesso rápido para o tipo de problema
-                        que usuário estará buscando.</td>
-                      <td>ALTA</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">RF-006</th>
-                      <td>O sistema deve disponibilizar um botão que irá facilitar a comunicação do usuário com um
-                        profissional capacitado em práticas de primeiros socorros.</td>
-                      <td>ALTA</td>
-                    </tr>
-                  </tbody>
-                </table>
+                <p>Objetivo Geral:</p>
 
-                <p><strong>Requisitos Não-Funcionais</strong></p>
-                <table class="table">
-                  <thead>
-                    <tr>
-                      <th scope="col">ID</th>
-                      <th scope="col">Descrição do Requisito</th>
-                      <th scope="col">Prioridade</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <th scope="row">RNF-001</th>
-                      <td>O sistema deve possuir uma interface de usuário intuitiva e de fácil navegação.</td>
-                      <td>ALTA</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">RNF-002</th>
-                      <td>O sistema deve oferecer disponibilidade da plataforma para dispositivos móveis e desktop.</td>
-                      <td>ALTA</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">RNF-003</th>
-                      <td>O sistema deve garantir um tempo de resposta rápido para o acesso ao conteúdo.</td>
-                      <td>ALTA</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">RNF-004</th>
-                      <td>O sistema deve garantir a segurança dos dados dos usuários.</td>
-                      <td>ALTA</td>
-                    </tr>
-                  </tbody>
-                </table>
+                <p>
+                  Desenvolver um software dedicado à conscientização e educação
+                  em primeiros socorros visando mitigar a falta de conhecimento
+                  existente no conhecimento básico sobre como agir diante de
+                  situações de emergência. Este software será uma ferramenta
+                  fundamental para capacitar as pessoas, fornecendo-lhes
+                  informações vitais e orientações passo a passo sobre como
+                  responder a uma variedade de cenários de emergência. Ao
+                  promover uma compreensão mais profunda dos procedimentos de
+                  primeiros socorros, o software não apenas aumentará a
+                  confiança das pessoas em suas habilidades de resposta, mas
+                  também poderá salvar vidas em momentos críticos. Ele
+                  proporcionará uma experiência de aprendizado envolvente e
+                  prática, adaptada para diversos públicos, desde jovens até
+                  adultos. Além disso, a acessibilidade será priorizada,
+                  garantindo que o software seja democrático.
+                </p>
+
+                <p>Objetivos Específicos:</p>
+
+                <p>
+                  Criar uma plataforma acessível e de fácil utilização que
+                  forneça informações sobre primeiros socorros de forma clara e
+                  objetiva. Desenvolver recursos interativos, como vídeos
+                  explicativos e simulações de situações de emergência, para
+                  melhorar o aprendizado e retenção do conhecimento.
+                </p>
               </section>
-            </section>
-
-            <section id="ti_projeto_interfaces">
-              <h4>Projeto de Interface</h4>
-              <p>Artefatos relacionados com a interface e a interacão do usuário na proposta de solução.
-                <button type="button" class="btn btn-light btn-sm float-right" data-toggle="collapse"
-                  href="#collapseInterface">Info</button>
-              </p>
-              <div class="alert alert-warning collapse" role="alert" id="collapseInterface">
-                <p>Apresente a ideia de interface que está sendo prevista para o projeto. Inclua os wireframes, o
-                  user/screen flow e o protótipo interativo.</p>
-              </div>
 
               <section>
-                <h5>User/Screen Flow e Protótipo interativo</h5>
-                <p>Artefatos relacionados com a interface e a interacão do usuário na solução proposta.
-                  <button type="button" class="btn btn-light btn-sm float-right" data-toggle="collapse"
-                    href="#collapseUserFlow">Info</button>
+                <h5>
+                  Justificativa
+                  <button
+                    type="button"
+                    class="btn btn-light btn-sm float-right"
+                    data-toggle="collapse"
+                    href="#collapseJustificativa"
+                  >
+                    Info
+                  </button>
+                </h5>
+                <div
+                  class="alert alert-warning collapse"
+                  role="alert"
+                  id="collapseJustificativa"
+                >
+                  Descreva a importância ou a motivação para trabalhar com esta
+                  aplicação que você escolheu. Indique as razões pelas quais
+                  você escolheu seus objetivos específicos ou as razões para
+                  aprofundar em certos aspectos do software. O grupo de trabalho
+                  pode fazer uso de questionários, entrevistas e dados
+                  estatísticos, que podem ser apresentados, com o objetivo de
+                  esclarecer detalhes do problema que será abordado pelo grupo.
+                </div>
+                <p>
+                  A urgência de resolver esta questão reside no fato de que
+                  muitas pessoas carecem de conhecimentos fundamentais em
+                  primeiros socorros, o que pode desencadear consequências
+                  graves durante emergências. O desenvolvimento deste software
+                  visa preencher essa lacuna, democratizando o acesso a
+                  informações essenciais sobre primeiros socorros. A opção por
+                  recursos interativos é motivada pela necessidade de engajar os
+                  usuários e facilitar a absorção do conteúdo. A utilização de
+                  questionários, entrevistas e análises estatísticas nos
+                  permitirá entender de forma mais aprofundada as necessidades e
+                  deficiências de conhecimento do público-alvo, orientando assim
+                  o desenvolvimento da solução.
                 </p>
-                <div class="alert alert-warning collapse" role="alert" id="collapseUserFlow">
-                  <p>O fluxo de usuário (User Flow) é uma técnica que permite ao desenvolvedor mapear todo fluxo de
-                    telas do site ou app. Essa técnica funciona para alinhar os caminhos e as possíveis ações que o
-                    usuário pode fazer junto com os membros de sua equipe. <img class="img-fluid"
-                      src="assets/images/exemplo-userflow.png" alt="Exemplo de fluxo de usuário">
+              </section>
+
+              <section>
+                <h5>
+                  Público-alvo
+                  <button
+                    type="button"
+                    class="btn btn-light btn-sm float-right"
+                    data-toggle="collapse"
+                    href="#collapsePublico"
+                  >
+                    Info
+                  </button>
+                </h5>
+                <div
+                  class="alert alert-warning collapse"
+                  role="alert"
+                  id="collapsePublico"
+                >
+                  Descreva quem serão as pessoas que usarão a sua aplicação
+                  indicando os diferentes perfis. O objetivo aqui não é definir
+                  quem serão os clientes ou quais serão os papéis dos usuários
+                  na aplicação. A ideia é, dentro do possível, conhecer um pouco
+                  mais sobre o perfil dos usuários: conhecimentos prévios,
+                  relação com a tecnologia, relações hierárquicas, etc. Adicione
+                  informações sobre o público-alvo por meio de uma descrição
+                  textual, ou diagramas de personas, mapa de stakeholders, ou
+                  como o grupo achar mais conveniente.
+                </div>
+                <p>
+                  O software é direcionado a um público diversificado,
+                  compreendendo uma ampla faixa etária, a partir de 13 anos,
+                  abrangendo desde leigos até profissionais da área da saúde. Os
+                  perfis de usuários incluem:
+                </p>
+
+                <ul>
+                  <li>
+                    Leigos: Pessoas sem conhecimento prévio em primeiros
+                    socorros.
+                  </li>
+                  <li>
+                    Pais e responsáveis: Indivíduos interessados em aprender a
+                    lidar com emergências que envolvam crianças.
+                  </li>
+                  <li>
+                    Profissionais da saúde: Médicos, enfermeiros e socorristas
+                    que desejam atualizar ou reforçar seus conhecimentos.
+                  </li>
+                  <li>
+                    Educadores: Professores e instrutores que buscam recursos
+                    para ensinar ou prestar primeiros socorros em escolas e
+                    organizações.
+                  </li>
+                </ul>
+              </section>
+            </section>
+            <hr class="divider" />
+
+            <!-- Concepção ============================ -->
+            <section id="ti_concepcao">
+              <h2>Concepção (Design Thinking)</h2>
+              <p class="lead">
+                Detalhes do processo de discovery do projeto.
+                <button
+                  type="button"
+                  class="btn btn-light btn-sm float-right"
+                  data-toggle="collapse"
+                  href="#collapseConcepcao"
+                >
+                  Info
+                </button>
+              </p>
+              <div
+                class="alert alert-warning collapse"
+                role="alert"
+                id="collapseConcepcao"
+              >
+                <p>
+                  Apresente o processo de discovery do projeto. Com foco na
+                  experiência do usuário, esse processo abrange a compreensão do
+                  contexto do problema e das características do usuário, a
+                  definição do problema, a geração de ideias, a prototipagem e a
+                  elaboração de uma proposta de solução
+                </p>
+              </div>
+
+              <section id="ti_processo_dt">
+                <h4>Processo de Design Thinking</h4>
+                <p>
+                  O arquivo que se segue apresenta o resultado desse processo.
+                  <button
+                    type="button"
+                    class="btn btn-light btn-sm float-right"
+                    data-toggle="collapse"
+                    href="#collapseProcesso"
+                  >
+                    Info
+                  </button>
+                </p>
+                <div
+                  class="alert alert-warning collapse"
+                  role="alert"
+                  id="collapseProcesso"
+                >
+                  <p>
+                    Apresente o processo de Design Thinking realizado pelo grupo
+                    e documentado por meio do software Miro. No documento
+                    apresentado, devem ser incluídos: (1) a matriz CSD, (2) o
+                    mapa de stakeholders, (3) as personas, (4) as respectivas
+                    propostas de valor e (5) o processo de ideação identificando
+                    as ideias levantadas e sua priorização.
                   </p>
-                  <p>Um protótipo interativo apresenta o projeto de interfaces e permite ao usuário navegar pelas
-                    funcionalidades como se estivesse lidando com o software pronto. Veja o exemplo a seguir.<br>
-                    <iframe title="Protótipo interativo"
-                      src="https://marvelapp.com/prototype/4hd6091?emb=1&iosapp=false&frameless=false" width="600px"
-                      height="360px" allowtransparency="true" frameborder="0"></iframe>
+                </div>
+                <object
+                  data="assets/files/primeiraAjudaProcessoDt.pdf"
+                  type="application/pdf"
+                  width="100%"
+                  height="500px"
+                >
+                  <p>
+                    Não foi possível apresentar o arquivo PDF. Faça o download e
+                    abra no seu computador:
+                    <a href="/assets/files/primeiraAjudaProcessoDt.pdf"
+                      >Download</a
+                    >
+                  </p>
+                </object>
+              </section>
+
+              <section id="ti_especificacoes">
+                <h4>Especificações do Projeto</h4>
+                <p>
+                  Documentação das especificações do projeto.
+                  <button
+                    type="button"
+                    class="btn btn-light btn-sm float-right"
+                    data-toggle="collapse"
+                    href="#collapseEspecificacao"
+                  >
+                    Info
+                  </button>
+                </p>
+                <div
+                  class="alert alert-warning collapse"
+                  role="alert"
+                  id="collapseEspecificacao"
+                >
+                  <p>
+                    Apresente as especificações do projeto, incluindo as
+                    histórias de usuário e os requisitos funcionais e não
+                    funcionais.
                   </p>
                 </div>
 
-                <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450"
-                  src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2F98bjco2iTtVQWATczqWRV5%2FPimeiraAjuda.com%3Ftype%3Ddesign%26node-id%3D20%253A11%26mode%3Ddesign%26t%3DPvYJVqQhzVXNiofU-1"
-                  allowfullscreen></iframe>
+                <section>
+                  <h5>Histórias de Usuários</h5>
+                  <p>
+                    Com base na análise das personas foram identificadas as
+                    seguintes histórias de usuários:
+                    <button
+                      type="button"
+                      class="btn btn-light btn-sm float-right"
+                      data-toggle="collapse"
+                      href="#collapseHistorias"
+                    >
+                      Info
+                    </button>
+                  </p>
+                  <div
+                    class="alert alert-warning collapse"
+                    role="alert"
+                    id="collapseHistorias"
+                  >
+                    <p>
+                      Apresente aqui as histórias de usuário que são relevantes
+                      para o projeto de sua solução. As Histórias de Usuário
+                      consistem em uma ferramenta poderosa para a compreensão e
+                      elicitação dos requisitos funcionais e não funcionais da
+                      sua aplicação. Se possível, agrupe as histórias de usuário
+                      por contexto, para facilitar consultas recorrentes à essa
+                      parte do documento.
+                    </p>
+                  </div>
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">EU COMO...<code>PERSONA</code></th>
+                        <th scope="col">
+                          QUERO/PRECISO...<code>FUNCIONALIDADE</code>
+                        </th>
+                        <th scope="col">PARA...<code>MOTIVO/VALOR</code></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">Usuário do sistema</th>
+                        <td>
+                          Abrir o site e ter facilidade de visualização das
+                          seções de primeiros socorros adequados ao tipo de
+                          situação emergencial.
+                        </td>
+                        <td>
+                          Encontrar rapidamente a informação necessária para
+                          prestar o socorro para um terceiro ou para mim mesmo.
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Usuário do sistema</th>
+                        <td>
+                          Encontrar um mapa interativo que me mostre a
+                          localização e a disponibilidade dos postos de
+                          atendimento médico mais próximos, como hospitais,
+                          clínicas e unidades de pronto-atendimento.
+                        </td>
+                        <td>
+                          Identificar facilmente onde obter assistência médica
+                          em caso de emergência ou necessidade de cuidados
+                          médicos urgentes.
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Usuário do sistema</th>
+                        <td>
+                          Ter acesso a vídeos curtos e diretos ensinando
+                          manobras de primeiros socorros, como a de
+                          engasgamento.
+                        </td>
+                        <td>
+                          Agir rapidamente em situações de emergência sem
+                          dificuldade.
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Usuário do sistema</th>
+                        <td>
+                          De interações dinâmicas que me ajude a testar meus
+                          conhecimentos em primeiro socorros, como quiz de
+                          perguntas e respostas.
+                        </td>
+                        <td>Testar os conhecimentos.</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Usuário do sistema</th>
+                        <td>
+                          Encontrar no site um local de divulgação de contatos
+                          de emergência que me conecte diretamente ao serviço de
+                          atendimento médico de emergência (SAMU).
+                        </td>
+                        <td>
+                          permitir que eu chame rapidamente uma ambulância e
+                          receba orientações de profissionais qualificados em
+                          casos de urgência médica grave.
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Usuário do sistema</th>
+                        <td>
+                          Ter acesso à minha classificação baseada no conteúdo
+                          que consumi, bem como, nos quizzes que realizei ao
+                          longo do tempo de uso da plataforma.
+                        </td>
+                        <td>
+                          Entender minha evolução no contexto de prestação de
+                          primeiros socorros.
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Usuário do sistema</th>
+                        <td>
+                          Ter a capacidade de criar kits de primeiros socorros
+                          adaptados para diversas situações.
+                        </td>
+                        <td>
+                          Garantindo assim minha prontidão diante de cenários
+                          adversos.
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Usuário do sistema</th>
+                        <td>
+                          De uma aba no site dedicada à divulgação de
+                          experiências dos usuários, onde as pessoas podem
+                          compartilhar como o site os ajudou em situações de
+                          emergência, oferecendo dicas e relatos reais.
+                        </td>
+                        <td>
+                          Incentivar outros a buscar conhecimento sobre
+                          primeiros socorros.
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Usuário do sistema</th>
+                        <td>
+                          De uma tela de cadastro e de perfil, onde consiga
+                          salvar todos os meus dados pessoais e o nível nos quiz
+                          interativos.
+                        </td>
+                        <td>
+                          Conseguir ter acesso ao perfil pessoal e monitorar o
+                          desempenho dos quiz sobre primeiros socorros.
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </section>
 
-                <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450"
-                  src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FYy3z2YneBt4CoBKwQTgHq4%2FG1---Primeiros-Socorros%3Ftype%3Dwhiteboard%26node-id%3D0%253A1%26t%3DQSrbzWkmjr4h0ULC-1"
-                  allowfullscreen></iframe>
+                <section>
+                  <h5>Requisitos</h5>
+                  <p>
+                    As tabelas que se seguem apresentam os requisitos funcionais
+                    e não funcionais que detalham o escopo do projeto.
+                    <button
+                      type="button"
+                      class="btn btn-light btn-sm float-right"
+                      data-toggle="collapse"
+                      href="#collapseRequisitos"
+                    >
+                      Info
+                    </button>
+                  </p>
+                  <div
+                    class="alert alert-warning collapse"
+                    role="alert"
+                    id="collapseRequisitos"
+                  >
+                    <p>
+                      Com base nas Histórias de Usuário, enumere os requisitos
+                      da sua solução. Classifique esses requisitos em dois
+                      grupos:
+                    </p>
+                    <ul>
+                      <li>
+                        <a
+                          href="https://pt.wikipedia.org/wiki/Requisito_funcional"
+                          >Requisitos Funcionais (RF)</a
+                        >: correspondem a uma funcionalidade que deve estar
+                        presente na plataforma (ex: cadastro de usuário).
+                      </li>
+                      <li>
+                        <a
+                          href="https://pt.wikipedia.org/wiki/Requisito_n%C3%A3o_funcional"
+                          >Requisitos Não Funcionais (RNF)</a
+                        >: correspondem a uma característica técnica, seja de
+                        usabilidade, desempenho, confiabilidade, segurança ou
+                        outro (ex: suporte a dispositivos iOS e Android).
+                      </li>
+                    </ul>
 
+                    <p>
+                      Lembre-se que cada requisito deve corresponder à uma e
+                      somente uma característica alvo da sua solução. Além
+                      disso, certifique-se de que todos os aspectos capturados
+                      nas Histórias de Usuário foram cobertos.
+                    </p>
+                  </div>
+
+                  <p><strong>Requisitos Funcionais</strong></p>
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Descrição do Requisito</th>
+                        <th scope="col">Prioridade</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">RF-001</th>
+                        <td>
+                          O sistema deve disponibilizar conteúdo educacional
+                          sobre primeiros socorros, dividido em seções temáticas
+                        </td>
+                        <td>ALTA</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">RF-002</th>
+                        <td>
+                          O sistema deve disponibilizar mapa interativo que me
+                          mostre a localização e a disponibilidade dos postos de
+                          atendimento médico mais próximos, como hospitais,
+                          clínicas e unidades de pronto-atendimento.
+                        </td>
+                        <td>MÉDIA</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">RF-003</th>
+                        <td>
+                          O sistema deve disponibilizar uma página com acesso a
+                          vídeos curtos e diretos ensinando manobras de
+                          primeiros socorros.
+                        </td>
+                        <td>MÉDIA</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">RF-004</th>
+                        <td>
+                          O sistema deve oferecer testes de conhecimento(quizzes
+                          de múltipla escolha), que serão destinados a
+                          realização dos usuários após consumo de alguma seção
+                          informativa de práticas de primeiros socorros, para
+                          avaliar as habilidades adquiridas a partir do conteúdo
+                          disponibilizado. Os resultados dos testes contribuirão
+                          para o progresso do usuário em sua classificação de
+                          capacitação.
+                        </td>
+                        <td>ALTA</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">RF-005</th>
+                        <td>
+                          O sistema deve disponibilizar uma página voltada para
+                          o compartilhamento de experiências do usuários.
+                        </td>
+                        <td>ALTA</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">RF-006</th>
+                        <td>
+                          O sistema deve disponibilizar o local de cadastro de
+                          usuários.
+                        </td>
+                        <td>ALTA</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">RF-007</th>
+                        <td>
+                          O sistema deve disponibilizar um recurso de contatos
+                          de emergência que conecte diretamente ao serviço de
+                          atendimento médico de emergência (SAMU), especialista
+                          em práticas de primeiros socorros, com o usuário.
+                        </td>
+                        <td>MÉDIA</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">RF-008</th>
+                        <td>
+                          O sistema deve incluir um painel do usuário com uma
+                          barra de progresso que indica a classificação do
+                          usuário, a qual será determinada pelo conteúdo que ele
+                          já consumiu.
+                        </td>
+                        <td>ALTA</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">RF-009</th>
+                        <td>
+                          O sistema deve fornecer uma tabela para listagem de
+                          kits de primeiros socorros montados pelo próprio
+                          usuário para diferentes situações, possibilitando sua
+                          visualização, edição e exclusão.
+                        </td>
+                        <td>ALTA</td>
+                      </tr>
+                    </tbody>
+                  </table>
+
+                  <p><strong>Requisitos Não-Funcionais</strong></p>
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Descrição do Requisito</th>
+                        <th scope="col">Prioridade</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">RNF-001</th>
+                        <td>
+                          O sistema deve possuir uma interface de usuário
+                          intuitiva e de fácil navegação.
+                        </td>
+                        <td>ALTA</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">RNF-002</th>
+                        <td>
+                          O sistema deve oferecer disponibilidade da plataforma
+                          para dispositivos móveis e desktop.
+                        </td>
+                        <td>ALTA</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">RNF-003</th>
+                        <td>
+                          O sistema deve garantir um tempo de resposta rápido
+                          para o acesso ao conteúdo.
+                        </td>
+                        <td>ALTA</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">RNF-004</th>
+                        <td>
+                          O sistema deve garantir a segurança dos dados dos
+                          usuários.
+                        </td>
+                        <td>ALTA</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </section>
               </section>
 
-              <!-- <section>
+              <section id="ti_projeto_interfaces">
+                <h4>Projeto de Interface</h4>
+                <p>
+                  Artefatos relacionados com a interface e a interacão do
+                  usuário na proposta de solução.
+                  <button
+                    type="button"
+                    class="btn btn-light btn-sm float-right"
+                    data-toggle="collapse"
+                    href="#collapseInterface"
+                  >
+                    Info
+                  </button>
+                </p>
+                <div
+                  class="alert alert-warning collapse"
+                  role="alert"
+                  id="collapseInterface"
+                >
+                  <p>
+                    Apresente a ideia de interface que está sendo prevista para
+                    o projeto. Inclua os wireframes, o user/screen flow e o
+                    protótipo interativo.
+                  </p>
+                </div>
+
+                <section>
+                  <h5>User/Screen Flow e Protótipo interativo</h5>
+                  <p>
+                    Artefatos relacionados com a interface e a interacão do
+                    usuário na solução proposta.
+                    <button
+                      type="button"
+                      class="btn btn-light btn-sm float-right"
+                      data-toggle="collapse"
+                      href="#collapseUserFlow"
+                    >
+                      Info
+                    </button>
+                  </p>
+                  <div
+                    class="alert alert-warning collapse"
+                    role="alert"
+                    id="collapseUserFlow"
+                  >
+                    <p>
+                      O fluxo de usuário (User Flow) é uma técnica que permite
+                      ao desenvolvedor mapear todo fluxo de telas do site ou
+                      app. Essa técnica funciona para alinhar os caminhos e as
+                      possíveis ações que o usuário pode fazer junto com os
+                      membros de sua equipe.
+                      <img
+                        class="img-fluid"
+                        src="assets/images/exemplo-userflow.png"
+                        alt="Exemplo de fluxo de usuário"
+                      />
+                    </p>
+                    <p>
+                      Um protótipo interativo apresenta o projeto de interfaces
+                      e permite ao usuário navegar pelas funcionalidades como se
+                      estivesse lidando com o software pronto. Veja o exemplo a
+                      seguir.<br />
+                      <iframe
+                        title="Protótipo interativo"
+                        src="https://marvelapp.com/prototype/4hd6091?emb=1&iosapp=false&frameless=false"
+                        width="600px"
+                        height="360px"
+                        allowtransparency="true"
+                        frameborder="0"
+                      ></iframe>
+                    </p>
+                  </div>
+
+                  <iframe
+                    style="border: 1px solid rgba(0, 0, 0, 0.1)"
+                    width="800"
+                    height="450"
+                    src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2F98bjco2iTtVQWATczqWRV5%2FPimeiraAjuda.com%3Ftype%3Ddesign%26node-id%3D20%253A11%26mode%3Ddesign%26t%3DPvYJVqQhzVXNiofU-1"
+                    allowfullscreen
+                  ></iframe>
+
+                  <iframe
+                    style="border: 1px solid rgba(0, 0, 0, 0.1)"
+                    width="800"
+                    height="450"
+                    src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FYy3z2YneBt4CoBKwQTgHq4%2FG1---Primeiros-Socorros%3Ftype%3Dwhiteboard%26node-id%3D0%253A1%26t%3DQSrbzWkmjr4h0ULC-1"
+                    allowfullscreen
+                  ></iframe>
+                </section>
+
+                <!-- <section>
                 <h5>Wireframes</h5>
                 <p>Protótipo de telas do sistema em baixa fidelidade (rascunhos).
                   <button type="button" class="btn btn-light btn-sm float-right" data-toggle="collapse"
@@ -567,398 +1016,1217 @@
                 </div>
                 <p>...... COLOQUE AQUI OS PROTÓTIPO DE TELAS E SUA DESCRIÇÃO ......</p>
               </section> -->
-
+              </section>
             </section>
-          </section>
 
-          <hr class="divider">
+            <hr class="divider" />
 
-          <!-- Metodologia ============================ -->
-          <section id="ti_metodologia">
-            <h2>Metodologia</h2>
-            <p class="lead">Detalhes sobre a organização do grupo e o ferramental empregado.
-              <button type="button" class="btn btn-light btn-sm float-right" data-toggle="collapse"
-                href="#collapseMetodologia">Info</button>
-            </p>
-            <div class="alert alert-warning collapse" role="alert" id="collapseMetodologia">
-              <p>Nesta parte do documento, você deve apresentar a metodologia adotada pelo grupo, descrevendo o processo
-                de trabalho baseado nas metodologias ágeis, a divisão de papéis e tarefas, as ferramentas empregadas e
-                como foi realizada a gestão de configuração do projeto via GitHub.</p>
-              <p>Coloque detalhes sobre o processo de Design Thinking e a implementação do Framework Scrum seguido pelo
-                grupo. O grupo poderá fazer uso de ferramentas on-line para acompanhar o andamento do projeto, a
-                execução das tarefas e o status de desenvolvimento da solução.</p>
-            </div>
+            <!-- Metodologia ============================ -->
+            <section id="ti_metodologia">
+              <h2>Metodologia</h2>
+              <p class="lead">
+                Detalhes sobre a organização do grupo e o ferramental empregado.
 
-            <section>
-              <h4 id="ti_ferramentas">Ferramentas</h4>
-              <p>Relação de ferramentas empregadas pelo grupo durante o projeto.
-                <button type="button" class="btn btn-light btn-sm float-right" data-toggle="collapse"
-                  href="#collapseFerramentas">Info</button>
+                <p class="text-center">
+                  <img
+                    class="img-fluid"
+                    src="assets/images/metodologia.png"
+                    alt="Tela Cadastro de Usuários"
+                  />
+                </p>
+
+                <button
+                  type="button"
+                  class="btn btn-light btn-sm float-right"
+                  data-toggle="collapse"
+                  href="#collapseMetodologia"
+                >
+                  Info
+                </button>
               </p>
-              <div class="alert alert-warning collapse" role="alert" id="collapseFerramentas">
-                <p>Liste as ferramentas empregadas no desenvolvimento do projeto, justificando a escolha delas, sempre
-                  que possível. Inclua itens como: (1) Editor de código, ferramentas de comunicação, ferramentas de
-                  diagramação, plataformas de hospedagem, entre outras.</p>
+              <div
+                class="alert alert-warning collapse"
+                role="alert"
+                id="collapseMetodologia"
+              >
+                <p>
+                  Nesta parte do documento, você deve apresentar a metodologia
+                  adotada pelo grupo, descrevendo o processo de trabalho baseado
+                  nas metodologias ágeis, a divisão de papéis e tarefas, as
+                  ferramentas empregadas e como foi realizada a gestão de
+                  configuração do projeto via GitHub.
+                </p>
+                <p>
+                  Coloque detalhes sobre o processo de Design Thinking e a
+                  implementação do Framework Scrum seguido pelo grupo. O grupo
+                  poderá fazer uso de ferramentas on-line para acompanhar o
+                  andamento do projeto, a execução das tarefas e o status de
+                  desenvolvimento da solução.
+                </p>
               </div>
-              <table class="table">
-                <thead>
-                  <tr>
-                    <th scope="col">Ambiente</th>
-                    <th scope="col">Plataforma</th>
-                    <th scope="col">Link de Acesso</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Processo de Design Thinking</td>
-                    <td>Miro</td>
-                    <td><a href="https://miro.com/app/board/uXjVKfKmp_4=/">https://miro.com/app/board/primeiraAjuda</a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Repositório de código</td>
-                    <td>GitHub</td>
-                    <td>
-                      <a href="https://github.com/ICEI-PUC-Minas-PPLES-TI/plf-es-2024-1-ti1-0387200-primeira-ajuda-1">https://github.com/primeiraAjuda
-                      </a>
-                    </td>
-                  </tr>
-                  <!-- <tr>
+
+              <section>
+                <h4 id="ti_ferramentas">Ferramentas</h4>
+                <p>
+                  Relação de ferramentas empregadas pelo grupo durante o
+                  projeto.
+                  <button
+                    type="button"
+                    class="btn btn-light btn-sm float-right"
+                    data-toggle="collapse"
+                    href="#collapseFerramentas"
+                  >
+                    Info
+                  </button>
+                </p>
+                <div
+                  class="alert alert-warning collapse"
+                  role="alert"
+                  id="collapseFerramentas"
+                >
+                  <p>
+                    Liste as ferramentas empregadas no desenvolvimento do
+                    projeto, justificando a escolha delas, sempre que possível.
+                    Inclua itens como: (1) Editor de código, ferramentas de
+                    comunicação, ferramentas de diagramação, plataformas de
+                    hospedagem, entre outras.
+                  </p>
+                </div>
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th scope="col">Ambiente</th>
+                      <th scope="col">Plataforma</th>
+                      <th scope="col">Link de Acesso</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Processo de Design Thinking</td>
+                      <td>Miro</td>
+                      <td>
+                        <a href="https://miro.com/app/board/uXjVKfKmp_4=/"
+                          >https://miro.com/app/board/primeiraAjuda</a
+                        >
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Repositório de código</td>
+                      <td>GitHub</td>
+                      <td>
+                        <a
+                          href="https://github.com/ICEI-PUC-Minas-PPLES-TI/plf-es-2024-1-ti1-0387200-primeira-ajuda-1"
+                          >https://github.com/primeiraAjuda
+                        </a>
+                      </td>
+                    </tr>
+                    <!-- <tr>
                     <td>Hospedagem do site</td>
                     <td>Heroku</td>
                     <td><a href="https://XXXXXXX.herokuapp.com">https://XXXXXXX.herokuapp.com</a><span
                         class="exemplo">EXEMPLO</span></td>
                   </tr> -->
-                  <tr>
-                    <td>Protótipo</td>
-                    <td>Figma</td>
-                    <td><a
-                        href="https://www.figma.com/file/98bjco2iTtVQWATczqWRV5/PimeiraAjuda.com?type=design&node-id=20%3A11&mode=design&t=PvYJVqQhzVXNiofU-1">https://figma.com/primeiraAjuda</a>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </section>
+                    <tr>
+                      <td>Protótipo</td>
+                      <td>Figma</td>
+                      <td>
+                        <a
+                          href="https://www.figma.com/file/98bjco2iTtVQWATczqWRV5/PimeiraAjuda.com?type=design&node-id=20%3A11&mode=design&t=PvYJVqQhzVXNiofU-1"
+                          >https://figma.com/primeiraAjuda</a
+                        >
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </section>
 
-            <section id="ti_gestao_projeto">
-              <h4>Gestão do Projeto</h4>
-              <p>Divisão de papéis no grupo e apresentação da estrutura da ferramenta de controle de tarefas (Kanban).
-                <button type="button" class="btn btn-light btn-sm float-right" data-toggle="collapse"
-                  href="#collapsePapeis">Info</button>
-              </p>
-              <div class="alert alert-warning collapse" role="alert" id="collapsePapeis">
-                <p>Apresente a divisão de papéis e tarefas entre os membros do grupo. Informe quem é o Scrum Master, o
-                  Product Owner e os desenvolvedores. Informe também quem é o responsável pela documentação do projeto.
+              <section id="ti_gestao_projeto">
+                <h4>Gestão do Projeto</h4>
+                <p>
+                  Divisão de papéis no grupo e apresentação da estrutura da
+                  ferramenta de controle de tarefas (Kanban).
+                  <button
+                    type="button"
+                    class="btn btn-light btn-sm float-right"
+                    data-toggle="collapse"
+                    href="#collapsePapeis"
+                  >
+                    Info
+                  </button>
                 </p>
-                <p>Apresente o quadro de gerenciamento do time (Kanban), seu formato e as experiências na utilização
-                  dessa ferramenta (GitHub Projects) </p>
-              </div>
+                <div
+                  class="alert alert-warning collapse"
+                  role="alert"
+                  id="collapsePapeis"
+                >
+                  <p>
+                    Apresente a divisão de papéis e tarefas entre os membros do
+                    grupo. Informe quem é o Scrum Master, o Product Owner e os
+                    desenvolvedores. Informe também quem é o responsável pela
+                    documentação do projeto.
+                  </p>
+                  <p>
+                    Apresente o quadro de gerenciamento do time (Kanban), seu
+                    formato e as experiências na utilização dessa ferramenta
+                    (GitHub Projects)
+                  </p>
+                </div>
 
-              <iframe width="768" height="432"
-                src="https://miro.com/app/live-embed/uXjVKRtUMeA=/?moveToViewport=-4204,-390,10245,4635&embedId=297259801379"
-                frameborder="0" scrolling="no" allow="fullscreen; clipboard-read; clipboard-write"
-                allowfullscreen></iframe>
+                <iframe
+                  width="768"
+                  height="432"
+                  src="https://miro.com/app/live-embed/uXjVKRtUMeA=/?moveToViewport=-4204,-390,10245,4635&embedId=297259801379"
+                  frameborder="0"
+                  scrolling="no"
+                  allow="fullscreen; clipboard-read; clipboard-write"
+                  allowfullscreen
+                ></iframe>
+              </section>
 
-            </section>
-
-
-            <section id="ti_controle_versao">
-              <h4>Controle de Versão</h4>
-              <p>Estrutura do fluxo de trabalho no ambiente do GitHub.
-                <button type="button" class="btn btn-light btn-sm float-right" data-toggle="collapse"
-                  href="#collapseVersao">Info</button>
-              </p>
-              <div class="alert alert-warning collapse" role="alert" id="collapseVersao">
-                <p>Discuta como a configuração do projeto foi feita na ferramenta de versionamento (GitHub). Exponha
-                  como a gerência de tags, merges, commits e branchs é realizada. Discuta como a gerência de issues foi
-                  realizada.<br>
-                  <img class="img-fluid" src="assets/images/exemplo-workflow.png" alt="">
+              <section id="ti_controle_versao">
+                <h4>Controle de Versão</h4>
+                <p>
+                  Estrutura do fluxo de trabalho no ambiente do GitHub.
+                  <button
+                    type="button"
+                    class="btn btn-light btn-sm float-right"
+                    data-toggle="collapse"
+                    href="#collapseVersao"
+                  >
+                    Info
+                  </button>
                 </p>
-              </div>
-              <p>
-                Na configuração do projeto no GitHub, adotamos uma abordagem meticulosa para gerenciar todas as etapas
-                do desenvolvimento. Começando pela organização das tags, que são cuidadosamente atribuídas a cada versão
-                do software, proporcionando uma trilha clara do progresso e das mudanças ao longo do tempo.
-
-                Os merges e commits são tratados com rigor, seguindo práticas de integração contínua. Cada merge é
-                revisado e testado para garantir que não comprometa a estabilidade do código-base. Os commits são
-                descritivos e concisos, facilitando a compreensão das alterações feitas em cada parte do projeto.
-
-                A estratégia de branches é fundamental para manter um ambiente de desenvolvimento organizado e seguro.
-                Utilizamos branches específicos para novas funcionalidades, correções de bugs e experimentos, garantindo
-                isolamento e controle sobre o que é incorporado à versão principal do projeto.
-
-                A gerência de issues é uma parte essencial do nosso fluxo de trabalho. Cada problema é cuidadosamente
-                documentado, atribuído a um responsável e priorizado de acordo com sua gravidade e impacto. Isso permite
-                uma abordagem sistemática para resolver problemas e implementar novas funcionalidades, mantendo uma
-                comunicação clara entre os membros da equipe e os stakeholders.
-
-                Em resumo, a configuração do projeto no GitHub é realizada com um foco firme na qualidade, transparência
-                e eficiência do processo de desenvolvimento.</p>
-            </section>
-          </section>
-          <hr class="divider">
-
-          <!-- Funcionalidades ==================== -->
-          <section id="ti_solucao">
-            <h2>Solução</h2>
-            <p class="lead">Esta seção apresenta todos os detalhes da solução criada no projeto.
-              <button type="button" class="btn btn-light btn-sm float-right" data-toggle="collapse"
-                href="#collapseSolucao">Info</button>
-            </p>
-            <div class="alert alert-warning collapse" role="alert" id="collapseSolucao">
-              <p>Apresente cada uma das funcionalidades que a aplicação fornece tanto para os usuários quanto aos
-                administradores da solução.</p>
-              <p>Inclua, para cada funcionalidade, itens como: (1) titulos e descrição da funcionalidade; (2) Estrutura
-                de dados associada; (3) o detalhe sobre as instruções de acesso e uso.</p>
-            </div>
-
-            <section id="ti_video">
-              <h4>Video do Projeto</h4>
-              <p>O vídeo a seguir traz uma apresentação do problema que a equipe está tratando e a proposta de solução.
-                <button type="button" class="btn btn-light btn-sm float-right" data-toggle="collapse"
-                  href="#collapseVideo">Info</button>
-              </p>
-              <div class="alert alert-warning collapse" role="alert" id="collapseVideo">
-                <p>O video de apresentação é voltado para que o público externo possa conhecer a solução. O formato é
-                  livre, sendo importante que seja apresentado o problema e a solução numa linguagem descomplicada e
-                  direta.</p>
-                <p>Utilize o recurso de compartilhamento via embed e inclua o vídeo logo abaixo.</p>
-              </div>
-              <p>...... COLOQUE AQUI O SEU VIDEO ......</p>
-            </section>
-
-            <section id="ti_funcionalidades">
-              <h4>Funcionalidades</h4>
-              <p>Esta seção apresenta as funcionalidades da solução.
-                <button type="button" class="btn btn-light btn-sm float-right" data-toggle="collapse"
-                  href="#collapseFuncionalidades">Info</button>
-              </p>
-              <div class="alert alert-warning collapse" role="alert" id="collapseFuncionalidades">
-                <p>Apresente cada uma das funcionalidades que a aplicação fornece tanto para os usuários quanto aos
-                  administradores da solução.</p>
-                <p>Inclua, para cada funcionalidade, itens como: (1) titulos e descrição da funcionalidade; (2)
-                  Estrutura de dados associada; (3) o detalhe sobre as instruções de acesso e uso.</p>
-              </div>
-
-              <section>
-                <h5>Funcionalidade 1 - Cadastro de Contatos<span class="exemplo">EXEMPLO</span></h5>
-                <p>Permite a inclusão, leitura, alteração e exclusão de contatos para o sistema</p>
-                <ul class="list-unstyled">
-                  <li><strong>Estrutura de dados: </strong><a href="#ti_ed_contatos">Contatos</a></li>
-                  <li><strong>Instruções de acesso: </strong>
-                    <ul>
-                      <li>Abra o site e efetue o login</li>
-                      <li>Acesse o menu principal e escolha a opção Cadastros </li>
-                      <li>Em seguida, escolha a opção Contatos</li>
-                    </ul>
-                  </li>
-                </ul>
-                <p class="text-center"><img class="img-fluid" src="assets/images/exemplo-funcionalidade.png"
-                    alt="Tela Cadastro de Contatos"></p>
+                <div
+                  class="alert alert-warning collapse"
+                  role="alert"
+                  id="collapseVersao"
+                >
+                  <p>
+                    Discuta como a configuração do projeto foi feita na
+                    ferramenta de versionamento (GitHub). Exponha como a
+                    gerência de tags, merges, commits e branchs é realizada.
+                    Discuta como a gerência de issues foi realizada.<br />
+                    <img
+                      class="img-fluid"
+                      src="assets/images/exemplo-workflow.png"
+                      alt=""
+                    />
+                  </p>
+                </div>
+                <p>
+                  Na configuração do projeto no GitHub, adotamos uma abordagem
+                  meticulosa para gerenciar todas as etapas do desenvolvimento.
+                  Começando pela organização das tags, que são cuidadosamente
+                  atribuídas a cada versão do software, proporcionando uma
+                  trilha clara do progresso e das mudanças ao longo do tempo. Os
+                  merges e commits são tratados com rigor, seguindo práticas de
+                  integração contínua. Cada merge é revisado e testado para
+                  garantir que não comprometa a estabilidade do código-base. Os
+                  commits são descritivos e concisos, facilitando a compreensão
+                  das alterações feitas em cada parte do projeto. A estratégia
+                  de branches é fundamental para manter um ambiente de
+                  desenvolvimento organizado e seguro. Utilizamos branches
+                  específicos para novas funcionalidades, correções de bugs e
+                  experimentos, garantindo isolamento e controle sobre o que é
+                  incorporado à versão principal do projeto. A gerência de
+                  issues é uma parte essencial do nosso fluxo de trabalho. Cada
+                  problema é cuidadosamente documentado, atribuído a um
+                  responsável e priorizado de acordo com sua gravidade e
+                  impacto. Isso permite uma abordagem sistemática para resolver
+                  problemas e implementar novas funcionalidades, mantendo uma
+                  comunicação clara entre os membros da equipe e os
+                  stakeholders. Em resumo, a configuração do projeto no GitHub é
+                  realizada com um foco firme na qualidade, transparência e
+                  eficiência do processo de desenvolvimento.
+                </p>
               </section>
             </section>
+            <hr class="divider" />
 
-            <!-- Estruturas de dados =============== -->
-            <section id="ti_estruturas_dados">
-              <h4>Estruturas de Dados</h4>
-              <p>Descrição das estruturas de dados utilizadas na solução com exemplos no formato JSON.
-                <button type="button" class="btn btn-light btn-sm float-right" data-toggle="collapse"
-                  href="#collapseEstruturas">Info</button>
+            <!-- Funcionalidades ==================== -->
+            <section id="ti_solucao">
+              <h2>Solução</h2>
+              <p class="lead">
+                Esta seção apresenta todos os detalhes da solução criada no
+                projeto.
+                <button
+                  type="button"
+                  class="btn btn-light btn-sm float-right"
+                  data-toggle="collapse"
+                  href="#collapseSolucao"
+                >
+                  Info
+                </button>
               </p>
-              <div class="alert alert-warning collapse" role="alert" id="collapseEstruturas">
-                <p>Apresente as estruturas de dados utilizadas na solução tanto para dados utilizados na essência da
-                  aplicação quanto outras estruturas que foram criadas para algum tipo de configuração</p>
-                <p>Nomeie a estrutura, coloque uma descrição sucinta e apresente um exemplo em formato JSON.</p>
+              <div
+                class="alert alert-warning collapse"
+                role="alert"
+                id="collapseSolucao"
+              >
+                <p>
+                  Apresente cada uma das funcionalidades que a aplicação fornece
+                  tanto para os usuários quanto aos administradores da solução.
+                </p>
+                <p>
+                  Inclua, para cada funcionalidade, itens como: (1) titulos e
+                  descrição da funcionalidade; (2) Estrutura de dados associada;
+                  (3) o detalhe sobre as instruções de acesso e uso.
+                </p>
               </div>
 
-              <section>
-                <h5>Estrutura de Dados - Contatos<span class="exemplo">EXEMPLO</span></h5>
-                <p>Contatos da aplicação</p>
-                <pre>
-                  {
+              <section id="ti_video">
+                <h4>Video do Projeto</h4>
+                <p>
+                  O vídeo a seguir traz uma apresentação do problema que a
+                  equipe está tratando e a proposta de solução.
+                  <button
+                    type="button"
+                    class="btn btn-light btn-sm float-right"
+                    data-toggle="collapse"
+                    href="#collapseVideo"
+                  >
+                    Info
+                  </button>
+                </p>
+                <div
+                  class="alert alert-warning collapse"
+                  role="alert"
+                  id="collapseVideo"
+                >
+                  <p>
+                    O video de apresentação é voltado para que o público externo
+                    possa conhecer a solução. O formato é livre, sendo
+                    importante que seja apresentado o problema e a solução numa
+                    linguagem descomplicada e direta.
+                  </p>
+                  <p>
+                    Utilize o recurso de compartilhamento via embed e inclua o
+                    vídeo logo abaixo.
+                  </p>
+                </div>
+                <p>...... COLOQUE AQUI O SEU VIDEO ......</p>
+              </section>
+
+              <section id="ti_funcionalidades">
+                <h4>Funcionalidades</h4>
+                <p>
+                  Esta seção apresenta as funcionalidades da solução.
+                  <button
+                    type="button"
+                    class="btn btn-light btn-sm float-right"
+                    data-toggle="collapse"
+                    href="#collapseFuncionalidades"
+                  >
+                    Info
+                  </button>
+                </p>
+                <div
+                  class="alert alert-warning collapse"
+                  role="alert"
+                  id="collapseFuncionalidades"
+                >
+                  <p>
+                    Apresente cada uma das funcionalidades que a aplicação
+                    fornece tanto para os usuários quanto aos administradores da
+                    solução.
+                  </p>
+                  <p>
+                    Inclua, para cada funcionalidade, itens como: (1) titulos e
+                    descrição da funcionalidade; (2) Estrutura de dados
+                    associada; (3) o detalhe sobre as instruções de acesso e
+                    uso.
+                  </p>
+                </div>
+
+                <section>
+                  <h5>Funcionalidade 1 - Cadastro de Usuários</h5>
+                  <p>
+                    Permite a inclusão das informações do usuário no sistema.
+                  </p>
+                  <ul class="list-unstyled">
+                    <li>
+                      <strong>Estrutura de dados: </strong
+                      ><a href="#ti_ed_contatos">Contatos</a>
+                    </li>
+                    <li>
+                      <strong>Instruções de acesso: </strong>
+                      <ul>
+                        <li>Abra a página de cadastro.</li>
+                        <li>Preencha corretamente os campos disponíveis.</li>
+                        <li>
+                          Selecione o botão "salvar" para concluir o cadastro.
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                  <p class="text-center">
+                    <img
+                      class="img-fluid"
+                      src="assets/images/pagina-de-cadastro.png"
+                      alt="Tela Cadastro de Usuários"
+                    />
+                  </p>
+                </section>
+
+                <section>
+                  <h5>Funcionalidade 2 - Tabela de Usuários Cadastrados</h5>
+                  <p>
+                    Permite a inclusão das informações do usuário no sistema.
+                  </p>
+                  <ul class="list-unstyled">
+                    <li>
+                      <strong>Estrutura de dados: </strong
+                      ><a href="#ti_ed_contatos">Contatos</a>
+                    </li>
+                    <li>
+                      <strong>Instruções de acesso: </strong>
+                      <ul>
+                        <li>
+                          Abra a página da tabela de usurários cadastrados.
+                        </li>
+                        <li>
+                          Selecione a opção desejada: editar | excluir | perfil.
+                        </li>
+                        <li>
+                          Selecionando a opção EDITAR: os dados do usuário
+                          apareceram nos campos à esquerda, permitindo as
+                          devidas edições, e serão atualizados após a seleção do
+                          botão "salvar".
+                        </li>
+                        <li>
+                          Selecionando a opção EXCLUIR: os dados do usuário
+                          serão excluidos imediatamente da tabela.
+                        </li>
+                        <li>
+                          Selecionando a opção PERFIL: abrirá a página de perfil
+                          do usuário selecionado.
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                  <p class="text-center">
+                    <img
+                      class="img-fluid"
+                      src="assets/images/pagina-da-tabela-de-usuarios-cadastrados.png"
+                      alt="Tela Tabela de Usurários Cadastrados"
+                    />
+                  </p>
+                </section>
+
+                <section>
+                  <h5>Funcionalidade 3 - Perfil do Usuário Cadastrado</h5>
+                  <p>
+                    Permite a inclusão das informações do usuário no sistema.
+                  </p>
+                  <ul class="list-unstyled">
+                    <li>
+                      <strong>Estrutura de dados: </strong
+                      ><a href="#ti_ed_contatos">Contatos</a>
+                    </li>
+                    <li>
+                      <strong>Instruções de acesso: </strong>
+                      <ul>
+                        <li>Abra a página de perfil do usuário.</li>
+                        <li>
+                          Aqui é possível visualizar as informações pessoais do
+                          usuário, o nível em que o usuário está na seção de
+                          perguntas e respostas (quiz) e os kits de primeiros
+                          socorros que o usuário já montou.
+                        </li>
+                        <li>
+                          Selecione o botão "editar" caso tenha alterado algum
+                          dado do usuário.
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                  <p class="text-center">
+                    <img
+                      class="img-fluid"
+                      src="assets/images/pagina-de-perfil-1.png"
+                      alt="Tela Cadastro de Usuários"
+                    />
+                  </p>
+                  <p class="text-center">
+                    <img
+                      class="img-fluid"
+                      src="assets/images/pagina-de-perfil-2.png"
+                      alt="Tela Perfil de Usuários"
+                    />
+                  </p>
+                </section>
+
+                <section>
+                  <h5>Funcionalidade 4 - Forúm de Experiências</h5>
+                  <p>
+                    Permite a inclusão das informações do usuário no sistema.
+                  </p>
+                  <ul class="list-unstyled">
+                    <li>
+                      <strong>Estrutura de dados: </strong
+                      ><a href="#ti_ed_contatos">Contatos</a>
+                    </li>
+                    <li>
+                      <strong>Instruções de acesso: </strong>
+                      <ul>
+                        <li>Abra a página do forúm.</li>
+                        <li>
+                          Preencha o campo "Sobre o que você quer falar?" e
+                          selecione o botão "+" para compartilhar suas
+                          experiências.
+                        </li>
+                        <li>
+                          Selecione o botão "editar" caso queira editar algo do
+                          seu comentário.
+                        </li>
+                        <li>
+                          Selecione o botão "excluir" caso queira excluir seu
+                          comentário.
+                        </li>
+                        <li>
+                          Selecione o botão "coração" caso queira curtir o
+                          comentário.
+                        </li>
+                        <li>
+                          Selecione o botão "comentário" caso queira comentar
+                          algo no comentário.
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                  <p class="text-center">
+                    <img
+                      class="img-fluid"
+                      src="assets/images/pagina-do-forum.png"
+                      alt="Tela Forúm de Experiências"
+                    />
+                  </p>
+                </section>
+
+                <section>
+                  <h5>Funcionalidade 5 - Tabela de Kits</h5>
+                  <p>
+                    Permite a inclusão das informações do usuário no sistema.
+                  </p>
+                  <ul class="list-unstyled">
+                    <li>
+                      <strong>Estrutura de dados: </strong
+                      ><a href="#ti_ed_contatos">Contatos</a>
+                    </li>
+                    <li>
+                      <strong>Instruções de acesso: </strong>
+                      <ul>
+                        <li>Abra a página de tabela de kits.</li>
+                        <li>
+                          Selecione o botão "Criar kit +" para criar o seu kit.
+                        </li>
+                        <li>
+                          Escolha um nome para seu kit, selecione os itens que
+                          deseja adicionar ao seu kit eselecione o botão
+                          "salvar" para concluir a montagem.
+                        </li>
+                        <li>
+                          Selecione o botão "editar" caso queira editar algo do
+                          seu kit.
+                        </li>
+                        <li>
+                          Selecione o botão "excluir" caso queira excluir seu
+                          kit.
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                  <p class="text-center">
+                    <img
+                      class="img-fluid"
+                      src="assets/images/pagina-de-tabela-de-kits.png"
+                      alt="Tela Tabela de Kits"
+                    />
+                  </p>
+                </section>
+
+                <section>
+                  <h5>Funcionalidade 6 - Cadastro de Questões</h5>
+                  <p>
+                    Permite a inclusão das informações do usuário no sistema.
+                  </p>
+                  <ul class="list-unstyled">
+                    <li>
+                      <strong>Estrutura de dados: </strong
+                      ><a href="#ti_ed_contatos">Contatos</a>
+                    </li>
+                    <li>
+                      <strong>Instruções de acesso: </strong>
+                      <ul>
+                        <li>Abra a página de cadastro de questões.</li>
+                        <li>Preencha corretamente os campos disponíveis.</li>
+                        <li>
+                          Selecione o botão "cadastrar" para cadastrar a questão
+                          ao banco de questões.
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                  <p class="text-center">
+                    <img
+                      class="img-fluid"
+                      src="assets/images/pagina-de-cadastro-de-questoes.png"
+                      alt="Tela Cadastro de Questões"
+                    />
+                  </p>
+                </section>
+
+                <section>
+                  <h5>Funcionalidade 7 - Quiz</h5>
+                  <p>
+                    Permite a inclusão das informações do usuário no sistema.
+                  </p>
+                  <ul class="list-unstyled">
+                    <li>
+                      <strong>Estrutura de dados: </strong
+                      ><a href="#ti_ed_contatos">Contatos</a>
+                    </li>
+                    <li>
+                      <strong>Instruções de acesso: </strong>
+                      <ul>
+                        <li>Abra a página de quiz.</li>
+                        <li>
+                          Informe quantas questões deseja responder e selecione
+                          o botão "iniciar".
+                        </li>
+                        <li>
+                          Marque a resposta que você acha correta e selecione o
+                          botão "enviar".
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                  <p class="text-center">
+                    <img
+                      class="img-fluid"
+                      src="assets/images/pagina-de-quiz-1.png"
+                      alt="Tela Cadastro de Usuários"
+                    />
+                  </p>
+                  <p class="text-center">
+                    <img
+                      class="img-fluid"
+                      src="assets/images/pagina-de-quiz-2.png"
+                      alt="Tela de Quiz"
+                    />
+                  </p>
+                </section>
+
+                <section>
+                  <h5>Funcionalidade 8 - Mapa Interativo</h5>
+                  <p>
+                    Permite a inclusão das informações do usuário no sistema.
+                  </p>
+                  <ul class="list-unstyled">
+                    <li>
+                      <strong>Estrutura de dados: </strong
+                      ><a href="#ti_ed_contatos">Contatos</a>
+                    </li>
+                    <li>
+                      <strong>Instruções de acesso: </strong>
+                      <ul>
+                        <li>Abra a página do mapa interativo.</li>
+                        <li>
+                          Preencha corretamente os campos do local que você
+                          deseja ver os hospitais próximos e selecione o botão
+                          "Buscar".
+                        </li>
+                        <li>
+                          Selecione o botão "↻" caso queira fazer uma nova
+                          busca.
+                        </li>
+                        <li>
+                          Selecione a opção desejada: rever | excluir | ↻.
+                        </li>
+                        <li>
+                          Selecionando a opção REVER: os dados do local serão
+                          recarregados no mapa e a localização ficará disponível
+                          novamente.
+                        </li>
+                        <li>
+                          Selecionando a opção EXCLUIR: os dados da localização
+                          serão excluidos imediatamente da tabela.
+                        </li>
+                        <li>
+                          Selecionando a opção ↻: a página será atualizada, o
+                          mapa irá sumir e será possível fazer uma nova busca.
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                  <p class="text-center">
+                    <img
+                      class="img-fluid"
+                      src="assets/images/pagina-do-mapa-interativo-1.png"
+                      alt="Tela Cadastro de Usuários"
+                    />
+                  </p>
+                  <p class="text-center">
+                    <img
+                      class="img-fluid"
+                      src="assets/images/pagina-do-mapa-interativo-2.png"
+                      alt="Tela de Quiz"
+                    />
+                  </p>
+                </section>
+              </section>
+
+              <!-- Estruturas de dados =============== -->
+              <section id="ti_estruturas_dados">
+                <h4>Estruturas de Dados</h4>
+                <p>
+                  Descrição das estruturas de dados utilizadas na solução com
+                  exemplos no formato JSON.
+                  <button
+                    type="button"
+                    class="btn btn-light btn-sm float-right"
+                    data-toggle="collapse"
+                    href="#collapseEstruturas"
+                  >
+                    Info
+                  </button>
+                </p>
+                <div
+                  class="alert alert-warning collapse"
+                  role="alert"
+                  id="collapseEstruturas"
+                >
+                  <p>
+                    Apresente as estruturas de dados utilizadas na solução tanto
+                    para dados utilizados na essência da aplicação quanto outras
+                    estruturas que foram criadas para algum tipo de configuração
+                  </p>
+                  <p>
+                    Nomeie a estrutura, coloque uma descrição sucinta e
+                    apresente um exemplo em formato JSON.
+                  </p>
+                </div>
+
+                <section>
+                  <h5>
+                    Estrutura de Dados - Cadastro de Usuários
+                  </h5>
+                  <p>Informações do usuário: </p>
+                  <pre>
+                    {
                     "id": 1,
-                    "nome": "Leanne Graham",
+                    "nome": "Maria da Silva",
+                    "Bairro": "Savassi",
                     "cidade": "Belo Horizonte",
-                    "categoria": "amigos",
-                    "email": "Sincere@april.biz",
-                    "telefone": "1-770-736-8031",
-                    "website": "hildegard.org"
-                  }
-                </pre>
+                    "email": "teste@teste.com",
+                    "telefone": "31912345678",
+                    "senha": 123
+                    "confirmar senha": 123
+                    }, ....
+              </pre
+                  >
+                </section>
+
+                <section>
+                  <h5>
+                    Estrutura de Dados - Tabela de Usuários Cadastrados
+                  </h5>
+                  <p>Informações do usuário: </p>
+                  <pre>
+                    {
+                    "id": 1,
+                    "nome": "Maria da Silva",
+                    "Bairro": "Savassi",
+                    "cidade": "Belo Horizonte",
+                    "email": "teste@teste.com",
+                    "telefone": "31912345678",
+                    "senha": 123
+                    }
+              </pre
+                  >
+                </section>
+    
+                <section>
+                  <h5>
+                    Estrutura de Dados - Tabela de Usuários Cadastrados
+                  </h5>
+                  <p>Informações dos usuários e seus kits: </p>
+                  <pre>
+                    { [
+                        "id": 1,
+                        "nome": "Maria da Silva",
+                        "bairro": "Savassi",
+                        "cidade": "Belo Horizonte",
+                        "telefone": "31912345678",
+                        "profissão:" Professora
+                        "email": "teste@teste.com",
+                        "senha": 123
+                      ],
+                      [
+                        "id": 1,
+                        "nome": "José dos Santos",
+                        "bairro": "Centro",
+                        "cidade": "Belo Horizonte",
+                        "telefone": "31998765432",
+                        "profissão:" Porteiro
+                        "email": "testando@teste.com",
+                        "senha": 321
+                      ], ...
+                    }
+              </pre
+                  >
+                </section>
+
+                <section>
+                  <h5>
+                    Estrutura de Dados - Perfil de Usuário
+                  </h5>
+                  <p>Informações do usuário: </p>
+                  <pre>
+                    {
+                    "id": 1,
+                    "nome": "Maria da Silva",
+                    "Bairro": "Savassi",
+                    "cidade": "Belo Horizonte",
+                    "telefone": "31912345678",
+                    "profissão:" Professora
+                    "email": "teste@teste.com",
+                    "senha": 123
+                    }
+                    {
+                    "nome": "Kit Básico",
+                    "itens":
+                    [
+                      "produto": "Ataduras",
+                      "quantidade": 10
+                    ],...
+                    }
+              </pre
+                  >
+                </section>
+
+                <section>
+                  <h5>
+                    Estrutura de Dados - Forúm de Experiências
+                  </h5>
+                  <p>Comentários: </p>
+                  <pre>
+                    {
+                        "id": 1,
+                        "level": "Bronze",
+                        "profissao": "Estudante",
+                        "nome": "Pedro da Silva",
+                        "avatar": "../assets/img/avatar.svg",
+                        "data": "22/05/2024 20:54",
+                        "conteudo": "Teste criar postagem",
+                        "curtidas": 20,
+                        "comentarios": [
+                        {
+                        "id": 1,
+                        "level": "Prata",
+                        "profissao": "Bancária",
+                        "nome": "Ana Gabriela",
+                        "avatar": "../assets/img/avatar.svg",
+                        "data": "22/05/2024 22:30",
+                        "conteudo": "Teste criar comentário"
+                        },
+                        {
+                        "id": 2,
+                        "level": "Prata",
+                        "profissao": "Estudante de Veterinária",
+                        "nome": "Guilherme Montes",
+                        "avatar": "../assets/img/avatar.svg",
+                        "data": "22/05/2024 23:15",
+                        "conteudo": "Teste criar segundo comentário"
+                        }
+                      ]
+                     }
+              </pre
+                  >
+                </section>
+
+                <section>
+                  <h5>
+                    Estrutura de Dados - Tabela de Kits
+                  </h5>
+                  <p>Opções de produtos para o kit: </p>
+                  <pre>
+                    { [
+                      "id": 1,
+                      "nome": "Kit Básico",
+                      "itens": [
+                      {
+                      "produto": "Ataduras",
+                      "quantidade": 10
+                      }, { "produto": "Gaze Estéril",
+                      "quantidade": 20 }
+                      ],...
+                    }
+              </pre
+                  >
+                </section>
+
+                <section>
+                  <h5>
+                    Estrutura de Dados - Quiz
+                  </h5>
+                  <p>Perguntas e Respostas: </p>
+                  <pre>
+                    {
+                      "pageTitle": "Primeiros Socorros: Guia Essencial",
+                      "content": {
+                      "sections": [
+                      {
+                      "title": "Introdução aos Primeiros Socorros",
+                      "body": "Primeiros socorros são os cuidados
+                     imediatos fornecidos a uma pessoa doente ou ferida até
+                     a chegada de ajuda médica profissional. Este guia
+                     cobrirá os conceitos básicos que todos devem conhecer."
+                      },
+                     "quiz": {
+                      "title": "Quiz sobre Primeiros Socorros",
+                      "questions": [
+                      {
+                      "question": "Qual é o primeiro passo ao chegar em
+                     uma cena de emergência?",
+                      "options": ["Iniciar a RCP", "Avaliar a situação",
+                     "Chamar a emergência", "Verificar os sinais vitais"],
+                      "correctAnswer": "Avaliar a situação"
+                      }}}
+                    }
+              </pre
+                  >
+                </section>
+
+                <section>
+                  <h5>
+                    Estrutura de Dados - Mapa Interativo
+                  </h5>
+                  <p>Informações da localização: </p>
+                  <pre>
+                    {
+                      "id_local": "123456",
+                      "licenca": "Dados © Colaboradores do OpenStreetMap",
+                      "tipo_osm": "nó",
+                      "id_osm": "123456789",
+                      "limites": [
+                      "-23.5987654",
+                      "-23.5977654",
+                      "-46.6965791",
+                      "-46.6955791"
+                      ],
+                      "latitude": "-23.5987654",
+                      "longitude": "-46.6965791",
+                      "endereco": "Rua do Catavento, São Paulo, SP 01033-050,
+                     Brasil",
+                      "classe": "local",
+                      "tipo": "residência",
+                      "importancia": 0.511
+                      }
+                     ]
+              </pre
+                  >
+                </section>
+
+                
               </section>
 
-              <section>
-                <h5>Estrutura de Dados - Usuários<span class="exemplo">EXEMPLO</span></h5>
-                <p>Registro dos usuários do sistema utilizados para login e para o perfil do sistema</p>
-                <pre>
-                  {
-                    id: "eed55b91-45be-4f2c-81bc-7686135503f9"
-                    email: "admin@abc.com"
-                    id: "eed55b91-45be-4f2c-81bc-7686135503f9"
-                    login: "admin"
-                    nome: "Administrador do Sistema"
-                    senha: "123"
-                  }
-                </pre>
+              <!-- Módulos e APIs ================= -->
+              <section id="ti_modulos_apis">
+                <h4>Módulos e APIs</h4>
+                <p>
+                  Esta seção apresenta os módulos e APIs utilizados na solução.
+                  <button
+                    type="button"
+                    class="btn btn-light btn-sm float-right"
+                    data-toggle="collapse"
+                    href="#collapseModulos"
+                  >
+                    Info
+                  </button>
+                </p>
+                <div
+                  class="alert alert-warning collapse"
+                  role="alert"
+                  id="collapseModulos"
+                >
+                  <p>
+                    Apresente os módulos e APIs utilizados no desenvolvimento da
+                    solução. Inclua itens como: (1) Frameworks, bibliotecas,
+                    módulos, etc. utilizados no desenvolvimento da solução; (2)
+                    APIs utilizadas para acesso a dados, serviços, etc.
+                  </p>
+                </div>
+
+                <section>
+                  <h5>API</h5>
+                  <ul>
+                    <li>
+                      -
+                      <a target="_blank" href="https://github.com/pedrodif/primeiraAjudaAPI"
+                        >https://github.com/pedrodif/primeiraAjudaAPI</a
+                      >
+                    </li>
+                  </ul>
+                </section>
               </section>
             </section>
+            <hr class="divider" />
 
-            <!-- Módulos e APIs ================= -->
-            <section id="ti_modulos_apis">
-              <h4>Módulos e APIs</h4>
-              <p>Esta seção apresenta os módulos e APIs utilizados na solução.
-                <button type="button" class="btn btn-light btn-sm float-right" data-toggle="collapse"
-                  href="#collapseModulos">Info</button>
+            <!-- FAQ ============================ -->
+            <section id="ti_faq">
+              <h2>FAQ</h2>
+              <p class="lead">
+                Perguntas e respostas comuns associadas ao projeto.
+                <button
+                  type="button"
+                  class="btn btn-light btn-sm float-right"
+                  data-toggle="collapse"
+                  href="#collapseFAQ"
+                >
+                  Info
+                </button>
               </p>
-              <div class="alert alert-warning collapse" role="alert" id="collapseModulos">
-                <p>Apresente os módulos e APIs utilizados no desenvolvimento da solução. Inclua itens como: (1)
-                  Frameworks, bibliotecas, módulos, etc. utilizados no desenvolvimento da solução; (2) APIs utilizadas
-                  para acesso a dados, serviços, etc.</p>
+              <div
+                class="alert alert-warning collapse"
+                role="alert"
+                id="collapseFAQ"
+              >
+                <p>
+                  Apresente uma lista de perguntas e respostas comuns associadas
+                  ao projeto. Inclua perguntas como: (1) detalhes de acesso e
+                  uso do projeto; (2) informações sobre a instalação e
+                  configuração da aplicação; (3) questões sobre a manutenção da
+                  aplicação; (4) detalhes sobre a integração da aplicação com
+                  outros sistemas; (5) questões sobre a segurança da aplicação.
+                </p>
               </div>
 
-              <section>
-                <h5>Images:</h5>
-                <ul>
-                  <li>Unsplash - <a target="_blank" href="https://unsplash.com/">https://unsplash.com/</a><span
-                      class="exemplo">EXEMPLO</span></li>
-                </ul>
-              </section>
-
-              <section>
-                <h5>Fonts:</h5>
-                <ul>
-                  <li>Icons Font Face - <a target="_blank"
-                      href="https://fontawesome.com/">https://fontawesome.com/</a><span class="exemplo">EXEMPLO</span>
-                  </li>
-                </ul>
-              </section>
-
-              <section>
-                <h5>Scripts:</h5>
-                <ul>
-                  <li>jQuery - <a target="_blank" href="http://www.jquery.com/">http://www.jquery.com/</a><span
-                      class="exemplo">EXEMPLO</span></li>
-                  <li>Bootstrap 4 - <a target="_blank" href="http://getbootstrap.com/">http://getbootstrap.com/</a><span
-                      class="exemplo">EXEMPLO</span></li>
-                </ul>
-              </section>
-            </section>
-
-          </section>
-          <hr class="divider">
-
-          <!-- FAQ ============================ -->
-          <section id="ti_faq">
-            <h2>FAQ</h2>
-            <p class="lead">Perguntas e respostas comuns associadas ao projeto.
-              <button type="button" class="btn btn-light btn-sm float-right" data-toggle="collapse"
-                href="#collapseFAQ">Info</button>
-            </p>
-            <div class="alert alert-warning collapse" role="alert" id="collapseFAQ">
-              <p>Apresente uma lista de perguntas e respostas comuns associadas ao projeto. Inclua perguntas como: (1)
-                detalhes de acesso e uso do projeto; (2) informações sobre a instalação e configuração da aplicação; (3)
-                questões sobre a manutenção da aplicação; (4) detalhes sobre a integração da aplicação com outros
-                sistemas; (5) questões sobre a segurança da aplicação.</p>
-            </div>
-
-            <span class="exemplo">EXEMPLO</span>
-            <div class="row">
-              <div class="col-lg-12">
-                <div class="accordion accordion-alterate arrow-right" id="popularTopics">
-                  <div class="card">
-                    <div class="card-header" id="heading1">
-                      <h5 class="mb-0"> <a href="#" class="collapsed" data-toggle="collapse" data-target="#collapse1"
-                          aria-expanded="false" aria-controls="collapse1">What does royalty free mean?</a> </h5>
+              <div class="row">
+                <div class="col-lg-12">
+                  <div
+                    class="accordion accordion-alterate arrow-right"
+                    id="popularTopics"
+                  >
+                    <div class="card">
+                      <div class="card-header" id="heading1">
+                        <h5 class="mb-0">
+                          <a
+                            href="#"
+                            class="collapsed"
+                            data-toggle="collapse"
+                            data-target="#collapse1"
+                            aria-expanded="false"
+                            aria-controls="collapse1"
+                            >O que devo fazer se alguém estiver sufocando?</a
+                          >
+                        </h5>
+                      </div>
+                      <div
+                        id="collapse1"
+                        class="collapse"
+                        aria-labelledby="heading1"
+                        data-parent="#popularTopics"
+                      >
+                        <div class="card-body">
+                          Se alguém estiver sufocando, incentive-o a tossir se ainda conseguir respirar. Se eles não conseguirem respirar ou fazer barulho, execute a manobra de Heimlich ficando atrás deles, passando os braços em volta da cintura e dando impulsos rápidos para cima no abdômen.
+                        </div>
+                      </div>
                     </div>
-                    <div id="collapse1" class="collapse" aria-labelledby="heading1" data-parent="#popularTopics">
-                      <div class="card-body"> Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown
-                        printer took a galley of type and scrambled it to make a type specimen book. It has survived not
-                        only five centuries, but also the leap into electronic typesetting, remaining essentially
-                        unchanged. </div>
+                    <div class="card">
+                      <div class="card-header" id="heading2">
+                        <h5 class="mb-0">
+                          <a
+                            href="#"
+                            class="collapsed"
+                            data-toggle="collapse"
+                            data-target="#collapse2"
+                            aria-expanded="false"
+                            aria-controls="collapse2"
+                            >Como faço para tratar uma queimadura leve?</a
+                          >
+                        </h5>
+                      </div>
+                      <div
+                        id="collapse2"
+                        class="collapse"
+                        aria-labelledby="heading2"
+                        data-parent="#popularTopics"
+                      >
+                        <div class="card-body">
+                          Para uma queimadura leve, deixe correr água fria (não fria) sobre a queimadura por vários minutos e depois cubra-a com um curativo estéril e não adesivo. Evite usar gelo, manteiga ou outros remédios caseiros.
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                  <div class="card">
-                    <div class="card-header" id="heading2">
-                      <h5 class="mb-0"> <a href="#" class="collapsed" data-toggle="collapse" data-target="#collapse2"
-                          aria-expanded="false" aria-controls="collapse2">What is a single application?</a> </h5>
+                    <div class="card">
+                      <div class="card-header" id="heading3">
+                        <h5 class="mb-0">
+                          <a
+                            href="#"
+                            class="collapsed"
+                            data-toggle="collapse"
+                            data-target="#collapse3"
+                            aria-expanded="false"
+                            aria-controls="collapse3"
+                            >Qual é a maneira correta de realizar a RCP?</a
+                          >
+                        </h5>
+                      </div>
+                      <div
+                        id="collapse3"
+                        class="collapse"
+                        aria-labelledby="heading3"
+                        data-parent="#popularTopics"
+                      >
+                        <div class="card-body">
+                          Para realizar a RCP, verifique se a pessoa não responde e não respira. Ligue para os serviços de emergência e inicie as compressões torácicas colocando as mãos no centro do peito e pressionando com força e rapidez, a uma taxa de 100-120 compressões por minuto.
+                        </div>
+                      </div>
                     </div>
-                    <div id="collapse2" class="collapse" aria-labelledby="heading2" data-parent="#popularTopics">
-                      <div class="card-body"> Iisque Anim pariatur cliche reprehenderit, enim eiusmod high life
-                        accusamus terry richardson ad squid. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf
-                        moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch
-                        et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea
-                        proident. Ad vegan excepteur butcher vice lomo. </div>
+                    <div class="card">
+                      <div class="card-header" id="heading2">
+                        <h5 class="mb-0">
+                          <a
+                            href="#"
+                            class="collapsed"
+                            data-toggle="collapse"
+                            data-target="#collapse2"
+                            aria-expanded="false"
+                            aria-controls="collapse2"
+                            >Como faço para parar o sangramento grave?</a
+                          >
+                        </h5>
+                      </div>
+                      <div
+                        id="collapse2"
+                        class="collapse"
+                        aria-labelledby="heading2"
+                        data-parent="#popularTopics"
+                      >
+                        <div class="card-body">
+                          Para estancar um sangramento grave, aplique pressão direta na ferida com um pano limpo ou curativo. Se o sangramento não parar, continue aplicando pressão e adicione mais panos, se necessário. Procure ajuda médica imediatamente.
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                  <div class="card">
-                    <div class="card-header" id="heading3">
-                      <h5 class="mb-0"> <a href="#" class="collapsed" data-toggle="collapse" data-target="#collapse3"
-                          aria-expanded="false" aria-controls="collapse3">What are some examples of permitted end
-                          products?</a> </h5>
-                    </div>
-                    <div id="collapse3" class="collapse" aria-labelledby="heading3" data-parent="#popularTopics">
-                      <div class="card-body"> Iisque persius interesset his et, in quot quidam persequeris vim, ad mea
-                        essent possim iriure. Mutat tacimates id sit. Ridens mediocritatem ius an, eu nec magna
-                        imperdiet. </div>
+                    <div class="card">
+                      <div class="card-header" id="heading2">
+                        <h5 class="mb-0">
+                          <a
+                            href="#"
+                            class="collapsed"
+                            data-toggle="collapse"
+                            data-target="#collapse2"
+                            aria-expanded="false"
+                            aria-controls="collapse2"
+                            >O que devo fazer se alguém tiver suspeita de osso quebrado?</a
+                          >
+                        </h5>
+                      </div>
+                      <div
+                        id="collapse2"
+                        class="collapse"
+                        aria-labelledby="heading2"
+                        data-parent="#popularTopics"
+                      >
+                        <div class="card-body">
+                          Se você suspeitar que alguém está com um osso quebrado, mantenha a área lesionada o mais imóvel possível. Use uma tala ou acolchoamento para imobilizar a área e aplique gelo para reduzir o inchaço. Procure atendimento médico imediatamente.
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
+            </section>
+            <hr class="divider" />
 
-          </section>
-          <hr class="divider">
-
-          <!-- Referências Bibliográficas ================= -->
-          <section id="ti_referencias">
-            <h2>Referências Bibliográficas</h2>
-            <p class="lead">Esta seção apresenta as referências bibliográficas utilizadas no projeto.
-              <button type="button" class="btn btn-light btn-sm float-right" data-toggle="collapse"
-                href="#collapseReferencias">Info</button>
-            </p>
-            <div class="alert alert-warning collapse" role="alert" id="collapseReferencias">
-              <p>Apresente as referências bibliográficas utilizadas no projeto. Inclua itens como: (1) livros, artigos,
-                tutoriais, etc. utilizados no desenvolvimento da solução; (2) links para sites, blogs, etc. utilizados
-                no desenvolvimento da solução.</p>
-            </div>
-            <p>...... COLOQUE AQUI O SEU TEXTO ......</p>
-          </section>
-
+            <!-- Referências Bibliográficas ================= -->
+            <section id="ti_referencias">
+              <h2>Referências Bibliográficas</h2>
+              <p class="lead">
+                Esta seção apresenta as referências bibliográficas utilizadas no
+                projeto.
+                <button
+                  type="button"
+                  class="btn btn-light btn-sm float-right"
+                  data-toggle="collapse"
+                  href="#collapseReferencias"
+                >
+                  Info
+                </button>
+              </p>
+              <div
+                class="alert alert-warning collapse"
+                role="alert"
+                id="collapseReferencias"
+              >
+                <p>
+                  Apresente as referências bibliográficas utilizadas no projeto.
+                  Inclua itens como: (1) livros, artigos, tutoriais, etc.
+                  utilizados no desenvolvimento da solução; (2) links para
+                  sites, blogs, etc. utilizados no desenvolvimento da solução.
+                </p>
+              </div>
+              <ul>
+                <li>
+                  <p>FIORUC, B. E.; MOLINA, A. C.; VITTI JUNIOR, W.; LIMA, S. A. M. Educação em saúde: abordando primeiros socorros em escolas públicas no interior de São Paulo. Revista Eletrônica de Enfermagem, Goiânia, Goiás, Brasil, v. 10, n. 3, 2017. DOI: 10.5216/ree.v10.46619. Disponível em: <a target="_blank" href="https://revistas.ufg.br/fen/article/view/46619">https://revistas.ufg.br/fen/article/view/46619</a>. Acesso em: 17 abr. 2024.</p>
+                </li>
+              </ul>
+              <ul>
+                <li>
+                  <p>SESI. Primeiros socorros: como agir em situações de emergência na indústria?. [S. l.], 17 mar. 2021. Disponível em: <a target="_blank" href="https://sesirs.org.br/saude-na-empresa/primeiros-socorros-como-agir-em-situacoes-de-emergencia-na-industria">https://sesirs.org.br/saude-na-empresa/primeiros-socorros-como-agir-em-situacoes-de-emergencia-na-industria</a>. Acesso em: 16 abr. 2024.</p>
+                </li>
+              </ul>
+            </section>
+          </div>
         </div>
-      </div>
-      <!-- Content end -->
-    </main>
+        <!-- Content end -->
+      </main>
 
-    <!-- Footer
-  ============================ -->
-    <footer id="footer" class="section bg-dark footer-text-light">
-      <div class="container">
-        <p class="text-center"><strong>Trabalho Interdisciplinar - ICEI PUC Minas</strong><br>Modelo adaptado de <a
-            href="http://www.harnishdesign.net/idocs-one-page-documentation-html-template/">iDocs</a> - Design &amp;
-          Develop by <a class="btn-link" target="_blank" href="http://www.harnishdesign.net/">HarnishDesign</a></p>
-      </div>
-    </footer>
-    <!-- Footer end -->
+      <!-- Footer
+============================ -->
+      <footer id="footer" class="section bg-dark footer-text-light">
+        <div class="container">
+          <p class="text-center">
+            <strong>Trabalho Interdisciplinar - ICEI PUC Minas</strong
+            ><br />Modelo adaptado de
+            <a
+              href="http://www.harnishdesign.net/idocs-one-page-documentation-html-template/"
+              >iDocs</a
+            >
+            - Design &amp; Develop by
+            <a
+              class="btn-link"
+              target="_blank"
+              href="http://www.harnishdesign.net/"
+              >HarnishDesign</a
+            >
+          </p>
+        </div>
+      </footer>
+      <!-- Footer end -->
 
-    <!-- Document Wrapper end -->
-  </div>
+      <!-- Document Wrapper end -->
+    </div>
 
-  <!-- Back To Top -->
-  <a id="back-to-top" data-toggle="tooltip" title="Topo" href="javascript:void(0)"><i class="fa fa-chevron-up"></i></a>
+    <!-- Back To Top -->
+    <a
+      id="back-to-top"
+      data-toggle="tooltip"
+      title="Topo"
+      href="javascript:void(0)"
+      ><i class="fa fa-chevron-up"></i
+    ></a>
 
-  <!-- JavaScript ============================ -->
-  <script src="assets/vendor/jquery/jquery.min.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <!-- Highlight JS -->
-  <script src="assets/vendor/highlight.js/highlight.min.js"></script>
-  <!-- Easing -->
-  <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
-  <!-- Magnific Popup -->
-  <script src="assets/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
-  <!-- Custom Script -->
-  <script src="assets/js/theme.js"></script>
-</body>
-
+    <!-- JavaScript ============================ -->
+    <script src="assets/vendor/jquery/jquery.min.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Highlight JS -->
+    <script src="assets/vendor/highlight.js/highlight.min.js"></script>
+    <!-- Easing -->
+    <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+    <!-- Magnific Popup -->
+    <script src="assets/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+    <!-- Custom Script -->
+    <script src="assets/js/theme.js"></script>
+  </body>
 </html>
