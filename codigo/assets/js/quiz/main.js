@@ -220,7 +220,7 @@ function submitQuiz() {
             } else {
                 opcao.parentElement.style.color = 'black'
             }
-        });
+        })
 
         if (userAnswer && userAnswer.value === pergunta.Resposta) {
             score++;
