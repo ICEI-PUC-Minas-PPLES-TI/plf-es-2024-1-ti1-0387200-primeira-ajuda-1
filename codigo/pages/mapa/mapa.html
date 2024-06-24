@@ -6,8 +6,9 @@
     <title>Hospitais Próximos</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <link rel="stylesheet" href="../../assets/css/global.css" />
-    <link rel="stylesheet" href="../../assets/css/mapa/mapa.css" />
-    <script src="../../assets/js/mapa/mapa.js" defer></script>
+    <link rel="stylesheet" href="../../assets/css/mapa/main.css" />
+    <link rel="shortcut icon" href="../../assets/img/favIcon.svg" type="image/x-icon">
+    <script src="../../assets/js/mapa/main.js" defer></script>
   </head>
   <body>
     <header>
@@ -16,7 +17,11 @@
       </a>
       <div>
         <span>
-          <img src="../../assets/img/profile-picture.png" id="avatar" alt="avatar" />
+          <img
+            src="../../assets/img/profile-picture.png"
+            id="avatar"
+            alt="avatar"
+          />
           <nav>
             <ul class="dropdown">
               <li><a href="">Entrar</a></li>
@@ -35,17 +40,24 @@
     <main>
       <section id="registration">
         <div class="container">
-          <h1>Encontre Hospitais Próximos</h1>
+          <h1>#BUSCARÁPIDA</h1>
+          <h2>Encontre Hospitais Próximos:</h2>
           <form id="locationForm">
             <label for="city"
-              >Cidade: <input type="text" id="city" name="city" required /> <br
+              ><input
+                type="text"
+                placeholder="Cidade"
+                id="city"
+                name="city"
+                required />
+              <br
             /></label>
-            <label for="neighborhood"
-              >Bairro:
+            <label for="neighborhood">
               <input
                 type="text"
                 id="neighborhood"
                 name="neighborhood"
+                placeholder="Bairro"
                 required />
               <br
             /></label>
