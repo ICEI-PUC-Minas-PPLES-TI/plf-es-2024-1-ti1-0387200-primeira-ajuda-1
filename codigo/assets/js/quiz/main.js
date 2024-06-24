@@ -1,21 +1,39 @@
+import { CadastroService } from "../../services/cadastroService.js";
 import { QuizService } from "../../services/quizService.js";
 
 let perguntas = []
+let score = 0
+let level = ''
+
 const quizService = new QuizService()
+const cadastroService = new CadastroService()
 
 const consultarSeletor = (variante) => document.querySelector(variante)
 const btnQuiz = consultarSeletor('#btn-quiz')
 const btnSubmit = consultarSeletor('#btn-submit')
 
-const questionCountInput = ('#contadorQuestoes')
+const questionCountInput = consultarSeletor('#contadorQuestoes')
 const quizButtons = consultarSeletor('.quiz-buttons')
 const quizContainer = consultarSeletor('#quiz-container')
 const setupContainer = consultarSeletor('#setup-container')
 const contadorQuestoes = consultarSeletor('#contadorQuestoes')
+const questionCount = parseInt(contadorQuestoes.value)
 
 function getNovoID() {
     const perguntas = JSON.parse(localStorage.getItem('CadastroPerguntas')) || [];
     return perguntas.length > 0 ? Math.max(...perguntas.map(p => p.id)) + 1 : 1;
+}
+
+function determinarProgresso() {
+    const progresso = (score / questionCount) * 100
+
+    if (progresso < 60) {
+        level = 'Bronze'
+    } else if (progresso <= 75) {
+        level = 'Prata'
+    } else {
+        level = 'Ouro'
+    }
 }
 
 const obeterNovasPerguntas = () => [
@@ -158,15 +176,12 @@ const obeterNovasPerguntas = () => [
 
 
 function criarQuiz() {
-    const questionCount = parseInt(contadorQuestoes.value)
-
     if (isNaN(questionCount) || questionCount < 1) {
         alert('Escolha um número válido de questões.')
         return;
     }
 
     const numeroQuestoes = Math.min(questionCount, perguntas.length)
-
     if (numeroQuestoes === 0) {
         quizContainer.innerHTML = '<p>Não há perguntas cadastradas.</p>'
         return
@@ -206,7 +221,6 @@ function criarQuiz() {
 
 function submitQuiz() {
     const selectedQuestions = JSON.parse(localStorage.getItem('armazenarQuestoes')) || []
-    let score = 0
 
     selectedQuestions.forEach((pergunta, index) => {
         const userAnswer = consultarSeletor(`input[name="question${index}"]:checked`)
@@ -238,13 +252,23 @@ function submitQuiz() {
         }
     })
 
-    console.log(score)
-
     alert(`Você acertou ${score} de ${selectedQuestions.length} perguntas.`)
 }
 
 btnQuiz.addEventListener('click', criarQuiz)
-btnSubmit.addEventListener('click', submitQuiz)
+btnSubmit.addEventListener('click', async () => {
+    submitQuiz()
+
+    const usuario = await cadastroService.getUsuario()
+    determinarProgresso()
+
+    const resposta = await cadastroService.updateUsuario({
+        ...usuario,
+        level
+    })
+
+    if (resposta) window.location.href = `/codigo/pages/perfil.html?id=${usuario.id}`
+})
 
 document.addEventListener('DOMContentLoaded', async () => {
     perguntas = await quizService.getPerguntas()
