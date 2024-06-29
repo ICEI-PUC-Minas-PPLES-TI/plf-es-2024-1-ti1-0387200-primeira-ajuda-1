@@ -1,99 +1,96 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Primeira Ajuda</title>
   <link rel="stylesheet" href="../../assets/css/global.css" />
-  <link rel="stylesheet" href="../../assets/css/cadastro/principal.css" />
-  <script src="../../assets/js/cadastro/principal.js" defer></script>
-  <script src="../../assets/js/cadastro/tabela.js" defer></script>
+  <link rel="stylesheet" href="../../assets/css/tabelaCadastro/main.css" />
+  <link rel="shortcut icon" href="../../assets/img/favIcon.svg" type="image/x-icon">
+  <title>Usuários Cadastrados</title>
 </head>
 
 <body>
-  <!-- <header>
-    <a href="../index.html">
-      <img src="../../assets/img/logo.svg" width="156" alt="logo" />
+  <header>
+    <a href="../../index.html">
+      <img src="../../assets/img/logo.svg" id="logo" alt="logo">
     </a>
 
     <div>
-      <nav>
-        <ul>
-          <li>
-            <a href="#">Fórum</a>
-          </li>
-          <li>
-            <a href="#">Cursos</a>
-          </li>
-        </ul>
-      </nav>
-
-      <img src="../../assets/img/profile-picture.png" id="avatar" alt="avatar" />
+      <span>
+        <img src="../../assets/img/profile-picture.png" id="avatar" alt="avatar">
+        <nav>
+          <ul class="dropdown">
+            <li id="login"><a href="../login/login.html">Entrar</a></li>
+            <li><a href="../perfil.html">Perfil</a></li>
+            <li><a href="../forum.html">Forum</a></li>
+            <li><a href="../quiz.html">Quiz</a></li>
+            <li><a href="../mapa/mapa.html">Mapa de Hospitais</a></li>
+            <li><a href="../questoes.html">Cadastro de Questões</a></li>
+            <li><a href="#">Usuários Cadastrados</a></li>
+            <li id="logout"><a href="#">Logout</a></li>
+          </ul>
+        </nav>
+      </span>
     </div>
-  </header> -->
+  </header>
+
   <main>
-    <section id="registration">
-      <div class="container" style="max-width: initial">
-        <div class="content">
-          <form id="userRegistration">
-            <label for="name">
-              <span>Nome</span>
-              <input id="name" type="text" placeholder="Seu nome" required />
-            </label>
-            <label for="phone">
-              <span>Telefone</span>
-              <input id="phone" type="text" placeholder="(##) #####-####" required />
-            </label>
-            <label for="city">
-              <span>Cidade</span>
-              <input id="city" type="text" placeholder="Sua cidade" required />
-            </label>
-            <label for="neighborhood">
-              <span>Bairro</span>
-              <input id="neighborhood" type="text" placeholder="Seu bairro" required />
-            </label>
-            <label for="profession">
-              <span>Profissão</span>
-              <input id="profession" type="text" placeholder="Sua profissão" required />
-            </label>
-            <label for="email">
-              <span>Email</span>
-              <input id="email" type="email" placeholder="seu@email.com" required />
-            </label>
-            <label for="password">
-              <span>Senha</span>
-              <input id="password" type="password" placeholder="******" required />
-            </label>
-            <button type="submit">Salvar</button>
-          </form>
-        </div>
-        <table style="margin-left: 50px" border="1" id="dataTable">
-          <thead>
-            <tr>
-              <th>Nome</th>
-              <th>Telefone</th>
-              <th>Cidade</th>
-              <th>Bairro</th>
-              <th>Profissão</th>
-              <th>Email</th>
-              <th>Senha</th>
-              <th>Editar</th>
-              <th>Excluir</th>
-              <th>Perfil</th>
-            </tr>
-          </thead>
-          <tbody>
-            <!-- Conteúdo da tabela será inserido aqui pelo JavaScript -->
-          </tbody>
-        </table>
-      </div>
-    </section>
+    <div id="tableWrapper">
+      <h2>#usuárioscadastrados</h2>
+      <table id="dataTable">
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Telefone</th>
+            <th>Cidade</th>
+            <th>Bairro</th>
+            <th>Profissão</th>
+            <th>Email</th>
+            <th>Editar</th>
+            <th>Excluir</th>
+            <th>Perfil</th>
+          </tr>
+        </thead>
+
+        <tbody></tbody>
+      </table>
+    </div>
+
+
+    <form>
+      <h2>#editarcadastro</h2>
+      <input id="nome" name="nome" type="text" placeholder="Nome completo" required />
+
+      <fieldset class="inputs">
+        <input id="bairro" name="bairro" type="text" placeholder="Bairro" required />
+        <input id="cidade" name="cidade" type="text" placeholder="Cidade" required />
+      </fieldset>
+
+      <fieldset class="inputs">
+        <input id="telefone" name="telefone" type="text" placeholder="Telefone" required />
+        <input id="profissao" name="profissao" type="text" placeholder="Profissão" required />
+      </fieldset>
+
+      <input id="email" name="email" type="email" placeholder="Email" required />
+
+      <fieldset class="inputs">
+        <input id="senha" name="senha" type="password" placeholder="Senha" required />
+        <input id="confirmaSenha" name="confirmaSenha" type="password" placeholder="Confirmar Senha" required />
+      </fieldset>
+
+      <p id="mensagemErro">As senhas informadas não coincidem.</p>
+      <button type="submit">Salvar Alterações</button>
+    </form>
   </main>
+
   <footer>
     <img src="../../assets/img/logo-puc.svg" id="LogoPUC" alt="LogoPUC" />
     <p>© Copyright 2024. Direitos reservados a Primeira Ajuda.</p>
   </footer>
+
+  <script src="../../assets/js/login/main.js"></script>
+  <script type="module" src="../../assets/js/cadastro/tabela.js"></script>
 </body>
 
 </html>
