@@ -1,31 +1,32 @@
 cff-version: 1.0.1
 message: Please cite this software using these metadata.
-title: 
+title: Primeira Ajuda
 authors:
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names:
+  - family-names: Silva
+    given-names: Felipe
+  - family-names: Pinto
+    given-names: Gabriella
+  - family-names: Diniz
+    given-names: Gustavo
+  - family-names: Oliveira
+    given-names: Natan
+  - family-names: Paula
+    given-names: Pedro
+  - family-names: Marino
+    given-names: Vitor
   - name-suffix: Professor
     affiliation: PUC Minas
-    family-names: 
-    given-names: 
+    family-names: Barros
+    given-names: Diego
   - name-suffix: Professor
     affiliation: PUC Minas
-    family-names: 
-    given-names: 
+    family-names: Silva
+    given-names: Luiz
 keywords:
-  - 
-  - 
-repository-code: 
+  - primeiros socorros
+  - informações
+  - cadastro
+repository-code:
 license: CC-BY-4.0
 version: 1.0.0
 date-released: 2022-07-14
