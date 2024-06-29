@@ -1,0 +1,100 @@
+main,
+main form,
+main form fieldset.inputs {
+  display: flex;
+}
+
+main form,
+main div#tableWrapper {
+  box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.234);
+}
+
+main {
+  width: 100%;
+  margin: 0 auto;
+  padding: 60px 30px;
+  gap: 8px;
+}
+
+main form {
+  width: 40%;
+  padding: 20px;
+  flex-direction: column;
+  gap: 8px;
+  border-radius: 4.8px;
+  background-color: #ffffff;
+}
+
+main form input {
+  padding: 12px;
+  border-radius: 4.8px;
+  border: 1px solid #c3c3c3;
+}
+
+main form fieldset.inputs {
+  gap: 4px;
+  border: none;
+}
+
+main form fieldset.inputs input {
+  width: 50%;
+}
+
+main form p#mensagemErro {
+  color: #ec2300;
+  font-weight: bold;
+  display: none;
+}
+
+main form input.senhasValidas {
+  border: 1px solid #228b22;
+}
+
+main form input.senhasInvalidas {
+  border: 1px solid #ec2300;
+}
+
+tr th {
+  padding: 12px;
+  border-radius: 4.8px;
+  text-align: center;
+  background-color: #f8f8f8;
+  border: none;
+}
+
+tbody tr td {
+  padding: 8px;
+  border: none;
+  text-align: center;
+  border-radius: 4.8px;
+  font-size: 14px;
+}
+
+tbody tr:hover {
+  transition: 0.4s;
+  transform: scale(1.02);
+  background-color: #f8f8f8;
+}
+
+td button {
+  margin-bottom: 20px;
+}
+
+table {
+  border: none;
+  border-radius: 4.8px;
+}
+
+main div#tableWrapper {
+  width: 100%;
+  padding: 24px;
+  border-radius: 4.8px;
+  background-color: #ffffff;
+}
+
+main div#tableWrapper h2,
+form h2 {
+  font-weight: 900;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}

@@ -219,37 +219,33 @@ footer img#LogoPUC {
 }
 
 table {
-  width: 100%; /*Define a largura da tabela para 100% da largura do contêiner pai.*/
-  border-collapse: collapse; /*Remove o espaço entre as bordas das células da tabela, colapsando-as.*/
+  width: 100%;
+  border-collapse: collapse;
 }
 
 th,
 td {
-  border: 1px solid #dddddd; /*Adiciona uma borda cinza clara de 1 pixel em torno das células.*/
-  text-align: left; /*Alinha o texto à esquerda nas células.*/
-  padding: 8px; /*Adiciona um preenchimento interno de 8 pixels nas células.*/
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
 }
 
 th {
-  background-color: #f2f2f2; /*Define a cor de fundo das células do cabeçalho para um cinza claro.*/
+  background-color: #f2f2f2;
 }
 
-/* Define estilos para linhas pares (nth-child(even)) da tabela.*/
 tr:nth-child(even) {
-  background-color: #f9f9f9; /*Define a cor de fundo das linhas pares para um cinza muito claro.*/
+  background-color: #f9f9f9;
 }
 
-/*Define estilos para as linhas quando o mouse passa sobre elas.*/
 tr:hover {
-  background-color: #e0e0e0; /*Define uma cor de fundo mais escura ao passar o mouse sobre a linha.*/
+  background-color: #e0e0e0;
 }
 
-/* Alteração do tamanho dos h1 */
 h1 {
   font-size: 32px;
 }
 
-/* teste */
 .cpg {
   display: grid;
   grid-template-columns: 1fr;
@@ -293,7 +289,6 @@ h1 {
   background-size: cover;
 }
 
-/* CP2  */
 .cp2-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -302,11 +297,11 @@ h1 {
   box-shadow: 4px 4px 4px 0px #0000001a;
   border-radius: 0.3rem;
 }
-/* CP2   imagens */
+
 .cp2-container img {
   width: 70px;
 }
-/* CP2  divisões */
+
 .cp2c1 {
   display: flex;
   flex-direction: column;
@@ -336,7 +331,7 @@ h1 {
   transition: 0.4s;
   border-radius: 0.3rem;
 }
-/* CP2 divisões hovers */
+
 .cp2c1:hover {
   transform: scale(1.02);
   border: 1px solid rgb(202, 202, 202);
@@ -350,7 +345,6 @@ h1 {
   border: 1px solid rgb(202, 202, 202);
 }
 
-/* CP25 */
 .cp25-container {
   display: flex;
   align-items: center;
@@ -424,7 +418,6 @@ button i.fa-solid {
   margin-left: 8px;
 }
 
-/* CP3 */
 .cp3-conteudo {
   display: flex;
 }
@@ -468,7 +461,6 @@ button i.fa-solid {
   opacity: 0.7;
 }
 
-/* CP4 */
 .cp4-cards {
   display: flex;
   padding: 10px;
@@ -508,12 +500,11 @@ button i.fa-solid {
   font-weight: bold;
   text-decoration: none;
 }
-/* CP4 divisões hovers */
+
 .card:hover {
   transform: scale(1.02);
 }
 
-/* Responsividade */
 @media (min-width: 930px) and (max-width: 1270px) {
   .cp2-container {
     display: grid;
