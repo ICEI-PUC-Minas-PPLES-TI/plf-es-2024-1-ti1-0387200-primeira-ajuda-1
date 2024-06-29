@@ -14,23 +14,21 @@ function getNextID() {
 }
 
 function validaFormulario(dados) {
-    const dadosRecuperados = { ...dados }
-    delete dados['resposta']
-    delete dados['pergunta']
-
-    if (!Object.values(dados).includes(dadosRecuperados.resposta)) {
-        alert("A resposta deve ser igual a uma das alternativas.")
-        return
-    }
-
-    const { alternativa1, alternativa2, alternativa3, alternativa4 } = dadosRecuperados
+    const { alternativa1, alternativa2, alternativa3, alternativa4 } = dados
     const alternativas = [alternativa1, alternativa2, alternativa3, alternativa4]
+
+    if (!alternativas.includes(dados.resposta)) {
+        alert("A resposta deve ser igual a uma das alternativas.")
+        return false
+    }
 
     const alternativasSet = new Set(alternativas)
     if (alternativasSet.size !== alternativas.length) {
         alert("As alternativas devem ser únicas.")
-        return
+        return false
     }
+
+    return true
 }
 
 form.addEventListener('submit', async (evento) => {
@@ -45,16 +43,16 @@ form.addEventListener('submit', async (evento) => {
     const valoresFormulario = new FormData(evento.target)
     valoresFormulario.forEach((value, key) => dadosCadastroQuestoes[key] = value)
 
-    validaFormulario(dadosCadastroQuestoes)
+    if (validaFormulario(dadosCadastroQuestoes)) {
+        const resposta = await quizService.createPergunta({
+            id: getNextID(),
+            ...dadosCadastroQuestoes
+        })
 
-    const resposta = await quizService.createPergunta({
-        id: getNextID(),
-        ...dadosCadastroQuestoes
-    })
-
-    if (resposta) {
-        form.reset()
-        alert("A pergunta foi cadastrada com sucesso!")
+        if (resposta) {
+            form.reset()
+            alert("A pergunta foi cadastrada com sucesso!")
+        }
     }
 })
 
